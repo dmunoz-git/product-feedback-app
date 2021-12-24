@@ -130,9 +130,21 @@
               "devServerTarget": "product-feedback-app:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
   },
-  "defaultProject": "product-feedback-app"
+  "defaultProject": "product-feedback-app",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
