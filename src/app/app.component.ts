@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
     title = 'product-feedback-app';
     test: boolean = false;
+
+    value: number = 10;
 }

@@ -4,7 +4,7 @@ $_purple: hsl(282, 83%, 52%);
 $_blue: hsl(230, 76%, 59%);
 $_darker-blue: hsl(230, 31%, 31%);
 $_white: hsl(0, 0%, 100%);
-$_blue-grey: hsl(231, 100%, 87%);
+$_blue-grey: hsl(231, 100%, 97%);
 $_darker-grey: hsl(230, 60%, 98%);
 $_navy-blue: hsl(231, 33%, 34%);
 $_gray-blue: hsl(224, 20%, 49%);
@@ -17,26 +17,36 @@ $_red: hsl(0, 67%, 53%);
 $primary-color: $_purple;
 $secondary-color: $_blue;
 $dark-color: $_darker-blue;
-
 $text-color: $_darker-grey;
 $title-color: $_navy-blue;
-
 $background-color: $_darker-grey;
 $link-color: $secondary-color;
-
 $link-hover-color: $_neon-blue;
-
 $link-visited-color: $_navy-blue;
-
 $link-active-color: $_neon-blue;
-
 $error-color: $_red;
 
 // Color schema
+$primary-color: $primary-color;
+$secondary-color: $secondary-color;
+$info-color: $dark-color;
+$error-color: $error-color;
+$light-color: $_darker-grey;
+$dark-color: $_darker-blue;
+$text-color: $_gray-blue;
+$title-color: $_navy-blue;
+$light-text-color: $_white;
+$chips-background-color: $_blue-grey;
+
+// Color schema
 $color-schema: (
-    primary: $primary-color,
-    secondary: $secondary-color,
-    dark: $dark-color,
-    error: $error-color,
-    light: $_white,
+    'primary-color': $primary-color,
+    'secondary-color': $secondary-color,
+    'info-color': $dark-color,
+    'error-color': $error-color,
+    'light-color': $_darker-grey,
+    'dark-color': $_darker-blue,
+    'text-color': $_gray-blue,
+    'title-color': $_navy-blue,
+    'light-text-color': $_white,
 );

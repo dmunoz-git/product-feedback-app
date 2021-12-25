@@ -4,15 +4,15 @@
 $font-family: 'Jost', sans-serif;
 
 // Font-sizes configuration variables
-$_fs-base: 16; // base font size in px
+$fs-base: 16; // base font size in px
 
-$_fs-24: math.div(24, $_fs-base) + rem; // 24px
-$_fs-20: math.div(20, $_fs-base) + rem; // 20px
-$_fs-18: math.div(18, $_fs-base) + rem; // 18px
-$_fs-16: math.div(16, $_fs-base) + rem; // 16px
-$_fs-15: math.div(15, $_fs-base) + rem; // 15px
-$_fs-14: math.div(14, $_fs-base) + rem; // 14px
-$_fs-13: math.div(13, $_fs-base) + rem; // 13px
+$_fs-24: math.div(24, $fs-base) + rem; // 24px
+$_fs-20: math.div(20, $fs-base) + rem; // 20px
+$_fs-18: math.div(18, $fs-base) + rem; // 18px
+$_fs-16: math.div(16, $fs-base) + rem; // 16px
+$_fs-15: math.div(15, $fs-base) + rem; // 15px
+$_fs-14: math.div(14, $fs-base) + rem; // 14px
+$_fs-13: math.div(13, $fs-base) + rem; // 13px
 
 $font-size: $_fs-16;
 
@@ -25,19 +25,20 @@ $elements-fs: (
 );
 
 $custom-fs: (
-    body1: $_fs-16,
-    body2: $_fs-15,
-    body3: $_fs-14,
+    'fs-body1': $_fs-16,
+    'fs-body2': $_fs-15,
+    'fs-body3': $_fs-14,
+    'fs-button': $_fs-14,
 );
 
 // Line heading configuration variables
-$_lh-35: math.div(35, $_fs-base) + rem; // 35px
-$_lh-29: math.div(29, $_fs-base) + rem; // 29px
-$_lh-26: math.div(26, $_fs-base) + rem; // 25px
-$_lh-23: math.div(23, $_fs-base) + rem; // 23px
-$_lh-22: math.div(22, $_fs-base) + rem; // 22px
-$_lh-20: math.div(20, $_fs-base) + rem; // 20px
-$_lh-19: math.div(19, $_fs-base) + rem; // 19px
+$_lh-35: math.div(35, $fs-base) + rem; // 35px
+$_lh-29: math.div(29, $fs-base) + rem; // 29px
+$_lh-26: math.div(26, $fs-base) + rem; // 25px
+$_lh-23: math.div(23, $fs-base) + rem; // 23px
+$_lh-22: math.div(22, $fs-base) + rem; // 22px
+$_lh-20: math.div(20, $fs-base) + rem; // 20px
+$_lh-19: math.div(19, $fs-base) + rem; // 19px
 
 $elements-lh: (
     h1: $_lh-35,
