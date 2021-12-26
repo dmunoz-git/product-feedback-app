@@ -1,4 +1,4 @@
 <div class="ui-toast" @fadeInOut>
 	<span class="ui-toast__text">{{ data.text }}</span>
-	<button class="ui-toast__button" (click)="close()">Close!</button>
+	<button class="ui-toast__button" *ngIf="data.close" (click)="close()">{{ data.close }}</button>
 </div>

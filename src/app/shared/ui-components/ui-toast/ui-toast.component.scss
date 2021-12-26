@@ -1,4 +1,5 @@
 @use 'settings/colors';
+@use 'settings/typography';
 
 .ui-toast {
     position: relative;
@@ -6,22 +7,18 @@
     padding: 0.5rem 1rem;
 
     background-color: colors.$toast-background-color;
-    color: colors.$light-text-color;
-    border-radius: 0.625rem;
+    color: lighten(colors.$toast-background-color, 35%);
+    border-radius: 0.3125rem;
+    font-size: var(--fs-button);
 
     &__button {
         background-color: transparent;
-        border: solid 1px colors.$light-text-color;
-        color: colors.$light-text-color;
-        border-radius: 5px;
+        border: 0;
+        font-size: var(--fs-button);
+        color: lighten(colors.$toast-background-color, 35%);
 
-        margin-left: 20px;
+        margin-left: 1.25rem;
 
         cursor: pointer;
-
-        &:hover {
-            background-color: colors.$light-text-color;
-            color: colors.$toast-background-color;
-        }
     }
 }

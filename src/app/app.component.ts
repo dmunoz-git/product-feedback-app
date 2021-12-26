@@ -18,6 +18,8 @@ export class AppComponent {
     openToast() {
         const toastRef = this.toast.open(UIToastComponent, {
             text: 'This is a toast message',
+            duration: 3000,
+            close: 'Close',
         });
 
         toastRef.afterClosed().subscribe(() => {

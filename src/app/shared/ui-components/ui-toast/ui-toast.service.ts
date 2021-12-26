@@ -1,9 +1,9 @@
-import { Overlay, ComponentType } from '@angular/cdk/overlay';
+import { Overlay, ComponentType, OverlayRef } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { Injectable, Injector } from '@angular/core';
 import { UIToastData } from './ui-toast-data';
 import { UIToastRef } from './ui-toast-ref';
-import { TOAST_DATA } from './ui-toast-tokens';
+import { UI_TOAST_DATA } from './ui-toast-tokens';
 
 @Injectable({
     providedIn: 'root',
@@ -24,7 +24,7 @@ export class UIToastService {
             parent: this.injector,
             providers: [
                 { provide: UIToastRef, useValue: toastRef },
-                { provide: TOAST_DATA, useValue: data },
+                { provide: UI_TOAST_DATA, useValue: data },
             ],
         });
 
