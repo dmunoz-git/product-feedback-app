@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UICounterComponent } from './ui-counter.component';
+import { UIToastComponent } from './ui-toast.component';
 
-describe('UICounterComponent', () => {
-    let component: UICounterComponent;
-    let fixture: ComponentFixture<UICounterComponent>;
+describe('UIToastComponent', () => {
+    let component: UIToastComponent;
+    let fixture: ComponentFixture<UIToastComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [UICounterComponent],
+            declarations: [UIToastComponent],
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(UICounterComponent);
+        fixture = TestBed.createComponent(UIToastComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

@@ -1,1 +1,1 @@
-<button class="ui-button" [ngClass]="getCSSClass(color)" [type]="type"><ng-content></ng-content></button>
+<button class="ui-button" [ngClass]="'ui-button--' + color" [type]="type"><ng-content></ng-content></button>

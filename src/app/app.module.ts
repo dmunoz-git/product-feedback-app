@@ -9,11 +9,14 @@ import { UIButtonModule } from './shared/ui-components/ui-button/ui-button.modul
 import { UIChipsModule } from './shared/ui-components/ui-chips/ui-chips.module';
 import { UICounterModule } from './shared/ui-components/ui-counter/ui-counter.module';
 import { FormsModule } from '@angular/forms';
+import { UIToastModule } from './shared/ui-components/ui-toast/ui-toast.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
     declarations: [AppComponent],
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
         HttpClientModule,
         TranslocoRootModule,
@@ -22,6 +25,7 @@ import { FormsModule } from '@angular/forms';
         UIButtonModule,
         UIChipsModule,
         UICounterModule,
+        UIToastModule,
         FormsModule,
     ],
     providers: [],

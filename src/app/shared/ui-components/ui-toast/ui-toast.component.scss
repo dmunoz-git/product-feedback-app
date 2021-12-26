@@ -1,0 +1,27 @@
+@use 'settings/colors';
+
+.ui-toast {
+    position: relative;
+    margin: 0.625rem;
+    padding: 0.5rem 1rem;
+
+    background-color: colors.$toast-background-color;
+    color: colors.$light-text-color;
+    border-radius: 0.625rem;
+
+    &__button {
+        background-color: transparent;
+        border: solid 1px colors.$light-text-color;
+        color: colors.$light-text-color;
+        border-radius: 5px;
+
+        margin-left: 20px;
+
+        cursor: pointer;
+
+        &:hover {
+            background-color: colors.$light-text-color;
+            color: colors.$toast-background-color;
+        }
+    }
+}
