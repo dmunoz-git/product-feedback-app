@@ -1,4 +1,4 @@
-import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 type UIButtonColors = 'primary' | 'secondary' | 'info' | 'light' | 'dark' | 'error' | 'default';
 type UIButtonType = 'button' | 'submit' | 'reset';
@@ -8,7 +8,6 @@ type UIButtonType = 'button' | 'submit' | 'reset';
     selector: 'ui-button',
     templateUrl: './ui-button.component.html',
     styleUrls: ['./ui-button.component.scss'],
-    encapsulation: ViewEncapsulation.None,
 })
 export class UIButtonComponent {
     @Input() color: UIButtonColors = 'default';

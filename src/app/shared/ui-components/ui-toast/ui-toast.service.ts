@@ -1,4 +1,4 @@
-import { Overlay, ComponentType, OverlayRef } from '@angular/cdk/overlay';
+import { Overlay, ComponentType } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { Injectable, Injector } from '@angular/core';
 import { UIToastData } from './ui-toast-data';

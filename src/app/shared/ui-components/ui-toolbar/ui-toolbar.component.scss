@@ -1,0 +1,8 @@
+@use 'settings/colors';
+
+.ui-toolbar {
+    padding: 0.875rem 1rem;
+    background-color: colors.$toolbar-background-color;
+    border-radius: 0.625rem;
+    color: colors.$light-text-color;
+}

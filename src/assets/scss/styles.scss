@@ -6,3 +6,7 @@
 @use 'elements/root';
 @use 'elements/body';
 @use 'elements/typography';
+
+// Common components styles
+@use 'common/ui-button';
+@use 'common/ui-badge';
