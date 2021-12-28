@@ -1,29 +1,13 @@
-<h1>Header 1</h1>
-<h2>Header 2</h2>
-<h3>Header 3</h3>
-<h4>Header 4</h4>
-<p>This is a param</p>
-<br>
-<div class="buttons-container">
-	<ui-button [color]="'primary'">Button 1</ui-button>
-    <ui-button [color]="'secondary'">Button 2</ui-button>
-	<ui-button [color]="'info'">Button 3</ui-button>
-	<ui-button [color]="'error'">Button 4</ui-button>
-</div>
-<br>
-<div class="buttons-container">
-	<button ui-button color="primary">Button 1</button>
-    <button ui-button color="secondary">Button 2</button>
-	<button ui-button color="info">Button 3</button>
-	<button ui-button color="error">Button 4</button>
-</div>
-<br>
-<ui-chip>UX</ui-chip>
-<br> <br> <br>
-<ui-counter [(ngModel)]="value"></ui-counter>
-<ui-button (click)="openToast()" [color]="'error'">Toast!</ui-button>
-<ui-toolbar>...</ui-toolbar>
-<br>
-<span ui-badge [value]="badgeValue">
-	<img  src="assets/images/icons/icon-comments.svg" alt="">
-</span>
+<!--
+<ui-dropdown style="display: none;">
+	<ui-option>Most Upvotes</ui-option>
+	<ui-option>Least Upvotes</ui-option>
+	<ui-option>Most Comments</ui-option>
+	<ui-option>Least Comments</ui-option>
+</ui-dropdown>
+-->
+<form action="" [formGroup]="form" class="form" >
+	<input type="text" ui-input class="layout" formControlName="username">
+	<input type="email" ui-input class="layout" formControlName="email">
+	<button ui-button color="primary" [disabled]="form.invalid">Submit</button>
+</form>
