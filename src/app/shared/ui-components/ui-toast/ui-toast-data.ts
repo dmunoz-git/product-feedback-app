@@ -1,5 +1,5 @@
 export interface UIToastData {
-    text: string;
+    message: string;
     duration?: number;
     close?: string;
     position?: UIToastPosition;

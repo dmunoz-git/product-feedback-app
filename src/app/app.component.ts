@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UIToastComponent } from './shared/ui-components/ui-toast/ui-toast.component';
+import { UIToastService } from './shared/ui-components/ui-toast/ui-toast.service';
 
 @Component({
     selector: 'app-root',
@@ -10,13 +11,12 @@ export class AppComponent {
     title = 'product-feedback-app';
     test: boolean = false;
 
-    value: number = 10;
-    badgeValue: number = 9;
+    constructor(private toast: UIToastService) {}
 
-    form = this.fb.group({
-        username: ['', Validators.required],
-        email: ['', Validators.required, Validators.email],
-    });
-
-    constructor(private fb: FormBuilder) {}
+    openToast() {
+        this.toast.open(UIToastComponent, {
+            message: 'This is a test message',
+            duration: 3000,
+        });
+    }
 }

@@ -1,13 +1,1 @@
-<!--
-<ui-dropdown style="display: none;">
-	<ui-option>Most Upvotes</ui-option>
-	<ui-option>Least Upvotes</ui-option>
-	<ui-option>Most Comments</ui-option>
-	<ui-option>Least Comments</ui-option>
-</ui-dropdown>
--->
-<form action="" [formGroup]="form" class="form" >
-	<input type="text" ui-input class="layout" formControlName="username">
-	<input type="email" ui-input class="layout" formControlName="email">
-	<button ui-button color="primary" [disabled]="form.invalid">Submit</button>
-</form>
+<button ui-button color="primary" (click)="openToast()">Open!</button>

@@ -1,12 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UIDropdownDirective } from './ui-dropdown.directive';
-import { UIDropdownComponent } from './ui-dropdown/ui-dropdown.component';
-import { UIOptionComponent } from './ui-option/ui-option.component';
+import { DropdownTriggerForDirective } from './dropdown-trigger-for.directive';
+import { UIDropdownComponent } from './ui-dropdown.component';
 
 @NgModule({
-    declarations: [UIDropdownDirective, UIDropdownComponent, UIOptionComponent],
+    declarations: [DropdownTriggerForDirective, UIDropdownComponent],
     imports: [CommonModule],
-    exports: [UIDropdownDirective, UIDropdownComponent, UIOptionComponent],
+    exports: [],
 })
 export class UIDropdownModule {}
