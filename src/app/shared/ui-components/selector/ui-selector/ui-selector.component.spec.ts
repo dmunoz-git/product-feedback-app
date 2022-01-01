@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UiFieldComponent } from './ui-field.component';
+import { UISelectorComponent } from './ui-selector.component';
 
-describe('UiFieldComponent', () => {
-  let component: UiFieldComponent;
-  let fixture: ComponentFixture<UiFieldComponent>;
+describe('UISelectorComponent', () => {
+  let component: UISelectorComponent;
+  let fixture: ComponentFixture<UISelectorComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UiFieldComponent ]
+      declarations: [ UISelectorComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UiFieldComponent);
+    fixture = TestBed.createComponent(UISelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

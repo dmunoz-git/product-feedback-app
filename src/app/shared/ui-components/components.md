@@ -59,9 +59,39 @@ The component implements ControlValueAccessor interface. So it can be used as a 
 
 Import the module `UIDropdownModule` from the `shared/ui-components/dropdown/ui-dropdown.module` file.
 
-## Form
+## Icons
 
-Import the module `UIFormModule` from the `shared/ui-components/form/ui-form.module` file.
+Import the module `UIIconModule` from the `shared/ui-components/icon/ui-icon.module` file.
+
+```html
+<ui-icon name="home"></ui-icon> <ui-icon type="desktop" name="home"></ui-icon>
+```
+
+Icon list:
+
+-   `arrow-down`
+-   `arrow-left`
+-   `arrow-up`
+-   `check`
+-   `comments`
+-   `edit-feedback`
+-   `new-feedback`
+-   `plus`
+
+Mobile type icons:
+
+-   `close`
+-   `hamburguer`
+
+## Input
+
+Import the module `UIInputModule` from the `shared/ui-components/input/ui-input.module` file.
+
+```html
+<input uiInput [ngModel]="value" />
+```
+
+## Selector
 
 ## Toast
 
