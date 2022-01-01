@@ -1,1 +1,8 @@
-<ui-icon name="comments"></ui-icon>
+<button ui-button color="primary" [uiDropdownTriggerFor]="menu">Menu</button>
+<ui-dropdown #menu>
+    <button ui-dropdown-item>Item 1</button>
+	<ui-divider></ui-divider>
+    <button ui-dropdown-item>Item 2</button>
+	<ui-divider></ui-divider>
+    <button ui-dropdown-item>Item 3</button>
+</ui-dropdown>

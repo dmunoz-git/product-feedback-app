@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { UIDropdownComponent } from './ui-dropdown.component';
 
-describe('UiDropdownComponent', () => {
+describe('UIDropdownComponent', () => {
     let component: UIDropdownComponent;
     let fixture: ComponentFixture<UIDropdownComponent>;
 

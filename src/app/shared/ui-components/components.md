@@ -55,9 +55,26 @@ Import the module `UICounterModule` from the `shared/ui-components/counter/ui-co
 
 The component implements ControlValueAccessor interface. So it can be used as a form control or as a part of a template form.
 
-## Dropdown
+## Dropdown Menu
 
 Import the module `UIDropdownModule` from the `shared/ui-components/dropdown/ui-dropdown.module` file.
+
+```html
+<button ui-button [uiDropdownTriggerFor]="menu">Menu</button>
+<ui-dropdown #menu>
+    <button ui-dropdown-item>Item 1</button>
+    <button ui-dropdown-item>Item 2</button>
+    <button ui-dropdown-item>Item 3</button>
+</ui-dropdown>
+```
+
+## Divider
+
+Import the module `UIDividerModule` from the `shared/ui-components/divider/ui-divider.module` file.
+
+```html
+<ui-divider></ui-divider>
+```
 
 ## Icons
 
