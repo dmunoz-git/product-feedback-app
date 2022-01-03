@@ -3,6 +3,10 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+	"paths": {
+		"@shared/*": ["src/app/shared/*"],
+		"@shared/ui-components/*": ["src/app/shared/ui-components/*"],
+	},
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,

@@ -1,0 +1,27 @@
+@use 'settings/colors';
+
+.ui-selector {
+    background-color: colors.$bg-input-color;
+    padding: 0.8125em 1.5em;
+    border-radius: 5px;
+    width: fit-content;
+    cursor: pointer;
+
+    &__input {
+        border: 0;
+        background-color: inherit;
+        cursor: pointer;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &--active {
+        outline: 1px solid colors.$outline-active-color;
+    }
+
+    &--error {
+        outline: 1px solid colors.$outline-error-color;
+    }
+}

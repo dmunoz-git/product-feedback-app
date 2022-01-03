@@ -110,6 +110,16 @@ Import the module `UIInputModule` from the `shared/ui-components/input/ui-input.
 
 ## Selector
 
+Import the module `UISelectorModule` from the `shared/ui-components/selector/ui-selector.module` file.
+
+```html
+<ui-select label="Name" [(ngModel)]="field">
+    <ui-select-option value="option1">Option 1</ui-select-option>
+    <ui-select-option value="option2">Option 2</ui-select-option>
+    <ui-select-option value="option3">Option 3</ui-select-option>
+</ui-select>
+```
+
 ## Toast
 
 Import the module `UIToastModule` from the `shared/ui-components/toast/ui-toast.module` file.

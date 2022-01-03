@@ -1,10 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UISelectorComponent } from './ui-selector/ui-selector.component';
+import { UISelectComponent } from './select/ui-select.component';
+import { UISelectOptionComponent } from './select-option/ui-select-option.component';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 @NgModule({
-    declarations: [UISelectorComponent],
-    imports: [CommonModule],
-    exports: [UISelectorComponent],
+    declarations: [UISelectComponent, UISelectOptionComponent],
+    imports: [CommonModule, OverlayModule],
+    exports: [UISelectComponent, UISelectOptionComponent],
 })
 export class UISelectorModule {}
