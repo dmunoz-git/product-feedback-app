@@ -1,94 +1,98 @@
 <div class="container">
-	<ui-toolbar>
-		<button ui-button color="info">Log in!</button>
-	</ui-toolbar>
-	<section class="typography">
-		<h1>Header 1</h1>
-		<h2>Header 2</h2>
-		<h3>Header 3</h3>
-		<h4>Header 4</h4>
-		<h5>Header 5</h5>
-		<h6>Header 6</h6>
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt tincidunt, ipsum ante euismod nisi, eu aliquam nisl nunc euismod nisi.</p>
-		<a>Link</a>
-	</section>
-	<section class="buttons">
-		<h2>Buttons</h2>
-		<h3>Component:</h3>
-		<div class="btn">
-			<ui-button color="primary">Button</ui-button>
-			<ui-button color="secondary">Button</ui-button>
-			<ui-button color="info">Button</ui-button>
-			<ui-button color="light">Button</ui-button>
-			<ui-button color="dark">Button</ui-button>
-			<ui-button color="error">Button</ui-button>
-		</div>
-		
-		<h3>Directive:</h3>
-		<div class="row">
-			<button ui-button color="primary">Button</button>
-			<button ui-button color="secondary">Button</button>
-			<button ui-button color="info">Button</button>
-			<button ui-button color="light">Button</button>
-			<button ui-button color="dark">Button</button>
-			<button ui-button color="error">Button</button>
-		</div>
-	</section>
-	<section class="badge">
-		<h2>Badge</h2>
-		<ui-icon name="comments" ui-badge value="9"></ui-icon>
-	</section>
-	<section class="chips">
-		<h2>Chips:</h2>
-		<div class="row">
-			<ui-chip>UX</ui-chip>
-			<ui-chip>Video</ui-chip>
-			<ui-chip>Tag</ui-chip>
-			<ui-chip>BE</ui-chip>
-		</div>
-	</section>
+    <ui-toolbar>
+        <button ui-button color="info">Log in!</button>
+    </ui-toolbar>
+    <section class="typography">
+        <h1>Header 1</h1>
+        <h2>Header 2</h2>
+        <h3>Header 3</h3>
+        <h4>Header 4</h4>
+        <h5>Header 5</h5>
+        <h6>Header 6</h6>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt tincidunt, ipsum ante euismod nisi, eu
+            aliquam nisl nunc euismod nisi.
+        </p>
+        <a>Link</a>
+    </section>
+    <section class="buttons">
+        <h2>Buttons</h2>
+        <h3>Component:</h3>
+        <div class="btn">
+            <ui-button color="primary">Button</ui-button>
+            <ui-button color="secondary">Button</ui-button>
+            <ui-button color="info">Button</ui-button>
+            <ui-button color="light">Button</ui-button>
+            <ui-button color="dark">Button</ui-button>
+            <ui-button color="error">Button</ui-button>
+        </div>
 
-	<section class="counter">
-		<h2>Counter:</h2>
-		<ui-counter></ui-counter>
-	</section>
+        <h3>Directive:</h3>
+        <div class="row">
+            <button ui-button color="primary">Button</button>
+            <button ui-button color="secondary">Button</button>
+            <button ui-button color="info">Button</button>
+            <button ui-button color="light">Button</button>
+            <button ui-button color="dark">Button</button>
+            <button ui-button color="error">Button</button>
+        </div>
+    </section>
+    <section class="badge">
+        <h2>Badge</h2>
+        <ui-icon name="comments" ui-badge value="9"></ui-icon>
+    </section>
+    <section class="chips">
+        <h2>Chips:</h2>
+        <div class="row">
+            <ui-chip>UX</ui-chip>
+            <ui-chip>Video</ui-chip>
+            <ui-chip>Tag</ui-chip>
+            <ui-chip>BE</ui-chip>
+        </div>
+    </section>
 
-	<section class="dropdown">
-		<h2>Dropdown:</h2>
-		<button ui-button color="info" [uiDropdownTriggerFor]="menu">Menu</button>
-		
-		<ui-dropdown #menu>
-			<button ui-dropdown-item>Item 1</button>
-			<ui-divider></ui-divider>
-			<button ui-dropdown-item>Item 2</button>
-			<ui-divider></ui-divider>
-			<button ui-dropdown-item>Item 3</button>
-		</ui-dropdown>
-		
-	</section>
+    <section class="counter">
+        <h2>Counter:</h2>
+        <ui-counter></ui-counter>
+    </section>
 
-	<section class="divider">
-		<h2>Divider:</h2>
-		<ui-divider></ui-divider>
-	</section>
+    <section class="dropdown">
+        <h2>Dropdown:</h2>
+        <button ui-button color="info" [uiDropdownTriggerFor]="menu">Menu</button>
 
-	<section class="icons">
-		<ui-icon name="home"></ui-icon>
-	</section>
+        <ui-dropdown #menu>
+            <button ui-dropdown-item>Item 1</button>
+            <ui-divider></ui-divider>
+            <button ui-dropdown-item>Item 2</button>
+            <ui-divider></ui-divider>
+            <button ui-dropdown-item>Item 3</button>
+        </ui-dropdown>
+    </section>
 
-	<section class="form">
-		<h2>Form:</h2>
-		<div class="row">
-			<input uiInput type="text" placeholder="Active input"/>
-			<input uiInput type="text" placeholder="Required input" required/>
-			<input uiInput type="text" placeholder="Disabled input" disabled/>
-		</div>
+    <section class="divider">
+        <h2>Divider:</h2>
+        <ui-divider></ui-divider>
+    </section>
 
-	</section>
+    <section class="icons">
+        <ui-icon name="check"></ui-icon>
+    </section>
 
-	<section class="toast">
-		<h2>Toast:</h2>
-		<button ui-button color="info" (click)="showToast()">Show Toast!</button>
-	</section>
+    <section class="form">
+        <h2>Form:</h2>
+        <div class="row">
+            <input uiInput type="text" placeholder="Active input" />
+            <ui-select [placeholder]="'Pizza 🍕'">
+                <ui-select-option>Carbonara</ui-select-option>
+                <ui-select-option>4 Formaggi</ui-select-option>
+                <ui-select-option>Napolitana</ui-select-option>
+                <ui-select-option>Margarita</ui-select-option>
+            </ui-select>
+        </div>
+    </section>
+
+    <section class="toast">
+        <h2>Toast:</h2>
+        <button ui-button color="info" (click)="showToast()">Show Toast!</button>
+    </section>
 </div>

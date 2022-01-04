@@ -1,0 +1,15 @@
+@use 'settings/colors';
+
+.ui-select-option {
+    background: transparent;
+    color: colors.$text-color;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+
+    text-align: left;
+
+    &:hover {
+        color: colors.$primary-color;
+    }
+}

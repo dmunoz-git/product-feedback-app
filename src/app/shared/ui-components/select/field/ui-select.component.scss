@@ -25,3 +25,13 @@
         outline: 1px solid colors.$outline-error-color;
     }
 }
+
+.ui-select-panel {
+    display: flex;
+    flex-direction: column;
+
+    min-width: 15.9375rem;
+    background-color: white;
+    border-radius: 0.625rem;
+    box-shadow: 0px 0.625rem 2.5rem -0.4375rem rgba(55, 63, 104, 0.350492);
+}

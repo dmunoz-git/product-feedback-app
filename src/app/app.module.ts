@@ -14,7 +14,7 @@ import { UIToastModule } from '@shared/ui-components/toast/ui-toast.module';
 import { UIToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { UISelectorModule } from './shared/ui-components/selector/ui-selector.module';
+import { UISelectorModule } from './shared/ui-components/select/ui-selector.module';
 
 import { TranslocoRootModule } from './transloco-root.module';
 
