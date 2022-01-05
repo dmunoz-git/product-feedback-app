@@ -62,9 +62,7 @@
 
         <ui-dropdown #menu>
             <button ui-dropdown-item>Item 1</button>
-            <ui-divider></ui-divider>
             <button ui-dropdown-item>Item 2</button>
-            <ui-divider></ui-divider>
             <button ui-dropdown-item>Item 3</button>
         </ui-dropdown>
     </section>
@@ -83,10 +81,11 @@
         <div class="row">
             <input uiInput type="text" placeholder="Active input" />
             <ui-select [placeholder]="'Pizza 🍕'">
-                <ui-select-option>Carbonara</ui-select-option>
-                <ui-select-option>4 Formaggi</ui-select-option>
-                <ui-select-option>Napolitana</ui-select-option>
-                <ui-select-option>Margarita</ui-select-option>
+                <ui-select-option value="carbonara">Carbonara</ui-select-option>
+                <ui-select-option value="4 formaggi">4 Formaggi</ui-select-option>
+                <ui-select-option value="napolitana">Napolitana</ui-select-option>
+                <ui-select-option value="margarita">Margarita</ui-select-option>
+                <ui-select-option value="">None</ui-select-option>
             </ui-select>
         </div>
     </section>

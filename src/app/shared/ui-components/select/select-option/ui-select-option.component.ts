@@ -1,4 +1,5 @@
-import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener, Input, ViewEncapsulation } from '@angular/core';
+import { UiSelectService } from '../ui-select.service';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
@@ -7,10 +8,13 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
     styleUrls: ['./ui-select-option.component.scss'],
     encapsulation: ViewEncapsulation.None,
 })
-export class UISelectOptionComponent implements OnInit {
+export class UISelectOptionComponent {
     @Input() value: string = '';
 
-    constructor() {}
+    constructor(private select: UiSelectService) {}
 
-    ngOnInit(): void {}
+    @HostListener('click', ['$event'])
+    click() {
+        this.select.getSelect().selectOption(this);
+    }
 }

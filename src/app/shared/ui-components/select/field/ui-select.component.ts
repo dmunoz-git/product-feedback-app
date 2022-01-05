@@ -1,41 +1,38 @@
-import { Component, Input } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, ContentChildren, Input, QueryList } from '@angular/core';
+import { UISelectOptionComponent } from '../select-option/ui-select-option.component';
+import { UiSelectService } from '../ui-select.service';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'ui-select',
     templateUrl: './ui-select.component.html',
     styleUrls: ['./ui-select.component.scss'],
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: UISelectComponent,
-            multi: true,
-        },
-    ],
 })
-export class UISelectComponent implements ControlValueAccessor {
+export class UISelectComponent {
     @Input() selected: string = '';
     @Input() placeholder: string = '';
+
+    @ContentChildren(UISelectOptionComponent) options!: QueryList<UISelectOptionComponent>;
+
+    selectedOption!: UISelectOptionComponent;
+    displayedText: string = '';
+
     isDropdownOpen: boolean = false;
 
-    onChangeFn = () => {};
-
-    onTouchedFn = () => {};
-
-    writeValue(obj: any): void {
-        this.selected = obj;
-    }
-    registerOnChange(fn: any): void {
-        this.onChangeFn = fn;
-    }
-    registerOnTouched(fn: any): void {
-        this.onTouchedFn = fn;
+    constructor(private select: UiSelectService) {
+        this.select.register(this);
     }
 
     toggleDropdown() {
-        console.log(this.isDropdownOpen);
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         this.isDropdownOpen ? (this.isDropdownOpen = false) : (this.isDropdownOpen = true);
+    }
+
+    selectOption(option: UISelectOptionComponent) {
+        console.log(option);
+        this.selectedOption = option;
+        this.selected = option.value;
+        this.displayedText = this.selectedOption ? option.value : '';
+        this.isDropdownOpen = false;
     }
 }
