@@ -13,7 +13,7 @@ export const JUSTIFY_CSS_CLASES = {
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'ui-toolbar',
-    templateUrl: './ui-toolbar.component.html',
+    template: `<div class="ui-toolbar" [ngClass]="getJustifyClass()"><ng-content></ng-content></div> `,
     styleUrls: ['./ui-toolbar.component.scss'],
 })
 export class UIToolbarComponent {
