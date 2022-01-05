@@ -12,7 +12,7 @@
     [cdkConnectedOverlayOpen]="isDropdownOpen"
     (backdropClick)="isDropdownOpen = false"
 >
-    <div class="ui-select-panel">
+    <div class="ui-select-panel" @fadeInOut>
         <ng-content></ng-content>
     </div>
 </ng-template>
