@@ -4,7 +4,7 @@ import { UiSelectService } from '../ui-select.service';
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'ui-select-option',
-    templateUrl: './ui-select-option.component.html',
+    template: `<button class="ui-select-option" #text><ng-content></ng-content></button> `,
     styleUrls: ['./ui-select-option.component.scss'],
     encapsulation: ViewEncapsulation.None,
 })

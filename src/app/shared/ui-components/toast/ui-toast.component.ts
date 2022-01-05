@@ -7,7 +7,10 @@ import { fadeInOut } from '../animations/fade.animation';
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'ui-toast',
-    templateUrl: './ui-toast.component.html',
+    template: ` <div class="ui-toast" @fadeInOut>
+        <span class="ui-toast__text">{{ data.message }}</span>
+        <button class="ui-toast__button" *ngIf="data.close" (click)="close()">{{ data.close }}</button>
+    </div>`,
     styleUrls: ['./ui-toast.component.scss'],
     animations: [fadeInOut],
 })

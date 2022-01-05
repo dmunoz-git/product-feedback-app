@@ -7,18 +7,18 @@ import { UiSelectService } from '../ui-select.service';
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'ui-select',
-    templateUrl: './ui-select.component.html',
-    styleUrls: ['./ui-select.component.scss'],
+    templateUrl: './ui-select-panel.component.html',
+    styleUrls: ['./ui-select-panel.component.scss'],
     animations: [fadeInOut],
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => UISelectComponent),
+            useExisting: forwardRef(() => UISelectPanelComponent),
             multi: true,
         },
     ],
 })
-export class UISelectComponent implements ControlValueAccessor {
+export class UISelectPanelComponent implements ControlValueAccessor {
     @Input() selected: string = '';
     @Input() placeholder: string = '';
     @Input() disabled: boolean = false;

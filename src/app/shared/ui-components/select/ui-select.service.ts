@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
-import { UISelectComponent } from './field/ui-select.component';
+import { UISelectPanelComponent } from './select-panel/ui-select-panel.component';
 
 @Injectable({
     providedIn: 'root',
 })
 export class UiSelectService {
-    private select!: UISelectComponent;
+    private select!: UISelectPanelComponent;
 
-    public register(select: UISelectComponent) {
+    public register(select: UISelectPanelComponent) {
         this.select = select;
     }
 
-    public getSelect(): UISelectComponent {
+    public getSelect(): UISelectPanelComponent {
         return this.select;
     }
 }
