@@ -1,19 +1,23 @@
 import { Directive, HostBinding, Input } from '@angular/core';
-
-const MAIN_CSS_CLASS = 'ui-button';
+import { ButtonColors, ButtonSize, MAIN_CSS_CLASS } from './ui-button.component';
 
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
     selector: '[ui-button]',
 })
 export class UIButtonDirective {
-    @Input() color: 'primary' | 'secondary' | 'info' | 'light' | 'dark' | 'error' | 'default' = 'default';
+    @Input() color: ButtonColors = 'none';
+    @Input() size: ButtonSize = 'none';
 
     @HostBinding('class') get classes(): string {
-        if (this.color !== 'default') {
-            return `${MAIN_CSS_CLASS} ui-button--${this.color}`;
-        }
+        return `${MAIN_CSS_CLASS} ${this.colorClass} ${this.sizeClass}`;
+    }
 
-        return MAIN_CSS_CLASS;
+    get colorClass(): string {
+        return `${MAIN_CSS_CLASS}--${this.color}`;
+    }
+
+    get sizeClass(): string {
+        return `${MAIN_CSS_CLASS}--${this.size}`;
     }
 }

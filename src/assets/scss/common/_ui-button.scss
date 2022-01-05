@@ -7,7 +7,6 @@
     font-weight: bold;
     font-size: var(--fs-button);
     padding: 13px;
-    width: min(layout.$min-button-width, 100%);
     cursor: pointer;
 
     &--primary {
@@ -44,5 +43,38 @@
         &:hover {
             background-color: lighten(colors.$error-color, 10%);
         }
+    }
+
+    &--light {
+        background-color: colors.$white-color;
+        color: colors.$text-color;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &--dark {
+        background: colors.$dark-color;
+        color: colors.$light-text-color;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &--icon-ly {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1ch;
+    }
+
+    &--full-width {
+        width: 100%;
+    }
+
+    &--long {
+        width: min(layout.$min-button-width, 100%);
     }
 }

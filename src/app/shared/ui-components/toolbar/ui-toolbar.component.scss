@@ -1,8 +1,36 @@
 @use 'settings/colors';
 
 .ui-toolbar {
+    display: flex;
     padding: 0.875rem 1rem;
     background-color: colors.$toolbar-background-color;
     border-radius: 0.625rem;
     color: colors.$light-text-color;
+
+    &--between {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &--around {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    &--end {
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    &--center {
+        justify-content: center;
+        align-items: center;
+    }
+
+    &--start {
+        justify-content: flex-start;
+        align-items: center;
+    }
 }
