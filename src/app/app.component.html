@@ -76,19 +76,21 @@
         <ui-icon name="check"></ui-icon>
     </section>
 
-    <section class="form">
+    <form class="form" [formGroup]="testForm" (ngSubmit)="onClick()">
         <h2>Form:</h2>
         <div class="row">
-            <input uiInput type="text" placeholder="Active input" />
-            <ui-select [placeholder]="'Pizza 🍕'">
-                <ui-select-option value="carbonara">Carbonara</ui-select-option>
-                <ui-select-option value="4 formaggi">4 Formaggi</ui-select-option>
-                <ui-select-option value="napolitana">Napolitana</ui-select-option>
-                <ui-select-option value="margarita">Margarita</ui-select-option>
+            <input uiInput type="text" placeholder="Active input" formControlName="name" />
+            <ui-select [placeholder]="'Feelings'" formControlName="pizza">
+                <ui-select-option value="love">💗</ui-select-option>
+                <ui-select-option value="luck">🍀</ui-select-option>
                 <ui-select-option value="">None</ui-select-option>
             </ui-select>
         </div>
-    </section>
+
+        <button ui-button color="primary">Submit</button>
+
+        <p>{{ testValueForm | json }}</p>
+    </form>
 
     <section class="toast">
         <h2>Toast:</h2>

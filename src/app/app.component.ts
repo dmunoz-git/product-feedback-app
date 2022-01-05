@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { UIToastComponent } from '@shared/ui-components/toast/ui-toast.component';
 import { UIToastService } from '@shared/ui-components/toast/ui-toast.service';
 
@@ -10,13 +11,23 @@ import { UIToastService } from '@shared/ui-components/toast/ui-toast.service';
 export class AppComponent {
     title = 'product-feedback-app';
     test: boolean = false;
+    testValueForm: any = {};
 
-    constructor(private toast: UIToastService) {}
+    testForm = this.fb.group({
+        name: [],
+        pizza: [],
+    });
+
+    constructor(private toast: UIToastService, private fb: FormBuilder) {}
 
     showToast() {
         this.toast.open(UIToastComponent, {
             message: 'This is a toast message',
             duration: 3000,
         });
+    }
+
+    onClick() {
+        this.testValueForm = this.testForm.value;
     }
 }

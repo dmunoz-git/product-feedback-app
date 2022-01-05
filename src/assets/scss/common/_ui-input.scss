@@ -7,6 +7,7 @@
     min-width: 15.9375rem;
     border-radius: 0.3125rem;
     background-color: colors.$bg-input-color;
+    margin: 1rem 0;
 
     &:focus {
         outline: 1px solid colors.$outline-active-color;

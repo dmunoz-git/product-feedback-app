@@ -1,4 +1,5 @@
-import { Component, ContentChildren, Input, QueryList } from '@angular/core';
+import { Component, ContentChildren, forwardRef, Input, QueryList } from '@angular/core';
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { UISelectOptionComponent } from '../select-option/ui-select-option.component';
 import { UiSelectService } from '../ui-select.service';
 
@@ -7,10 +8,18 @@ import { UiSelectService } from '../ui-select.service';
     selector: 'ui-select',
     templateUrl: './ui-select.component.html',
     styleUrls: ['./ui-select.component.scss'],
+    providers: [
+        {
+            provide: NG_VALUE_ACCESSOR,
+            useExisting: forwardRef(() => UISelectComponent),
+            multi: true,
+        },
+    ],
 })
-export class UISelectComponent {
+export class UISelectComponent implements ControlValueAccessor {
     @Input() selected: string = '';
     @Input() placeholder: string = '';
+    @Input() disabled: boolean = false;
 
     @ContentChildren(UISelectOptionComponent) options!: QueryList<UISelectOptionComponent>;
 
@@ -23,16 +32,36 @@ export class UISelectComponent {
         this.select.register(this);
     }
 
+    onTouchedFn = () => {};
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    onChangeFn = (_: any) => {};
+
     toggleDropdown() {
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         this.isDropdownOpen ? (this.isDropdownOpen = false) : (this.isDropdownOpen = true);
     }
 
     selectOption(option: UISelectOptionComponent) {
-        console.log(option);
         this.selectedOption = option;
         this.selected = option.value;
-        this.displayedText = this.selectedOption ? option.value : '';
+        this.displayedText = this.selectedOption && this.selected !== '' ? option.textElement.nativeElement.innerText : '';
         this.isDropdownOpen = false;
+        this.onChangeFn(this.selected);
+    }
+
+    writeValue(fn: any): void {
+        this.onChangeFn = fn;
+    }
+    registerOnChange(fn: any): void {
+        this.onChangeFn = fn;
+    }
+
+    registerOnTouched(fn: any): void {
+        this.onTouchedFn = fn;
+    }
+
+    setDisabledState(isDisabled: boolean): void {
+        this.disabled = isDisabled;
     }
 }

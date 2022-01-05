@@ -1,4 +1,4 @@
-import { Component, HostListener, Input, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, HostListener, Input, ViewChild, ViewEncapsulation } from '@angular/core';
 import { UiSelectService } from '../ui-select.service';
 
 @Component({
@@ -10,6 +10,7 @@ import { UiSelectService } from '../ui-select.service';
 })
 export class UISelectOptionComponent {
     @Input() value: string = '';
+    @ViewChild('text') textElement!: ElementRef;
 
     constructor(private select: UiSelectService) {}
 
