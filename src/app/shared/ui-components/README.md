@@ -7,19 +7,6 @@ Figma design file. All components are prefiexed with the component name `<ui-**>
 
 Import the module `UIButtonModule` from the `shared/ui-components/button/ui-button.module` file.
 
-It can be used as component in the application;
-
-```html
-<ui-button color="primary"></ui-button>
-<ui-button color="secondary"></ui-button>
-<ui-button color="info"></ui-button>
-<ui-button color="light"></ui-button>
-<ui-button color="dark"></ui-button>
-<ui-button color="error"></ui-button>
-```
-
-Or as a directive in the application:
-
 ```html
 <button ui-button color="primary"></button>
 <button ui-button color="secondary"></button>

@@ -1,5 +1,9 @@
 import { Directive, HostBinding, Input } from '@angular/core';
-import { ButtonColors, ButtonSize, MAIN_CSS_CLASS } from './ui-button.component';
+
+export const MAIN_CSS_CLASS = 'ui-button';
+export type ButtonColors = 'primary' | 'secondary' | 'info' | 'light' | 'dark' | 'error' | 'none';
+export type ButtonType = 'button' | 'submit' | 'reset';
+export type ButtonSize = 'small' | 'medium' | 'long' | 'none';
 
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector

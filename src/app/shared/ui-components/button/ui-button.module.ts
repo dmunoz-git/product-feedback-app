@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UIButtonComponent } from './ui-button.component';
 import { UIButtonDirective } from './ui-button.directive';
 
 @NgModule({
-    declarations: [UIButtonComponent, UIButtonDirective],
+    declarations: [UIButtonDirective],
     imports: [CommonModule],
-    exports: [UIButtonComponent, UIButtonDirective],
+    exports: [UIButtonDirective],
 })
 export class UIButtonModule {}
