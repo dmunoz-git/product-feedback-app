@@ -8,7 +8,9 @@ export type ButtonSize = 'small' | 'medium' | 'long' | 'none';
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'ui-button',
-    template: `<button class="ui-button" [ngClass]="cssClasses" [type]="type"><ng-content></ng-content></button> `,
+    template: `<button [class]="cssClasses" [ngClass]="disabled ? disabledClass : ''" [type]="type">
+        <ng-content></ng-content>
+    </button> `,
 })
 export class UIButtonComponent {
     @Input() color: ButtonColors = 'none';
@@ -16,15 +18,11 @@ export class UIButtonComponent {
     @Input() size: ButtonSize = 'none';
     @Input() disabled: boolean = false;
 
-    get colorClass(): string {
-        return `${MAIN_CSS_CLASS}--${this.color}`;
-    }
-
-    get sizeClass(): string {
-        return `${MAIN_CSS_CLASS}--${this.size}`;
-    }
+    public sizeClass: string = `${MAIN_CSS_CLASS}--${this.size}`;
+    public colorClass: string = `${MAIN_CSS_CLASS}--${this.color}`;
+    public disabledClass: string = `${MAIN_CSS_CLASS}--disabled`;
 
     get cssClasses(): string {
-        return `${this.colorClass} ${this.sizeClass}`;
+        return `${MAIN_CSS_CLASS} ${this.colorClass} ${this.sizeClass}`;
     }
 }

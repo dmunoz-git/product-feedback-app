@@ -1,21 +1,25 @@
 import { Directive, ElementRef, Inject, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
     selector: '[ui-badge]',
 })
 export class UIBadgeDirective implements OnChanges, OnDestroy {
-    @Input() value!: any;
+    @Input() value!: number;
 
     private badgeElement: HTMLElement | null = null;
+    private regex = new RegExp(/^[0-9]\d*$/);
 
     constructor(@Inject(DOCUMENT) private document: Document, private elRef: ElementRef<HTMLElement>) {}
 
     ngOnChanges(changes: SimpleChanges): void {
         if ('value' in changes) {
             const value = `${changes['value'].currentValue}`.trim();
-            if (value?.length > 0) {
+            if (value?.length > 0 && this.regex.test(value)) {
                 this.updateBadge(value);
+            } else {
+                this.updateBadge('0');
             }
         }
     }
