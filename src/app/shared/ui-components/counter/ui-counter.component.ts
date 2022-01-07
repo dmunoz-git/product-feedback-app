@@ -1,4 +1,5 @@
-import { Component, forwardRef } from '@angular/core';
+import { i18nMetaToJSDoc } from '@angular/compiler/src/render3/view/i18n/meta';
+import { Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -15,16 +16,23 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     ],
 })
 export class UICounterComponent implements ControlValueAccessor {
-    value: number = 0;
+    @Input() limitCounterTo: number = -1;
+    public active: boolean = false;
+    public value: number = 0;
 
     onChange: any = () => {};
 
     onTouch: any = () => {};
 
     increment(): void {
-        this.value++;
-        this.onChange(this.value);
-        this.writeValue(this.value);
+        if (!this.active) {
+            this.value++;
+            this.onChange(this.value);
+            this.writeValue(this.value);
+            this.active = this.value === this.limitCounterTo;
+        } else {
+            this.value = this.value < 0 ? 0 : this.value;
+        }
     }
 
     // controlValueAccessor methods

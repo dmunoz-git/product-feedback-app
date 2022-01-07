@@ -25,6 +25,20 @@
         color: colors.$secondary-color;
     }
 
+    &--active {
+        background-color: colors.$secondary-color;
+        color: colors.$light-text-color;
+
+        .ui-counter__icon {
+            filter: brightness(0) invert(1);
+        }
+
+        &:hover {
+            background-color: colors.$secondary-color;
+            color: colors.$light-text-color;
+        }
+    }
+
     &__icon {
         width: 1rem;
         height: auto;
