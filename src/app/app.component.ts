@@ -30,4 +30,8 @@ export class AppComponent {
     onClick() {
         this.testValueForm = this.testForm.value;
     }
+
+    showSelected(value: string) {
+        console.log(value);
+    }
 }

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ContentChildren, EventEmitter, Output, QueryList } from '@angular/core';
+import { Component, ContentChildren, EventEmitter, Output, QueryList } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms';
 import { UIChipComponent } from '../chip/ui-chip.component';
 import { UiChipListService } from './ui-chip-list.service';
@@ -9,9 +9,9 @@ import { UiChipListService } from './ui-chip-list.service';
     templateUrl: './ui-chip-list.component.html',
     styleUrls: ['./ui-chip-list.component.scss'],
 })
-export class UIChipListComponent implements AfterViewInit, ControlValueAccessor {
-    @ContentChildren(UIChipComponent) chips!: QueryList<UIChipComponent>;
+export class UIChipListComponent implements ControlValueAccessor {
     @Output() selected: EventEmitter<string> = new EventEmitter();
+    @ContentChildren(UIChipComponent) chips!: QueryList<UIChipComponent>;
 
     private value!: string;
 
@@ -23,12 +23,9 @@ export class UIChipListComponent implements AfterViewInit, ControlValueAccessor 
         uiChipList.register(this);
     }
 
-    ngAfterViewInit() {
-        this.chips.forEach((chip) => console.log(chip));
-    }
-
     setSelected(chip: UIChipComponent) {
         this.value = chip.textElement.nativeElement.innerText;
+        this.setActiveElement(chip);
         this.onChangeFn(this.value);
         this.selected.emit(this.value);
     }
@@ -42,5 +39,9 @@ export class UIChipListComponent implements AfterViewInit, ControlValueAccessor 
 
     registerOnTouched(fn: any): void {
         this.onTouchFn = fn;
+    }
+
+    private setActiveElement(selectedChip: UIChipComponent) {
+        this.chips.forEach((chip) => (chip.active = chip === selectedChip));
     }
 }

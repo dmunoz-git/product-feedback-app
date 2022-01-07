@@ -32,7 +32,7 @@
     </section>
     <section class="chips">
         <h2>Chips:</h2>
-        <ui-chip-list>
+        <ui-chip-list (selected)="showSelected($event)">
             <ui-chip>UX</ui-chip>
             <ui-chip>Video</ui-chip>
             <ui-chip>Tag</ui-chip>

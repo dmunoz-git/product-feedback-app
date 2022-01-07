@@ -10,8 +10,8 @@ import { UiChipListService } from '../chip-list/ui-chip-list.service';
     styleUrls: ['./ui-chip.component.scss'],
 })
 export class UIChipComponent {
-    active: boolean = false;
     @ViewChild('text') textElement!: ElementRef;
+    active: boolean = false;
 
     constructor(private chipList: UiChipListService) {}
 
