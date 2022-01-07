@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output, TemplateRef, ViewChild } from '@angular/core';
+import { Component, EventEmitter, Output, TemplateRef, ViewChild, ViewEncapsulation } from '@angular/core';
 import { fadeInOut } from '@shared/ui-components/animations/fade.animation';
 import { UIDropdownPanel } from './ui-dropdown-panel';
 
@@ -7,6 +7,7 @@ import { UIDropdownPanel } from './ui-dropdown-panel';
     selector: 'ui-dropdown',
     templateUrl: './ui-dropdown.component.html',
     styleUrls: ['./ui-dropdown.component.scss'],
+    encapsulation: ViewEncapsulation.None,
     animations: [fadeInOut],
 })
 export class UIDropdownComponent implements UIDropdownPanel {
