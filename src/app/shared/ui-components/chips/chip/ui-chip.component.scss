@@ -16,5 +16,10 @@
     &--active {
         background-color: colors.$secondary-color;
         color: colors.$light-text-color;
+
+        &:hover {
+            background-color: colors.$secondary-color;
+            color: colors.$light-text-color;
+        }
     }
 }

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
 import { UIChipComponent } from '../chip/ui-chip.component';
 
 import { UIChipListComponent } from './ui-chip-list.component';
@@ -22,7 +21,6 @@ describe('UIChipListComponent', () => {
     let component: UIChipListComponent;
     let fixture: ComponentFixture<UIChipListComponent>;
 
-    let testComponent: TestComponent;
     let testFixture: ComponentFixture<TestComponent>;
 
     beforeEach(async () => {
@@ -37,7 +35,6 @@ describe('UIChipListComponent', () => {
         fixture.detectChanges();
 
         testFixture = TestBed.createComponent(TestComponent);
-        testComponent = testFixture.componentInstance;
 
         testFixture.detectChanges();
     });

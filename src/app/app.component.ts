@@ -15,7 +15,7 @@ export class AppComponent {
 
     testForm = this.fb.group({
         name: [],
-        pizza: [],
+        pizza: ['feature'],
     });
 
     constructor(private toast: UIToastService, private fb: FormBuilder) {}

@@ -1,4 +1,4 @@
-import { Component, ContentChildren, forwardRef, Input, QueryList, ViewEncapsulation } from '@angular/core';
+import { AfterViewInit, Component, ContentChildren, forwardRef, Input, QueryList, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { fadeInOut } from '@shared/ui-components/animations/fade.animation';
 import { UISelectOptionComponent } from '../select-option/ui-select-option.component';
@@ -19,7 +19,7 @@ import { UiSelectService } from '../ui-select.service';
         },
     ],
 })
-export class UISelectPanelComponent implements ControlValueAccessor {
+export class UISelectPanelComponent implements AfterViewInit, ControlValueAccessor {
     @Input() selected: string = '';
     @Input() placeholder: string = '';
     @Input() disabled: boolean = false;
@@ -33,6 +33,12 @@ export class UISelectPanelComponent implements ControlValueAccessor {
 
     constructor(private select: UiSelectService) {
         this.select.register(this);
+    }
+
+    ngAfterViewInit(): void {
+        if (this.selected !== '') {
+            this.setSelected();
+        }
     }
 
     onTouchedFn = () => {};
@@ -50,7 +56,21 @@ export class UISelectPanelComponent implements ControlValueAccessor {
         this.selected = option.value;
         this.displayedText = this.selectedOption && this.selected !== '' ? option.textElement.nativeElement.innerText : '';
         this.isDropdownOpen = false;
+        this.setSelected();
         this.onChangeFn(this.selected);
+    }
+
+    onOpened() {
+        this.isDropdownOpen = true;
+        this.onTouchedFn();
+    }
+
+    onClose() {
+        this.isDropdownOpen = false;
+    }
+
+    setSelected() {
+        this.options.forEach((opt) => (opt.selected = opt.value === this.selected));
     }
 
     writeValue(fn: any): void {
