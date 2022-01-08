@@ -1,0 +1,6 @@
+@use '../settings/layout';
+
+.container {
+    width: min(100%, layout.$min-container-width);
+    margin: 0 auto;
+}
