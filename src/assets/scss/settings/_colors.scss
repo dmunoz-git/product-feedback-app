@@ -1,0 +1,61 @@
+// Colors Pallete
+
+$_purple: hsl(282, 83%, 52%);
+$_blue: hsl(230, 76%, 59%);
+$_darker-blue: hsl(230, 31%, 31%);
+$_white: hsl(0, 0%, 100%);
+$_blue-grey: hsl(231, 100%, 97%);
+$_darker-grey: hsl(230, 60%, 98%);
+$_navy-blue: hsl(231, 33%, 34%);
+$_gray-blue: hsl(224, 20%, 49%);
+$_pastel-orange: hsl(14, 83%, 71%);
+$_neon-blue: hsl(204, 94%, 68%);
+$_red: hsl(0, 67%, 53%);
+
+// Elements colors
+
+$primary-color: $_purple;
+$secondary-color: $_blue;
+$dark-color: $_darker-blue;
+$text-color: $_darker-grey;
+$title-color: $_navy-blue;
+$background-color: $_darker-grey;
+$link-color: $secondary-color;
+$link-hover-color: $_neon-blue;
+$link-visited-color: $_navy-blue;
+$link-active-color: $_neon-blue;
+$error-color: $_red;
+$chips-background-color: $_blue-grey;
+$toast-background-color: $_navy-blue;
+$toolbar-background-color: $_darker-blue;
+$white-color: $_white;
+
+$bg-input-color: $_darker-grey;
+$text-input-color: $_navy-blue;
+$outline-active-color: $_blue;
+$outline-error-color: $_red;
+
+// Color schema
+$primary-color: $primary-color;
+$secondary-color: $secondary-color;
+$info-color: $dark-color;
+$error-color: $error-color;
+$light-color: $_darker-grey;
+$dark-color: $_darker-blue;
+$text-color: $_gray-blue;
+$title-color: $_navy-blue;
+$light-text-color: $_white;
+$param-text-color: $_gray-blue;
+
+// Color schema
+$color-schema: (
+    'primary-color': $primary-color,
+    'secondary-color': $secondary-color,
+    'info-color': $dark-color,
+    'error-color': $error-color,
+    'light-color': $_darker-grey,
+    'dark-color': $_darker-blue,
+    'text-color': $_gray-blue,
+    'title-color': $_navy-blue,
+    'light-text-color': $_white,
+);

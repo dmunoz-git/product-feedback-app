@@ -1,0 +1,12 @@
+@use '../settings/colors';
+
+.ui-badge-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ui-badge {
+    font-weight: 700;
+    color: colors.$text-color;
+}

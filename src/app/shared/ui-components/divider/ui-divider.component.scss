@@ -1,0 +1,6 @@
+@use 'settings/colors';
+
+.ui-divider {
+    border: 0;
+    border-top: 1px solid colors.$text-color;
+}

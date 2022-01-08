@@ -1,0 +1,6 @@
+@use 'sass:math';
+
+@use 'typography';
+
+// Buttons
+$min-button-width: math.div(148, typography.$fs-base) + rem; // 148px min-width

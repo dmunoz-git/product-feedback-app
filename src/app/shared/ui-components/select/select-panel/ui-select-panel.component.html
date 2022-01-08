@@ -1,0 +1,26 @@
+<div
+    class="ui-selector"
+    [class.ui-selector--focus]="isDropdownOpen"
+    cdkOverlayOrigin
+    (click)="toggleDropdown()"
+    #trigger="cdkOverlayOrigin"
+>
+    <input class="ui-selector__input" [value]="displayedText" [placeholder]="placeholder" type="text" readonly autocomplete="off" />
+    <img class="ui-selector__icon" src="assets/images/icons/icon-arrow-down.svg" alt="Arrow down icon" />
+</div>
+
+<ng-template
+    cdkConnectedOverlay
+    cdkConnectedOverlayLockPosition
+    cdkConnectedOverlayHasBackdrop
+    cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
+    [cdkConnectedOverlayOrigin]="trigger"
+    [cdkConnectedOverlayOpen]="isDropdownOpen"
+    (backdropClick)="isDropdownOpen = false"
+    (opened)="onOpened()"
+    (closed)="onClosed()"
+>
+    <div class="ui-select-panel" @fadeInOut>
+        <ng-content class="ui-select-panel__option"></ng-content>
+    </div>
+</ng-template>
