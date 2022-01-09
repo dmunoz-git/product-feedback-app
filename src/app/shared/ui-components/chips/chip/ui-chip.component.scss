@@ -1,6 +1,7 @@
 @use 'settings/colors';
 
 .ui-chip {
+    display: inline-block;
     font-weight: 600;
     padding: 0.39em 1.153em;
     border-radius: 0.625rem;
