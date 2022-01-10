@@ -1,3 +1,13 @@
 .margin {
     margin-top: 1.5rem;
 }
+
+.feedback-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.feedback-title {
+    margin-bottom: 0.25rem;
+}

@@ -1,15 +1,11 @@
 <div class="margin">
-    <app-feedback-card></app-feedback-card>
-</div>
-<div class="margin">
-    <app-feedback-card></app-feedback-card>
-</div>
-<div class="margin">
-    <app-feedback-card></app-feedback-card>
-</div>
-<div class="margin">
-    <app-feedback-card></app-feedback-card>
-</div>
-<div class="margin">
-    <app-feedback-card></app-feedback-card>
+    <app-feedback-card>
+        <ui-counter [limitCounterTo]="1" slot="side"></ui-counter>
+        <h3 slot="title" class="feedback-title">This is the title</h3>
+        <div class="" slot="content" class="feedback-content">
+            <p>This is the text</p>
+            <ui-icon name="comments" ui-badge [value]="3"></ui-icon>
+        </div>
+        <ui-chip slot="footer">Feature</ui-chip>
+    </app-feedback-card>
 </div>

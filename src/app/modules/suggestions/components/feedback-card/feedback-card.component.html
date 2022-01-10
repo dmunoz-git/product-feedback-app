@@ -1,11 +1,18 @@
 <div class="feedback-card">
-    <ui-counter [limitCounterTo]="1" class="feedback-card__votes"></ui-counter>
+    <div class="feedback-card__side">
+        <ng-content select="[slot=side]"></ng-content>
+    </div>
     <article class="feedback-card__body">
-        <h3 class="feedback-card__title">Test feedback</h3>
-        <div class="feedback-card__content">
-            <p class="feedback-card__text">This is a text for dev purposes</p>
-            <ui-icon class="feedback-card__comments" name="comments" ui-badge [value]="0"></ui-icon>
+        <div class="feedback-card__title">
+            <ng-content select="[slot=title]"></ng-content>
         </div>
-        <ui-chip>Feature</ui-chip>
+
+        <div class="feedback-card__content">
+            <ng-content select="[slot=content]"></ng-content>
+        </div>
+
+        <div class="feedback-card__footer">
+            <ng-content select="[slot=footer]"></ng-content>
+        </div>
     </article>
 </div>
