@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'src/app/core/http/user.service';
 
 @Component({
     selector: 'app-suggestions-layout',
@@ -6,7 +7,9 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./suggestions-layout.component.scss'],
 })
 export class SuggestionsLayoutComponent implements OnInit {
-    constructor() {}
+    constructor(private userServ: UserService) {}
 
-    ngOnInit(): void {}
+    ngOnInit(): void {
+        this.userServ.getAuthendicatedUser().subscribe((user) => console.log(user));
+    }
 }

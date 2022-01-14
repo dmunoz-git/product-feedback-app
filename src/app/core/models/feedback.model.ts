@@ -1,13 +1,11 @@
+import { Comment } from './comment.model';
+
 export interface Feedback {
     id?: number;
     title: string;
-    category: Category;
+    category: string;
     upvotes: number;
-    status: Status;
+    status: string;
     description: string;
-    comments: Comment[];
+    comments?: Comment[];
 }
-
-export type Category = 'feature' | 'ui' | 'ux' | 'enhancement' | 'bug';
-
-export type Status = 'suggestion' | 'planned' | 'in-progress';

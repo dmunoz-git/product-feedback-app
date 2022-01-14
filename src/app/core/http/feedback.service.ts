@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import data from '../mocks/data.json';
 import { Feedback } from '../models/feedback.model';
 import { endpoints } from './endpoints';
 
@@ -18,8 +19,8 @@ export class FeedbackService {
         return this.http.get<Feedback>(`${endpoints.feedbacks}/${id}`);
     }
 
-    getFeedbacks(): Observable<Feedback[]> {
-        return this.http.get<Feedback[]>(endpoints.feedbacks);
+    getFeedbackList(): Observable<Feedback[]> {
+        return new BehaviorSubject<Feedback[]>(data.productRequests).asObservable();
     }
 
     updateFeedback(id: number, feedback: Feedback): Observable<void> {
