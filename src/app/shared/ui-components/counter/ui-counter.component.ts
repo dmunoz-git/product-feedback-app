@@ -17,6 +17,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 export class UICounterComponent implements ControlValueAccessor, OnInit {
     @Input() limitCounterTo: number = -1;
     @Input() initValue: number = 0;
+    @Input() activeAfterFirstClick: boolean = false;
     public active: boolean = false;
     public value: number = 0;
 
@@ -29,7 +30,7 @@ export class UICounterComponent implements ControlValueAccessor, OnInit {
             this.value++;
             this.onChange(this.value);
             this.writeValue(this.value);
-            this.active = this.value === this.limitCounterTo;
+            this.active = !this.activeAfterFirstClick ? this.value === this.limitCounterTo : true;
         } else {
             this.value = this.value < 0 ? 0 : this.value;
         }

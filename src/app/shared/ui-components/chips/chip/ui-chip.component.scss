@@ -7,11 +7,11 @@
     border-radius: 0.625rem;
     background-color: colors.$chips-background-color;
     color: colors.$secondary-color;
-    cursor: pointer;
 
-    &:hover {
+    &--selected:hover {
         background-color: darken(colors.$chips-background-color, 10%);
         color: colors.$secondary-color;
+        cursor: pointer;
     }
 
     &--active {
