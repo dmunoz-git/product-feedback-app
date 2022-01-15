@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
-import { UserService } from 'src/app/core/http/user.service';
+import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
+import { FeedbackService } from 'src/app/core/http/feedback.service';
+import { Feedback } from 'src/app/core/models/feedback.model';
 
 @Component({
     selector: 'app-suggestions-layout',
     templateUrl: './suggestions-layout.component.html',
     styleUrls: ['./suggestions-layout.component.scss'],
 })
-export class SuggestionsLayoutComponent implements OnInit {
-    constructor(private userServ: UserService) {}
+export class SuggestionsLayoutComponent {
+    feedbacks$!: Observable<Feedback[]>;
 
-    ngOnInit(): void {
-        this.userServ.getAuthendicatedUser().subscribe((user) => console.log(user));
+    constructor(private feedbacks: FeedbackService) {
+        this.feedbacks$ = feedbacks.getFeedbackList();
     }
 }

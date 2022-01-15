@@ -1,18 +1,16 @@
-<div class="feedback-card">
-    <div class="feedback-card__side">
-        <ng-content select="[slot=side]"></ng-content>
-    </div>
-    <article class="feedback-card__body">
-        <div class="feedback-card__title">
-            <ng-content select="[slot=title]"></ng-content>
-        </div>
-
-        <div class="feedback-card__content">
-            <ng-content select="[slot=content]"></ng-content>
-        </div>
-
-        <div class="feedback-card__footer">
-            <ng-content select="[slot=footer]"></ng-content>
-        </div>
-    </article>
+<div class="feedback-card__side">
+    <ng-content select="[feedback-card-aside]"></ng-content>
 </div>
+<article class="feedback-card__body">
+    <div class="feedback-card__title">
+        <ng-content select="[feedback-card-title]"></ng-content>
+    </div>
+
+    <div class="feedback-card__content">
+        <ng-content select="[feedback-card-content]"></ng-content>
+    </div>
+
+    <div class="feedback-card__footer">
+        <ng-content select="[feedback-card-footer]"></ng-content>
+    </div>
+</article>
