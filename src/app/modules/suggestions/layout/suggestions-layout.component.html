@@ -3,7 +3,7 @@
         <ui-counter feedback-card-aside [activeAfterFirstClick]="true" [initValue]="feedback.upvotes"></ui-counter>
         <h3 feedback-card-title>{{ feedback.title }}</h3>
         <div feedback-card-content>
-            <p>{{ feedback.description }}</p>
+            <p class="text">{{ feedback.description }}</p>
             <ui-icon name="comments" ui-badge [value]="feedback.comments ? feedback.comments.length : 0"></ui-icon>
         </div>
         <ui-chip feedback-card-footer [selectable]="false">{{ feedback.category | titlecase }}</ui-chip>
