@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --configuration development",
     "test": "ng test",
-	"test:coverage": "ng test --coverage",	
+    "test:coverage": "ng test --coverage",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
@@ -28,6 +28,8 @@
     "@angular/platform-browser-dynamic": "~13.1.0",
     "@angular/router": "~13.1.0",
     "@ngneat/transloco": "^3.1.1",
+    "jest-preset-angular": "^11.0.1",
+    "json-server": "^0.17.0",
     "rxjs": "~7.4.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

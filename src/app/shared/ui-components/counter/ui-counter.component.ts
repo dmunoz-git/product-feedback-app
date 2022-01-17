@@ -1,4 +1,4 @@
-import { Component, forwardRef, Input } from '@angular/core';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
@@ -14,8 +14,11 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
         },
     ],
 })
-export class UICounterComponent implements ControlValueAccessor {
+export class UICounterComponent implements ControlValueAccessor, OnInit {
     @Input() limitCounterTo: number = -1;
+    @Input() initValue: number = 0;
+    @Input() activeAfterFirstClick: boolean = false;
+    @Input() order: 'column' | 'row' = 'column';
     public active: boolean = false;
     public value: number = 0;
 
@@ -28,10 +31,16 @@ export class UICounterComponent implements ControlValueAccessor {
             this.value++;
             this.onChange(this.value);
             this.writeValue(this.value);
-            this.active = this.value === this.limitCounterTo;
+            this.active = !this.activeAfterFirstClick ? this.value === this.limitCounterTo : true;
         } else {
             this.value = this.value < 0 ? 0 : this.value;
         }
+    }
+
+    ngOnInit(): void {
+        this.value = this.initValue;
+        this.onChange(this.value);
+        this.writeValue(this.value);
     }
 
     // controlValueAccessor methods

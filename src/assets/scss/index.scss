@@ -8,8 +8,13 @@
 @use 'elements/body';
 @use 'elements/typography';
 
+//Objects
+@use 'objects/container';
+
 // Common components styles
 @use 'common/ui-button';
 @use 'common/ui-badge';
 @use 'common/ui-input';
 @use 'common/ui-dropdown-item';
+
+@use 'utilities/hide';

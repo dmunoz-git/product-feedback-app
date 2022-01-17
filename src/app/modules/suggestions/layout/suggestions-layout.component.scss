@@ -1,0 +1,16 @@
+@use 'tools/mixins';
+
+.feedback-list > .feedback-card {
+    margin-bottom: 1.5rem;
+}
+
+.feedback-list {
+    margin: 1.5rem 0;
+}
+
+.feedback-aside-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
