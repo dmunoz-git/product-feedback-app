@@ -18,6 +18,7 @@ export class UICounterComponent implements ControlValueAccessor, OnInit {
     @Input() limitCounterTo: number = -1;
     @Input() initValue: number = 0;
     @Input() activeAfterFirstClick: boolean = false;
+    @Input() order: 'column' | 'row' = 'column';
     public active: boolean = false;
     public value: number = 0;
 
