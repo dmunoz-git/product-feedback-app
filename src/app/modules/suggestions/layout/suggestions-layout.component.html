@@ -6,7 +6,13 @@
         </app-banner>
     </aside>
     <main class="main">
-        <ui-toolbar class="toolbar"> </ui-toolbar>
+        <ui-toolbar class="toolbar" justify="between">
+            <div class="toolbar__header">
+                <img src="/assets/images/suggestions/icon-suggestions.svg" alt="" />
+                <h3>{{ (feedbacks$ | async)?.length }} {{ t('toolbarTitle') }}</h3>
+            </div>
+            <button ui-button color="primary"><ui-icon name="plus"></ui-icon> {{ t('createFeedbackLabelButton') }}</button>
+        </ui-toolbar>
         <section class="feedback-list">
             <app-feedback-card class="feedback-card" *ngFor="let feedback of feedbacks$ | async">
                 <ui-counter

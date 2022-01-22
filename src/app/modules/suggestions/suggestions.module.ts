@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TranslocoModule } from '@ngneat/transloco';
 import { UIBadgeModule } from '@shared/ui-components/badge/ui-badge.module';
+import { UIButtonModule } from '@shared/ui-components/button/ui-button.module';
 import { UIChipsModule } from '@shared/ui-components/chips/ui-chips.module';
 import { UICounterModule } from '@shared/ui-components/counter/ui-counter.module';
 import { UIIconModule } from '@shared/ui-components/icon/ui-icon.module';
@@ -29,6 +30,7 @@ const routes: Routes = [
         UIChipsModule,
         UIIconModule,
         UIToolbarModule,
+        UIButtonModule,
         FeedbackCardModule,
         TranslocoModule,
     ],

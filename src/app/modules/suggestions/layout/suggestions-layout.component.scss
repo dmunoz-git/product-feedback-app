@@ -1,5 +1,6 @@
 @use 'tools/mixins';
 
+// Layout
 .layout {
     display: flex;
     flex-wrap: wrap;
@@ -17,11 +18,12 @@
     }
 }
 
-// Sections
+// Feedback card margins
 .feedback-list > .feedback-card {
     margin-bottom: 1.5rem;
 }
 
+// Feedback aside mobile
 .feedback-aside-mobile {
     display: flex;
     justify-content: space-between;
@@ -29,6 +31,13 @@
     width: 100%;
 }
 
+// Toolbar classes
 .toolbar {
     margin-bottom: 1.5rem;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
 }

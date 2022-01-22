@@ -1,4 +1,6 @@
 {
 	"title": "Frontend Mentor",
-	"subtitle": "Feedback board"
+	"subtitle": "Feedback board",
+	"toolbarTitle": "Suggestions",
+	"createFeedbackLabelButton": "Add feedback"
 }
