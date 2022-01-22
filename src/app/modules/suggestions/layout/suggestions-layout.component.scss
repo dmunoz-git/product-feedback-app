@@ -1,11 +1,25 @@
 @use 'tools/mixins';
 
-.feedback-list > .feedback-card {
-    margin-bottom: 1.5rem;
+.layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.875rem;
+    padding: 5.875rem 0 8.0625rem 0;
+
+    .main {
+        flex: 1;
+        flex-grow: 315;
+    }
+
+    .aside {
+        flex-basis: 15.9375rem;
+        flex-grow: 1;
+    }
 }
 
-.feedback-list {
-    margin: 1.5rem 0;
+// Sections
+.feedback-list > .feedback-card {
+    margin-bottom: 1.5rem;
 }
 
 .feedback-aside-mobile {

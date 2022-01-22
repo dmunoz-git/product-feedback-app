@@ -11,6 +11,7 @@ $_gray-blue: hsl(224, 20%, 49%);
 $_pastel-orange: hsl(14, 83%, 71%);
 $_neon-blue: hsl(204, 94%, 68%);
 $_red: hsl(0, 67%, 53%);
+$_radial-gradient: radial-gradient(128.88% 128.88% at 103.9% -10.39%, #e84d70 0%, #a337f6 53.09%, #28a7ed 100%);
 
 // Elements colors
 
@@ -46,6 +47,7 @@ $text-color: $_gray-blue;
 $title-color: $_navy-blue;
 $light-text-color: $_white;
 $param-text-color: $_gray-blue;
+$background-banner-color: $_radial-gradient;
 
 // Color schema
 $color-schema: (
