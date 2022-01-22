@@ -6,6 +6,7 @@
         </app-banner>
     </aside>
     <main class="main">
+        <ui-toolbar class="toolbar"> </ui-toolbar>
         <section class="feedback-list">
             <app-feedback-card class="feedback-card" *ngFor="let feedback of feedbacks$ | async">
                 <ui-counter

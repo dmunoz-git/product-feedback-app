@@ -1,5 +1,9 @@
 @use 'settings/colors';
 
+:host {
+    display: block;
+}
+
 .ui-toolbar {
     display: flex;
     padding: 0.875rem 1rem;
