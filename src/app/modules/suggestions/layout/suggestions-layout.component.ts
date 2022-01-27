@@ -10,7 +10,6 @@ import { Feedback } from 'src/app/core/models/feedback.model';
 })
 export class SuggestionsLayoutComponent {
     feedbacks$!: Observable<Feedback[]>;
-    feedbacksLength: number = 0;
 
     constructor(private feedbacks: FeedbackService) {
         this.feedbacks$ = feedbacks.getFeedbackList();

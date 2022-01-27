@@ -1,7 +1,7 @@
 <div *transloco="let t" class="layout">
     <aside class="aside">
         <app-banner>
-            <h2 app-banner-title>{{ t('title') }}</h2>
+            <h2 app-banner-title class="text-white">{{ t('title') }}</h2>
             <span app-banner-subtitle>{{ t('subtitle') }}</span>
         </app-banner>
     </aside>
@@ -9,11 +9,11 @@
         <ui-toolbar class="toolbar" justify="between">
             <div class="toolbar__header">
                 <img src="/assets/images/suggestions/icon-suggestions.svg" alt="" />
-                <h3>{{ (feedbacks$ | async)?.length }} {{ t('toolbarTitle') }}</h3>
+                <h3 class="text-white">{{ (feedbacks$ | async)?.length }} {{ t('toolbarTitle') }}</h3>
             </div>
             <button ui-button color="primary"><ui-icon name="plus"></ui-icon> {{ t('createFeedbackLabelButton') }}</button>
         </ui-toolbar>
-        <section class="feedback-list">
+        <section class="feedback-list" *ngIf="(feedbacks$ | async)!.length > 0">
             <app-feedback-card class="feedback-card" *ngFor="let feedback of feedbacks$ | async">
                 <ui-counter
                     feedback-card-aside
@@ -42,5 +42,12 @@
                 <ui-chip feedback-card-footer [selectable]="false">{{ feedback.category | titlecase }}</ui-chip>
             </app-feedback-card>
         </section>
+        <app-empty-feedbacks *ngIf="(feedbacks$ | async)!.length === 0">
+            <h1 empty-feedbacks-title>{{ t('emptyFeedbackList.title') }}</h1>
+            <p empty-feedbacks-body>{{ t('emptyFeedbackList.description') }}</p>
+            <button ui-button color="primary" empty-feedbacks-button>
+                <ui-icon name="plus"></ui-icon> {{ t('createFeedbackLabelButton') }}
+            </button>
+        </app-empty-feedbacks>
     </main>
 </div>
