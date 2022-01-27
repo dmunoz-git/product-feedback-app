@@ -12,6 +12,7 @@ import { BannerModule } from './components/banner/banner.module';
 import { EmptyFeedbacksModule } from './components/empty-feedbacks/empty-feedbacks.module';
 import { FeedbackCardModule } from './components/feedback-card/feedback-card.module';
 import { SuggestionsLayoutComponent } from './layout/suggestions-layout.component';
+import { CategoryFilterComponent } from './components/category-filter/category-filter.component';
 
 const routes: Routes = [
     {
@@ -22,7 +23,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [SuggestionsLayoutComponent],
+    declarations: [SuggestionsLayoutComponent, CategoryFilterComponent],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),

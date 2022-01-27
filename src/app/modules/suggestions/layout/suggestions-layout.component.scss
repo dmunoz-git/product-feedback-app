@@ -13,6 +13,9 @@
     }
 
     .aside {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
         flex-basis: 15.9375rem;
         flex-grow: 1;
     }

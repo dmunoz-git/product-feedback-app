@@ -7,5 +7,14 @@
 	"emptyFeedbackList": {
 		"title": "There is no feedback yet.",
 		"description": "Got a suggestion? Found a bug that needs to be squashed?\n We love hearing about new ideas to improve our app."
+	},
+
+	"categoriesFeedbackFilter": {
+		"all": "All",
+		"ui": "UI",
+		"ux": "UX",
+		"enchancement": "Enchancement",
+		"bug": "Bug",
+		"feature": "Feature"
 	}
 }
