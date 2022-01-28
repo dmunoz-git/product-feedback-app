@@ -18,6 +18,7 @@ import { UiChipListService } from '../chip-list/ui-chip-list.service';
 export class UIChipComponent {
     @ViewChild('text') textElement!: ElementRef;
     @Input() selectable: boolean = true;
+    @Input() value!: string;
 
     active: boolean = false;
 
