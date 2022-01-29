@@ -18,19 +18,21 @@ import { UiChipListService } from '../chip-list/ui-chip-list.service';
 export class UIChipComponent {
     @ViewChild('text') textElement!: ElementRef;
     @Input() selectable: boolean = true;
-
-    active: boolean = false;
+    @Input() value!: string;
+    @Input() key!: string;
+    active!: boolean;
 
     constructor(private chipList: UiChipListService) {}
 
-    setActiveState(active: boolean): void {
-        this.active = active;
+    setActiveState(): void {
+        this.active = true;
     }
 
     setSelectedValue() {
-        const chipListRef = this.chipList.getChipList();
-        if (chipListRef) {
-            chipListRef.setSelected(this);
-        }
+        this.chipList.getChipList()?.setSelected(this);
+    }
+
+    get componentInstance(): UIChipComponent {
+        return this;
     }
 }

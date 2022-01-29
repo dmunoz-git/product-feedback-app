@@ -1,4 +1,20 @@
 {
 	"title": "Frontend Mentor",
-	"subtitle": "Feedback board"
+	"subtitle": "Feedback board",
+	"toolbarTitle": "Suggestions",
+	"createFeedbackLabelButton": "Add feedback",
+
+	"emptyFeedbackList": {
+		"title": "There is no feedback yet.",
+		"description": "Got a suggestion? Found a bug that needs to be squashed?\n We love hearing about new ideas to improve our app."
+	},
+
+	"categoriesFeedbackFilter": {
+		"all": "All",
+		"ui": "UI",
+		"ux": "UX",
+		"enhancement": "Enhancement",
+		"bug": "Bug",
+		"feature": "Feature"
+	}
 }

@@ -1,0 +1,24 @@
+.empty-feedbacks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 37.5rem;
+
+    background: white;
+    border-radius: 0.625rem;
+
+    &__image {
+        min-height: 8.5463rem;
+        min-width: auto;
+    }
+    &__title {
+        margin: 3.3287rem 0 0 0;
+    }
+
+    &__body {
+        margin: 1rem 0 3rem 0;
+        text-align: center;
+        max-width: 45ch;
+    }
+}
