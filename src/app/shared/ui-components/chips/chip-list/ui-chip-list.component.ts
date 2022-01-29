@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ContentChildren, EventEmitter, Input, Output, QueryList } from '@angular/core';
+import { AfterContentInit, Component, ContentChildren, EventEmitter, Input, Output, QueryList } from '@angular/core';
 import { UIChipComponent } from '../chip/ui-chip.component';
 import { UiChipListService } from './ui-chip-list.service';
 
@@ -8,10 +8,10 @@ import { UiChipListService } from './ui-chip-list.service';
     templateUrl: './ui-chip-list.component.html',
     styleUrls: ['./ui-chip-list.component.scss'],
 })
-export class UIChipListComponent implements AfterViewInit {
+export class UIChipListComponent implements AfterContentInit {
     @Output() selected: EventEmitter<string> = new EventEmitter();
     @Input() initialSelected!: string;
-    @ContentChildren(UIChipComponent) chips!: QueryList<UIChipComponent>;
+    @ContentChildren(UIChipComponent) public readonly chips?: QueryList<UIChipComponent>;
 
     private value!: string;
 
@@ -19,8 +19,8 @@ export class UIChipListComponent implements AfterViewInit {
         uiChipList.register(this);
     }
 
-    ngAfterViewInit(): void {
-        this.chips.find((chip) => chip.key === this.initialSelected)?.setActiveState();
+    ngAfterContentInit(): void {
+        this.chips?.find((chip) => chip.key === this.initialSelected)?.setSelectedValue();
     }
 
     setSelected(chip: UIChipComponent) {
@@ -30,6 +30,6 @@ export class UIChipListComponent implements AfterViewInit {
     }
 
     private setActiveElement(selectedChip: UIChipComponent) {
-        this.chips.forEach((chip) => (chip.active = chip === selectedChip));
+        this.chips?.forEach((chip) => (chip.active = chip === selectedChip));
     }
 }
