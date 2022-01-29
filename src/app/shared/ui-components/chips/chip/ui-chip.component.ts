@@ -19,19 +19,16 @@ export class UIChipComponent {
     @ViewChild('text') textElement!: ElementRef;
     @Input() selectable: boolean = true;
     @Input() value!: string;
-
-    active: boolean = false;
+    @Input() key!: string;
+    active!: boolean;
 
     constructor(private chipList: UiChipListService) {}
 
-    setActiveState(active: boolean): void {
-        this.active = active;
+    setActiveState(): void {
+        this.active = true;
     }
 
     setSelectedValue() {
-        const chipListRef = this.chipList.getChipList();
-        if (chipListRef) {
-            chipListRef.setSelected(this);
-        }
+        this.chipList.getChipList()?.setSelected(this);
     }
 }

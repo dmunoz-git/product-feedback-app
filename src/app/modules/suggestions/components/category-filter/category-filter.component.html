@@ -1,8 +1,8 @@
-<ui-chip-list class="category-filter" *transloco="let t" (selected)="categorySelected.next($event)">
-    <ui-chip>{{ t('categoriesFeedbackFilter.all') }}</ui-chip>
-    <ui-chip>{{ t('categoriesFeedbackFilter.ui') }}</ui-chip>
-    <ui-chip>{{ t('categoriesFeedbackFilter.ux') }}</ui-chip>
-    <ui-chip>{{ t('categoriesFeedbackFilter.enchancement') }}</ui-chip>
-    <ui-chip>{{ t('categoriesFeedbackFilter.bug') }}</ui-chip>
-    <ui-chip>{{ t('categoriesFeedbackFilter.feature') }}</ui-chip>
+<ui-chip-list *transloco="let t" selected="all">
+    <ui-chip key="all">{{ t('categoriesFeedbackFilter.all') }}</ui-chip>
+    <ui-chip key="ui">{{ t('categoriesFeedbackFilter.ui') }}</ui-chip>
+    <ui-chip key="ux">{{ t('categoriesFeedbackFilter.ux') }}</ui-chip>
+    <ui-chip key="enchancement">{{ t('categoriesFeedbackFilter.enchancement') }}</ui-chip>
+    <ui-chip key="bug">{{ t('categoriesFeedbackFilter.bug') }}</ui-chip>
+    <ui-chip key="feature">{{ t('categoriesFeedbackFilter.feature') }}</ui-chip>
 </ui-chip-list>
