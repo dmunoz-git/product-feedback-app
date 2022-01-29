@@ -1,17 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
     selector: 'app-category-filter',
     templateUrl: './category-filter.component.html',
     styleUrls: ['./category-filter.component.scss'],
 })
-export class CategoryFilterComponent implements OnInit {
-    category: FormControl = new FormControl({ value: 'all', disabled: false });
+export class CategoryFilterComponent {
+    @Output() category: EventEmitter<string> = new EventEmitter();
 
-    ngOnInit(): void {
-        this.category.valueChanges.subscribe((value) => {
-            console.log(value);
-        });
+    getCategory(category: string) {
+        this.category.emit(category);
     }
 }

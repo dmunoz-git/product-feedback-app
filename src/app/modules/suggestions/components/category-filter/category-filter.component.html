@@ -1,4 +1,4 @@
-<ui-chip-list *transloco="let t" selected="all">
+<ui-chip-list *transloco="let t" initialSelected="all" (selected)="getCategory($event)">
     <ui-chip key="all">{{ t('categoriesFeedbackFilter.all') }}</ui-chip>
     <ui-chip key="ui">{{ t('categoriesFeedbackFilter.ui') }}</ui-chip>
     <ui-chip key="ux">{{ t('categoriesFeedbackFilter.ux') }}</ui-chip>

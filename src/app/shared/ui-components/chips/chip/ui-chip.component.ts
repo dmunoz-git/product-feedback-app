@@ -31,4 +31,8 @@ export class UIChipComponent {
     setSelectedValue() {
         this.chipList.getChipList()?.setSelected(this);
     }
+
+    get componentInstance(): UIChipComponent {
+        return this;
+    }
 }

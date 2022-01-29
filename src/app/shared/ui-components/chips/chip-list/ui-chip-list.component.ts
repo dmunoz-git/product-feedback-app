@@ -1,4 +1,4 @@
-import { Component, ContentChildren, EventEmitter, Output, QueryList } from '@angular/core';
+import { AfterViewInit, Component, ContentChildren, EventEmitter, Input, Output, QueryList } from '@angular/core';
 import { UIChipComponent } from '../chip/ui-chip.component';
 import { UiChipListService } from './ui-chip-list.service';
 
@@ -8,14 +8,19 @@ import { UiChipListService } from './ui-chip-list.service';
     templateUrl: './ui-chip-list.component.html',
     styleUrls: ['./ui-chip-list.component.scss'],
 })
-export class UIChipListComponent {
+export class UIChipListComponent implements AfterViewInit {
     @Output() selected: EventEmitter<string> = new EventEmitter();
+    @Input() initialSelected!: string;
     @ContentChildren(UIChipComponent) chips!: QueryList<UIChipComponent>;
 
     private value!: string;
 
     constructor(private uiChipList: UiChipListService) {
         uiChipList.register(this);
+    }
+
+    ngAfterViewInit(): void {
+        this.chips.find((chip) => chip.key === this.initialSelected)?.setActiveState();
     }
 
     setSelected(chip: UIChipComponent) {
