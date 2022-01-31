@@ -19,7 +19,7 @@ export class SuggestionsLayoutComponent implements OnInit {
         this.feedbacks$ = this.feedbacks.getFeedbackList();
     }
 
-    filter(category: string) {
+    filterFeedbacks(category: string) {
         this.feedbacks$ = category !== 'all' ? this.getFeedbacksFiltered(category) : this.feedbacks.getFeedbackList();
     }
 

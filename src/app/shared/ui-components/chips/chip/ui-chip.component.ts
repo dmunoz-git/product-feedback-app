@@ -1,12 +1,11 @@
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { UiChipListService } from '../chip-list/ui-chip-list.service';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'ui-chip',
     template: ` <span
         class="ui-chip"
-        (click)="setSelectedValue()"
+        (click)="setActiveState()"
         [class.ui-chip--active]="active"
         [class.ui-chip--selected]="selectable"
         #text
@@ -22,17 +21,7 @@ export class UIChipComponent {
     @Input() key!: string;
     active!: boolean;
 
-    constructor(private chipList: UiChipListService) {}
-
     setActiveState(): void {
         this.active = true;
-    }
-
-    setSelectedValue() {
-        this.chipList.getChipList()?.setSelected(this);
-    }
-
-    get componentInstance(): UIChipComponent {
-        return this;
     }
 }

@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-category-filter',
@@ -6,9 +6,5 @@ import { Component, EventEmitter, Output } from '@angular/core';
     styleUrls: ['./category-filter.component.scss'],
 })
 export class CategoryFilterComponent {
-    @Output() category: EventEmitter<string> = new EventEmitter();
-
-    getCategory(category: string) {
-        this.category.emit(category);
-    }
+    categories: string[] = ['all', 'ui', 'ux', 'enhancement', 'bug', 'feature'];
 }

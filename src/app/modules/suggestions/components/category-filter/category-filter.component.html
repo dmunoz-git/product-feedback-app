@@ -1,8 +1,3 @@
-<ui-chip-list *transloco="let t" initialSelected="all" (selected)="getCategory($event)">
-    <ui-chip key="all">{{ t('categoriesFeedbackFilter.all') }}</ui-chip>
-    <ui-chip key="ui">{{ t('categoriesFeedbackFilter.ui') }}</ui-chip>
-    <ui-chip key="ux">{{ t('categoriesFeedbackFilter.ux') }}</ui-chip>
-    <ui-chip key="enhancement">{{ t('categoriesFeedbackFilter.enhancement') }}</ui-chip>
-    <ui-chip key="bug">{{ t('categoriesFeedbackFilter.bug') }}</ui-chip>
-    <ui-chip key="feature">{{ t('categoriesFeedbackFilter.feature') }}</ui-chip>
+<ui-chip-list *transloco="let t" aria-label="Feedbacks category filter">
+    <ui-chip *ngFor="let category of categories">{{ t('categoriesFeedbackFilter.' + category) }}</ui-chip>
 </ui-chip-list>

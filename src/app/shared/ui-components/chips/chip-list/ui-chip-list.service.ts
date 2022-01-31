@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
-import { UIChipListComponent } from './ui-chip-list.component';
+import { Observable, ReplaySubject } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
 })
 export class UiChipListService {
-    private chipListRef!: UIChipListComponent;
+    public readonly selectedChipKey$: Observable<string>;
 
-    register(chipList: UIChipListComponent) {
-        this.chipListRef = chipList;
+    private readonly selectedChipKeySub$: ReplaySubject<string>;
+
+    constructor() {
+        this.selectedChipKeySub$ = new ReplaySubject<string>(1);
+
+        this.selectedChipKey$ = this.selectedChipKeySub$.asObservable();
     }
 
-    getChipList(): UIChipListComponent {
-        return this.chipListRef;
+    public selectChipByKey(key: string): void {
+        this.selectedChipKeySub$.next(key);
     }
 }
