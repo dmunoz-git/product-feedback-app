@@ -26,7 +26,10 @@ export class UICounterComponent implements ControlValueAccessor, OnInit {
 
     onTouch: any = () => {};
 
-    increment(): void {
+    increment(event: any): void {
+        event.preventDefault();
+        event.stopPropagation();
+
         if (!this.active) {
             this.value++;
             this.onChange(this.value);
