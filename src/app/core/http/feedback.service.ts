@@ -15,8 +15,9 @@ export class FeedbackService {
         return this.http.post<void>(endpoints.feedbacks, feedback);
     }
 
-    getFeedbackDetail(id: number): Observable<Feedback> {
-        return this.http.get<Feedback>(`${endpoints.feedbacks}/${id}`);
+    getFeedbackDetail(id: number): Observable<Feedback | undefined> {
+        const feedback = data.productRequests.find((x) => x.id === id);
+        return new BehaviorSubject<Feedback | undefined>(feedback).asObservable();
     }
 
     getFeedbackList(): Observable<Feedback[]> {

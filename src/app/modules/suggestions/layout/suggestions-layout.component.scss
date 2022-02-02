@@ -21,9 +21,15 @@
     }
 }
 
+.pointer {
+    cursor: pointer;
+}
+
 // Feedback card margins
-.feedback-list > .feedback-card {
-    margin-bottom: 1.5rem;
+.feedback-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 // Feedback aside mobile
