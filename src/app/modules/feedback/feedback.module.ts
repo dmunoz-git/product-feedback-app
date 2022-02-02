@@ -5,7 +5,7 @@ import { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-deta
 
 const routes: Routes = [
     {
-        path: '/detail/:id',
+        path: 'detail/:id',
         component: FeedbackDetailComponent,
     },
 ];

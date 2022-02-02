@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { map, Observable } from 'rxjs';
 import { FeedbackService } from 'src/app/core/http/feedback.service';
 import { Feedback } from 'src/app/core/models/feedback.model';
@@ -11,7 +12,7 @@ import { Feedback } from 'src/app/core/models/feedback.model';
 export class SuggestionsLayoutComponent implements OnInit {
     feedbacks$!: Observable<Feedback[]>;
 
-    constructor(private feedbacks: FeedbackService) {
+    constructor(private feedbacks: FeedbackService, private router: Router) {
         this.feedbacks$ = feedbacks.getFeedbackList();
     }
 
