@@ -1,1 +1,23 @@
-<p>feedback-detail works!</p>
+<section class="layout">
+    <ui-toolbar class="toolbar" justify="between" background="transparent">
+        <app-back-btn>Go Back</app-back-btn>
+        <button ui-button color="secondary">Edit Feedback</button>
+    </ui-toolbar>
+    <app-feedback-card>
+        <ui-counter feedback-card-aside class="hide-mobile" [activeAfterFirstClick]="true" [initValue]="feedback.upvotes"></ui-counter>
+        <ng-container feedback-card-aside>
+            <section class="show-only-mobile">
+                <div class="feedback-aside-mobile">
+                    <ui-counter order="row" [activeAfterFirstClick]="true" [initValue]="feedback.upvotes"></ui-counter>
+                    <ui-icon name="comments" ui-badge></ui-icon>
+                </div>
+            </section>
+        </ng-container>
+        <h3 feedback-card-title>{{ feedback.title }}</h3>
+        <div feedback-card-content>
+            <p class="text">{{ feedback.description }}</p>
+            <ui-icon class="hide-mobile" name="comments" ui-badge [value]="feedback.comments ? feedback.comments.length : 0"></ui-icon>
+        </div>
+        <ui-chip feedback-card-footer [selectable]="false">{{ feedback.category | titlecase }}</ui-chip>
+    </app-feedback-card>
+</section>

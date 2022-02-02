@@ -15,7 +15,7 @@
             <button ui-button color="primary"><ui-icon name="plus"></ui-icon> {{ t('createFeedbackLabelButton') }}</button>
         </ui-toolbar>
         <section class="feedback-list" *ngIf="(feedbacks$ | async)!.length > 0">
-            <app-feedback-card *ngFor="let feedback of feedbacks$ | async" routerLink="/feedbacks/{{ feedback.id }}">
+            <app-feedback-card *ngFor="let feedback of feedbacks$ | async" routerLink="/feedback/detail/{{ feedback.id }}">
                 <ui-counter
                     feedback-card-aside
                     class="hide-mobile"

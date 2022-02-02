@@ -9,10 +9,10 @@ import { UIChipsModule } from '@shared/ui-components/chips/ui-chips.module';
 import { UICounterModule } from '@shared/ui-components/counter/ui-counter.module';
 import { UIIconModule } from '@shared/ui-components/icon/ui-icon.module';
 import { UIToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';
+import { UIFeedbackCardModule } from '../../shared/ui-components/feedback-card/feedback-card.module';
 import { BannerModule } from './components/banner/banner.module';
 import { CategoryFilterComponent } from './components/category-filter/category-filter.component';
 import { EmptyFeedbacksModule } from './components/empty-feedbacks/empty-feedbacks.module';
-import { FeedbackCardModule } from './components/feedback-card/feedback-card.module';
 import { SuggestionsLayoutComponent } from './layout/suggestions-layout.component';
 
 const routes: Routes = [
@@ -35,7 +35,7 @@ const routes: Routes = [
         UIIconModule,
         UIToolbarModule,
         UIButtonModule,
-        FeedbackCardModule,
+        UIFeedbackCardModule,
         EmptyFeedbacksModule,
         BannerModule,
         TranslocoModule,

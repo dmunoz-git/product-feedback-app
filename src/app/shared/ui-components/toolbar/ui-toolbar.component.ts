@@ -13,11 +13,14 @@ export const JUSTIFY_CSS_CLASES = {
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'ui-toolbar',
-    template: `<div class="ui-toolbar" [ngClass]="getJustifyClass()"><ng-content></ng-content></div> `,
+    template: `<div class="ui-toolbar" [ngClass]="getJustifyClass()" [class.bg-transparent]="background === 'transparent'">
+        <ng-content></ng-content>
+    </div> `,
     styleUrls: ['./ui-toolbar.component.scss'],
 })
 export class UIToolbarComponent {
     @Input() justify: JusfityType = 'start';
+    @Input() background: 'transparent' | 'none' = 'none';
 
     getJustifyClass(): string {
         return JUSTIFY_CSS_CLASES[this.justify];
