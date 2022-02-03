@@ -9,12 +9,22 @@ import { UIFeedbackCardModule } from '@shared/ui-components/feedback-card/feedba
 import { UIIconModule } from '@shared/ui-components/icon/ui-icon.module';
 import { UIToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';
 import { BackBtnComponent } from './components/back-btn/back-btn.component';
+import { FeedbackCreateComponent } from './layouts/feedback-create/feedback-create.component';
 import { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';
+import { FeedbackEditComponent } from './layouts/feedback-edit/feedback-edit.component';
 
 const routes: Routes = [
     {
         path: 'detail/:id',
         component: FeedbackDetailComponent,
+    },
+    {
+        path: 'new',
+        component: FeedbackCreateComponent,
+    },
+    {
+        path: 'edit/:id',
+        component: FeedbackEditComponent,
     },
 ];
 

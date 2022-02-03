@@ -1,7 +1,7 @@
 <section class="layout">
     <ui-toolbar class="toolbar" justify="between" background="transparent">
         <app-back-btn>Go Back</app-back-btn>
-        <button ui-button color="secondary">Edit Feedback</button>
+        <button ui-button color="secondary" routerLink="/feedback/edit/{{ feedback.id }}">Edit Feedback</button>
     </ui-toolbar>
     <app-feedback-card>
         <ui-counter feedback-card-aside class="hide-mobile" [activeAfterFirstClick]="true" [initValue]="feedback.upvotes"></ui-counter>
