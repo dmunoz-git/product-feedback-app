@@ -7,8 +7,11 @@ import { UIChipsModule } from '@shared/ui-components/chips/ui-chips.module';
 import { UICounterModule } from '@shared/ui-components/counter/ui-counter.module';
 import { UIFeedbackCardModule } from '@shared/ui-components/feedback-card/feedback-card.module';
 import { UIIconModule } from '@shared/ui-components/icon/ui-icon.module';
+import { UIInputModule } from '@shared/ui-components/input/ui-input.module';
+import { UISelectModule } from '@shared/ui-components/select/ui-select.module';
 import { UIToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';
 import { BackBtnComponent } from './components/back-btn/back-btn.component';
+import { FormCardComponent } from './components/form-card/form-card.component';
 import { FeedbackCreateComponent } from './layouts/feedback-create/feedback-create.component';
 import { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';
 import { FeedbackEditComponent } from './layouts/feedback-edit/feedback-edit.component';
@@ -29,7 +32,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [FeedbackDetailComponent, BackBtnComponent],
+    declarations: [FeedbackDetailComponent, FeedbackCreateComponent, FeedbackEditComponent, BackBtnComponent, FormCardComponent],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
@@ -40,6 +43,8 @@ const routes: Routes = [
         UICounterModule,
         UIChipsModule,
         UIBadgeModule,
+        UIInputModule,
+        UISelectModule,
     ],
     exports: [RouterModule],
 })

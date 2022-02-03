@@ -1,0 +1,17 @@
+:host {
+    display: block;
+}
+
+.form-card {
+    position: relative;
+    background: white;
+    padding: 3.25rem 2.625rem 2.5rem 2.625rem;
+    border-radius: 0.625rem;
+
+    &__icon {
+        position: absolute;
+        top: -1.75rem;
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+}
