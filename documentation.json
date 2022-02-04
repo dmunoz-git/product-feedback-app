@@ -1762,12 +1762,12 @@
         },
         {
             "name": "UIButtonDirective",
-            "id": "directive-UIButtonDirective-892f367c174ecba8f305a8e582ab92399c794fb510d67b147d227a40063b668134695857e5b25dfdc2af736d38f1c80cdabfc1bc5e7ab5422d25e95620de03cc",
+            "id": "directive-UIButtonDirective-fcbe2fa9d0495a3ceb20dbd09c7d31df02b7f50f221eecd071689c8e129bb31437ea6423fec1d07ff9da8d1434005d363f6c83492938b071cc87663f8308546f",
             "file": "src/app/shared/ui-components/button/ui-button.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, Input } from '@angular/core';\n\nexport type ButtonColors = 'primary' | 'secondary' | 'light' | 'dark' | 'error' | 'default';\nexport type ButtonType = 'button' | 'submit' | 'reset';\nexport type ButtonSize = 'long' | 'default';\n\n@Directive({\n    // eslint-disable-next-line @angular-eslint/directive-selector\n    selector: '[ui-button]',\n    // eslint-disable-next-line @angular-eslint/no-host-metadata-property\n    host: {\n        class: 'ui-button',\n        '[class.ui-button--primary]': 'color === \"primary\"',\n        '[class.ui-button--secondary]': 'color === \"secondary\"',\n        '[class.ui-button--dark]': 'color === \"dark\"',\n        '[class.ui-button--error]': 'color === \"error\"',\n        '[class.ui-button--long]': 'size === \"long\"',\n    },\n})\nexport class UIButtonDirective {\n    @Input() color: ButtonColors = 'default';\n    @Input() size: ButtonSize = 'default';\n}\n",
+            "sourceCode": "import { Directive, Input } from '@angular/core';\n\nexport type ButtonColors = 'primary' | 'secondary' | 'light' | 'dark' | 'error' | 'default';\nexport type ButtonType = 'button' | 'submit' | 'reset';\nexport type ButtonSize = 'long' | 'default';\n\n@Directive({\n    // eslint-disable-next-line @angular-eslint/directive-selector\n    selector: '[ui-button]',\n    // eslint-disable-next-line @angular-eslint/no-host-metadata-property\n    host: {\n        class: 'ui-button',\n        '[class.ui-button--primary]': 'color === \"primary\"',\n        '[class.ui-button--secondary]': 'color === \"secondary\"',\n        '[class.ui-button--dark]': 'color === \"dark\"',\n        '[class.ui-button--light]': 'color === \"light\"',\n        '[class.ui-button--error]': 'color === \"error\"',\n        '[class.ui-button--long]': 'size === \"long\"',\n    },\n})\nexport class UIButtonDirective {\n    @Input() color: ButtonColors = 'default';\n    @Input() size: ButtonSize = 'default';\n}\n",
             "selector": "[ui-button]",
             "providers": [],
             "inputsClass": [
@@ -1776,7 +1776,7 @@
                     "defaultValue": "'default'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 22,
                     "type": "ButtonColors",
                     "decorators": []
                 },
@@ -1785,7 +1785,7 @@
                     "defaultValue": "'default'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 23,
                     "type": "ButtonSize",
                     "decorators": []
                 }
@@ -4576,6 +4576,16 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Button",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui-components/chips/stories/chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
                 "name": "configureTests",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4664,6 +4674,16 @@
                 "deprecationMessage": "",
                 "type": "Story<UIButtonDirective>",
                 "defaultValue": "(args: UIButtonDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UIButtonDirective],\n        imports: [CommonModule],\n    },\n    template: `<button ui-button [color]=\"color\" [size]=\"size\">Button</button>`,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui-components/chips/stories/chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<UIChipComponent>",
+                "defaultValue": "(args: UIChipComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UIChipComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-chip>Chip</ui-chip>`,\n})"
             },
             {
                 "name": "UI_TOAST_DATA",
@@ -4778,6 +4798,28 @@
                     "deprecationMessage": "",
                     "type": "Story<UIButtonDirective>",
                     "defaultValue": "(args: UIButtonDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UIButtonDirective],\n        imports: [CommonModule],\n    },\n    template: `<button ui-button [color]=\"color\" [size]=\"size\">Button</button>`,\n})"
+                }
+            ],
+            "src/app/shared/ui-components/chips/stories/chip.stories.ts": [
+                {
+                    "name": "Button",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/chips/stories/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/chips/stories/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<UIChipComponent>",
+                    "defaultValue": "(args: UIChipComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UIChipComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-chip>Chip</ui-chip>`,\n})"
                 }
             ],
             "test-config.helper.ts": [
@@ -5298,6 +5340,26 @@
                 "name": "UIChipComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui-components/chips/stories/chip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Button",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui-components/chips/stories/chip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
