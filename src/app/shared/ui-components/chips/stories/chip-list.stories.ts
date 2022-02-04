@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
 import { moduleMetadata } from '@storybook/angular';
 import { Story } from '@storybook/angular/types-6-0';
-import { UIChipListComponent } from '../chip-list/ui-chip-list.component';
-import { UIChipComponent } from '../chip/ui-chip.component';
+import { UiChipListComponent } from '../chip-list/ui-chip-list.component';
+import { UiChipComponent } from '../chip/ui-chip.component';
 
 // This exports the Stories group for this component
 export default {
@@ -11,23 +11,23 @@ export default {
     // Here we add it to a "Components" section under "Link"
     title: 'Components/Chip List',
     // The component related to the Stories
-    component: UIChipListComponent,
+    component: UiChipListComponent,
 
-    subcomponents: { UIChipComponent },
+    subcomponents: { UiChipComponent },
 
     decorators: [
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
-            declarations: [UIChipListComponent],
+            declarations: [UiChipListComponent],
             imports: [CommonModule],
         }),
     ],
 };
 // This creates a Story for the component
-const Template: Story<UIChipListComponent> = (args: UIChipListComponent) => ({
+const Template: Story<UiChipListComponent> = (args: UiChipListComponent) => ({
     props: args,
     moduleMetadata: {
-        declarations: [UIChipListComponent],
+        declarations: [UiChipListComponent],
         imports: [CommonModule],
     },
     template: `<ui-chip-list><ui-chip>Two</ui-chip><ui-chip>Three</ui-chip><ui-chip>Four</ui-chip><ui-chip>Five</ui-chip></ui-chip-list>`,

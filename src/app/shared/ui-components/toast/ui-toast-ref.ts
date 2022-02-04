@@ -1,7 +1,7 @@
 import { OverlayRef } from '@angular/cdk/overlay';
-import { Subject, Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
-export class UIToastRef {
+export class UiToastRef {
     private afterClosedSubject: Subject<any> = new Subject();
 
     constructor(private overlayRef: OverlayRef) {}

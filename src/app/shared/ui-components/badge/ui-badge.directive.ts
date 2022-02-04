@@ -1,11 +1,11 @@
-import { Directive, ElementRef, Inject, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { Directive, ElementRef, Inject, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
     selector: '[ui-badge]',
 })
-export class UIBadgeDirective implements OnChanges, OnDestroy {
+export class UiBadgeDirective implements OnChanges, OnDestroy {
     @Input() value!: number;
 
     private badgeElement: HTMLElement | null = null;

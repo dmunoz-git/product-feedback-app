@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { moduleMetadata } from '@storybook/angular';
 import { Story } from '@storybook/angular/types-6-0';
-import { UIButtonDirective } from './ui-button.directive';
+import { UiButtonDirective } from './ui-button.directive';
 
 // This exports the Stories group for this component
 export default {
@@ -10,21 +10,21 @@ export default {
     // Here we add it to a "Components" section under "Link"
     title: 'Components/Button',
     // The component related to the Stories
-    component: UIButtonDirective,
+    component: UiButtonDirective,
 
     decorators: [
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
-            declarations: [UIButtonDirective],
+            declarations: [UiButtonDirective],
             imports: [CommonModule],
         }),
     ],
 };
 // This creates a Story for the component
-const Template: Story<UIButtonDirective> = (args: UIButtonDirective) => ({
+const Template: Story<UiButtonDirective> = (args: UiButtonDirective) => ({
     props: args,
     moduleMetadata: {
-        declarations: [UIButtonDirective],
+        declarations: [UiButtonDirective],
         imports: [CommonModule],
     },
     template: `<button ui-button [color]="color" [size]="size">Button</button>`,

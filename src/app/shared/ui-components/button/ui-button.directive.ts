@@ -18,7 +18,7 @@ export type ButtonSize = 'long' | 'default';
         '[class.ui-button--long]': 'size === "long"',
     },
 })
-export class UIButtonDirective {
+export class UiButtonDirective {
     @Input() color: ButtonColors = 'default';
     @Input() size: ButtonSize = 'default';
 }

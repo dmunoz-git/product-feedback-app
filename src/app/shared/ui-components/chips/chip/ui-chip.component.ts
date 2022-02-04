@@ -8,7 +8,7 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
     </span>`,
     styleUrls: ['./ui-chip.component.scss'],
 })
-export class UIChipComponent {
+export class UiChipComponent {
     @ViewChild('text') textElement!: ElementRef;
     @Input() selectable: boolean = true;
     @Input() value: string = '';

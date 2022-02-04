@@ -1,30 +1,30 @@
-import { Overlay, ComponentType } from '@angular/cdk/overlay';
+import { ComponentType, Overlay } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { Injectable, Injector } from '@angular/core';
-import { UIToastData } from './ui-toast-data';
-import { UIToastRef } from './ui-toast-ref';
-import { UI_TOAST_DATA } from './ui-toast-tokens';
+import { UiToastData } from './ui-toast-data';
+import { UiToastRef } from './ui-toast-ref';
+import { Ui_TOAST_DATA } from './ui-toast-tokens';
 
 @Injectable({
     providedIn: 'root',
 })
-export class UIToastService {
+export class UiToastService {
     constructor(private overlay: Overlay, private injector: Injector) {}
 
-    open<UIToastComponent>(component: ComponentType<UIToastComponent>, data: UIToastData) {
+    open<UiToastComponent>(component: ComponentType<UiToastComponent>, data: UiToastData) {
         const positionStrategy = this.overlay.position().global().centerHorizontally().bottom();
 
         const overlayRef = this.overlay.create({
             positionStrategy,
         });
 
-        const toastRef = new UIToastRef(overlayRef);
+        const toastRef = new UiToastRef(overlayRef);
 
         const injector = Injector.create({
             parent: this.injector,
             providers: [
-                { provide: UIToastRef, useValue: toastRef },
-                { provide: UI_TOAST_DATA, useValue: data },
+                { provide: UiToastRef, useValue: toastRef },
+                { provide: Ui_TOAST_DATA, useValue: data },
             ],
         });
 

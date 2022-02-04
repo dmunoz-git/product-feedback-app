@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { UIChipComponent } from '../chip/ui-chip.component';
+import { UiChipComponent } from '../chip/ui-chip.component';
+import { UiChipListComponent } from './ui-chip-list.component';
 
-import { UIChipListComponent } from './ui-chip-list.component';
 @Component({
     template: ` <ui-chip-list (selected)="getSelectedItem($event)">
         <ui-chip>Item 1</ui-chip>
@@ -17,20 +17,20 @@ class TestComponent {
     }
 }
 
-describe('UIChipListComponent', () => {
-    let component: UIChipListComponent;
-    let fixture: ComponentFixture<UIChipListComponent>;
+describe('UiChipListComponent', () => {
+    let component: UiChipListComponent;
+    let fixture: ComponentFixture<UiChipListComponent>;
 
     let testFixture: ComponentFixture<TestComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [UIChipListComponent, TestComponent, UIChipComponent],
+            declarations: [UiChipListComponent, TestComponent, UiChipComponent],
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(UIChipListComponent);
+        fixture = TestBed.createComponent(UiChipListComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
 

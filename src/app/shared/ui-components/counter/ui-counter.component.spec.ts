@@ -1,19 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { UiCounterComponent } from './ui-counter.component';
 
-import { UICounterComponent } from './ui-counter.component';
-
-describe('UICounterComponent', () => {
-    let component: UICounterComponent;
-    let fixture: ComponentFixture<UICounterComponent>;
+describe('UiCounterComponent', () => {
+    let component: UiCounterComponent;
+    let fixture: ComponentFixture<UiCounterComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [UICounterComponent],
+            declarations: [UiCounterComponent],
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(UICounterComponent);
+        fixture = TestBed.createComponent(UiCounterComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { moduleMetadata } from '@storybook/angular';
 import { Story } from '@storybook/angular/types-6-0';
-import { UIInputDirective } from './ui-input.directive';
+import { UiInputDirective } from './ui-input.directive';
 
 // This exports the Stories group for this component
 export default {
@@ -10,21 +10,21 @@ export default {
     // Here we add it to a "Components" section under "Link"
     title: 'Components/Input',
     // The component related to the Stories
-    component: UIInputDirective,
+    component: UiInputDirective,
 
     decorators: [
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
-            declarations: [UIInputDirective],
+            declarations: [UiInputDirective],
             imports: [CommonModule],
         }),
     ],
 };
 // This creates a Story for the component
-const Template: Story<UIInputDirective> = (args: UIInputDirective) => ({
+const Template: Story<UiInputDirective> = (args: UiInputDirective) => ({
     props: args,
     moduleMetadata: {
-        declarations: [UIInputDirective],
+        declarations: [UiInputDirective],
         imports: [CommonModule],
     },
     template: `<input uiInput [ngModel]="value" />`,

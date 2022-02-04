@@ -1,8 +1,8 @@
 import { Component, Inject, OnDestroy, OnInit } from '@angular/core';
-import { UIToastData } from './ui-toast-data';
-import { UIToastRef } from './ui-toast-ref';
-import { UI_TOAST_DATA } from './ui-toast-tokens';
 import { fadeInOut } from '../animations/fade.animation';
+import { UiToastData } from './ui-toast-data';
+import { UiToastRef } from './ui-toast-ref';
+import { Ui_TOAST_DATA } from './ui-toast-tokens';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
@@ -14,10 +14,10 @@ import { fadeInOut } from '../animations/fade.animation';
     styleUrls: ['./ui-toast.component.scss'],
     animations: [fadeInOut],
 })
-export class UIToastComponent implements OnInit, OnDestroy {
+export class UiToastComponent implements OnInit, OnDestroy {
     private intervalId!: ReturnType<typeof setTimeout>;
 
-    constructor(private toastRef: UIToastRef, @Inject(UI_TOAST_DATA) readonly data: UIToastData) {}
+    constructor(private toastRef: UiToastRef, @Inject(Ui_TOAST_DATA) readonly data: UiToastData) {}
 
     ngOnDestroy(): void {
         if (this.intervalId) {

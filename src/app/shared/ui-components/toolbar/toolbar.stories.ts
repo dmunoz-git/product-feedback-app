@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { moduleMetadata } from '@storybook/angular';
 import { Story } from '@storybook/angular/types-6-0';
-import { UIToolbarComponent } from './ui-toolbar.component';
+import { UiToolbarComponent } from './ui-toolbar.component';
 
 // This exports the Stories group for this component
 export default {
@@ -10,21 +10,21 @@ export default {
     // Here we add it to a "Components" section under "Link"
     title: 'Components/Toolbar',
     // The component related to the Stories
-    component: UIToolbarComponent,
+    component: UiToolbarComponent,
 
     decorators: [
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
-            declarations: [UIToolbarComponent],
+            declarations: [UiToolbarComponent],
             imports: [CommonModule],
         }),
     ],
 };
 // This creates a Story for the component
-const Template: Story<UIToolbarComponent> = (args: UIToolbarComponent) => ({
+const Template: Story<UiToolbarComponent> = (args: UiToolbarComponent) => ({
     props: args,
     moduleMetadata: {
-        declarations: [UIToolbarComponent],
+        declarations: [UiToolbarComponent],
         imports: [CommonModule],
     },
     template: `<ui-toolbar>Toolbar</ui-toolbar>`,

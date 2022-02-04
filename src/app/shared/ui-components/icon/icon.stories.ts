@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { moduleMetadata } from '@storybook/angular';
 import { Story } from '@storybook/angular/types-6-0';
-import { UIIconComponent } from './ui-icon.component';
+import { UiIconComponent } from './ui-icon.component';
 
 // This exports the Stories group for this component
 export default {
@@ -10,21 +10,21 @@ export default {
     // Here we add it to a "Components" section under "Link"
     title: 'Components/Icon',
     // The component related to the Stories
-    component: UIIconComponent,
+    component: UiIconComponent,
 
     decorators: [
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
-            declarations: [UIIconComponent],
+            declarations: [UiIconComponent],
             imports: [CommonModule],
         }),
     ],
 };
 // This creates a Story for the component
-const Template: Story<UIIconComponent> = (args: UIIconComponent) => ({
+const Template: Story<UiIconComponent> = (args: UiIconComponent) => ({
     props: args,
     moduleMetadata: {
-        declarations: [UIIconComponent],
+        declarations: [UiIconComponent],
         imports: [CommonModule],
     },
     template: `<ui-icon name="comments"></ui-icon> `,

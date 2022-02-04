@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { UIButtonDirective } from './ui-button.directive';
+import { UiButtonDirective } from './ui-button.directive';
 
 @Component({
     template: `<button ui-button [color]="color" [type]="type" [size]="size" [disabled]="disabled"></button>`,
@@ -13,18 +13,18 @@ class TestComponent {
     disabled!: boolean;
 }
 
-describe('UIButtonDirective', () => {
+describe('UiButtonDirective', () => {
     let fixture: ComponentFixture<TestComponent>;
 
     beforeEach(async () => {
         fixture = await TestBed.configureTestingModule({
-            declarations: [UIButtonDirective, TestComponent],
+            declarations: [UiButtonDirective, TestComponent],
         }).createComponent(TestComponent);
 
         fixture.detectChanges();
     });
     it('should create an instance', () => {
-        const directive = new UIButtonDirective();
+        const directive = new UiButtonDirective();
         expect(directive).toBeTruthy();
     });
 

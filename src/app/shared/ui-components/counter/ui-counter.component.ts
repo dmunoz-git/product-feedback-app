@@ -17,12 +17,12 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => UICounterComponent),
+            useExisting: forwardRef(() => UiCounterComponent),
             multi: true,
         },
     ],
 })
-export class UICounterComponent implements ControlValueAccessor, OnInit {
+export class UiCounterComponent implements ControlValueAccessor, OnInit {
     @Input() limitCounterTo: number = -1;
     @Input() initValue: number = 0;
     @Input() activeAfterFirstClick: boolean = false;

@@ -10,7 +10,7 @@ import { UiSelectService } from '../ui-select.service';
     styleUrls: ['./ui-select-option.component.scss'],
     encapsulation: ViewEncapsulation.None,
 })
-export class UISelectOptionComponent {
+export class UiSelectOptionComponent {
     @Input() value: string = '';
     @ViewChild('text') textElement!: ElementRef;
     selected: boolean = false;

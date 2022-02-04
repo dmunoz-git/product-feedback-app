@@ -170,13 +170,13 @@
             "methods": []
         },
         {
-            "name": "UIToastData",
-            "id": "interface-UIToastData-1bd1c61a000c71fc77a6d876d4ea0aff216171ef222c8829cefe477452d50b6e30cb0f1f6d9ae7a12cee807bf5ec8d6811c82123d3bd01577f157f366f5a6b25",
+            "name": "UiToastData",
+            "id": "interface-UiToastData-1bd1c61a000c71fc77a6d876d4ea0aff216171ef222c8829cefe477452d50b6e30cb0f1f6d9ae7a12cee807bf5ec8d6811c82123d3bd01577f157f366f5a6b25",
             "file": "src/app/shared/ui-components/toast/ui-toast-data.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface UIToastData {\n    message: string;\n    duration?: number;\n    close?: string;\n    position?: UIToastPosition;\n}\n\nexport type UIToastPosition = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center' | 'center';\n",
+            "sourceCode": "export interface UiToastData {\n    message: string;\n    duration?: number;\n    close?: string;\n    position?: UiToastPosition;\n}\n\nexport type UiToastPosition = 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left' | 'top-center' | 'bottom-center' | 'center';\n",
             "properties": [
                 {
                     "name": "close",
@@ -209,7 +209,7 @@
                     "name": "position",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "UIToastPosition",
+                    "type": "UiToastPosition",
                     "optional": true,
                     "description": "",
                     "line": 5
@@ -870,7 +870,7 @@
                     "name": "select",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "UISelectPanelComponent",
+                    "type": "UiSelectPanelComponent",
                     "optional": false,
                     "description": "",
                     "line": 8,
@@ -884,7 +884,7 @@
                     "name": "getSelect",
                     "args": [],
                     "optional": false,
-                    "returnType": "UISelectPanelComponent",
+                    "returnType": "UiSelectPanelComponent",
                     "typeParameters": [],
                     "line": 14,
                     "deprecated": false,
@@ -898,7 +898,7 @@
                     "args": [
                         {
                             "name": "select",
-                            "type": "UISelectPanelComponent",
+                            "type": "UiSelectPanelComponent",
                             "deprecated": false,
                             "deprecationMessage": ""
                         }
@@ -915,7 +915,7 @@
                     "jsdoctags": [
                         {
                             "name": "select",
-                            "type": "UISelectPanelComponent",
+                            "type": "UiSelectPanelComponent",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -929,12 +929,12 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { UISelectPanelComponent } from './select-panel/ui-select-panel.component';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class UiSelectService {\n    private select!: UISelectPanelComponent;\n\n    public register(select: UISelectPanelComponent) {\n        this.select = select;\n    }\n\n    public getSelect(): UISelectPanelComponent {\n        return this.select;\n    }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { UiSelectPanelComponent } from './select-panel/ui-select-panel.component';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class UiSelectService {\n    private select!: UiSelectPanelComponent;\n\n    public register(select: UiSelectPanelComponent) {\n        this.select = select;\n    }\n\n    public getSelect(): UiSelectPanelComponent {\n        return this.select;\n    }\n}\n",
             "type": "injectable"
         },
         {
-            "name": "UIToastService",
-            "id": "injectable-UIToastService-123fecb088c7e76a6854bd0b47aca60e4bf93968c36aa4bdbcca2b1113cddf16451139385d81edd7c1943ba696c51e1dd1db61c8c26e931171485e55545339d0",
+            "name": "UiToastService",
+            "id": "injectable-UiToastService-123fecb088c7e76a6854bd0b47aca60e4bf93968c36aa4bdbcca2b1113cddf16451139385d81edd7c1943ba696c51e1dd1db61c8c26e931171485e55545339d0",
             "file": "src/app/shared/ui-components/toast/ui-toast.service.ts",
             "properties": [],
             "methods": [
@@ -943,13 +943,13 @@
                     "args": [
                         {
                             "name": "component",
-                            "type": "ComponentType<UIToastComponent>",
+                            "type": "ComponentType<UiToastComponent>",
                             "deprecated": false,
                             "deprecationMessage": ""
                         },
                         {
                             "name": "data",
-                            "type": "UIToastData",
+                            "type": "UiToastData",
                             "deprecated": false,
                             "deprecationMessage": ""
                         }
@@ -957,7 +957,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [
-                        "UIToastComponent"
+                        "UiToastComponent"
                     ],
                     "line": 14,
                     "deprecated": false,
@@ -965,7 +965,7 @@
                     "jsdoctags": [
                         {
                             "name": "component",
-                            "type": "ComponentType<UIToastComponent>",
+                            "type": "ComponentType<UiToastComponent>",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -974,7 +974,7 @@
                         },
                         {
                             "name": "data",
-                            "type": "UIToastData",
+                            "type": "UiToastData",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -988,7 +988,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Overlay, ComponentType } from '@angular/cdk/overlay';\nimport { ComponentPortal } from '@angular/cdk/portal';\nimport { Injectable, Injector } from '@angular/core';\nimport { UIToastData } from './ui-toast-data';\nimport { UIToastRef } from './ui-toast-ref';\nimport { UI_TOAST_DATA } from './ui-toast-tokens';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class UIToastService {\n    constructor(private overlay: Overlay, private injector: Injector) {}\n\n    open<UIToastComponent>(component: ComponentType<UIToastComponent>, data: UIToastData) {\n        const positionStrategy = this.overlay.position().global().centerHorizontally().bottom();\n\n        const overlayRef = this.overlay.create({\n            positionStrategy,\n        });\n\n        const toastRef = new UIToastRef(overlayRef);\n\n        const injector = Injector.create({\n            parent: this.injector,\n            providers: [\n                { provide: UIToastRef, useValue: toastRef },\n                { provide: UI_TOAST_DATA, useValue: data },\n            ],\n        });\n\n        const portal = new ComponentPortal(component, null, injector);\n        overlayRef.attach(portal);\n\n        return toastRef;\n    }\n}\n",
+            "sourceCode": "import { Overlay, ComponentType } from '@angular/cdk/overlay';\nimport { ComponentPortal } from '@angular/cdk/portal';\nimport { Injectable, Injector } from '@angular/core';\nimport { UiToastData } from './ui-toast-data';\nimport { UiToastRef } from './ui-toast-ref';\nimport { Ui_TOAST_DATA } from './ui-toast-tokens';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class UiToastService {\n    constructor(private overlay: Overlay, private injector: Injector) {}\n\n    open<UiToastComponent>(component: ComponentType<UiToastComponent>, data: UiToastData) {\n        const positionStrategy = this.overlay.position().global().centerHorizontally().bottom();\n\n        const overlayRef = this.overlay.create({\n            positionStrategy,\n        });\n\n        const toastRef = new UiToastRef(overlayRef);\n\n        const injector = Injector.create({\n            parent: this.injector,\n            providers: [\n                { provide: UiToastRef, useValue: toastRef },\n                { provide: Ui_TOAST_DATA, useValue: data },\n            ],\n        });\n\n        const portal = new ComponentPortal(component, null, injector);\n        overlayRef.attach(portal);\n\n        return toastRef;\n    }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1087,13 +1087,13 @@
     "interceptors": [],
     "classes": [
         {
-            "name": "UIToastRef",
-            "id": "class-UIToastRef-a1f50e2062f971efc8c7e4f84636cc7595323a90c133792d7379263eee1dc9c0ac814961510f48e710cbe5bae77ba8462f4e155b7a447601623439e6d537b2d3",
+            "name": "UiToastRef",
+            "id": "class-UiToastRef-a1f50e2062f971efc8c7e4f84636cc7595323a90c133792d7379263eee1dc9c0ac814961510f48e710cbe5bae77ba8462f4e155b7a447601623439e6d537b2d3",
             "file": "src/app/shared/ui-components/toast/ui-toast-ref.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
-            "sourceCode": "import { OverlayRef } from '@angular/cdk/overlay';\nimport { Subject, Observable } from 'rxjs';\n\nexport class UIToastRef {\n    private afterClosedSubject: Subject<any> = new Subject();\n\n    constructor(private overlayRef: OverlayRef) {}\n\n    public close(data?: any) {\n        this.overlayRef.dispose();\n        this.afterClosedSubject.next(data);\n        this.afterClosedSubject.complete();\n    }\n\n    public afterClosed(): Observable<any> {\n        return this.afterClosedSubject.asObservable();\n    }\n}\n",
+            "sourceCode": "import { OverlayRef } from '@angular/cdk/overlay';\nimport { Subject, Observable } from 'rxjs';\n\nexport class UiToastRef {\n    private afterClosedSubject: Subject<any> = new Subject();\n\n    constructor(private overlayRef: OverlayRef) {}\n\n    public close(data?: any) {\n        this.overlayRef.dispose();\n        this.afterClosedSubject.next(data);\n        this.afterClosedSubject.complete();\n    }\n\n    public afterClosed(): Observable<any> {\n        return this.afterClosedSubject.asObservable();\n    }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1560,13 +1560,13 @@
             "methodsClass": []
         },
         {
-            "name": "UIBadgeDirective",
-            "id": "directive-UIBadgeDirective-83edf177ea6aaf3f75b53fd3c8b48c8d601e10a22a1757ab30c67cd9adddb6a82c06b2c76e83e20ddd83c0a608661d6d1f6814c7c0a3e1886f4b076013d620e1",
+            "name": "UiBadgeDirective",
+            "id": "directive-UiBadgeDirective-83edf177ea6aaf3f75b53fd3c8b48c8d601e10a22a1757ab30c67cd9adddb6a82c06b2c76e83e20ddd83c0a608661d6d1f6814c7c0a3e1886f4b076013d620e1",
             "file": "src/app/shared/ui-components/badge/ui-badge.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, ElementRef, Inject, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';\nimport { DOCUMENT } from '@angular/common';\n\n@Directive({\n    // eslint-disable-next-line @angular-eslint/directive-selector\n    selector: '[ui-badge]',\n})\nexport class UIBadgeDirective implements OnChanges, OnDestroy {\n    @Input() value!: number;\n\n    private badgeElement: HTMLElement | null = null;\n    private regex = new RegExp(/^[0-9]\\d*$/);\n\n    constructor(@Inject(DOCUMENT) private document: Document, private elRef: ElementRef<HTMLElement>) {}\n\n    ngOnChanges(changes: SimpleChanges): void {\n        if ('value' in changes) {\n            const value = `${changes['value'].currentValue}`.trim();\n            if (value?.length > 0 && this.regex.test(value)) {\n                this.updateBadge(value);\n            } else {\n                this.updateBadge('0');\n            }\n        }\n    }\n\n    ngOnDestroy(): void {\n        if (this.badgeElement) {\n            this.elRef.nativeElement.removeChild(this.badgeElement);\n            this.badgeElement.remove();\n        }\n    }\n\n    private createBadge(value: string): HTMLElement {\n        const badge = this.document.createElement('span');\n        badge.classList.add('ui-badge');\n        badge.textContent = value;\n        this.elRef.nativeElement.classList.add('ui-badge-container'); // add class to parent element\n        this.elRef.nativeElement.appendChild(badge); // add badge to parent element\n        return badge;\n    }\n\n    private updateBadge(value: string): void {\n        if (!this.badgeElement) {\n            this.badgeElement = this.createBadge(value);\n        } else {\n            this.badgeElement.textContent = value;\n        }\n    }\n}\n",
+            "sourceCode": "import { Directive, ElementRef, Inject, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';\nimport { DOCUMENT } from '@angular/common';\n\n@Directive({\n    // eslint-disable-next-line @angular-eslint/directive-selector\n    selector: '[ui-badge]',\n})\nexport class UiBadgeDirective implements OnChanges, OnDestroy {\n    @Input() value!: number;\n\n    private badgeElement: HTMLElement | null = null;\n    private regex = new RegExp(/^[0-9]\\d*$/);\n\n    constructor(@Inject(DOCUMENT) private document: Document, private elRef: ElementRef<HTMLElement>) {}\n\n    ngOnChanges(changes: SimpleChanges): void {\n        if ('value' in changes) {\n            const value = `${changes['value'].currentValue}`.trim();\n            if (value?.length > 0 && this.regex.test(value)) {\n                this.updateBadge(value);\n            } else {\n                this.updateBadge('0');\n            }\n        }\n    }\n\n    ngOnDestroy(): void {\n        if (this.badgeElement) {\n            this.elRef.nativeElement.removeChild(this.badgeElement);\n            this.badgeElement.remove();\n        }\n    }\n\n    private createBadge(value: string): HTMLElement {\n        const badge = this.document.createElement('span');\n        badge.classList.add('ui-badge');\n        badge.textContent = value;\n        this.elRef.nativeElement.classList.add('ui-badge-container'); // add class to parent element\n        this.elRef.nativeElement.appendChild(badge); // add badge to parent element\n        return badge;\n    }\n\n    private updateBadge(value: string): void {\n        if (!this.badgeElement) {\n            this.badgeElement = this.createBadge(value);\n        } else {\n            this.badgeElement.textContent = value;\n        }\n    }\n}\n",
             "selector": "[ui-badge]",
             "providers": [],
             "inputsClass": [
@@ -1761,13 +1761,13 @@
             }
         },
         {
-            "name": "UIButtonDirective",
-            "id": "directive-UIButtonDirective-fcbe2fa9d0495a3ceb20dbd09c7d31df02b7f50f221eecd071689c8e129bb31437ea6423fec1d07ff9da8d1434005d363f6c83492938b071cc87663f8308546f",
+            "name": "UiButtonDirective",
+            "id": "directive-UiButtonDirective-fcbe2fa9d0495a3ceb20dbd09c7d31df02b7f50f221eecd071689c8e129bb31437ea6423fec1d07ff9da8d1434005d363f6c83492938b071cc87663f8308546f",
             "file": "src/app/shared/ui-components/button/ui-button.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, Input } from '@angular/core';\n\nexport type ButtonColors = 'primary' | 'secondary' | 'light' | 'dark' | 'error' | 'default';\nexport type ButtonType = 'button' | 'submit' | 'reset';\nexport type ButtonSize = 'long' | 'default';\n\n@Directive({\n    // eslint-disable-next-line @angular-eslint/directive-selector\n    selector: '[ui-button]',\n    // eslint-disable-next-line @angular-eslint/no-host-metadata-property\n    host: {\n        class: 'ui-button',\n        '[class.ui-button--primary]': 'color === \"primary\"',\n        '[class.ui-button--secondary]': 'color === \"secondary\"',\n        '[class.ui-button--dark]': 'color === \"dark\"',\n        '[class.ui-button--light]': 'color === \"light\"',\n        '[class.ui-button--error]': 'color === \"error\"',\n        '[class.ui-button--long]': 'size === \"long\"',\n    },\n})\nexport class UIButtonDirective {\n    @Input() color: ButtonColors = 'default';\n    @Input() size: ButtonSize = 'default';\n}\n",
+            "sourceCode": "import { Directive, Input } from '@angular/core';\n\nexport type ButtonColors = 'primary' | 'secondary' | 'light' | 'dark' | 'error' | 'default';\nexport type ButtonType = 'button' | 'submit' | 'reset';\nexport type ButtonSize = 'long' | 'default';\n\n@Directive({\n    // eslint-disable-next-line @angular-eslint/directive-selector\n    selector: '[ui-button]',\n    // eslint-disable-next-line @angular-eslint/no-host-metadata-property\n    host: {\n        class: 'ui-button',\n        '[class.ui-button--primary]': 'color === \"primary\"',\n        '[class.ui-button--secondary]': 'color === \"secondary\"',\n        '[class.ui-button--dark]': 'color === \"dark\"',\n        '[class.ui-button--light]': 'color === \"light\"',\n        '[class.ui-button--error]': 'color === \"error\"',\n        '[class.ui-button--long]': 'size === \"long\"',\n    },\n})\nexport class UiButtonDirective {\n    @Input() color: ButtonColors = 'default';\n    @Input() size: ButtonSize = 'default';\n}\n",
             "selector": "[ui-button]",
             "providers": [],
             "inputsClass": [
@@ -1799,13 +1799,13 @@
             "methodsClass": []
         },
         {
-            "name": "UIInputDirective",
-            "id": "directive-UIInputDirective-b072c59f65fe201c101f88dc00277f6b9ad132f7c31ecca3a36b2d5db2df040b0bca19e0b559941efbaf82ce7025ec49b75cf142a75755d9b3d0793bc2e1bf55",
+            "name": "UiInputDirective",
+            "id": "directive-UiInputDirective-b072c59f65fe201c101f88dc00277f6b9ad132f7c31ecca3a36b2d5db2df040b0bca19e0b559941efbaf82ce7025ec49b75cf142a75755d9b3d0793bc2e1bf55",
             "file": "src/app/shared/ui-components/input/ui-input.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, HostBinding } from '@angular/core';\n\n@Directive({\n    // eslint-disable-next-line @angular-eslint/directive-selector\n    selector: '[uiInput]',\n})\nexport class UIInputDirective {\n    @HostBinding('class') elementClass = 'ui-input';\n}\n",
+            "sourceCode": "import { Directive, HostBinding } from '@angular/core';\n\n@Directive({\n    // eslint-disable-next-line @angular-eslint/directive-selector\n    selector: '[uiInput]',\n})\nexport class UiInputDirective {\n    @HostBinding('class') elementClass = 'ui-input';\n}\n",
             "selector": "[uiInput]",
             "providers": [],
             "inputsClass": [],
@@ -2503,8 +2503,8 @@
             "templateData": "<div *transloco=\"let t\" class=\"layout\">\n    <aside class=\"aside\">\n        <app-banner>\n            <h2 app-banner-title class=\"text-white\">{{ t('title') }}</h2>\n            <span app-banner-subtitle>{{ t('subtitle') }}</span>\n        </app-banner>\n        <app-category-filter (categorySelected)=\"filterFeedbacks($event)\"></app-category-filter>\n    </aside>\n    <main class=\"main\">\n        <ui-toolbar class=\"toolbar\" justify=\"between\">\n            <div class=\"toolbar__header\">\n                <img src=\"/assets/images/suggestions/icon-suggestions.svg\" alt=\"\" />\n                <h3 class=\"text-white\">{{ (feedbacks$ | async)?.length }} {{ t('toolbarTitle') }}</h3>\n            </div>\n            <button ui-button color=\"primary\"><ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}</button>\n        </ui-toolbar>\n        <section class=\"feedback-list\" *ngIf=\"(feedbacks$ | async)!.length > 0\">\n            <app-feedback-card class=\"pointer\" *ngFor=\"let feedback of feedbacks$ | async\" routerLink=\"/feedback/detail/{{ feedback.id }}\">\n                <ui-counter\n                    feedback-card-aside\n                    class=\"hide-mobile\"\n                    [activeAfterFirstClick]=\"true\"\n                    [initValue]=\"feedback.upvotes\"\n                ></ui-counter>\n                <ng-container feedback-card-aside>\n                    <section class=\"show-only-mobile\">\n                        <div class=\"feedback-aside-mobile\">\n                            <ui-counter order=\"row\" [activeAfterFirstClick]=\"true\" [initValue]=\"feedback.upvotes\"></ui-counter>\n                            <ui-icon name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n                        </div>\n                    </section>\n                </ng-container>\n                <h3 feedback-card-title>{{ feedback.title }}</h3>\n                <div feedback-card-content>\n                    <p class=\"text\">{{ feedback.description }}</p>\n                    <ui-icon\n                        class=\"hide-mobile\"\n                        name=\"comments\"\n                        ui-badge\n                        [value]=\"feedback.comments ? feedback.comments.length : 0\"\n                    ></ui-icon>\n                </div>\n                <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n            </app-feedback-card>\n        </section>\n        <app-empty-feedbacks *ngIf=\"(feedbacks$ | async)!.length === 0\">\n            <h1 empty-feedbacks-title>{{ t('emptyFeedbackList.title') }}</h1>\n            <p empty-feedbacks-body>{{ t('emptyFeedbackList.description') }}</p>\n            <button ui-button color=\"primary\" empty-feedbacks-button>\n                <ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}\n            </button>\n        </app-empty-feedbacks>\n    </main>\n</div>\n"
         },
         {
-            "name": "UIChipComponent",
-            "id": "component-UIChipComponent-96838e9ff2216fbbbb57386013e5ae2fb506312beeffbe3daea63addac3a21969bf67cf08da534ecb02241a95e9ecea4bc565c381cde945f4db5dd3818161eae",
+            "name": "UiChipComponent",
+            "id": "component-UiChipComponent-96838e9ff2216fbbbb57386013e5ae2fb506312beeffbe3daea63addac3a21969bf67cf08da534ecb02241a95e9ecea4bc565c381cde945f4db5dd3818161eae",
             "file": "src/app/shared/ui-components/chips/chip/ui-chip.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2574,7 +2574,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, ElementRef, Input, ViewChild } from '@angular/core';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-chip',\n    template: ` <span class=\"ui-chip\" [class.ui-chip--active]=\"active\" [class.ui-chip--selected]=\"selectable\" #text>\n        <ng-content></ng-content>\n    </span>`,\n    styleUrls: ['./ui-chip.component.scss'],\n})\nexport class UIChipComponent {\n    @ViewChild('text') textElement!: ElementRef;\n    @Input() selectable: boolean = true;\n    @Input() value: string = '';\n    @Input() active: boolean = false;\n}\n",
+            "sourceCode": "import { Component, ElementRef, Input, ViewChild } from '@angular/core';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-chip',\n    template: ` <span class=\"ui-chip\" [class.ui-chip--active]=\"active\" [class.ui-chip--selected]=\"selectable\" #text>\n        <ng-content></ng-content>\n    </span>`,\n    styleUrls: ['./ui-chip.component.scss'],\n})\nexport class UiChipComponent {\n    @ViewChild('text') textElement!: ElementRef;\n    @Input() selectable: boolean = true;\n    @Input() value: string = '';\n    @Input() active: boolean = false;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2585,8 +2585,8 @@
             "stylesData": ""
         },
         {
-            "name": "UIChipListComponent",
-            "id": "component-UIChipListComponent-d0720196e16750c80f1cdffae3b307e68d192a60b7889b8457f5472588be789c7c7be2704402aa472288bbedcae507bcf8b0af2bf98c7f4c016087e36ab7b04b",
+            "name": "UiChipListComponent",
+            "id": "component-UiChipListComponent-d0720196e16750c80f1cdffae3b307e68d192a60b7889b8457f5472588be789c7c7be2704402aa472288bbedcae507bcf8b0af2bf98c7f4c016087e36ab7b04b",
             "file": "src/app/shared/ui-components/chips/chip-list/ui-chip-list.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2613,7 +2613,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-chip-list',\n    templateUrl: './ui-chip-list.component.html',\n    styleUrls: ['./ui-chip-list.component.scss'],\n})\nexport class UIChipListComponent {}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-chip-list',\n    templateUrl: './ui-chip-list.component.html',\n    styleUrls: ['./ui-chip-list.component.scss'],\n})\nexport class UiChipListComponent {}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2625,8 +2625,8 @@
             "templateData": "<div class=\"ui-chip-list\">\n    <ng-content></ng-content>\n</div>\n"
         },
         {
-            "name": "UICounterComponent",
-            "id": "component-UICounterComponent-3594bdbafd320282690e80c24b0bf678e25b57d0868e02c8e0156e971c7a1e37671fd990cd9265ce3b85e643d09b0f54062c58121261541ec437828cf828f773",
+            "name": "UiCounterComponent",
+            "id": "component-UiCounterComponent-3594bdbafd320282690e80c24b0bf678e25b57d0868e02c8e0156e971c7a1e37671fd990cd9265ce3b85e643d09b0f54062c58121261541ec437828cf828f773",
             "file": "src/app/shared/ui-components/counter/ui-counter.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2634,7 +2634,7 @@
             "outputs": [],
             "providers": [
                 {
-                    "name": "{\n    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => UICounterComponent), multi: true,\n}",
+                    "name": "{\n    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => UiCounterComponent), multi: true,\n}",
                     "type": "component"
                 }
             ],
@@ -2865,7 +2865,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, forwardRef, Input, OnInit } from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-counter',\n    templateUrl: './ui-counter.component.html',\n    styleUrls: ['./ui-counter.component.scss'],\n    providers: [\n        {\n            provide: NG_VALUE_ACCESSOR,\n            useExisting: forwardRef(() => UICounterComponent),\n            multi: true,\n        },\n    ],\n})\nexport class UICounterComponent implements ControlValueAccessor, OnInit {\n    @Input() limitCounterTo: number = -1;\n    @Input() initValue: number = 0;\n    @Input() activeAfterFirstClick: boolean = false;\n    @Input() order: 'column' | 'row' = 'column';\n    public active: boolean = false;\n    public value: number = 0;\n\n    onChange: any = () => {};\n\n    onTouch: any = () => {};\n\n    increment(event: any): void {\n        event.preventDefault();\n        event.stopPropagation();\n\n        if (!this.active) {\n            this.value++;\n            this.onChange(this.value);\n            this.writeValue(this.value);\n            this.active = !this.activeAfterFirstClick ? this.value === this.limitCounterTo : true;\n        } else {\n            this.value = this.value < 0 ? 0 : this.value;\n        }\n    }\n\n    ngOnInit(): void {\n        this.value = this.initValue;\n        this.onChange(this.value);\n        this.writeValue(this.value);\n    }\n\n    // controlValueAccessor methods\n    writeValue(value: number): void {\n        this.value = value;\n    }\n    registerOnChange(fn: any): void {\n        this.onChange = fn;\n    }\n    registerOnTouched(fn: any): void {\n        this.onChange = fn;\n    }\n}\n",
+            "sourceCode": "import { Component, forwardRef, Input, OnInit } from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-counter',\n    templateUrl: './ui-counter.component.html',\n    styleUrls: ['./ui-counter.component.scss'],\n    providers: [\n        {\n            provide: NG_VALUE_ACCESSOR,\n            useExisting: forwardRef(() => UiCounterComponent),\n            multi: true,\n        },\n    ],\n})\nexport class UiCounterComponent implements ControlValueAccessor, OnInit {\n    @Input() limitCounterTo: number = -1;\n    @Input() initValue: number = 0;\n    @Input() activeAfterFirstClick: boolean = false;\n    @Input() order: 'column' | 'row' = 'column';\n    public active: boolean = false;\n    public value: number = 0;\n\n    onChange: any = () => {};\n\n    onTouch: any = () => {};\n\n    increment(event: any): void {\n        event.preventDefault();\n        event.stopPropagation();\n\n        if (!this.active) {\n            this.value++;\n            this.onChange(this.value);\n            this.writeValue(this.value);\n            this.active = !this.activeAfterFirstClick ? this.value === this.limitCounterTo : true;\n        } else {\n            this.value = this.value < 0 ? 0 : this.value;\n        }\n    }\n\n    ngOnInit(): void {\n        this.value = this.initValue;\n        this.onChange(this.value);\n        this.writeValue(this.value);\n    }\n\n    // controlValueAccessor methods\n    writeValue(value: number): void {\n        this.value = value;\n    }\n    registerOnChange(fn: any): void {\n        this.onChange = fn;\n    }\n    registerOnTouched(fn: any): void {\n        this.onChange = fn;\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2881,8 +2881,8 @@
             "templateData": "<span class=\"ui-counter\" (click)=\"increment($event)\" [class.ui-counter--active]=\"active\" [class.ui-counter--row]=\"order === 'row'\">\n    <img class=\"ui-counter__icon\" src=\"assets/images/icons/icon-arrow-up.svg\" alt=\"counter icon\" />\n    <span class=\"ui-counter__value\">{{ value }}</span>\n</span>\n"
         },
         {
-            "name": "UIDividerComponent",
-            "id": "component-UIDividerComponent-47cc2fe23b5e56842434924fd8f1713d2e71401193d6279824cd8ecbcbab80128563ef6d9080063d7c6a9fdce9a9af628014625efbaba4178a5f8fbdda2828e6",
+            "name": "UiDividerComponent",
+            "id": "component-UiDividerComponent-47cc2fe23b5e56842434924fd8f1713d2e71401193d6279824cd8ecbcbab80128563ef6d9080063d7c6a9fdce9a9af628014625efbaba4178a5f8fbdda2828e6",
             "file": "src/app/shared/ui-components/divider/ui-divider.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2908,7 +2908,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-divider',\n    template: `<hr class=\"ui-divider\" />`,\n    styleUrls: ['./ui-divider.component.scss'],\n})\nexport class UIDividerComponent {}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-divider',\n    template: `<hr class=\"ui-divider\" />`,\n    styleUrls: ['./ui-divider.component.scss'],\n})\nexport class UiDividerComponent {}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2919,8 +2919,8 @@
             "stylesData": ""
         },
         {
-            "name": "UIIconComponent",
-            "id": "component-UIIconComponent-3ae5dff24db3b1d7fefc3e158b56a0b6f8c3198c7b9986fc619039a9cbb02ab35a6eee4df921179fbfd081f646efd1fdb1c85080ab30d78cbb3b2c17189f2e45",
+            "name": "UiIconComponent",
+            "id": "component-UiIconComponent-3ae5dff24db3b1d7fefc3e158b56a0b6f8c3198c7b9986fc619039a9cbb02ab35a6eee4df921179fbfd081f646efd1fdb1c85080ab30d78cbb3b2c17189f2e45",
             "file": "src/app/shared/ui-components/icon/ui-icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2974,15 +2974,15 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\nexport const ICONS_BASE_PATH = '/assets/images/icons';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-icon',\n    templateUrl: './ui-icon.component.html',\n})\nexport class UIIconComponent {\n    @Input() name!: string;\n    @Input() type: 'desktop' | 'mobile' = 'desktop';\n\n    getIconPath(): string {\n        return this.type === 'desktop'\n            ? `${ICONS_BASE_PATH}/icon-${this.name}.svg`\n            : `${ICONS_BASE_PATH}/${this.type}/icon-${this.name}.svg`;\n    }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\nexport const ICONS_BASE_PATH = '/assets/images/icons';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-icon',\n    templateUrl: './ui-icon.component.html',\n})\nexport class UiIconComponent {\n    @Input() name!: string;\n    @Input() type: 'desktop' | 'mobile' = 'desktop';\n\n    getIconPath(): string {\n        return this.type === 'desktop'\n            ? `${ICONS_BASE_PATH}/icon-${this.name}.svg`\n            : `${ICONS_BASE_PATH}/${this.type}/icon-${this.name}.svg`;\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "templateData": "<img *ngIf=\"name\" [src]=\"getIconPath()\" alt=\"\"/>\n"
         },
         {
-            "name": "UISelectOptionComponent",
-            "id": "component-UISelectOptionComponent-466e23ae6d40cac5637661413008a4e8f99a77c3527238cda27d0df78889613042caa4a4c81543b0ad85a99d6ecaca7c1728ffe20a838fd7aa4a15f9d6982e5f",
+            "name": "UiSelectOptionComponent",
+            "id": "component-UiSelectOptionComponent-466e23ae6d40cac5637661413008a4e8f99a77c3527238cda27d0df78889613042caa4a4c81543b0ad85a99d6ecaca7c1728ffe20a838fd7aa4a15f9d6982e5f",
             "file": "src/app/shared/ui-components/select/select-option/ui-select-option.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -3074,7 +3074,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, ElementRef, HostListener, Input, ViewChild, ViewEncapsulation } from '@angular/core';\nimport { UiSelectService } from '../ui-select.service';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-select-option',\n    template: `<button class=\"ui-select-option\" [class.ui-select-option--selected]=\"selected\" #text>\n        <ng-content></ng-content><img *ngIf=\"selected\" src=\"assets/images/icons/icon-check.svg\" alt=\"\" />\n    </button> `,\n    styleUrls: ['./ui-select-option.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class UISelectOptionComponent {\n    @Input() value: string = '';\n    @ViewChild('text') textElement!: ElementRef;\n    selected: boolean = false;\n\n    constructor(private select: UiSelectService) {}\n\n    @HostListener('click', ['$event'])\n    click() {\n        this.select.getSelect().selectOption(this);\n    }\n}\n",
+            "sourceCode": "import { Component, ElementRef, HostListener, Input, ViewChild, ViewEncapsulation } from '@angular/core';\nimport { UiSelectService } from '../ui-select.service';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-select-option',\n    template: `<button class=\"ui-select-option\" [class.ui-select-option--selected]=\"selected\" #text>\n        <ng-content></ng-content><img *ngIf=\"selected\" src=\"assets/images/icons/icon-check.svg\" alt=\"\" />\n    </button> `,\n    styleUrls: ['./ui-select-option.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class UiSelectOptionComponent {\n    @Input() value: string = '';\n    @ViewChild('text') textElement!: ElementRef;\n    selected: boolean = false;\n\n    constructor(private select: UiSelectService) {}\n\n    @HostListener('click', ['$event'])\n    click() {\n        this.select.getSelect().selectOption(this);\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3111,8 +3111,8 @@
             }
         },
         {
-            "name": "UISelectPanelComponent",
-            "id": "component-UISelectPanelComponent-7c184b1c6d89910c2d8b5cc45fd720921ee738c582d933763617848ef8b286c69747f2a4b257577277138334abcd3ad6eff685dc0052e8c66a78a6959b15fc54",
+            "name": "UiSelectPanelComponent",
+            "id": "component-UiSelectPanelComponent-7c184b1c6d89910c2d8b5cc45fd720921ee738c582d933763617848ef8b286c69747f2a4b257577277138334abcd3ad6eff685dc0052e8c66a78a6959b15fc54",
             "file": "src/app/shared/ui-components/select/select-panel/ui-select-panel.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -3122,7 +3122,7 @@
             "outputs": [],
             "providers": [
                 {
-                    "name": "{\n    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => UISelectPanelComponent), multi: true,\n}",
+                    "name": "{\n    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => UiSelectPanelComponent), multi: true,\n}",
                     "type": "component"
                 }
             ],
@@ -3210,14 +3210,14 @@
                     "name": "options",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "QueryList<UISelectOptionComponent>",
+                    "type": "QueryList<UiSelectOptionComponent>",
                     "optional": false,
                     "description": "",
                     "line": 27,
                     "decorators": [
                         {
                             "name": "ContentChildren",
-                            "stringifiedArguments": "UISelectOptionComponent"
+                            "stringifiedArguments": "UiSelectOptionComponent"
                         }
                     ]
                 },
@@ -3225,7 +3225,7 @@
                     "name": "selectedOption",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "UISelectOptionComponent",
+                    "type": "UiSelectOptionComponent",
                     "optional": false,
                     "description": "",
                     "line": 29
@@ -3323,7 +3323,7 @@
                     "args": [
                         {
                             "name": "option",
-                            "type": "UISelectOptionComponent",
+                            "type": "UiSelectOptionComponent",
                             "deprecated": false,
                             "deprecationMessage": ""
                         }
@@ -3337,7 +3337,7 @@
                     "jsdoctags": [
                         {
                             "name": "option",
-                            "type": "UISelectOptionComponent",
+                            "type": "UiSelectOptionComponent",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -3430,7 +3430,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { AfterViewInit, Component, ContentChildren, forwardRef, Input, QueryList, ViewEncapsulation } from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\nimport { fadeInOut } from '@shared/ui-components/animations/fade.animation';\nimport { UISelectOptionComponent } from '../select-option/ui-select-option.component';\nimport { UiSelectService } from '../ui-select.service';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-select',\n    templateUrl: './ui-select-panel.component.html',\n    styleUrls: ['./ui-select-panel.component.scss'],\n    animations: [fadeInOut],\n    encapsulation: ViewEncapsulation.None,\n    providers: [\n        {\n            provide: NG_VALUE_ACCESSOR,\n            useExisting: forwardRef(() => UISelectPanelComponent),\n            multi: true,\n        },\n    ],\n})\nexport class UISelectPanelComponent implements AfterViewInit, ControlValueAccessor {\n    @Input() selected: string = '';\n    @Input() placeholder: string = '';\n    @Input() disabled: boolean = false;\n\n    @ContentChildren(UISelectOptionComponent) options!: QueryList<UISelectOptionComponent>;\n\n    selectedOption!: UISelectOptionComponent;\n    displayedText: string = '';\n\n    isDropdownOpen: boolean = false;\n\n    constructor(private select: UiSelectService) {\n        this.select.register(this);\n    }\n\n    ngAfterViewInit(): void {\n        if (this.selected !== '') {\n            this.setSelected();\n        }\n    }\n\n    onTouchedFn = () => {};\n\n    // eslint-disable-next-line @typescript-eslint/no-unused-vars\n    onChangeFn = (_: any) => {};\n\n    toggleDropdown() {\n        // eslint-disable-next-line @typescript-eslint/no-unused-expressions\n        this.isDropdownOpen ? (this.isDropdownOpen = false) : (this.isDropdownOpen = true);\n    }\n\n    selectOption(option: UISelectOptionComponent) {\n        this.selectedOption = option;\n        this.selected = option.value;\n        this.displayedText = this.selectedOption && this.selected !== '' ? option.textElement.nativeElement.innerText : '';\n        this.isDropdownOpen = false;\n        this.setSelected();\n        this.onChangeFn(this.selected);\n    }\n\n    onOpened() {\n        this.isDropdownOpen = true;\n        this.onTouchedFn();\n    }\n\n    onClose() {\n        this.isDropdownOpen = false;\n    }\n\n    setSelected() {\n        this.options.forEach((opt) => (opt.selected = opt.value === this.selected));\n    }\n\n    writeValue(fn: any): void {\n        this.onChangeFn = fn;\n    }\n    registerOnChange(fn: any): void {\n        this.onChangeFn = fn;\n    }\n\n    registerOnTouched(fn: any): void {\n        this.onTouchedFn = fn;\n    }\n\n    setDisabledState(isDisabled: boolean): void {\n        this.disabled = isDisabled;\n    }\n}\n",
+            "sourceCode": "import { AfterViewInit, Component, ContentChildren, forwardRef, Input, QueryList, ViewEncapsulation } from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\nimport { fadeInOut } from '@shared/ui-components/animations/fade.animation';\nimport { UiSelectOptionComponent } from '../select-option/ui-select-option.component';\nimport { UiSelectService } from '../ui-select.service';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-select',\n    templateUrl: './ui-select-panel.component.html',\n    styleUrls: ['./ui-select-panel.component.scss'],\n    animations: [fadeInOut],\n    encapsulation: ViewEncapsulation.None,\n    providers: [\n        {\n            provide: NG_VALUE_ACCESSOR,\n            useExisting: forwardRef(() => UiSelectPanelComponent),\n            multi: true,\n        },\n    ],\n})\nexport class UiSelectPanelComponent implements AfterViewInit, ControlValueAccessor {\n    @Input() selected: string = '';\n    @Input() placeholder: string = '';\n    @Input() disabled: boolean = false;\n\n    @ContentChildren(UiSelectOptionComponent) options!: QueryList<UiSelectOptionComponent>;\n\n    selectedOption!: UiSelectOptionComponent;\n    displayedText: string = '';\n\n    isDropdownOpen: boolean = false;\n\n    constructor(private select: UiSelectService) {\n        this.select.register(this);\n    }\n\n    ngAfterViewInit(): void {\n        if (this.selected !== '') {\n            this.setSelected();\n        }\n    }\n\n    onTouchedFn = () => {};\n\n    // eslint-disable-next-line @typescript-eslint/no-unused-vars\n    onChangeFn = (_: any) => {};\n\n    toggleDropdown() {\n        // eslint-disable-next-line @typescript-eslint/no-unused-expressions\n        this.isDropdownOpen ? (this.isDropdownOpen = false) : (this.isDropdownOpen = true);\n    }\n\n    selectOption(option: UiSelectOptionComponent) {\n        this.selectedOption = option;\n        this.selected = option.value;\n        this.displayedText = this.selectedOption && this.selected !== '' ? option.textElement.nativeElement.innerText : '';\n        this.isDropdownOpen = false;\n        this.setSelected();\n        this.onChangeFn(this.selected);\n    }\n\n    onOpened() {\n        this.isDropdownOpen = true;\n        this.onTouchedFn();\n    }\n\n    onClose() {\n        this.isDropdownOpen = false;\n    }\n\n    setSelected() {\n        this.options.forEach((opt) => (opt.selected = opt.value === this.selected));\n    }\n\n    writeValue(fn: any): void {\n        this.onChangeFn = fn;\n    }\n    registerOnChange(fn: any): void {\n        this.onChangeFn = fn;\n    }\n\n    registerOnTouched(fn: any): void {\n        this.onTouchedFn = fn;\n    }\n\n    setDisabledState(isDisabled: boolean): void {\n        this.disabled = isDisabled;\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3472,8 +3472,8 @@
             "templateData": "<div\n    class=\"ui-selector\"\n    [class.ui-selector--focus]=\"isDropdownOpen\"\n    cdkOverlayOrigin\n    (click)=\"toggleDropdown()\"\n    #trigger=\"cdkOverlayOrigin\"\n>\n    <input class=\"ui-selector__input\" [value]=\"displayedText\" [placeholder]=\"placeholder\" type=\"text\" readonly autocomplete=\"off\" />\n    <img class=\"ui-selector__icon\" src=\"assets/images/icons/icon-arrow-down.svg\" alt=\"Arrow down icon\" />\n</div>\n\n<ng-template\n    cdkConnectedOverlay\n    cdkConnectedOverlayLockPosition\n    cdkConnectedOverlayHasBackdrop\n    cdkConnectedOverlayBackdropClass=\"cdk-overlay-transparent-backdrop\"\n    [cdkConnectedOverlayOrigin]=\"trigger\"\n    [cdkConnectedOverlayOpen]=\"isDropdownOpen\"\n    (backdropClick)=\"isDropdownOpen = false\"\n    (opened)=\"onOpened()\"\n    (closed)=\"onClosed()\"\n>\n    <div class=\"ui-select-panel\" @fadeInOut>\n        <ng-content></ng-content>\n    </div>\n</ng-template>\n"
         },
         {
-            "name": "UIToastComponent",
-            "id": "component-UIToastComponent-b494e94fe07fa51838c91ee3696b55dd73db06d237a3df5f46e6a900e125da6c1f3c15a5b6d9ef483ee2126c78a1b5299b68b07a479de206ba20ab0c8dcb5014",
+            "name": "UiToastComponent",
+            "id": "component-UiToastComponent-b494e94fe07fa51838c91ee3696b55dd73db06d237a3df5f46e6a900e125da6c1f3c15a5b6d9ef483ee2126c78a1b5299b68b07a479de206ba20ab0c8dcb5014",
             "file": "src/app/shared/ui-components/toast/ui-toast.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3543,7 +3543,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Inject, OnDestroy, OnInit } from '@angular/core';\nimport { UIToastData } from './ui-toast-data';\nimport { UIToastRef } from './ui-toast-ref';\nimport { UI_TOAST_DATA } from './ui-toast-tokens';\nimport { fadeInOut } from '../animations/fade.animation';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-toast',\n    template: ` <div class=\"ui-toast\" @fadeInOut>\n        <span class=\"ui-toast__text\">{{ data.message }}</span>\n        <button class=\"ui-toast__button\" *ngIf=\"data.close\" (click)=\"close()\">{{ data.close }}</button>\n    </div>`,\n    styleUrls: ['./ui-toast.component.scss'],\n    animations: [fadeInOut],\n})\nexport class UIToastComponent implements OnInit, OnDestroy {\n    private intervalId!: ReturnType<typeof setTimeout>;\n\n    constructor(private toastRef: UIToastRef, @Inject(UI_TOAST_DATA) readonly data: UIToastData) {}\n\n    ngOnDestroy(): void {\n        if (this.intervalId) {\n            clearTimeout(this.intervalId);\n        }\n    }\n\n    ngOnInit(): void {\n        if (this.data.duration) {\n            this.intervalId = setTimeout(() => {\n                this.close();\n            }, this.data.duration);\n        }\n    }\n\n    close() {\n        this.toastRef.close();\n    }\n}\n",
+            "sourceCode": "import { Component, Inject, OnDestroy, OnInit } from '@angular/core';\nimport { UiToastData } from './ui-toast-data';\nimport { UiToastRef } from './ui-toast-ref';\nimport { Ui_TOAST_DATA } from './ui-toast-tokens';\nimport { fadeInOut } from '../animations/fade.animation';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-toast',\n    template: ` <div class=\"ui-toast\" @fadeInOut>\n        <span class=\"ui-toast__text\">{{ data.message }}</span>\n        <button class=\"ui-toast__button\" *ngIf=\"data.close\" (click)=\"close()\">{{ data.close }}</button>\n    </div>`,\n    styleUrls: ['./ui-toast.component.scss'],\n    animations: [fadeInOut],\n})\nexport class UiToastComponent implements OnInit, OnDestroy {\n    private intervalId!: ReturnType<typeof setTimeout>;\n\n    constructor(private toastRef: UiToastRef, @Inject(Ui_TOAST_DATA) readonly data: UiToastData) {}\n\n    ngOnDestroy(): void {\n        if (this.intervalId) {\n            clearTimeout(this.intervalId);\n        }\n    }\n\n    ngOnInit(): void {\n        if (this.data.duration) {\n            this.intervalId = setTimeout(() => {\n                this.close();\n            }, this.data.duration);\n        }\n    }\n\n    close() {\n        this.toastRef.close();\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3560,13 +3560,13 @@
                 "args": [
                     {
                         "name": "toastRef",
-                        "type": "UIToastRef",
+                        "type": "UiToastRef",
                         "deprecated": false,
                         "deprecationMessage": ""
                     },
                     {
                         "name": "data",
-                        "type": "UIToastData",
+                        "type": "UiToastData",
                         "deprecated": false,
                         "deprecationMessage": ""
                     }
@@ -3575,7 +3575,7 @@
                 "jsdoctags": [
                     {
                         "name": "toastRef",
-                        "type": "UIToastRef",
+                        "type": "UiToastRef",
                         "deprecated": false,
                         "deprecationMessage": "",
                         "tagName": {
@@ -3584,7 +3584,7 @@
                     },
                     {
                         "name": "data",
-                        "type": "UIToastData",
+                        "type": "UiToastData",
                         "deprecated": false,
                         "deprecationMessage": "",
                         "tagName": {
@@ -3599,8 +3599,8 @@
             ]
         },
         {
-            "name": "UIToolbarComponent",
-            "id": "component-UIToolbarComponent-f0acc8721ec8e624df8e0293978082925c8c7a3b844467612d3825661cbd2be41fbaa26db3b128c6a4c4f9000ee3bf5a2476751a3a97a84cb229a3ea6f4ec32a",
+            "name": "UiToolbarComponent",
+            "id": "component-UiToolbarComponent-f0acc8721ec8e624df8e0293978082925c8c7a3b844467612d3825661cbd2be41fbaa26db3b128c6a4c4f9000ee3bf5a2476751a3a97a84cb229a3ea6f4ec32a",
             "file": "src/app/shared/ui-components/toolbar/ui-toolbar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3656,7 +3656,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\nexport type JusfityType = 'start' | 'end' | 'center' | 'between' | 'around';\n\nexport const JUSTIFY_CSS_CLASES = {\n    start: 'ui-toolbar--start',\n    end: 'ui-toolbar--end',\n    center: 'ui-toolbar--center',\n    between: 'ui-toolbar--between',\n    around: 'ui-toolbar--around',\n};\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-toolbar',\n    template: `<div class=\"ui-toolbar\" [ngClass]=\"getJustifyClass()\" [class.bg-transparent]=\"background === 'transparent'\">\n        <ng-content></ng-content>\n    </div> `,\n    styleUrls: ['./ui-toolbar.component.scss'],\n})\nexport class UIToolbarComponent {\n    @Input() justify: JusfityType = 'start';\n    @Input() background: 'transparent' | 'none' = 'none';\n\n    getJustifyClass(): string {\n        return JUSTIFY_CSS_CLASES[this.justify];\n    }\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\nexport type JusfityType = 'start' | 'end' | 'center' | 'between' | 'around';\n\nexport const JUSTIFY_CSS_CLASES = {\n    start: 'ui-toolbar--start',\n    end: 'ui-toolbar--end',\n    center: 'ui-toolbar--center',\n    between: 'ui-toolbar--between',\n    around: 'ui-toolbar--around',\n};\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-toolbar',\n    template: `<div class=\"ui-toolbar\" [ngClass]=\"getJustifyClass()\" [class.bg-transparent]=\"background === 'transparent'\">\n        <ng-content></ng-content>\n    </div> `,\n    styleUrls: ['./ui-toolbar.component.scss'],\n})\nexport class UiToolbarComponent {\n    @Input() justify: JusfityType = 'start';\n    @Input() background: 'transparent' | 'none' = 'none';\n\n    getJustifyClass(): string {\n        return JUSTIFY_CSS_CLASES[this.justify];\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3878,7 +3878,7 @@
             "deprecated": false,
             "file": "src/app/modules/feedback/feedback.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { UIBadgeModule } from '@shared/ui-components/badge/ui-badge.module';\nimport { UIButtonModule } from '@shared/ui-components/button/ui-button.module';\nimport { UIChipsModule } from '@shared/ui-components/chips/ui-chips.module';\nimport { UICounterModule } from '@shared/ui-components/counter/ui-counter.module';\nimport { UIFeedbackCardModule } from '@shared/ui-components/feedback-card/feedback-card.module';\nimport { UIIconModule } from '@shared/ui-components/icon/ui-icon.module';\nimport { UIToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';\nimport { BackBtnComponent } from './components/back-btn/back-btn.component';\nimport { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';\n\nconst routes: Routes = [\n    {\n        path: 'detail/:id',\n        component: FeedbackDetailComponent,\n    },\n];\n\n@NgModule({\n    declarations: [FeedbackDetailComponent, BackBtnComponent],\n    imports: [\n        CommonModule,\n        RouterModule.forChild(routes),\n        UIToolbarModule,\n        UIButtonModule,\n        UIIconModule,\n        UIFeedbackCardModule,\n        UICounterModule,\n        UIChipsModule,\n        UIBadgeModule,\n    ],\n    exports: [RouterModule],\n})\nexport class FeedbackModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { UiBadgeModule } from '@shared/ui-components/badge/ui-badge.module';\nimport { UiButtonModule } from '@shared/ui-components/button/ui-button.module';\nimport { UiChipsModule } from '@shared/ui-components/chips/ui-chips.module';\nimport { UiCounterModule } from '@shared/ui-components/counter/ui-counter.module';\nimport { UiFeedbackCardModule } from '@shared/ui-components/feedback-card/feedback-card.module';\nimport { UiIconModule } from '@shared/ui-components/icon/ui-icon.module';\nimport { UiToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';\nimport { BackBtnComponent } from './components/back-btn/back-btn.component';\nimport { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';\n\nconst routes: Routes = [\n    {\n        path: 'detail/:id',\n        component: FeedbackDetailComponent,\n    },\n];\n\n@NgModule({\n    declarations: [FeedbackDetailComponent, BackBtnComponent],\n    imports: [\n        CommonModule,\n        RouterModule.forChild(routes),\n        UiToolbarModule,\n        UiButtonModule,\n        UiIconModule,\n        UiFeedbackCardModule,\n        UiCounterModule,\n        UiChipsModule,\n        UiBadgeModule,\n    ],\n    exports: [RouterModule],\n})\nexport class FeedbackModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -3899,25 +3899,25 @@
                     "type": "imports",
                     "elements": [
                         {
-                            "name": "UIBadgeModule"
+                            "name": "UiBadgeModule"
                         },
                         {
-                            "name": "UIButtonModule"
+                            "name": "UiButtonModule"
                         },
                         {
-                            "name": "UIChipsModule"
+                            "name": "UiChipsModule"
                         },
                         {
-                            "name": "UICounterModule"
+                            "name": "UiCounterModule"
                         },
                         {
-                            "name": "UIFeedbackCardModule"
+                            "name": "UiFeedbackCardModule"
                         },
                         {
-                            "name": "UIIconModule"
+                            "name": "UiIconModule"
                         },
                         {
-                            "name": "UIToolbarModule"
+                            "name": "UiToolbarModule"
                         }
                     ]
                 },
@@ -3943,7 +3943,7 @@
             "deprecated": false,
             "file": "src/app/modules/suggestions/suggestions.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { RouterModule, Routes } from '@angular/router';\nimport { TranslocoModule } from '@ngneat/transloco';\nimport { UIBadgeModule } from '@shared/ui-components/badge/ui-badge.module';\nimport { UIButtonModule } from '@shared/ui-components/button/ui-button.module';\nimport { UIChipsModule } from '@shared/ui-components/chips/ui-chips.module';\nimport { UICounterModule } from '@shared/ui-components/counter/ui-counter.module';\nimport { UIIconModule } from '@shared/ui-components/icon/ui-icon.module';\nimport { UIToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';\nimport { UIFeedbackCardModule } from '../../shared/ui-components/feedback-card/feedback-card.module';\nimport { BannerModule } from './components/banner/banner.module';\nimport { CategoryFilterComponent } from './components/category-filter/category-filter.component';\nimport { EmptyFeedbacksModule } from './components/empty-feedbacks/empty-feedbacks.module';\nimport { SuggestionsLayoutComponent } from './layout/suggestions-layout.component';\n\nconst routes: Routes = [\n    {\n        path: '',\n        component: SuggestionsLayoutComponent,\n        pathMatch: 'full',\n    },\n];\n\n@NgModule({\n    declarations: [SuggestionsLayoutComponent, CategoryFilterComponent],\n    imports: [\n        CommonModule,\n        RouterModule.forChild(routes),\n        ReactiveFormsModule,\n        UICounterModule,\n        UIBadgeModule,\n        UIChipsModule,\n        UIIconModule,\n        UIToolbarModule,\n        UIButtonModule,\n        UIFeedbackCardModule,\n        EmptyFeedbacksModule,\n        BannerModule,\n        TranslocoModule,\n    ],\n    exports: [RouterModule],\n})\nexport class SuggestionsModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { RouterModule, Routes } from '@angular/router';\nimport { TranslocoModule } from '@ngneat/transloco';\nimport { UiBadgeModule } from '@shared/ui-components/badge/ui-badge.module';\nimport { UiButtonModule } from '@shared/ui-components/button/ui-button.module';\nimport { UiChipsModule } from '@shared/ui-components/chips/ui-chips.module';\nimport { UiCounterModule } from '@shared/ui-components/counter/ui-counter.module';\nimport { UiIconModule } from '@shared/ui-components/icon/ui-icon.module';\nimport { UiToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';\nimport { UiFeedbackCardModule } from '../../shared/ui-components/feedback-card/feedback-card.module';\nimport { BannerModule } from './components/banner/banner.module';\nimport { CategoryFilterComponent } from './components/category-filter/category-filter.component';\nimport { EmptyFeedbacksModule } from './components/empty-feedbacks/empty-feedbacks.module';\nimport { SuggestionsLayoutComponent } from './layout/suggestions-layout.component';\n\nconst routes: Routes = [\n    {\n        path: '',\n        component: SuggestionsLayoutComponent,\n        pathMatch: 'full',\n    },\n];\n\n@NgModule({\n    declarations: [SuggestionsLayoutComponent, CategoryFilterComponent],\n    imports: [\n        CommonModule,\n        RouterModule.forChild(routes),\n        ReactiveFormsModule,\n        UiCounterModule,\n        UiBadgeModule,\n        UiChipsModule,\n        UiIconModule,\n        UiToolbarModule,\n        UiButtonModule,\n        UiFeedbackCardModule,\n        EmptyFeedbacksModule,\n        BannerModule,\n        TranslocoModule,\n    ],\n    exports: [RouterModule],\n})\nexport class SuggestionsModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -3970,25 +3970,25 @@
                             "name": "EmptyFeedbacksModule"
                         },
                         {
-                            "name": "UIBadgeModule"
+                            "name": "UiBadgeModule"
                         },
                         {
-                            "name": "UIButtonModule"
+                            "name": "UiButtonModule"
                         },
                         {
-                            "name": "UIChipsModule"
+                            "name": "UiChipsModule"
                         },
                         {
-                            "name": "UICounterModule"
+                            "name": "UiCounterModule"
                         },
                         {
-                            "name": "UIFeedbackCardModule"
+                            "name": "UiFeedbackCardModule"
                         },
                         {
-                            "name": "UIIconModule"
+                            "name": "UiIconModule"
                         },
                         {
-                            "name": "UIToolbarModule"
+                            "name": "UiToolbarModule"
                         }
                     ]
                 },
@@ -4043,14 +4043,14 @@
             ]
         },
         {
-            "name": "UIBadgeModule",
-            "id": "module-UIBadgeModule-26443416a6ee21904b0ced545d624e2806b7f8f7d124ce4be3b6151b94c2c1cb9e5c5028093b025b84433de3165c3d059df834df09f969f74b1afe0e318e9717",
+            "name": "UiBadgeModule",
+            "id": "module-UiBadgeModule-26443416a6ee21904b0ced545d624e2806b7f8f7d124ce4be3b6151b94c2c1cb9e5c5028093b025b84433de3165c3d059df834df09f969f74b1afe0e318e9717",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/badge/ui-badge.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UIBadgeDirective } from './ui-badge.directive';\n\n@NgModule({\n    declarations: [UIBadgeDirective],\n    imports: [CommonModule],\n    exports: [UIBadgeDirective],\n})\nexport class UIBadgeModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UiBadgeDirective } from './ui-badge.directive';\n\n@NgModule({\n    declarations: [UiBadgeDirective],\n    imports: [CommonModule],\n    exports: [UiBadgeDirective],\n})\nexport class UiBadgeModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4060,7 +4060,7 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "UIBadgeDirective"
+                            "name": "UiBadgeDirective"
                         }
                     ]
                 },
@@ -4072,7 +4072,7 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "UIBadgeDirective"
+                            "name": "UiBadgeDirective"
                         }
                     ]
                 },
@@ -4087,14 +4087,14 @@
             ]
         },
         {
-            "name": "UIButtonModule",
-            "id": "module-UIButtonModule-5624d3f7ae4bee359df21c4d4775dacdee806f6063ed9c9ac3ea9b808ec8265c2de051bfac6aad168c8dd8873562aebf20bd306dfcf42ec58360fbad6602207e",
+            "name": "UiButtonModule",
+            "id": "module-UiButtonModule-5624d3f7ae4bee359df21c4d4775dacdee806f6063ed9c9ac3ea9b808ec8265c2de051bfac6aad168c8dd8873562aebf20bd306dfcf42ec58360fbad6602207e",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/button/ui-button.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UIButtonDirective } from './ui-button.directive';\n\n@NgModule({\n    declarations: [UIButtonDirective],\n    imports: [CommonModule],\n    exports: [UIButtonDirective],\n})\nexport class UIButtonModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UiButtonDirective } from './ui-button.directive';\n\n@NgModule({\n    declarations: [UiButtonDirective],\n    imports: [CommonModule],\n    exports: [UiButtonDirective],\n})\nexport class UiButtonModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4104,7 +4104,7 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "UIButtonDirective"
+                            "name": "UiButtonDirective"
                         }
                     ]
                 },
@@ -4116,7 +4116,7 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "UIButtonDirective"
+                            "name": "UiButtonDirective"
                         }
                     ]
                 },
@@ -4131,14 +4131,14 @@
             ]
         },
         {
-            "name": "UIChipsModule",
-            "id": "module-UIChipsModule-ee2f5a81a82cc10a654d4d49dcabb5688b7ff6a01ccb88185cf7586dc62095326d63f22f0a84d4b767271df49f7afd36702f74d113e820cbb441413df9cbc321",
+            "name": "UiChipsModule",
+            "id": "module-UiChipsModule-ee2f5a81a82cc10a654d4d49dcabb5688b7ff6a01ccb88185cf7586dc62095326d63f22f0a84d4b767271df49f7afd36702f74d113e820cbb441413df9cbc321",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/chips/ui-chips.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UIChipListComponent } from './chip-list/ui-chip-list.component';\nimport { UIChipComponent } from './chip/ui-chip.component';\n\n@NgModule({\n    declarations: [UIChipComponent, UIChipListComponent],\n    imports: [CommonModule],\n    exports: [UIChipComponent, UIChipListComponent],\n})\nexport class UIChipsModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiChipListComponent } from './chip-list/ui-chip-list.component';\nimport { UiChipComponent } from './chip/ui-chip.component';\n\n@NgModule({\n    declarations: [UiChipComponent, UiChipListComponent],\n    imports: [CommonModule],\n    exports: [UiChipComponent, UiChipListComponent],\n})\nexport class UiChipsModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4148,10 +4148,10 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "UIChipComponent"
+                            "name": "UiChipComponent"
                         },
                         {
-                            "name": "UIChipListComponent"
+                            "name": "UiChipListComponent"
                         }
                     ]
                 },
@@ -4163,10 +4163,10 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "UIChipComponent"
+                            "name": "UiChipComponent"
                         },
                         {
-                            "name": "UIChipListComponent"
+                            "name": "UiChipListComponent"
                         }
                     ]
                 },
@@ -4181,14 +4181,14 @@
             ]
         },
         {
-            "name": "UICounterModule",
-            "id": "module-UICounterModule-bde5708b6e39519a3828e75b1eeb3dab7033eaf63ac0f30c787756c3f8484cf68605b7c1a0b2e8c6c9c1ec39a9cc335761d13d76e38a872a255dc6eae04fba59",
+            "name": "UiCounterModule",
+            "id": "module-UiCounterModule-bde5708b6e39519a3828e75b1eeb3dab7033eaf63ac0f30c787756c3f8484cf68605b7c1a0b2e8c6c9c1ec39a9cc335761d13d76e38a872a255dc6eae04fba59",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/counter/ui-counter.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UICounterComponent } from './ui-counter.component';\n\n@NgModule({\n    declarations: [UICounterComponent],\n    imports: [CommonModule],\n    exports: [UICounterComponent],\n})\nexport class UICounterModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UiCounterComponent } from './ui-counter.component';\n\n@NgModule({\n    declarations: [UiCounterComponent],\n    imports: [CommonModule],\n    exports: [UiCounterComponent],\n})\nexport class UiCounterModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4198,7 +4198,7 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "UICounterComponent"
+                            "name": "UiCounterComponent"
                         }
                     ]
                 },
@@ -4210,7 +4210,7 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "UICounterComponent"
+                            "name": "UiCounterComponent"
                         }
                     ]
                 },
@@ -4225,14 +4225,14 @@
             ]
         },
         {
-            "name": "UIDividerModule",
-            "id": "module-UIDividerModule-f803bc100ea5449d4ea82465d34a4723c8515b9c95b1a9cbef6de23912556bda5df85ec8e56eb8580b3fd90e149ed4803a804b13706603990ec98a71b5b37bf1",
+            "name": "UiDividerModule",
+            "id": "module-UiDividerModule-f803bc100ea5449d4ea82465d34a4723c8515b9c95b1a9cbef6de23912556bda5df85ec8e56eb8580b3fd90e149ed4803a804b13706603990ec98a71b5b37bf1",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/divider/ui-divider.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UIDividerComponent } from './ui-divider.component';\n\n@NgModule({\n    declarations: [UIDividerComponent],\n    imports: [CommonModule],\n    exports: [UIDividerComponent],\n})\nexport class UIDividerModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UiDividerComponent } from './ui-divider.component';\n\n@NgModule({\n    declarations: [UiDividerComponent],\n    imports: [CommonModule],\n    exports: [UiDividerComponent],\n})\nexport class UiDividerModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4242,7 +4242,7 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "UIDividerComponent"
+                            "name": "UiDividerComponent"
                         }
                     ]
                 },
@@ -4254,7 +4254,7 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "UIDividerComponent"
+                            "name": "UiDividerComponent"
                         }
                     ]
                 },
@@ -4269,14 +4269,14 @@
             ]
         },
         {
-            "name": "UIFeedbackCardModule",
-            "id": "module-UIFeedbackCardModule-730eda270bac369bddc4006f2aaf4626fe8dbb48a9693f724dc5674fe93f87f30d82ce5de41092379b50d282efc2163c6f68070c3a59d2c78ca633ed807c8785",
+            "name": "UiFeedbackCardModule",
+            "id": "module-UiFeedbackCardModule-730eda270bac369bddc4006f2aaf4626fe8dbb48a9693f724dc5674fe93f87f30d82ce5de41092379b50d282efc2163c6f68070c3a59d2c78ca633ed807c8785",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/feedback-card/feedback-card.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { FeedbackCardComponent } from './feedback-card.component';\nimport {\n    FeedbackCardContentDirective,\n    FeedbackCardFooterDirective,\n    FeedbackCardSideDirective,\n    FeedbackCardTitleDirective,\n} from './feeed-card.directive';\n\n@NgModule({\n    declarations: [\n        FeedbackCardComponent,\n        FeedbackCardContentDirective,\n        FeedbackCardFooterDirective,\n        FeedbackCardTitleDirective,\n        FeedbackCardSideDirective,\n    ],\n    imports: [CommonModule],\n    exports: [\n        FeedbackCardComponent,\n        FeedbackCardContentDirective,\n        FeedbackCardFooterDirective,\n        FeedbackCardTitleDirective,\n        FeedbackCardSideDirective,\n    ],\n})\nexport class UIFeedbackCardModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { FeedbackCardComponent } from './feedback-card.component';\nimport {\n    FeedbackCardContentDirective,\n    FeedbackCardFooterDirective,\n    FeedbackCardSideDirective,\n    FeedbackCardTitleDirective,\n} from './feeed-card.directive';\n\n@NgModule({\n    declarations: [\n        FeedbackCardComponent,\n        FeedbackCardContentDirective,\n        FeedbackCardFooterDirective,\n        FeedbackCardTitleDirective,\n        FeedbackCardSideDirective,\n    ],\n    imports: [CommonModule],\n    exports: [\n        FeedbackCardComponent,\n        FeedbackCardContentDirective,\n        FeedbackCardFooterDirective,\n        FeedbackCardTitleDirective,\n        FeedbackCardSideDirective,\n    ],\n})\nexport class UiFeedbackCardModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4337,14 +4337,14 @@
             ]
         },
         {
-            "name": "UIIconModule",
-            "id": "module-UIIconModule-fb2b88fb7105f241de7c1ca47ad8d60ca24ce8c07d37b91dbe9d7183536be3982c7a7ebb07ec618e9035cc0866621d33ffe13eb64542f94e6905a2463ab53269",
+            "name": "UiIconModule",
+            "id": "module-UiIconModule-fb2b88fb7105f241de7c1ca47ad8d60ca24ce8c07d37b91dbe9d7183536be3982c7a7ebb07ec618e9035cc0866621d33ffe13eb64542f94e6905a2463ab53269",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/icon/ui-icon.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UIIconComponent } from './ui-icon.component';\n\n@NgModule({\n    declarations: [UIIconComponent],\n    imports: [CommonModule],\n    exports: [UIIconComponent],\n})\nexport class UIIconModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UiIconComponent } from './ui-icon.component';\n\n@NgModule({\n    declarations: [UiIconComponent],\n    imports: [CommonModule],\n    exports: [UiIconComponent],\n})\nexport class UiIconModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4354,7 +4354,7 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "UIIconComponent"
+                            "name": "UiIconComponent"
                         }
                     ]
                 },
@@ -4366,7 +4366,7 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "UIIconComponent"
+                            "name": "UiIconComponent"
                         }
                     ]
                 },
@@ -4381,14 +4381,14 @@
             ]
         },
         {
-            "name": "UIInputModule",
-            "id": "module-UIInputModule-a3449a2bbd32a4af2b84d8abcb00c14c1390670c2ced7cd15b1951ebe6fb4120a977a4e67f7a1499e2d4f14634cede3f49a95f51bc3f38c6549fb1e7b36dcc48",
+            "name": "UiInputModule",
+            "id": "module-UiInputModule-a3449a2bbd32a4af2b84d8abcb00c14c1390670c2ced7cd15b1951ebe6fb4120a977a4e67f7a1499e2d4f14634cede3f49a95f51bc3f38c6549fb1e7b36dcc48",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/input/ui-input.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UIInputDirective } from './ui-input.directive';\n\n@NgModule({\n    declarations: [UIInputDirective],\n    imports: [CommonModule],\n    exports: [UIInputDirective],\n})\nexport class UIInputModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UiInputDirective } from './ui-input.directive';\n\n@NgModule({\n    declarations: [UiInputDirective],\n    imports: [CommonModule],\n    exports: [UiInputDirective],\n})\nexport class UiInputModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4398,7 +4398,7 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "UIInputDirective"
+                            "name": "UiInputDirective"
                         }
                     ]
                 },
@@ -4410,7 +4410,7 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "UIInputDirective"
+                            "name": "UiInputDirective"
                         }
                     ]
                 },
@@ -4425,14 +4425,14 @@
             ]
         },
         {
-            "name": "UISelectModule",
-            "id": "module-UISelectModule-0bc0c5c706eaae6132fd113ee10a59d8a243b81eedae5a339152bbeb9fb50bd2ad560c42249679eb553d8a4f2823c1b0003ffe2cf7fd6c1118ebb52b1aa42d44",
+            "name": "UiSelectModule",
+            "id": "module-UiSelectModule-0bc0c5c706eaae6132fd113ee10a59d8a243b81eedae5a339152bbeb9fb50bd2ad560c42249679eb553d8a4f2823c1b0003ffe2cf7fd6c1118ebb52b1aa42d44",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/select/ui-select.module.ts",
             "methods": [],
-            "sourceCode": "import { OverlayModule } from '@angular/cdk/overlay';\nimport { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UISelectOptionComponent } from './select-option/ui-select-option.component';\nimport { UISelectPanelComponent } from './select-panel/ui-select-panel.component';\n\n@NgModule({\n    declarations: [UISelectPanelComponent, UISelectOptionComponent],\n    imports: [CommonModule, OverlayModule],\n    exports: [UISelectPanelComponent, UISelectOptionComponent],\n})\nexport class UISelectModule {}\n",
+            "sourceCode": "import { OverlayModule } from '@angular/cdk/overlay';\nimport { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiSelectOptionComponent } from './select-option/ui-select-option.component';\nimport { UiSelectPanelComponent } from './select-panel/ui-select-panel.component';\n\n@NgModule({\n    declarations: [UiSelectPanelComponent, UiSelectOptionComponent],\n    imports: [CommonModule, OverlayModule],\n    exports: [UiSelectPanelComponent, UiSelectOptionComponent],\n})\nexport class UiSelectModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4442,10 +4442,10 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "UISelectOptionComponent"
+                            "name": "UiSelectOptionComponent"
                         },
                         {
-                            "name": "UISelectPanelComponent"
+                            "name": "UiSelectPanelComponent"
                         }
                     ]
                 },
@@ -4457,10 +4457,10 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "UISelectOptionComponent"
+                            "name": "UiSelectOptionComponent"
                         },
                         {
-                            "name": "UISelectPanelComponent"
+                            "name": "UiSelectPanelComponent"
                         }
                     ]
                 },
@@ -4475,14 +4475,14 @@
             ]
         },
         {
-            "name": "UIToastModule",
-            "id": "module-UIToastModule-eab97f9408a6821667c4c41e2b1ed8e7575ab5aed69f4c34af64cbc62990db3b6b511039ba4df66ba8dc865fa2aca5c3250f4bf95d8a0e338cf711b593d98f47",
+            "name": "UiToastModule",
+            "id": "module-UiToastModule-eab97f9408a6821667c4c41e2b1ed8e7575ab5aed69f4c34af64cbc62990db3b6b511039ba4df66ba8dc865fa2aca5c3250f4bf95d8a0e338cf711b593d98f47",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/toast/ui-toast.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UIToastComponent } from './ui-toast.component';\nimport { OverlayModule } from '@angular/cdk/overlay';\n\n@NgModule({\n    declarations: [UIToastComponent],\n    imports: [CommonModule, OverlayModule],\n    exports: [UIToastComponent],\n})\nexport class UIToastModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UiToastComponent } from './ui-toast.component';\nimport { OverlayModule } from '@angular/cdk/overlay';\n\n@NgModule({\n    declarations: [UiToastComponent],\n    imports: [CommonModule, OverlayModule],\n    exports: [UiToastComponent],\n})\nexport class UiToastModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4492,7 +4492,7 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "UIToastComponent"
+                            "name": "UiToastComponent"
                         }
                     ]
                 },
@@ -4504,7 +4504,7 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "UIToastComponent"
+                            "name": "UiToastComponent"
                         }
                     ]
                 },
@@ -4519,14 +4519,14 @@
             ]
         },
         {
-            "name": "UIToolbarModule",
-            "id": "module-UIToolbarModule-9ad03999a5527f0e14eee121a8c2eb1eb6024c3eaa98f47c79fa806dfc40c251882afddb680a34ad56e9f6964b2ca3e29e30bf14f70165bb7d87399024ca7728",
+            "name": "UiToolbarModule",
+            "id": "module-UiToolbarModule-9ad03999a5527f0e14eee121a8c2eb1eb6024c3eaa98f47c79fa806dfc40c251882afddb680a34ad56e9f6964b2ca3e29e30bf14f70165bb7d87399024ca7728",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/toolbar/ui-toolbar.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UIToolbarComponent } from './ui-toolbar.component';\n\n@NgModule({\n    declarations: [UIToolbarComponent],\n    imports: [CommonModule],\n    exports: [UIToolbarComponent],\n})\nexport class UIToolbarModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UiToolbarComponent } from './ui-toolbar.component';\n\n@NgModule({\n    declarations: [UiToolbarComponent],\n    imports: [CommonModule],\n    exports: [UiToolbarComponent],\n})\nexport class UiToolbarModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4536,7 +4536,7 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "UIToolbarComponent"
+                            "name": "UiToolbarComponent"
                         }
                     ]
                 },
@@ -4548,7 +4548,7 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "UIToolbarComponent"
+                            "name": "UiToolbarComponent"
                         }
                     ]
                 },
@@ -4672,8 +4672,8 @@
                 "file": "src/app/shared/ui-components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<UIButtonDirective>",
-                "defaultValue": "(args: UIButtonDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UIButtonDirective],\n        imports: [CommonModule],\n    },\n    template: `<button ui-button [color]=\"color\" [size]=\"size\">Button</button>`,\n})"
+                "type": "Story<UiButtonDirective>",
+                "defaultValue": "(args: UiButtonDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiButtonDirective],\n        imports: [CommonModule],\n    },\n    template: `<button ui-button [color]=\"color\" [size]=\"size\">Button</button>`,\n})"
             },
             {
                 "name": "Template",
@@ -4682,18 +4682,18 @@
                 "file": "src/app/shared/ui-components/chips/stories/chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story<UIChipComponent>",
-                "defaultValue": "(args: UIChipComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UIChipComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-chip>Chip</ui-chip>`,\n})"
+                "type": "Story<UiChipComponent>",
+                "defaultValue": "(args: UiChipComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiChipComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-chip>Chip</ui-chip>`,\n})"
             },
             {
-                "name": "UI_TOAST_DATA",
+                "name": "Ui_TOAST_DATA",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/shared/ui-components/toast/ui-toast-tokens.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
-                "defaultValue": "new InjectionToken<UIToastData>('TOAST_DATA')"
+                "defaultValue": "new InjectionToken<UiToastData>('TOAST_DATA')"
             }
         ],
         "functions": [],
@@ -4765,7 +4765,7 @@
                 "kind": 186
             },
             {
-                "name": "UIToastPosition",
+                "name": "UiToastPosition",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"top-right\" | \"top-left\" | \"bottom-right\" | \"bottom-left\" | \"top-center\" | \"bottom-center\" | \"center\"",
@@ -4796,8 +4796,8 @@
                     "file": "src/app/shared/ui-components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<UIButtonDirective>",
-                    "defaultValue": "(args: UIButtonDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UIButtonDirective],\n        imports: [CommonModule],\n    },\n    template: `<button ui-button [color]=\"color\" [size]=\"size\">Button</button>`,\n})"
+                    "type": "Story<UiButtonDirective>",
+                    "defaultValue": "(args: UiButtonDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiButtonDirective],\n        imports: [CommonModule],\n    },\n    template: `<button ui-button [color]=\"color\" [size]=\"size\">Button</button>`,\n})"
                 }
             ],
             "src/app/shared/ui-components/chips/stories/chip.stories.ts": [
@@ -4818,8 +4818,8 @@
                     "file": "src/app/shared/ui-components/chips/stories/chip.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story<UIChipComponent>",
-                    "defaultValue": "(args: UIChipComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UIChipComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-chip>Chip</ui-chip>`,\n})"
+                    "type": "Story<UiChipComponent>",
+                    "defaultValue": "(args: UiChipComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiChipComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-chip>Chip</ui-chip>`,\n})"
                 }
             ],
             "test-config.helper.ts": [
@@ -4920,14 +4920,14 @@
             ],
             "src/app/shared/ui-components/toast/ui-toast-tokens.ts": [
                 {
-                    "name": "UI_TOAST_DATA",
+                    "name": "Ui_TOAST_DATA",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/shared/ui-components/toast/ui-toast-tokens.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
-                    "defaultValue": "new InjectionToken<UIToastData>('TOAST_DATA')"
+                    "defaultValue": "new InjectionToken<UiToastData>('TOAST_DATA')"
                 }
             ]
         },
@@ -5008,7 +5008,7 @@
             ],
             "src/app/shared/ui-components/toast/ui-toast-data.ts": [
                 {
-                    "name": "UIToastPosition",
+                    "name": "UiToastPosition",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "\"top-right\" | \"top-left\" | \"bottom-right\" | \"bottom-left\" | \"top-center\" | \"bottom-center\" | \"center\"",
@@ -5290,7 +5290,7 @@
                 "filePath": "src/app/shared/ui-components/badge/ui-badge.directive.ts",
                 "type": "directive",
                 "linktype": "directive",
-                "name": "UIBadgeDirective",
+                "name": "UiBadgeDirective",
                 "coveragePercent": 0,
                 "coverageCount": "0/9",
                 "status": "low"
@@ -5319,7 +5319,7 @@
                 "filePath": "src/app/shared/ui-components/button/ui-button.directive.ts",
                 "type": "directive",
                 "linktype": "directive",
-                "name": "UIButtonDirective",
+                "name": "UiButtonDirective",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
                 "status": "low"
@@ -5328,7 +5328,7 @@
                 "filePath": "src/app/shared/ui-components/chips/chip-list/ui-chip-list.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "UIChipListComponent",
+                "name": "UiChipListComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5337,7 +5337,7 @@
                 "filePath": "src/app/shared/ui-components/chips/chip/ui-chip.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "UIChipComponent",
+                "name": "UiChipComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
                 "status": "low"
@@ -5366,7 +5366,7 @@
                 "filePath": "src/app/shared/ui-components/counter/ui-counter.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "UICounterComponent",
+                "name": "UiCounterComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/14",
                 "status": "low"
@@ -5375,7 +5375,7 @@
                 "filePath": "src/app/shared/ui-components/divider/ui-divider.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "UIDividerComponent",
+                "name": "UiDividerComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5429,7 +5429,7 @@
                 "filePath": "src/app/shared/ui-components/icon/ui-icon.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "UIIconComponent",
+                "name": "UiIconComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
                 "status": "low"
@@ -5448,7 +5448,7 @@
                 "filePath": "src/app/shared/ui-components/input/ui-input.directive.ts",
                 "type": "directive",
                 "linktype": "directive",
-                "name": "UIInputDirective",
+                "name": "UiInputDirective",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
                 "status": "low"
@@ -5457,7 +5457,7 @@
                 "filePath": "src/app/shared/ui-components/select/select-option/ui-select-option.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "UISelectOptionComponent",
+                "name": "UiSelectOptionComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/7",
                 "status": "low"
@@ -5466,7 +5466,7 @@
                 "filePath": "src/app/shared/ui-components/select/select-panel/ui-select-panel.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "UISelectPanelComponent",
+                "name": "UiSelectPanelComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/21",
                 "status": "low"
@@ -5484,7 +5484,7 @@
                 "filePath": "src/app/shared/ui-components/toast/ui-toast-data.ts",
                 "type": "interface",
                 "linktype": "interface",
-                "name": "UIToastData",
+                "name": "UiToastData",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
                 "status": "low"
@@ -5493,7 +5493,7 @@
                 "filePath": "src/app/shared/ui-components/toast/ui-toast-ref.ts",
                 "type": "class",
                 "linktype": "classe",
-                "name": "UIToastRef",
+                "name": "UiToastRef",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
                 "status": "low"
@@ -5503,7 +5503,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "UI_TOAST_DATA",
+                "name": "Ui_TOAST_DATA",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5512,7 +5512,7 @@
                 "filePath": "src/app/shared/ui-components/toast/ui-toast.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "UIToastComponent",
+                "name": "UiToastComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
                 "status": "low"
@@ -5521,7 +5521,7 @@
                 "filePath": "src/app/shared/ui-components/toast/ui-toast.service.ts",
                 "type": "injectable",
                 "linktype": "injectable",
-                "name": "UIToastService",
+                "name": "UiToastService",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
                 "status": "low"
@@ -5530,7 +5530,7 @@
                 "filePath": "src/app/shared/ui-components/toolbar/ui-toolbar.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "UIToolbarComponent",
+                "name": "UiToolbarComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
                 "status": "low"

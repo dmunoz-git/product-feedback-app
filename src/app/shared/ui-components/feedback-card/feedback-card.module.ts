@@ -25,4 +25,4 @@ import {
         FeedbackCardSideDirective,
     ],
 })
-export class UIFeedbackCardModule {}
+export class UiFeedbackCardModule {}

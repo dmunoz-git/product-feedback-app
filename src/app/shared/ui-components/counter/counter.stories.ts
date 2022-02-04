@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { moduleMetadata } from '@storybook/angular';
 import { Story } from '@storybook/angular/types-6-0';
-import { UICounterComponent } from './ui-counter.component';
+import { UiCounterComponent } from './ui-counter.component';
 
 // This exports the Stories group for this component
 export default {
@@ -10,21 +10,21 @@ export default {
     // Here we add it to a "Components" section under "Link"
     title: 'Components/Counter',
     // The component related to the Stories
-    component: UICounterComponent,
+    component: UiCounterComponent,
 
     decorators: [
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
-            declarations: [UICounterComponent],
+            declarations: [UiCounterComponent],
             imports: [CommonModule],
         }),
     ],
 };
 // This creates a Story for the component
-const Template: Story<UICounterComponent> = (args: UICounterComponent) => ({
+const Template: Story<UiCounterComponent> = (args: UiCounterComponent) => ({
     props: args,
     moduleMetadata: {
-        declarations: [UICounterComponent],
+        declarations: [UiCounterComponent],
         imports: [CommonModule],
     },
     template: `<ui-counter></ui-counter>`,
