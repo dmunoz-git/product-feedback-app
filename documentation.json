@@ -171,7 +171,7 @@
         },
         {
             "name": "UiToastData",
-            "id": "interface-UiToastData-1bd1c61a000c71fc77a6d876d4ea0aff216171ef222c8829cefe477452d50b6e30cb0f1f6d9ae7a12cee807bf5ec8d6811c82123d3bd01577f157f366f5a6b25",
+            "id": "interface-UiToastData-1e457f5f6d3b3afc4313f0dc521a3a430d7615aa0946adbadce8a8ca58ee59f51c64b025432f59d39572941d7286f265a587054aab159fedf82753d0b9860611",
             "file": "src/app/shared/ui-components/toast/ui-toast-data.ts",
             "deprecated": false,
             "deprecationMessage": "",
@@ -863,7 +863,7 @@
         },
         {
             "name": "UiSelectService",
-            "id": "injectable-UiSelectService-e044c8f66af32fe84e07d78049507e6dfaff05d6b7129751ca9c17b98751a080fc0eef12ef3ba7d96714ee2cbf5709cdc22c92bf5d3d293b2032cee1b526987a",
+            "id": "injectable-UiSelectService-38dd2a2c8599d14726ceb66354dc79a9b3a938cf66b1d670a822f637c59a85474cd765eba2bbdc83b5c7cb658a7ada10145531d3ce1e0289c6bb72a222f43e85",
             "file": "src/app/shared/ui-components/select/ui-select.service.ts",
             "properties": [
                 {
@@ -934,7 +934,7 @@
         },
         {
             "name": "UiToastService",
-            "id": "injectable-UiToastService-123fecb088c7e76a6854bd0b47aca60e4bf93968c36aa4bdbcca2b1113cddf16451139385d81edd7c1943ba696c51e1dd1db61c8c26e931171485e55545339d0",
+            "id": "injectable-UiToastService-1825d5878fe9c431e860d14a9e721b449be91d5cfb293e299c6536ad24501b12eb4000c696ec8a547702b5807df426fa7ccdcc19b4c51cee62a045316738efe8",
             "file": "src/app/shared/ui-components/toast/ui-toast.service.ts",
             "properties": [],
             "methods": [
@@ -988,7 +988,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Overlay, ComponentType } from '@angular/cdk/overlay';\nimport { ComponentPortal } from '@angular/cdk/portal';\nimport { Injectable, Injector } from '@angular/core';\nimport { UiToastData } from './ui-toast-data';\nimport { UiToastRef } from './ui-toast-ref';\nimport { Ui_TOAST_DATA } from './ui-toast-tokens';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class UiToastService {\n    constructor(private overlay: Overlay, private injector: Injector) {}\n\n    open<UiToastComponent>(component: ComponentType<UiToastComponent>, data: UiToastData) {\n        const positionStrategy = this.overlay.position().global().centerHorizontally().bottom();\n\n        const overlayRef = this.overlay.create({\n            positionStrategy,\n        });\n\n        const toastRef = new UiToastRef(overlayRef);\n\n        const injector = Injector.create({\n            parent: this.injector,\n            providers: [\n                { provide: UiToastRef, useValue: toastRef },\n                { provide: Ui_TOAST_DATA, useValue: data },\n            ],\n        });\n\n        const portal = new ComponentPortal(component, null, injector);\n        overlayRef.attach(portal);\n\n        return toastRef;\n    }\n}\n",
+            "sourceCode": "import { ComponentType, Overlay } from '@angular/cdk/overlay';\nimport { ComponentPortal } from '@angular/cdk/portal';\nimport { Injectable, Injector } from '@angular/core';\nimport { UiToastData } from './ui-toast-data';\nimport { UiToastRef } from './ui-toast-ref';\nimport { Ui_TOAST_DATA } from './ui-toast-tokens';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class UiToastService {\n    constructor(private overlay: Overlay, private injector: Injector) {}\n\n    open<UiToastComponent>(component: ComponentType<UiToastComponent>, data: UiToastData) {\n        const positionStrategy = this.overlay.position().global().centerHorizontally().bottom();\n\n        const overlayRef = this.overlay.create({\n            positionStrategy,\n        });\n\n        const toastRef = new UiToastRef(overlayRef);\n\n        const injector = Injector.create({\n            parent: this.injector,\n            providers: [\n                { provide: UiToastRef, useValue: toastRef },\n                { provide: Ui_TOAST_DATA, useValue: data },\n            ],\n        });\n\n        const portal = new ComponentPortal(component, null, injector);\n        overlayRef.attach(portal);\n\n        return toastRef;\n    }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1088,12 +1088,12 @@
     "classes": [
         {
             "name": "UiToastRef",
-            "id": "class-UiToastRef-a1f50e2062f971efc8c7e4f84636cc7595323a90c133792d7379263eee1dc9c0ac814961510f48e710cbe5bae77ba8462f4e155b7a447601623439e6d537b2d3",
+            "id": "class-UiToastRef-f832e476fd51f39985a96031655365dcbc2ee103f5214108021fae3c3ff51391f6e852fb35870f711cf6c83df65287996c4c3b5bc2c3e9b9b41fd729bae6f337",
             "file": "src/app/shared/ui-components/toast/ui-toast-ref.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
-            "sourceCode": "import { OverlayRef } from '@angular/cdk/overlay';\nimport { Subject, Observable } from 'rxjs';\n\nexport class UiToastRef {\n    private afterClosedSubject: Subject<any> = new Subject();\n\n    constructor(private overlayRef: OverlayRef) {}\n\n    public close(data?: any) {\n        this.overlayRef.dispose();\n        this.afterClosedSubject.next(data);\n        this.afterClosedSubject.complete();\n    }\n\n    public afterClosed(): Observable<any> {\n        return this.afterClosedSubject.asObservable();\n    }\n}\n",
+            "sourceCode": "import { OverlayRef } from '@angular/cdk/overlay';\nimport { Observable, Subject } from 'rxjs';\n\nexport class UiToastRef {\n    private afterClosedSubject: Subject<any> = new Subject();\n\n    constructor(private overlayRef: OverlayRef) {}\n\n    public close(data?: any) {\n        this.overlayRef.dispose();\n        this.afterClosedSubject.next(data);\n        this.afterClosedSubject.complete();\n    }\n\n    public afterClosed(): Observable<any> {\n        return this.afterClosedSubject.asObservable();\n    }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1561,12 +1561,12 @@
         },
         {
             "name": "UiBadgeDirective",
-            "id": "directive-UiBadgeDirective-83edf177ea6aaf3f75b53fd3c8b48c8d601e10a22a1757ab30c67cd9adddb6a82c06b2c76e83e20ddd83c0a608661d6d1f6814c7c0a3e1886f4b076013d620e1",
+            "id": "directive-UiBadgeDirective-ec59242ca21f4a7aba8ab18d6b775cc52659c41f8f03992a113ebd264871ecde257abcfc6512befa7380a0a3256e60d97457c07c6e915bf41911a77fe576db68",
             "file": "src/app/shared/ui-components/badge/ui-badge.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, ElementRef, Inject, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';\nimport { DOCUMENT } from '@angular/common';\n\n@Directive({\n    // eslint-disable-next-line @angular-eslint/directive-selector\n    selector: '[ui-badge]',\n})\nexport class UiBadgeDirective implements OnChanges, OnDestroy {\n    @Input() value!: number;\n\n    private badgeElement: HTMLElement | null = null;\n    private regex = new RegExp(/^[0-9]\\d*$/);\n\n    constructor(@Inject(DOCUMENT) private document: Document, private elRef: ElementRef<HTMLElement>) {}\n\n    ngOnChanges(changes: SimpleChanges): void {\n        if ('value' in changes) {\n            const value = `${changes['value'].currentValue}`.trim();\n            if (value?.length > 0 && this.regex.test(value)) {\n                this.updateBadge(value);\n            } else {\n                this.updateBadge('0');\n            }\n        }\n    }\n\n    ngOnDestroy(): void {\n        if (this.badgeElement) {\n            this.elRef.nativeElement.removeChild(this.badgeElement);\n            this.badgeElement.remove();\n        }\n    }\n\n    private createBadge(value: string): HTMLElement {\n        const badge = this.document.createElement('span');\n        badge.classList.add('ui-badge');\n        badge.textContent = value;\n        this.elRef.nativeElement.classList.add('ui-badge-container'); // add class to parent element\n        this.elRef.nativeElement.appendChild(badge); // add badge to parent element\n        return badge;\n    }\n\n    private updateBadge(value: string): void {\n        if (!this.badgeElement) {\n            this.badgeElement = this.createBadge(value);\n        } else {\n            this.badgeElement.textContent = value;\n        }\n    }\n}\n",
+            "sourceCode": "import { DOCUMENT } from '@angular/common';\nimport { Directive, ElementRef, Inject, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';\n\n@Directive({\n    // eslint-disable-next-line @angular-eslint/directive-selector\n    selector: '[ui-badge]',\n})\nexport class UiBadgeDirective implements OnChanges, OnDestroy {\n    @Input() value!: number;\n\n    private badgeElement: HTMLElement | null = null;\n    private regex = new RegExp(/^[0-9]\\d*$/);\n\n    constructor(@Inject(DOCUMENT) private document: Document, private elRef: ElementRef<HTMLElement>) {}\n\n    ngOnChanges(changes: SimpleChanges): void {\n        if ('value' in changes) {\n            const value = `${changes['value'].currentValue}`.trim();\n            if (value?.length > 0 && this.regex.test(value)) {\n                this.updateBadge(value);\n            } else {\n                this.updateBadge('0');\n            }\n        }\n    }\n\n    ngOnDestroy(): void {\n        if (this.badgeElement) {\n            this.elRef.nativeElement.removeChild(this.badgeElement);\n            this.badgeElement.remove();\n        }\n    }\n\n    private createBadge(value: string): HTMLElement {\n        const badge = this.document.createElement('span');\n        badge.classList.add('ui-badge');\n        badge.textContent = value;\n        this.elRef.nativeElement.classList.add('ui-badge-container'); // add class to parent element\n        this.elRef.nativeElement.appendChild(badge); // add badge to parent element\n        return badge;\n    }\n\n    private updateBadge(value: string): void {\n        if (!this.badgeElement) {\n            this.badgeElement = this.createBadge(value);\n        } else {\n            this.badgeElement.textContent = value;\n        }\n    }\n}\n",
             "selector": "[ui-badge]",
             "providers": [],
             "inputsClass": [
@@ -1762,7 +1762,7 @@
         },
         {
             "name": "UiButtonDirective",
-            "id": "directive-UiButtonDirective-fcbe2fa9d0495a3ceb20dbd09c7d31df02b7f50f221eecd071689c8e129bb31437ea6423fec1d07ff9da8d1434005d363f6c83492938b071cc87663f8308546f",
+            "id": "directive-UiButtonDirective-76ef230405429c5f1b7e839f0261990e64383f3849e3a17d87a9d6a59401ec6f3b2a747f02c9fdc7f2b40e3489dc03314f4207ff429ae02977c9c6f0649eaecb",
             "file": "src/app/shared/ui-components/button/ui-button.directive.ts",
             "type": "directive",
             "description": "",
@@ -1800,7 +1800,7 @@
         },
         {
             "name": "UiInputDirective",
-            "id": "directive-UiInputDirective-b072c59f65fe201c101f88dc00277f6b9ad132f7c31ecca3a36b2d5db2df040b0bca19e0b559941efbaf82ce7025ec49b75cf142a75755d9b3d0793bc2e1bf55",
+            "id": "directive-UiInputDirective-c94f7ad7d9926c285821b837e75b4a831a3c32d4913f51bc2ec4ff7e327ec6811ec615b8c77187d6827f5e66685d232501c7d2168e1033932464409eff954214",
             "file": "src/app/shared/ui-components/input/ui-input.directive.ts",
             "type": "directive",
             "description": "",
@@ -2504,7 +2504,7 @@
         },
         {
             "name": "UiChipComponent",
-            "id": "component-UiChipComponent-96838e9ff2216fbbbb57386013e5ae2fb506312beeffbe3daea63addac3a21969bf67cf08da534ecb02241a95e9ecea4bc565c381cde945f4db5dd3818161eae",
+            "id": "component-UiChipComponent-707ba43c5ec8772f819acd9e1067029c67ccfc3e400b042faca09f2e1eb81ba70ab8daca1c53308e8f316b6db5049865b9e3f358baf1a59805b9f09ece7a1924",
             "file": "src/app/shared/ui-components/chips/chip/ui-chip.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2525,7 +2525,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 13,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -2534,38 +2534,13 @@
                     "defaultValue": "true",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 12,
                     "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "value",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 14,
-                    "type": "string",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "textElement",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "ElementRef",
-                    "optional": false,
-                    "description": "",
-                    "line": 12,
-                    "decorators": [
-                        {
-                            "name": "ViewChild",
-                            "stringifiedArguments": "'text'"
-                        }
-                    ]
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -2574,7 +2549,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, ElementRef, Input, ViewChild } from '@angular/core';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-chip',\n    template: ` <span class=\"ui-chip\" [class.ui-chip--active]=\"active\" [class.ui-chip--selected]=\"selectable\" #text>\n        <ng-content></ng-content>\n    </span>`,\n    styleUrls: ['./ui-chip.component.scss'],\n})\nexport class UiChipComponent {\n    @ViewChild('text') textElement!: ElementRef;\n    @Input() selectable: boolean = true;\n    @Input() value: string = '';\n    @Input() active: boolean = false;\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-chip',\n    template: ` <span class=\"ui-chip\" [class.ui-chip--active]=\"active\" [class.ui-chip--selected]=\"selectable\" #text>\n        <ng-content></ng-content>\n    </span>`,\n    styleUrls: ['./ui-chip.component.scss'],\n})\nexport class UiChipComponent {\n    @Input() selectable: boolean = true;\n    @Input() active: boolean = false;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2586,7 +2561,7 @@
         },
         {
             "name": "UiChipListComponent",
-            "id": "component-UiChipListComponent-d0720196e16750c80f1cdffae3b307e68d192a60b7889b8457f5472588be789c7c7be2704402aa472288bbedcae507bcf8b0af2bf98c7f4c016087e36ab7b04b",
+            "id": "component-UiChipListComponent-b0e2c92e12ac45f617c88f0d9a1faf237085c494db0bd99e8e1ff205b1a0ed549b881f27530c82e72b0d47601972fbcad90240b040f04396eb8f031ad89679b4",
             "file": "src/app/shared/ui-components/chips/chip-list/ui-chip-list.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2626,7 +2601,7 @@
         },
         {
             "name": "UiCounterComponent",
-            "id": "component-UiCounterComponent-3594bdbafd320282690e80c24b0bf678e25b57d0868e02c8e0156e971c7a1e37671fd990cd9265ce3b85e643d09b0f54062c58121261541ec437828cf828f773",
+            "id": "component-UiCounterComponent-ea9cf0d3c112fd1902ad6f5c811848c107f2501d11276c02394303b28125fffdcf6e36e661e0c0d8d4f5f4f891a077dd7641d5165d4dc833401c41a9f5a43427",
             "file": "src/app/shared/ui-components/counter/ui-counter.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2643,9 +2618,8 @@
                 "./ui-counter.component.scss"
             ],
             "styles": [],
-            "templateUrl": [
-                "./ui-counter.component.html"
-            ],
+            "template": "<span        class=\"ui-counter\"\n        (click)=\"increment($event)\"\n        [class.ui-counter--active]=\"active\"\n        [class.ui-counter--row]=\"order === 'row'\"\n    >\n        <img class=\"ui-counter__icon\" src=\"assets/images/icons/icon-arrow-up.svg\" alt=\"counter icon\" />\n        <span class=\"ui-counter__value\">{{ value }}</span>\n    </span>",
+            "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [
                 {
@@ -2653,7 +2627,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 28,
                     "type": "boolean",
                     "decorators": []
                 },
@@ -2662,7 +2636,7 @@
                     "defaultValue": "0",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 27,
                     "type": "number",
                     "decorators": []
                 },
@@ -2671,7 +2645,7 @@
                     "defaultValue": "-1",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 18,
+                    "line": 26,
                     "type": "number",
                     "decorators": []
                 },
@@ -2680,7 +2654,7 @@
                     "defaultValue": "'column'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 29,
                     "type": "\"column\" | \"row\"",
                     "decorators": []
                 }
@@ -2695,7 +2669,7 @@
                     "type": "boolean",
                     "optional": false,
                     "description": "",
-                    "line": 22,
+                    "line": 30,
                     "modifierKind": [
                         123
                     ]
@@ -2708,7 +2682,7 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 25
+                    "line": 33
                 },
                 {
                     "name": "onTouch",
@@ -2718,7 +2692,7 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 27
+                    "line": 35
                 },
                 {
                     "name": "value",
@@ -2728,7 +2702,7 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 23,
+                    "line": 31,
                     "modifierKind": [
                         123
                     ]
@@ -2748,7 +2722,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 29,
+                    "line": 37,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2769,7 +2743,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 43,
+                    "line": 51,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -2786,7 +2760,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 53,
+                    "line": 61,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2814,7 +2788,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 56,
+                    "line": 64,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2842,7 +2816,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 50,
+                    "line": 58,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2865,7 +2839,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, forwardRef, Input, OnInit } from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-counter',\n    templateUrl: './ui-counter.component.html',\n    styleUrls: ['./ui-counter.component.scss'],\n    providers: [\n        {\n            provide: NG_VALUE_ACCESSOR,\n            useExisting: forwardRef(() => UiCounterComponent),\n            multi: true,\n        },\n    ],\n})\nexport class UiCounterComponent implements ControlValueAccessor, OnInit {\n    @Input() limitCounterTo: number = -1;\n    @Input() initValue: number = 0;\n    @Input() activeAfterFirstClick: boolean = false;\n    @Input() order: 'column' | 'row' = 'column';\n    public active: boolean = false;\n    public value: number = 0;\n\n    onChange: any = () => {};\n\n    onTouch: any = () => {};\n\n    increment(event: any): void {\n        event.preventDefault();\n        event.stopPropagation();\n\n        if (!this.active) {\n            this.value++;\n            this.onChange(this.value);\n            this.writeValue(this.value);\n            this.active = !this.activeAfterFirstClick ? this.value === this.limitCounterTo : true;\n        } else {\n            this.value = this.value < 0 ? 0 : this.value;\n        }\n    }\n\n    ngOnInit(): void {\n        this.value = this.initValue;\n        this.onChange(this.value);\n        this.writeValue(this.value);\n    }\n\n    // controlValueAccessor methods\n    writeValue(value: number): void {\n        this.value = value;\n    }\n    registerOnChange(fn: any): void {\n        this.onChange = fn;\n    }\n    registerOnTouched(fn: any): void {\n        this.onChange = fn;\n    }\n}\n",
+            "sourceCode": "import { Component, forwardRef, Input, OnInit } from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-counter',\n    template: `<span\n        class=\"ui-counter\"\n        (click)=\"increment($event)\"\n        [class.ui-counter--active]=\"active\"\n        [class.ui-counter--row]=\"order === 'row'\"\n    >\n        <img class=\"ui-counter__icon\" src=\"assets/images/icons/icon-arrow-up.svg\" alt=\"counter icon\" />\n        <span class=\"ui-counter__value\">{{ value }}</span>\n    </span> `,\n    styleUrls: ['./ui-counter.component.scss'],\n    providers: [\n        {\n            provide: NG_VALUE_ACCESSOR,\n            useExisting: forwardRef(() => UiCounterComponent),\n            multi: true,\n        },\n    ],\n})\nexport class UiCounterComponent implements ControlValueAccessor, OnInit {\n    @Input() limitCounterTo: number = -1;\n    @Input() initValue: number = 0;\n    @Input() activeAfterFirstClick: boolean = false;\n    @Input() order: 'column' | 'row' = 'column';\n    public active: boolean = false;\n    public value: number = 0;\n\n    onChange: any = () => {};\n\n    onTouch: any = () => {};\n\n    increment(event: any): void {\n        event.preventDefault();\n        event.stopPropagation();\n\n        if (!this.active) {\n            this.value++;\n            this.onChange(this.value);\n            this.writeValue(this.value);\n            this.active = !this.activeAfterFirstClick ? this.value === this.limitCounterTo : true;\n        } else {\n            this.value = this.value < 0 ? 0 : this.value;\n        }\n    }\n\n    ngOnInit(): void {\n        this.value = this.initValue;\n        this.onChange(this.value);\n        this.writeValue(this.value);\n    }\n\n    // controlValueAccessor methods\n    writeValue(value: number): void {\n        this.value = value;\n    }\n    registerOnChange(fn: any): void {\n        this.onChange = fn;\n    }\n    registerOnTouched(fn: any): void {\n        this.onChange = fn;\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2877,50 +2851,11 @@
             "implements": [
                 "ControlValueAccessor",
                 "OnInit"
-            ],
-            "templateData": "<span class=\"ui-counter\" (click)=\"increment($event)\" [class.ui-counter--active]=\"active\" [class.ui-counter--row]=\"order === 'row'\">\n    <img class=\"ui-counter__icon\" src=\"assets/images/icons/icon-arrow-up.svg\" alt=\"counter icon\" />\n    <span class=\"ui-counter__value\">{{ value }}</span>\n</span>\n"
-        },
-        {
-            "name": "UiDividerComponent",
-            "id": "component-UiDividerComponent-47cc2fe23b5e56842434924fd8f1713d2e71401193d6279824cd8ecbcbab80128563ef6d9080063d7c6a9fdce9a9af628014625efbaba4178a5f8fbdda2828e6",
-            "file": "src/app/shared/ui-components/divider/ui-divider.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "ui-divider",
-            "styleUrls": [
-                "./ui-divider.component.scss"
-            ],
-            "styles": [],
-            "template": "<hr class=\"ui-divider\" />",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-divider',\n    template: `<hr class=\"ui-divider\" />`,\n    styleUrls: ['./ui-divider.component.scss'],\n})\nexport class UiDividerComponent {}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "@use 'settings/colors';\n\n.ui-divider {\n    border: 0;\n    border-top: 1px solid colors.$text-color;\n}\n",
-                    "styleUrl": "./ui-divider.component.scss"
-                }
-            ],
-            "stylesData": ""
+            ]
         },
         {
             "name": "UiIconComponent",
-            "id": "component-UiIconComponent-3ae5dff24db3b1d7fefc3e158b56a0b6f8c3198c7b9986fc619039a9cbb02ab35a6eee4df921179fbfd081f646efd1fdb1c85080ab30d78cbb3b2c17189f2e45",
+            "id": "component-UiIconComponent-ffb3448aabb87c845b122dc89c81dbdddc8b3cc3da2774d035dc8022aaa52180d0a41dbccf869ad168b2792d4d8eacb06fc1a8e5e3317d2c39208c6778b4f64c",
             "file": "src/app/shared/ui-components/icon/ui-icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2982,7 +2917,7 @@
         },
         {
             "name": "UiSelectOptionComponent",
-            "id": "component-UiSelectOptionComponent-466e23ae6d40cac5637661413008a4e8f99a77c3527238cda27d0df78889613042caa4a4c81543b0ad85a99d6ecaca7c1728ffe20a838fd7aa4a15f9d6982e5f",
+            "id": "component-UiSelectOptionComponent-9a3ec77e877d3b2911b1cd148c3bf8cd8af06fcedd73b48014e35810bd7db20c686a3e0d4c3f23ada0d1a2e088089e47699b0506dde3bde85afe003970c62180",
             "file": "src/app/shared/ui-components/select/select-option/ui-select-option.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -3112,7 +3047,7 @@
         },
         {
             "name": "UiSelectPanelComponent",
-            "id": "component-UiSelectPanelComponent-7c184b1c6d89910c2d8b5cc45fd720921ee738c582d933763617848ef8b286c69747f2a4b257577277138334abcd3ad6eff685dc0052e8c66a78a6959b15fc54",
+            "id": "component-UiSelectPanelComponent-852666ebc31398c104948d041b88510f1b353ab31d72258ec95f1006e51c83cef2217ab732a273d30fa919e497d78142832ced17a2577602e7e58c581cfd4aa3",
             "file": "src/app/shared/ui-components/select/select-panel/ui-select-panel.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -3473,7 +3408,7 @@
         },
         {
             "name": "UiToastComponent",
-            "id": "component-UiToastComponent-b494e94fe07fa51838c91ee3696b55dd73db06d237a3df5f46e6a900e125da6c1f3c15a5b6d9ef483ee2126c78a1b5299b68b07a479de206ba20ab0c8dcb5014",
+            "id": "component-UiToastComponent-af2a679f99503542aa61a3d15f599e50bb4e5017f0833aed2aae7b8be69c91876943a651d5b55d611f43fbd5c835dcded51e57547a936665ac2f298c775a4be4",
             "file": "src/app/shared/ui-components/toast/ui-toast.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3543,7 +3478,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Inject, OnDestroy, OnInit } from '@angular/core';\nimport { UiToastData } from './ui-toast-data';\nimport { UiToastRef } from './ui-toast-ref';\nimport { Ui_TOAST_DATA } from './ui-toast-tokens';\nimport { fadeInOut } from '../animations/fade.animation';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-toast',\n    template: ` <div class=\"ui-toast\" @fadeInOut>\n        <span class=\"ui-toast__text\">{{ data.message }}</span>\n        <button class=\"ui-toast__button\" *ngIf=\"data.close\" (click)=\"close()\">{{ data.close }}</button>\n    </div>`,\n    styleUrls: ['./ui-toast.component.scss'],\n    animations: [fadeInOut],\n})\nexport class UiToastComponent implements OnInit, OnDestroy {\n    private intervalId!: ReturnType<typeof setTimeout>;\n\n    constructor(private toastRef: UiToastRef, @Inject(Ui_TOAST_DATA) readonly data: UiToastData) {}\n\n    ngOnDestroy(): void {\n        if (this.intervalId) {\n            clearTimeout(this.intervalId);\n        }\n    }\n\n    ngOnInit(): void {\n        if (this.data.duration) {\n            this.intervalId = setTimeout(() => {\n                this.close();\n            }, this.data.duration);\n        }\n    }\n\n    close() {\n        this.toastRef.close();\n    }\n}\n",
+            "sourceCode": "import { Component, Inject, OnDestroy, OnInit } from '@angular/core';\nimport { fadeInOut } from '../animations/fade.animation';\nimport { UiToastData } from './ui-toast-data';\nimport { UiToastRef } from './ui-toast-ref';\nimport { Ui_TOAST_DATA } from './ui-toast-tokens';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-toast',\n    template: ` <div class=\"ui-toast\" @fadeInOut>\n        <span class=\"ui-toast__text\">{{ data.message }}</span>\n        <button class=\"ui-toast__button\" *ngIf=\"data.close\" (click)=\"close()\">{{ data.close }}</button>\n    </div>`,\n    styleUrls: ['./ui-toast.component.scss'],\n    animations: [fadeInOut],\n})\nexport class UiToastComponent implements OnInit, OnDestroy {\n    private intervalId!: ReturnType<typeof setTimeout>;\n\n    constructor(private toastRef: UiToastRef, @Inject(Ui_TOAST_DATA) readonly data: UiToastData) {}\n\n    ngOnDestroy(): void {\n        if (this.intervalId) {\n            clearTimeout(this.intervalId);\n        }\n    }\n\n    ngOnInit(): void {\n        if (this.data.duration) {\n            this.intervalId = setTimeout(() => {\n                this.close();\n            }, this.data.duration);\n        }\n    }\n\n    close() {\n        this.toastRef.close();\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3600,7 +3535,7 @@
         },
         {
             "name": "UiToolbarComponent",
-            "id": "component-UiToolbarComponent-f0acc8721ec8e624df8e0293978082925c8c7a3b844467612d3825661cbd2be41fbaa26db3b128c6a4c4f9000ee3bf5a2476751a3a97a84cb229a3ea6f4ec32a",
+            "id": "component-UiToolbarComponent-1c345dd8ed82eca96a50734f967450a2f9da9bccbd954cc6e540b5e3b68d8007a56b6ce5e103f1edfcdf7349fb34e581832b2b1de806c41e6907da54e1c3955d",
             "file": "src/app/shared/ui-components/toolbar/ui-toolbar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3872,7 +3807,7 @@
         },
         {
             "name": "FeedbackModule",
-            "id": "module-FeedbackModule-c3271bc22c8562c2b7519cfc6e1fb23fdb04f5e77ff5b116563d0f6c6080e232662c2819d6014544d25e67a414bead1b40b5c7e9d5b984b95b2aa829a72a4a33",
+            "id": "module-FeedbackModule-6571e7eae8006d12c65a9800f2b5251b105b5560d511e9c6ee8e6d8fbb14d43d39156a04d119c305f9100c4030087d2e024cf094b7734c6f978d102e4657a523",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
@@ -3937,7 +3872,7 @@
         },
         {
             "name": "SuggestionsModule",
-            "id": "module-SuggestionsModule-d741fb8e667c8b70b621bc9eb0a8fddb2890bdcde55f20d493faa72a62b2fb7b8f2312485f299e42e822c13868b334961ff0e1e44c84e65f426df932933cac93",
+            "id": "module-SuggestionsModule-8a20f0e890efc514c687357e3cd4bc89dd1a1636e9de2dd952801648145356032e61883e3730602a11cd43dd2bb850114715c7e01f3a79583ba43202f94a3e4d",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
@@ -4044,13 +3979,13 @@
         },
         {
             "name": "UiBadgeModule",
-            "id": "module-UiBadgeModule-26443416a6ee21904b0ced545d624e2806b7f8f7d124ce4be3b6151b94c2c1cb9e5c5028093b025b84433de3165c3d059df834df09f969f74b1afe0e318e9717",
+            "id": "module-UiBadgeModule-cc09fc693b44f7626de925c1e7754da7e1d0d071f03594cb9d16b67e2a128d4879f18064026ade6c28eb1e2fba88855d1af01906e7859191155e273995b9cad7",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/badge/ui-badge.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UiBadgeDirective } from './ui-badge.directive';\n\n@NgModule({\n    declarations: [UiBadgeDirective],\n    imports: [CommonModule],\n    exports: [UiBadgeDirective],\n})\nexport class UiBadgeModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiBadgeDirective } from './ui-badge.directive';\n\n@NgModule({\n    declarations: [UiBadgeDirective],\n    imports: [CommonModule],\n    exports: [UiBadgeDirective],\n})\nexport class UiBadgeModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4088,13 +4023,13 @@
         },
         {
             "name": "UiButtonModule",
-            "id": "module-UiButtonModule-5624d3f7ae4bee359df21c4d4775dacdee806f6063ed9c9ac3ea9b808ec8265c2de051bfac6aad168c8dd8873562aebf20bd306dfcf42ec58360fbad6602207e",
+            "id": "module-UiButtonModule-71b3862a78bc1e8f9830d13f98bb504640fdaef76d29a278473e61c5b900b6237205178e4a35dec1d0b3b239f31241005690ccc10f0a4f61087d725e3768587a",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/button/ui-button.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UiButtonDirective } from './ui-button.directive';\n\n@NgModule({\n    declarations: [UiButtonDirective],\n    imports: [CommonModule],\n    exports: [UiButtonDirective],\n})\nexport class UiButtonModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiButtonDirective } from './ui-button.directive';\n\n@NgModule({\n    declarations: [UiButtonDirective],\n    imports: [CommonModule],\n    exports: [UiButtonDirective],\n})\nexport class UiButtonModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4132,7 +4067,7 @@
         },
         {
             "name": "UiChipsModule",
-            "id": "module-UiChipsModule-ee2f5a81a82cc10a654d4d49dcabb5688b7ff6a01ccb88185cf7586dc62095326d63f22f0a84d4b767271df49f7afd36702f74d113e820cbb441413df9cbc321",
+            "id": "module-UiChipsModule-53de5fa3a2d459a5fec888b7f3c7986f52e65d667eee146ac3287b952b06db40f1e3a26516938a49215c0bfe9ac17651be75c6a65c2415e354c6e15c0fb82a0f",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
@@ -4182,13 +4117,13 @@
         },
         {
             "name": "UiCounterModule",
-            "id": "module-UiCounterModule-bde5708b6e39519a3828e75b1eeb3dab7033eaf63ac0f30c787756c3f8484cf68605b7c1a0b2e8c6c9c1ec39a9cc335761d13d76e38a872a255dc6eae04fba59",
+            "id": "module-UiCounterModule-46a52df1efea7214ef401af7dc383d6d109cc31a66fef71453ab07018b698a2bbf4b05298a4db018583ec158427539cf416607b4c170580979c2cb9557c03adb",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/counter/ui-counter.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UiCounterComponent } from './ui-counter.component';\n\n@NgModule({\n    declarations: [UiCounterComponent],\n    imports: [CommonModule],\n    exports: [UiCounterComponent],\n})\nexport class UiCounterModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiCounterComponent } from './ui-counter.component';\n\n@NgModule({\n    declarations: [UiCounterComponent],\n    imports: [CommonModule],\n    exports: [UiCounterComponent],\n})\nexport class UiCounterModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4211,50 +4146,6 @@
                     "elements": [
                         {
                             "name": "UiCounterComponent"
-                        }
-                    ]
-                },
-                {
-                    "type": "bootstrap",
-                    "elements": []
-                },
-                {
-                    "type": "classes",
-                    "elements": []
-                }
-            ]
-        },
-        {
-            "name": "UiDividerModule",
-            "id": "module-UiDividerModule-f803bc100ea5449d4ea82465d34a4723c8515b9c95b1a9cbef6de23912556bda5df85ec8e56eb8580b3fd90e149ed4803a804b13706603990ec98a71b5b37bf1",
-            "description": "",
-            "deprecationMessage": "",
-            "deprecated": false,
-            "file": "src/app/shared/ui-components/divider/ui-divider.module.ts",
-            "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UiDividerComponent } from './ui-divider.component';\n\n@NgModule({\n    declarations: [UiDividerComponent],\n    imports: [CommonModule],\n    exports: [UiDividerComponent],\n})\nexport class UiDividerModule {}\n",
-            "children": [
-                {
-                    "type": "providers",
-                    "elements": []
-                },
-                {
-                    "type": "declarations",
-                    "elements": [
-                        {
-                            "name": "UiDividerComponent"
-                        }
-                    ]
-                },
-                {
-                    "type": "imports",
-                    "elements": []
-                },
-                {
-                    "type": "exports",
-                    "elements": [
-                        {
-                            "name": "UiDividerComponent"
                         }
                     ]
                 },
@@ -4270,7 +4161,7 @@
         },
         {
             "name": "UiFeedbackCardModule",
-            "id": "module-UiFeedbackCardModule-730eda270bac369bddc4006f2aaf4626fe8dbb48a9693f724dc5674fe93f87f30d82ce5de41092379b50d282efc2163c6f68070c3a59d2c78ca633ed807c8785",
+            "id": "module-UiFeedbackCardModule-afa8a8b3dd55ba5ff034205566ffe4b83d35e10524624e0b5923578d8c7e4d45c18816e6f99bdb5d048c2e277e659b1cc12970177a9c7ca9ae837262450c3c85",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
@@ -4338,13 +4229,13 @@
         },
         {
             "name": "UiIconModule",
-            "id": "module-UiIconModule-fb2b88fb7105f241de7c1ca47ad8d60ca24ce8c07d37b91dbe9d7183536be3982c7a7ebb07ec618e9035cc0866621d33ffe13eb64542f94e6905a2463ab53269",
+            "id": "module-UiIconModule-ce2e8605a5fef4847f19b3601787f57dda1d7d941d35cc7f42d257b9e6905529ac83f1e9554d2b0f5c36e3719c1d0d2a17f1d7900530e8cd381567a32fa4c66a",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/icon/ui-icon.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UiIconComponent } from './ui-icon.component';\n\n@NgModule({\n    declarations: [UiIconComponent],\n    imports: [CommonModule],\n    exports: [UiIconComponent],\n})\nexport class UiIconModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiIconComponent } from './ui-icon.component';\n\n@NgModule({\n    declarations: [UiIconComponent],\n    imports: [CommonModule],\n    exports: [UiIconComponent],\n})\nexport class UiIconModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4382,13 +4273,13 @@
         },
         {
             "name": "UiInputModule",
-            "id": "module-UiInputModule-a3449a2bbd32a4af2b84d8abcb00c14c1390670c2ced7cd15b1951ebe6fb4120a977a4e67f7a1499e2d4f14634cede3f49a95f51bc3f38c6549fb1e7b36dcc48",
+            "id": "module-UiInputModule-937f68cba34ee161454639807bbb8eb8dd631f28bc7509833dffa7c3606352740d3eeaa3afa857abbf5e11df6ddbc002aea61032cb07a34a27bf2d3e02c4e823",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/input/ui-input.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UiInputDirective } from './ui-input.directive';\n\n@NgModule({\n    declarations: [UiInputDirective],\n    imports: [CommonModule],\n    exports: [UiInputDirective],\n})\nexport class UiInputModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiInputDirective } from './ui-input.directive';\n\n@NgModule({\n    declarations: [UiInputDirective],\n    imports: [CommonModule],\n    exports: [UiInputDirective],\n})\nexport class UiInputModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4426,7 +4317,7 @@
         },
         {
             "name": "UiSelectModule",
-            "id": "module-UiSelectModule-0bc0c5c706eaae6132fd113ee10a59d8a243b81eedae5a339152bbeb9fb50bd2ad560c42249679eb553d8a4f2823c1b0003ffe2cf7fd6c1118ebb52b1aa42d44",
+            "id": "module-UiSelectModule-f4f9167dd2960edbdb83d64afc41d9e1aec25c531d7f3e75adc442c8db4ec7db3bb09e92ca94cc9431bbcb0bee4c6999202eff89dd58fa76ca34a1e7b9ff5639",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
@@ -4476,13 +4367,13 @@
         },
         {
             "name": "UiToastModule",
-            "id": "module-UiToastModule-eab97f9408a6821667c4c41e2b1ed8e7575ab5aed69f4c34af64cbc62990db3b6b511039ba4df66ba8dc865fa2aca5c3250f4bf95d8a0e338cf711b593d98f47",
+            "id": "module-UiToastModule-5c90412a57172ef47808e46903d4e205f15171d41ad07547a45e452aa5163e3e29d96e779ae9e5d77d326e563a08b97543fd047384bdf1b14a3a8401ebfa758d",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/toast/ui-toast.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UiToastComponent } from './ui-toast.component';\nimport { OverlayModule } from '@angular/cdk/overlay';\n\n@NgModule({\n    declarations: [UiToastComponent],\n    imports: [CommonModule, OverlayModule],\n    exports: [UiToastComponent],\n})\nexport class UiToastModule {}\n",
+            "sourceCode": "import { OverlayModule } from '@angular/cdk/overlay';\nimport { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiToastComponent } from './ui-toast.component';\n\n@NgModule({\n    declarations: [UiToastComponent],\n    imports: [CommonModule, OverlayModule],\n    exports: [UiToastComponent],\n})\nexport class UiToastModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4520,13 +4411,13 @@
         },
         {
             "name": "UiToolbarModule",
-            "id": "module-UiToolbarModule-9ad03999a5527f0e14eee121a8c2eb1eb6024c3eaa98f47c79fa806dfc40c251882afddb680a34ad56e9f6964b2ca3e29e30bf14f70165bb7d87399024ca7728",
+            "id": "module-UiToolbarModule-70c5c16c3ac3e6c7d166f21cd533004160a4056393543dfb8bfc740f9cfbad5a24fceda4da4533e53c8e5b648e41d5924eb2fccc35a6aa6dc53d1b28183fee84",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/shared/ui-components/toolbar/ui-toolbar.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { UiToolbarComponent } from './ui-toolbar.component';\n\n@NgModule({\n    declarations: [UiToolbarComponent],\n    imports: [CommonModule],\n    exports: [UiToolbarComponent],\n})\nexport class UiToolbarModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiToolbarComponent } from './ui-toolbar.component';\n\n@NgModule({\n    declarations: [UiToolbarComponent],\n    imports: [CommonModule],\n    exports: [UiToolbarComponent],\n})\nexport class UiToolbarModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4566,7 +4457,7 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "Button",
+                "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/shared/ui-components/button/button.stories.ts",
@@ -4576,7 +4467,57 @@
                 "defaultValue": "Template.bind({})"
             },
             {
-                "name": "Button",
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui-components/counter/counter.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui-components/input/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui-components/chips/stories/chip-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/shared/ui-components/chips/stories/chip.stories.ts",
@@ -4674,6 +4615,56 @@
                 "deprecationMessage": "",
                 "type": "Story<UiButtonDirective>",
                 "defaultValue": "(args: UiButtonDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiButtonDirective],\n        imports: [CommonModule],\n    },\n    template: `<button ui-button [color]=\"color\" [size]=\"size\">Button</button>`,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui-components/counter/counter.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<UiCounterComponent>",
+                "defaultValue": "(args: UiCounterComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiCounterComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-counter></ui-counter>`,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui-components/icon/icon.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<UiIconComponent>",
+                "defaultValue": "(args: UiIconComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiIconComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-icon name=\"comments\"></ui-icon> `,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui-components/input/input.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<UiInputDirective>",
+                "defaultValue": "(args: UiInputDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiInputDirective],\n        imports: [CommonModule],\n    },\n    template: `<input uiInput [ngModel]=\"value\" />`,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<UiToolbarComponent>",
+                "defaultValue": "(args: UiToolbarComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiToolbarComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-toolbar>Toolbar</ui-toolbar>`,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui-components/chips/stories/chip-list.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<UiChipListComponent>",
+                "defaultValue": "(args: UiChipListComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiChipListComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-chip-list><ui-chip>Two</ui-chip><ui-chip>Three</ui-chip><ui-chip>Four</ui-chip><ui-chip>Five</ui-chip></ui-chip-list>`,\n})"
             },
             {
                 "name": "Template",
@@ -4780,7 +4771,7 @@
         "groupedVariables": {
             "src/app/shared/ui-components/button/button.stories.ts": [
                 {
-                    "name": "Button",
+                    "name": "Basic",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/shared/ui-components/button/button.stories.ts",
@@ -4800,9 +4791,119 @@
                     "defaultValue": "(args: UiButtonDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiButtonDirective],\n        imports: [CommonModule],\n    },\n    template: `<button ui-button [color]=\"color\" [size]=\"size\">Button</button>`,\n})"
                 }
             ],
+            "src/app/shared/ui-components/counter/counter.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/counter/counter.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/counter/counter.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<UiCounterComponent>",
+                    "defaultValue": "(args: UiCounterComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiCounterComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-counter></ui-counter>`,\n})"
+                }
+            ],
+            "src/app/shared/ui-components/icon/icon.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/icon/icon.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<UiIconComponent>",
+                    "defaultValue": "(args: UiIconComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiIconComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-icon name=\"comments\"></ui-icon> `,\n})"
+                }
+            ],
+            "src/app/shared/ui-components/input/input.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/input/input.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<UiInputDirective>",
+                    "defaultValue": "(args: UiInputDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiInputDirective],\n        imports: [CommonModule],\n    },\n    template: `<input uiInput [ngModel]=\"value\" />`,\n})"
+                }
+            ],
+            "src/app/shared/ui-components/toolbar/toolbar.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<UiToolbarComponent>",
+                    "defaultValue": "(args: UiToolbarComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiToolbarComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-toolbar>Toolbar</ui-toolbar>`,\n})"
+                }
+            ],
+            "src/app/shared/ui-components/chips/stories/chip-list.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/chips/stories/chip-list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/chips/stories/chip-list.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<UiChipListComponent>",
+                    "defaultValue": "(args: UiChipListComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiChipListComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-chip-list><ui-chip>Two</ui-chip><ui-chip>Three</ui-chip><ui-chip>Four</ui-chip><ui-chip>Five</ui-chip></ui-chip-list>`,\n})"
+                }
+            ],
             "src/app/shared/ui-components/chips/stories/chip.stories.ts": [
                 {
-                    "name": "Button",
+                    "name": "Basic",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/shared/ui-components/chips/stories/chip.stories.ts",
@@ -5300,7 +5401,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Button",
+                "name": "Basic",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5339,7 +5440,27 @@
                 "linktype": "component",
                 "name": "UiChipComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui-components/chips/stories/chip-list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui-components/chips/stories/chip-list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -5347,7 +5468,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Button",
+                "name": "Basic",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5363,21 +5484,32 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/shared/ui-components/counter/counter.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui-components/counter/counter.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/shared/ui-components/counter/ui-counter.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "UiCounterComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/14",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/divider/ui-divider.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "UiDividerComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -5426,6 +5558,26 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/shared/ui-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui-components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/shared/ui-components/icon/ui-icon.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -5440,6 +5592,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "ICONS_BASE_PATH",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui-components/input/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui-components/input/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5524,6 +5696,26 @@
                 "name": "UiToastService",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
