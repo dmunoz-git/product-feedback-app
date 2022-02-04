@@ -8,7 +8,7 @@ export default {
     // The title defines the name and where in the structure of
     // Storybook's menu this is going to be placed.
     // Here we add it to a "Components" section under "Link"
-    title: 'Components/Chips/Chip',
+    title: 'Components/Chip',
     // The component related to the Stories
     component: UIChipComponent,
 
@@ -30,7 +30,7 @@ const Template: Story<UIChipComponent> = (args: UIChipComponent) => ({
     template: `<ui-chip>Chip</ui-chip>`,
 });
 
-export const Chip = Template.bind({});
-Chip.args = {};
+export const Basic = Template.bind({});
+Basic.args = {};
 
 // Other stories could be added here as well, all you have to do is export them along!
