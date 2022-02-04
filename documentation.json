@@ -1762,30 +1762,30 @@
         },
         {
             "name": "UIButtonDirective",
-            "id": "directive-UIButtonDirective-86d5cd4f6e0ac35acab58460219018c973b74daae00b1fbaacc846109bb24ebed5dfc236ecee26a8b3c03a746be9f6a27337fba0b26b76510805803ce2b799cf",
+            "id": "directive-UIButtonDirective-892f367c174ecba8f305a8e582ab92399c794fb510d67b147d227a40063b668134695857e5b25dfdc2af736d38f1c80cdabfc1bc5e7ab5422d25e95620de03cc",
             "file": "src/app/shared/ui-components/button/ui-button.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, HostBinding, Input } from '@angular/core';\n\nexport const MAIN_CSS_CLASS = 'ui-button';\nexport type ButtonColors = 'primary' | 'secondary' | 'info' | 'light' | 'dark' | 'error' | 'none';\nexport type ButtonType = 'button' | 'submit' | 'reset';\nexport type ButtonSize = 'small' | 'medium' | 'long' | 'none';\n\n@Directive({\n    // eslint-disable-next-line @angular-eslint/directive-selector\n    selector: '[ui-button]',\n})\nexport class UIButtonDirective {\n    @Input() color: ButtonColors = 'none';\n    @Input() size: ButtonSize = 'none';\n\n    @HostBinding('class') get classes(): string {\n        return `${MAIN_CSS_CLASS} ${this.colorClass} ${this.sizeClass}`;\n    }\n\n    get colorClass(): string {\n        return `${MAIN_CSS_CLASS}--${this.color}`;\n    }\n\n    get sizeClass(): string {\n        return `${MAIN_CSS_CLASS}--${this.size}`;\n    }\n}\n",
+            "sourceCode": "import { Directive, Input } from '@angular/core';\n\nexport type ButtonColors = 'primary' | 'secondary' | 'light' | 'dark' | 'error' | 'default';\nexport type ButtonType = 'button' | 'submit' | 'reset';\nexport type ButtonSize = 'long' | 'default';\n\n@Directive({\n    // eslint-disable-next-line @angular-eslint/directive-selector\n    selector: '[ui-button]',\n    // eslint-disable-next-line @angular-eslint/no-host-metadata-property\n    host: {\n        class: 'ui-button',\n        '[class.ui-button--primary]': 'color === \"primary\"',\n        '[class.ui-button--secondary]': 'color === \"secondary\"',\n        '[class.ui-button--dark]': 'color === \"dark\"',\n        '[class.ui-button--error]': 'color === \"error\"',\n        '[class.ui-button--long]': 'size === \"long\"',\n    },\n})\nexport class UIButtonDirective {\n    @Input() color: ButtonColors = 'default';\n    @Input() size: ButtonSize = 'default';\n}\n",
             "selector": "[ui-button]",
             "providers": [],
             "inputsClass": [
                 {
                     "name": "color",
-                    "defaultValue": "'none'",
+                    "defaultValue": "'default'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 21,
                     "type": "ButtonColors",
                     "decorators": []
                 },
                 {
                     "name": "size",
-                    "defaultValue": "'none'",
+                    "defaultValue": "'default'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 22,
                     "type": "ButtonSize",
                     "decorators": []
                 }
@@ -1793,48 +1793,10 @@
             "outputsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
-            "hostBindings": [
-                {
-                    "name": "class",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 16,
-                    "type": "string",
-                    "decorators": []
-                }
-            ],
+            "hostBindings": [],
             "hostListeners": [],
             "propertiesClass": [],
-            "methodsClass": [],
-            "accessors": {
-                "classes": {
-                    "name": "classes",
-                    "getSignature": {
-                        "name": "classes",
-                        "type": "string",
-                        "returnType": "string",
-                        "line": 16
-                    }
-                },
-                "colorClass": {
-                    "name": "colorClass",
-                    "getSignature": {
-                        "name": "colorClass",
-                        "type": "string",
-                        "returnType": "string",
-                        "line": 20
-                    }
-                },
-                "sizeClass": {
-                    "name": "sizeClass",
-                    "getSignature": {
-                        "name": "sizeClass",
-                        "type": "string",
-                        "returnType": "string",
-                        "line": 24
-                    }
-                }
-            }
+            "methodsClass": []
         },
         {
             "name": "UIInputDirective",
@@ -4607,7 +4569,7 @@
                 "name": "Button",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/button/stories/button.stories.ts",
+                "file": "src/app/shared/ui-components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4684,16 +4646,6 @@
                 "defaultValue": "{\n    start: 'ui-toolbar--start',\n    end: 'ui-toolbar--end',\n    center: 'ui-toolbar--center',\n    between: 'ui-toolbar--between',\n    around: 'ui-toolbar--around',\n}"
             },
             {
-                "name": "MAIN_CSS_CLASS",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/shared/ui-components/button/ui-button.directive.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "string",
-                "defaultValue": "'ui-button'"
-            },
-            {
                 "name": "mock",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -4707,7 +4659,7 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/button/stories/button.stories.ts",
+                "file": "src/app/shared/ui-components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UIButtonDirective>",
@@ -4730,7 +4682,7 @@
                 "name": "ButtonColors",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "\"primary\" | \"secondary\" | \"info\" | \"light\" | \"dark\" | \"error\" | \"none\"",
+                "rawtype": "\"primary\" | \"secondary\" | \"light\" | \"dark\" | \"error\" | \"default\"",
                 "file": "src/app/shared/ui-components/button/ui-button.directive.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4741,7 +4693,7 @@
                 "name": "ButtonSize",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "\"small\" | \"medium\" | \"long\" | \"none\"",
+                "rawtype": "\"long\" | \"default\"",
                 "file": "src/app/shared/ui-components/button/ui-button.directive.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4806,12 +4758,12 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "src/app/shared/ui-components/button/stories/button.stories.ts": [
+            "src/app/shared/ui-components/button/button.stories.ts": [
                 {
                     "name": "Button",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/button/stories/button.stories.ts",
+                    "file": "src/app/shared/ui-components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -4821,7 +4773,7 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/button/stories/button.stories.ts",
+                    "file": "src/app/shared/ui-components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<UIButtonDirective>",
@@ -4912,18 +4864,6 @@
                     "defaultValue": "{\n    start: 'ui-toolbar--start',\n    end: 'ui-toolbar--end',\n    center: 'ui-toolbar--center',\n    between: 'ui-toolbar--between',\n    around: 'ui-toolbar--around',\n}"
                 }
             ],
-            "src/app/shared/ui-components/button/ui-button.directive.ts": [
-                {
-                    "name": "MAIN_CSS_CLASS",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/ui-components/button/ui-button.directive.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "defaultValue": "'ui-button'"
-                }
-            ],
             "setup-jest.ts": [
                 {
                     "name": "mock",
@@ -4957,7 +4897,7 @@
                     "name": "ButtonColors",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "\"primary\" | \"secondary\" | \"info\" | \"light\" | \"dark\" | \"error\" | \"none\"",
+                    "rawtype": "\"primary\" | \"secondary\" | \"light\" | \"dark\" | \"error\" | \"default\"",
                     "file": "src/app/shared/ui-components/button/ui-button.directive.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -4968,7 +4908,7 @@
                     "name": "ButtonSize",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "\"small\" | \"medium\" | \"long\" | \"none\"",
+                    "rawtype": "\"long\" | \"default\"",
                     "file": "src/app/shared/ui-components/button/ui-button.directive.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
@@ -5314,7 +5254,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/shared/ui-components/button/stories/button.stories.ts",
+                "filePath": "src/app/shared/ui-components/button/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -5324,7 +5264,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/shared/ui-components/button/stories/button.stories.ts",
+                "filePath": "src/app/shared/ui-components/button/button.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -5339,17 +5279,7 @@
                 "linktype": "directive",
                 "name": "UIButtonDirective",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/button/ui-button.directive.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "MAIN_CSS_CLASS",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {

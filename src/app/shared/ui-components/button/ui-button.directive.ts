@@ -1,9 +1,8 @@
 import { Directive, Input } from '@angular/core';
 
-export const MAIN_CSS_CLASS = 'ui-button';
-export type ButtonColors = 'primary' | 'secondary' | 'info' | 'light' | 'dark' | 'error' | 'none';
+export type ButtonColors = 'primary' | 'secondary' | 'light' | 'dark' | 'error' | 'default';
 export type ButtonType = 'button' | 'submit' | 'reset';
-export type ButtonSize = 'small' | 'medium' | 'long' | 'none';
+export type ButtonSize = 'long' | 'default';
 
 @Directive({
     // eslint-disable-next-line @angular-eslint/directive-selector
@@ -13,14 +12,13 @@ export type ButtonSize = 'small' | 'medium' | 'long' | 'none';
         class: 'ui-button',
         '[class.ui-button--primary]': 'color === "primary"',
         '[class.ui-button--secondary]': 'color === "secondary"',
-        '[class.ui-button--info]': 'color === "info"',
-        '[class.ui-button--light]': 'color === "light"',
         '[class.ui-button--dark]': 'color === "dark"',
+        '[class.ui-button--light]': 'color === "light"',
         '[class.ui-button--error]': 'color === "error"',
         '[class.ui-button--long]': 'size === "long"',
     },
 })
 export class UIButtonDirective {
-    @Input() color: ButtonColors = 'none';
-    @Input() size: ButtonSize = 'none';
+    @Input() color: ButtonColors = 'default';
+    @Input() size: ButtonSize = 'default';
 }

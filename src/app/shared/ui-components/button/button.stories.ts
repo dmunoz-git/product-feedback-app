@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { moduleMetadata } from '@storybook/angular';
 import { Story } from '@storybook/angular/types-6-0';
-import { UIButtonDirective } from '../ui-button.directive';
+import { UIButtonDirective } from './ui-button.directive';
 
 // This exports the Stories group for this component
 export default {
@@ -33,6 +33,7 @@ const Template: Story<UIButtonDirective> = (args: UIButtonDirective) => ({
 export const Button = Template.bind({});
 Button.args = {
     color: 'primary',
+    size: 'default',
 };
 
 // Other stories could be added here as well, all you have to do is export them along!
