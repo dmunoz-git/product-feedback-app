@@ -4,7 +4,15 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'ui-counter',
-    templateUrl: './ui-counter.component.html',
+    template: `<span
+        class="ui-counter"
+        (click)="increment($event)"
+        [class.ui-counter--active]="active"
+        [class.ui-counter--row]="order === 'row'"
+    >
+        <img class="ui-counter__icon" src="assets/images/icons/icon-arrow-up.svg" alt="counter icon" />
+        <span class="ui-counter__value">{{ value }}</span>
+    </span> `,
     styleUrls: ['./ui-counter.component.scss'],
     providers: [
         {
