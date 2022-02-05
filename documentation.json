@@ -934,7 +934,7 @@
         },
         {
             "name": "UiToastService",
-            "id": "injectable-UiToastService-1825d5878fe9c431e860d14a9e721b449be91d5cfb293e299c6536ad24501b12eb4000c696ec8a547702b5807df426fa7ccdcc19b4c51cee62a045316738efe8",
+            "id": "injectable-UiToastService-93ed8e821209afd1f10878f0d4cbb7fdc835bc686fbb1faeeaba415f44db27c1111ed7676dab47405c83cb1674c84aabb0be0198991b9f11abffd9cd3c358bda",
             "file": "src/app/shared/ui-components/toast/ui-toast.service.ts",
             "properties": [],
             "methods": [
@@ -988,7 +988,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { ComponentType, Overlay } from '@angular/cdk/overlay';\nimport { ComponentPortal } from '@angular/cdk/portal';\nimport { Injectable, Injector } from '@angular/core';\nimport { UiToastData } from './ui-toast-data';\nimport { UiToastRef } from './ui-toast-ref';\nimport { Ui_TOAST_DATA } from './ui-toast-tokens';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class UiToastService {\n    constructor(private overlay: Overlay, private injector: Injector) {}\n\n    open<UiToastComponent>(component: ComponentType<UiToastComponent>, data: UiToastData) {\n        const positionStrategy = this.overlay.position().global().centerHorizontally().bottom();\n\n        const overlayRef = this.overlay.create({\n            positionStrategy,\n        });\n\n        const toastRef = new UiToastRef(overlayRef);\n\n        const injector = Injector.create({\n            parent: this.injector,\n            providers: [\n                { provide: UiToastRef, useValue: toastRef },\n                { provide: Ui_TOAST_DATA, useValue: data },\n            ],\n        });\n\n        const portal = new ComponentPortal(component, null, injector);\n        overlayRef.attach(portal);\n\n        return toastRef;\n    }\n}\n",
+            "sourceCode": "import { ComponentType, Overlay } from '@angular/cdk/overlay';\nimport { ComponentPortal } from '@angular/cdk/portal';\nimport { Injectable, Injector } from '@angular/core';\nimport { UiToastData } from './ui-toast-data';\nimport { UiToastRef } from './ui-toast-ref';\nimport { UI_TOAST_DATA } from './ui-toast-tokens';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class UiToastService {\n    constructor(private overlay: Overlay, private injector: Injector) {}\n\n    open<UiToastComponent>(component: ComponentType<UiToastComponent>, data: UiToastData) {\n        const positionStrategy = this.overlay.position().global().centerHorizontally().bottom();\n\n        const overlayRef = this.overlay.create({\n            positionStrategy,\n        });\n\n        const toastRef = new UiToastRef(overlayRef);\n\n        const injector = Injector.create({\n            parent: this.injector,\n            providers: [\n                { provide: UiToastRef, useValue: toastRef },\n                { provide: UI_TOAST_DATA, useValue: data },\n            ],\n        });\n\n        const portal = new ComponentPortal(component, null, injector);\n        overlayRef.attach(portal);\n\n        return toastRef;\n    }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -2119,6 +2119,74 @@
             "templateData": "<ui-chip-list *transloco=\"let t\" aria-label=\"Feedbacks category filter\">\n    <ui-chip *ngFor=\"let category of categories\" [active]=\"getCategoryActive(category.name)\" (click)=\"setCategory(category.name)\">{{\n        t('categoriesFeedbackFilter.' + category.name)\n    }}</ui-chip>\n</ui-chip-list>\n"
         },
         {
+            "name": "DummyToastComponent",
+            "id": "component-DummyToastComponent-43ae396bcdf81018c11cac5eccea53cd04f36d3242c68e74b4291590b87ef7d04c2e2845f5add0dbfcb1ef12cfe7d83d17fc30ab6ef563cffc491310bc85e472",
+            "file": "src/app/shared/ui-components/toast/toast.stories.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-dummy-ui-button",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<button ui-button color=\"secondary\" (click)=\"openToast()\">Login</button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "openToast",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { Component } from '@angular/core';\nimport { moduleMetadata } from '@storybook/angular';\nimport { Story } from '@storybook/angular/types-6-0';\nimport { UiButtonModule } from '../button/ui-button.module';\nimport { UiToastComponent } from './ui-toast.component';\nimport { UiToastModule } from './ui-toast.module';\nimport { UiToastService } from './ui-toast.service';\n\n@Component({\n    selector: 'app-dummy-ui-button',\n    template: `<button ui-button color=\"secondary\" (click)=\"openToast()\">Login</button>`,\n})\nclass DummyToastComponent {\n    constructor(private toast: UiToastService) {}\n\n    openToast() {\n        this.toast.open(UiToastComponent, {\n            message: 'This is a toast message',\n            duration: 3000,\n        });\n    }\n}\n\n// This exports the Stories group for this component\nexport default {\n    // The title defines the name and where in the structure of\n    // Storybook's menu this is going to be placed.\n    // Here we add it to a \"Components\" section under \"Link\"\n    title: 'Components/Toast',\n    // The component related to the Stories\n    component: DummyToastComponent,\n\n    decorators: [\n        // The necessary modules for the component to work on Storybook\n        moduleMetadata({\n            imports: [CommonModule, UiToastModule, UiButtonModule],\n        }),\n    ],\n};\nconst Template: Story<DummyToastComponent> = (args: DummyToastComponent) => ({\n    props: args,\n\n    template: `<app-dummy-ui-button></app-dummy-ui-button>`,\n});\n\nexport const Basic = Template.bind({});\nBasic.args = {};\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "toast",
+                        "type": "UiToastService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 14,
+                "jsdoctags": [
+                    {
+                        "name": "toast",
+                        "type": "UiToastService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            }
+        },
+        {
             "name": "EmptyFeedbacksComponent",
             "id": "component-EmptyFeedbacksComponent-057a08c06a521da201a1ffdaf56ad6c06bfffedf50033535d89462c9cba678ab12918c620c800ce4af999cdcb77bd6b3ebf9740920551e5f00d024ea351c3a77",
             "file": "src/app/modules/suggestions/components/empty-feedbacks/empty-feedbacks.component.ts",
@@ -2336,7 +2404,7 @@
                 "OnInit",
                 "OnDestroy"
             ],
-            "templateData": "<section class=\"layout\">\n    <ui-toolbar class=\"toolbar\" justify=\"between\" background=\"transparent\">\n        <app-back-btn>Go Back</app-back-btn>\n        <button ui-button color=\"secondary\">Edit Feedback</button>\n    </ui-toolbar>\n    <app-feedback-card>\n        <ui-counter feedback-card-aside class=\"hide-mobile\" [activeAfterFirstClick]=\"true\" [initValue]=\"feedback.upvotes\"></ui-counter>\n        <ng-container feedback-card-aside>\n            <section class=\"show-only-mobile\">\n                <div class=\"feedback-aside-mobile\">\n                    <ui-counter order=\"row\" [activeAfterFirstClick]=\"true\" [initValue]=\"feedback.upvotes\"></ui-counter>\n                    <ui-icon name=\"comments\" ui-badge></ui-icon>\n                </div>\n            </section>\n        </ng-container>\n        <h3 feedback-card-title>{{ feedback.title }}</h3>\n        <div feedback-card-content>\n            <p class=\"text\">{{ feedback.description }}</p>\n            <ui-icon class=\"hide-mobile\" name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n        </div>\n        <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n    </app-feedback-card>\n</section>\n"
+            "templateData": "<section class=\"layout\">\n    <ui-toolbar class=\"toolbar\" justify=\"between\" background=\"transparent\">\n        <app-back-btn>Go Back</app-back-btn>\n        <button ui-button color=\"secondary\">Edit Feedback</button>\n    </ui-toolbar>\n    <app-feedback-card>\n        <ui-counter feedback-card-aside class=\"hide-mobile\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n        <ng-container feedback-card-aside>\n            <section class=\"show-only-mobile\">\n                <div class=\"feedback-aside-mobile\">\n                    <ui-counter order=\"row\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                    <ui-icon name=\"comments\" ui-badge></ui-icon>\n                </div>\n            </section>\n        </ng-container>\n        <h3 feedback-card-title>{{ feedback.title }}</h3>\n        <div feedback-card-content>\n            <p class=\"text\">{{ feedback.description }}</p>\n            <ui-icon class=\"hide-mobile\" name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n        </div>\n        <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n    </app-feedback-card>\n</section>\n"
         },
         {
             "name": "SuggestionsLayoutComponent",
@@ -2500,7 +2568,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div *transloco=\"let t\" class=\"layout\">\n    <aside class=\"aside\">\n        <app-banner>\n            <h2 app-banner-title class=\"text-white\">{{ t('title') }}</h2>\n            <span app-banner-subtitle>{{ t('subtitle') }}</span>\n        </app-banner>\n        <app-category-filter (categorySelected)=\"filterFeedbacks($event)\"></app-category-filter>\n    </aside>\n    <main class=\"main\">\n        <ui-toolbar class=\"toolbar\" justify=\"between\">\n            <div class=\"toolbar__header\">\n                <img src=\"/assets/images/suggestions/icon-suggestions.svg\" alt=\"\" />\n                <h3 class=\"text-white\">{{ (feedbacks$ | async)?.length }} {{ t('toolbarTitle') }}</h3>\n            </div>\n            <button ui-button color=\"primary\"><ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}</button>\n        </ui-toolbar>\n        <section class=\"feedback-list\" *ngIf=\"(feedbacks$ | async)!.length > 0\">\n            <app-feedback-card class=\"pointer\" *ngFor=\"let feedback of feedbacks$ | async\" routerLink=\"/feedback/detail/{{ feedback.id }}\">\n                <ui-counter\n                    feedback-card-aside\n                    class=\"hide-mobile\"\n                    [activeAfterFirstClick]=\"true\"\n                    [initValue]=\"feedback.upvotes\"\n                ></ui-counter>\n                <ng-container feedback-card-aside>\n                    <section class=\"show-only-mobile\">\n                        <div class=\"feedback-aside-mobile\">\n                            <ui-counter order=\"row\" [activeAfterFirstClick]=\"true\" [initValue]=\"feedback.upvotes\"></ui-counter>\n                            <ui-icon name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n                        </div>\n                    </section>\n                </ng-container>\n                <h3 feedback-card-title>{{ feedback.title }}</h3>\n                <div feedback-card-content>\n                    <p class=\"text\">{{ feedback.description }}</p>\n                    <ui-icon\n                        class=\"hide-mobile\"\n                        name=\"comments\"\n                        ui-badge\n                        [value]=\"feedback.comments ? feedback.comments.length : 0\"\n                    ></ui-icon>\n                </div>\n                <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n            </app-feedback-card>\n        </section>\n        <app-empty-feedbacks *ngIf=\"(feedbacks$ | async)!.length === 0\">\n            <h1 empty-feedbacks-title>{{ t('emptyFeedbackList.title') }}</h1>\n            <p empty-feedbacks-body>{{ t('emptyFeedbackList.description') }}</p>\n            <button ui-button color=\"primary\" empty-feedbacks-button>\n                <ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}\n            </button>\n        </app-empty-feedbacks>\n    </main>\n</div>\n"
+            "templateData": "<div *transloco=\"let t\" class=\"layout\">\n    <aside class=\"aside\">\n        <app-banner>\n            <h2 app-banner-title class=\"text-white\">{{ t('title') }}</h2>\n            <span app-banner-subtitle>{{ t('subtitle') }}</span>\n        </app-banner>\n        <app-category-filter (categorySelected)=\"filterFeedbacks($event)\"></app-category-filter>\n    </aside>\n    <main class=\"main\">\n        <ui-toolbar class=\"toolbar\" justify=\"between\">\n            <div class=\"toolbar__header\">\n                <img src=\"/assets/images/suggestions/icon-suggestions.svg\" alt=\"\" />\n                <h3 class=\"text-white\">{{ (feedbacks$ | async)?.length }} {{ t('toolbarTitle') }}</h3>\n            </div>\n            <button ui-button color=\"primary\"><ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}</button>\n        </ui-toolbar>\n        <section class=\"feedback-list\" *ngIf=\"(feedbacks$ | async)!.length > 0\">\n            <app-feedback-card class=\"pointer\" *ngFor=\"let feedback of feedbacks$ | async\" routerLink=\"/feedback/detail/{{ feedback.id }}\">\n                <ui-counter feedback-card-aside class=\"hide-mobile\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                <ng-container feedback-card-aside>\n                    <section class=\"show-only-mobile\">\n                        <div class=\"feedback-aside-mobile\">\n                            <ui-counter order=\"row\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                            <ui-icon name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n                        </div>\n                    </section>\n                </ng-container>\n                <h3 feedback-card-title>{{ feedback.title }}</h3>\n                <div feedback-card-content>\n                    <p class=\"text\">{{ feedback.description }}</p>\n                    <ui-icon\n                        class=\"hide-mobile\"\n                        name=\"comments\"\n                        ui-badge\n                        [value]=\"feedback.comments ? feedback.comments.length : 0\"\n                    ></ui-icon>\n                </div>\n                <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n            </app-feedback-card>\n        </section>\n        <app-empty-feedbacks *ngIf=\"(feedbacks$ | async)!.length === 0\">\n            <h1 empty-feedbacks-title>{{ t('emptyFeedbackList.title') }}</h1>\n            <p empty-feedbacks-body>{{ t('emptyFeedbackList.description') }}</p>\n            <button ui-button color=\"primary\" empty-feedbacks-button>\n                <ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}\n            </button>\n        </app-empty-feedbacks>\n    </main>\n</div>\n"
         },
         {
             "name": "UiChipComponent",
@@ -3289,7 +3357,7 @@
         },
         {
             "name": "UiToastComponent",
-            "id": "component-UiToastComponent-af2a679f99503542aa61a3d15f599e50bb4e5017f0833aed2aae7b8be69c91876943a651d5b55d611f43fbd5c835dcded51e57547a936665ac2f298c775a4be4",
+            "id": "component-UiToastComponent-f87cdc7043e09f4104c801af3f8837f9ea9b6690fe5a4107184db044ac2a89efd759f495a0fa2ddcaaf4d238224688a92814f2087d9de2e232893bf37183ae16",
             "file": "src/app/shared/ui-components/toast/ui-toast.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3359,7 +3427,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Inject, OnDestroy, OnInit } from '@angular/core';\nimport { fadeInOut } from '../animations/fade.animation';\nimport { UiToastData } from './ui-toast-data';\nimport { UiToastRef } from './ui-toast-ref';\nimport { Ui_TOAST_DATA } from './ui-toast-tokens';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-toast',\n    template: ` <div class=\"ui-toast\" @fadeInOut>\n        <span class=\"ui-toast__text\">{{ data.message }}</span>\n        <button class=\"ui-toast__button\" *ngIf=\"data.close\" (click)=\"close()\">{{ data.close }}</button>\n    </div>`,\n    styleUrls: ['./ui-toast.component.scss'],\n    animations: [fadeInOut],\n})\nexport class UiToastComponent implements OnInit, OnDestroy {\n    private intervalId!: ReturnType<typeof setTimeout>;\n\n    constructor(private toastRef: UiToastRef, @Inject(Ui_TOAST_DATA) readonly data: UiToastData) {}\n\n    ngOnDestroy(): void {\n        if (this.intervalId) {\n            clearTimeout(this.intervalId);\n        }\n    }\n\n    ngOnInit(): void {\n        if (this.data.duration) {\n            this.intervalId = setTimeout(() => {\n                this.close();\n            }, this.data.duration);\n        }\n    }\n\n    close() {\n        this.toastRef.close();\n    }\n}\n",
+            "sourceCode": "import { Component, Inject, OnDestroy, OnInit } from '@angular/core';\nimport { fadeInOut } from '../animations/fade.animation';\nimport { UiToastData } from './ui-toast-data';\nimport { UiToastRef } from './ui-toast-ref';\nimport { UI_TOAST_DATA } from './ui-toast-tokens';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-toast',\n    template: ` <div class=\"ui-toast\" @fadeInOut>\n        <span class=\"ui-toast__text\">{{ data.message }}</span>\n        <button class=\"ui-toast__button\" *ngIf=\"data.close\" (click)=\"close()\">{{ data.close }}</button>\n    </div>`,\n    styleUrls: ['./ui-toast.component.scss'],\n    animations: [fadeInOut],\n})\nexport class UiToastComponent implements OnInit, OnDestroy {\n    private intervalId!: ReturnType<typeof setTimeout>;\n\n    constructor(private toastRef: UiToastRef, @Inject(UI_TOAST_DATA) readonly data: UiToastData) {}\n\n    ngOnDestroy(): void {\n        if (this.intervalId) {\n            clearTimeout(this.intervalId);\n        }\n    }\n\n    ngOnInit(): void {\n        if (this.data.duration) {\n            this.intervalId = setTimeout(() => {\n                this.close();\n            }, this.data.duration);\n        }\n    }\n\n    close() {\n        this.toastRef.close();\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -4391,6 +4459,16 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/shared/ui-components/toast/toast.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Basic",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4551,6 +4629,16 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/app/shared/ui-components/toast/toast.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<DummyToastComponent>",
+                "defaultValue": "(args: DummyToastComponent) => ({\n    props: args,\n\n    template: `<app-dummy-ui-button></app-dummy-ui-button>`,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -4585,7 +4673,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UiToolbarComponent>",
-                "defaultValue": "(args: UiToolbarComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiToolbarComponent],\n        imports: [CommonModule, UiButtonModule],\n    },\n    template: `<ui-toolbar background=\"transparent\"><button ui-button color=\"dark\">Login</button></ui-toolbar>`,\n})"
+                "defaultValue": "(args: UiToolbarComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiToolbarComponent],\n        imports: [CommonModule, UiButtonModule],\n    },\n    template: `<ui-toolbar background=\"transparent\"><button ui-button color=\"light\">Login</button></ui-toolbar>`,\n})"
             },
             {
                 "name": "TemplateWithLogo",
@@ -4608,7 +4696,7 @@
                 "defaultValue": "TemplateTransparent.bind({})"
             },
             {
-                "name": "Ui_TOAST_DATA",
+                "name": "UI_TOAST_DATA",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/app/shared/ui-components/toast/ui-toast-tokens.ts",
@@ -4820,6 +4908,28 @@
                     "defaultValue": "(args: UiInputDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiInputDirective],\n        imports: [CommonModule],\n    },\n    template: `<input uiInput [ngModel]=\"value\" />`,\n})"
                 }
             ],
+            "src/app/shared/ui-components/toast/toast.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/toast/toast.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/toast/toast.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<DummyToastComponent>",
+                    "defaultValue": "(args: DummyToastComponent) => ({\n    props: args,\n\n    template: `<app-dummy-ui-button></app-dummy-ui-button>`,\n})"
+                }
+            ],
             "src/app/shared/ui-components/toolbar/toolbar.stories.ts": [
                 {
                     "name": "Basic",
@@ -4849,7 +4959,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<UiToolbarComponent>",
-                    "defaultValue": "(args: UiToolbarComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiToolbarComponent],\n        imports: [CommonModule, UiButtonModule],\n    },\n    template: `<ui-toolbar background=\"transparent\"><button ui-button color=\"dark\">Login</button></ui-toolbar>`,\n})"
+                    "defaultValue": "(args: UiToolbarComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiToolbarComponent],\n        imports: [CommonModule, UiButtonModule],\n    },\n    template: `<ui-toolbar background=\"transparent\"><button ui-button color=\"light\">Login</button></ui-toolbar>`,\n})"
                 },
                 {
                     "name": "TemplateWithLogo",
@@ -5024,7 +5134,7 @@
             ],
             "src/app/shared/ui-components/toast/ui-toast-tokens.ts": [
                 {
-                    "name": "Ui_TOAST_DATA",
+                    "name": "UI_TOAST_DATA",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/app/shared/ui-components/toast/ui-toast-tokens.ts",
@@ -5676,6 +5786,35 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/shared/ui-components/toast/toast.stories.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "DummyToastComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui-components/toast/toast.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui-components/toast/toast.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/shared/ui-components/toast/ui-toast-data.ts",
                 "type": "interface",
                 "linktype": "interface",
@@ -5698,7 +5837,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Ui_TOAST_DATA",
+                "name": "UI_TOAST_DATA",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
