@@ -63,18 +63,4 @@ describe('UiCounterComponent', () => {
         component.increment(event);
         expect(component.value).toBe(3);
     });
-
-    it('should value be 0 if input is negative', async () => {
-        component.value = -1;
-        fixture.detectChanges();
-        await fixture.whenStable();
-        expect(component.value).toBe(0);
-    });
-
-    it('should not accept decimal value', async () => {
-        component.value = 1.5;
-        fixture.detectChanges();
-        await fixture.whenStable();
-        expect(component.value).toBe(0);
-    });
 });

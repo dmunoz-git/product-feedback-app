@@ -4565,7 +4565,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UiChipListComponent>",
-                "defaultValue": "(args: UiChipListComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiChipListComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-chip-list></ui-chip-list>`,\n})"
+                "defaultValue": "(args: UiChipListComponent) => ({\n    props: args,\n    template: `<ui-chip-list><ui-chip>One</ui-chip><ui-chip>Two</ui-chip></ui-chip-list>`,\n})"
             },
             {
                 "name": "Template",
@@ -4821,7 +4821,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<UiChipListComponent>",
-                    "defaultValue": "(args: UiChipListComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiChipListComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-chip-list></ui-chip-list>`,\n})"
+                    "defaultValue": "(args: UiChipListComponent) => ({\n    props: args,\n    template: `<ui-chip-list><ui-chip>One</ui-chip><ui-chip>Two</ui-chip></ui-chip-list>`,\n})"
                 }
             ],
             "src/app/shared/ui-components/chips/stories/chip.stories.ts": [
