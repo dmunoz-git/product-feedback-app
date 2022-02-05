@@ -1,5 +1,4 @@
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+import { Component, Input } from '@angular/core';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
@@ -14,25 +13,12 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
         <span class="ui-counter__value">{{ value }}</span>
     </span> `,
     styleUrls: ['./ui-counter.component.scss'],
-    providers: [
-        {
-            provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => UiCounterComponent),
-            multi: true,
-        },
-    ],
 })
-export class UiCounterComponent implements ControlValueAccessor, OnInit {
-    @Input() limitCounterTo: number = -1;
-    @Input() initValue: number = 0;
-    @Input() activeAfterFirstClick: boolean = false;
+export class UiCounterComponent {
+    @Input() limitClicksTo: number = 0;
     @Input() order: 'column' | 'row' = 'column';
-    public active: boolean = false;
-    public value: number = 0;
-
-    onChange: any = () => {};
-
-    onTouch: any = () => {};
+    @Input() active: boolean = false;
+    @Input() value: number = 0;
 
     increment(event: any): void {
         event.preventDefault();
@@ -40,28 +26,12 @@ export class UiCounterComponent implements ControlValueAccessor, OnInit {
 
         if (!this.active) {
             this.value++;
-            this.onChange(this.value);
-            this.writeValue(this.value);
-            this.active = !this.activeAfterFirstClick ? this.value === this.limitCounterTo : true;
-        } else {
-            this.value = this.value < 0 ? 0 : this.value;
+            this.limitClicksTo--;
+            this.active = this.limitClicksTo === 0;
         }
     }
 
-    ngOnInit(): void {
-        this.value = this.initValue;
-        this.onChange(this.value);
-        this.writeValue(this.value);
-    }
-
-    // controlValueAccessor methods
-    writeValue(value: number): void {
-        this.value = value;
-    }
-    registerOnChange(fn: any): void {
-        this.onChange = fn;
-    }
-    registerOnTouched(fn: any): void {
-        this.onChange = fn;
+    private isPositiveInteger(value: string): boolean {
+        return /^\+?\d+$/.test(value);
     }
 }

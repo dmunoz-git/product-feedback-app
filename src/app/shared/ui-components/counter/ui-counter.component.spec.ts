@@ -20,4 +20,61 @@ describe('UiCounterComponent', () => {
     it('should create', () => {
         expect(component).toBeTruthy();
     });
+
+    it('should increment value', () => {
+        const event: Event = new Event('click');
+        component.increment(event);
+        expect(component.value).toBe(1);
+    });
+
+    it('should not increment value if it is active', () => {
+        const event: Event = new Event('click');
+        component.active = true;
+        component.increment(event);
+        expect(component.value).toBe(0);
+    });
+
+    it('should never be active if limitClicksTo is minor or equal to 0', async () => {
+        const event = new Event('click');
+        component.limitClicksTo = 0;
+        fixture.detectChanges();
+        await fixture.whenStable();
+        component.increment(event);
+        component.increment(event);
+        expect(component.value).toBe(2);
+    });
+
+    it('should be active if limitClicksTo is equal to 1', async () => {
+        const event = new Event('click');
+        component.limitClicksTo = 1;
+        fixture.detectChanges();
+        await fixture.whenStable();
+        component.increment(event);
+        expect(component.active).toBe(true);
+    });
+
+    it('should increment value if limitClicksTo mayor than 0', async () => {
+        const event = new Event('click');
+        component.limitClicksTo = 1;
+        component.value = 2;
+        fixture.detectChanges();
+        await fixture.whenStable();
+        component.increment(event);
+        component.increment(event);
+        expect(component.value).toBe(3);
+    });
+
+    it('should value be 0 if input is negative', async () => {
+        component.value = -1;
+        fixture.detectChanges();
+        await fixture.whenStable();
+        expect(component.value).toBe(0);
+    });
+
+    it('should not accept decimal value', async () => {
+        component.value = 1.5;
+        fixture.detectChanges();
+        await fixture.whenStable();
+        expect(component.value).toBe(0);
+    });
 });
