@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { moduleMetadata } from '@storybook/angular';
 import { Story } from '@storybook/angular/types-6-0';
+import { UiButtonModule } from '../button/ui-button.module';
 import { UiToolbarComponent } from './ui-toolbar.component';
 
 // This exports the Stories group for this component
@@ -33,4 +34,32 @@ const Template: Story<UiToolbarComponent> = (args: UiToolbarComponent) => ({
 export const Basic = Template.bind({});
 Basic.args = {};
 
+const TemplateWithLogo: Story<UiToolbarComponent> = (args: UiToolbarComponent) => ({
+    props: args,
+    moduleMetadata: {
+        declarations: [UiToolbarComponent],
+        imports: [CommonModule, UiButtonModule],
+    },
+    template: `<ui-toolbar justify="between"><img src="/assets/images/suggestions/icon-suggestions.svg" alt="Logo image"/>
+	<button ui-button color="dark">Login</button></ui-toolbar>`,
+});
+
+export const WithLogo = TemplateWithLogo.bind({});
+WithLogo.args = {
+    justify: 'between',
+};
+
+const TemplateTransparent: Story<UiToolbarComponent> = (args: UiToolbarComponent) => ({
+    props: args,
+    moduleMetadata: {
+        declarations: [UiToolbarComponent],
+        imports: [CommonModule, UiButtonModule],
+    },
+    template: `<ui-toolbar background="transparent"><button ui-button color="light">Login</button></ui-toolbar>`,
+});
+
+export const Transparent = TemplateTransparent.bind({});
+Transparent.args = {
+    background: 'transparent',
+};
 // Other stories could be added here as well, all you have to do is export them along!

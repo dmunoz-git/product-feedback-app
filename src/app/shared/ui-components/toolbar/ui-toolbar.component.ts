@@ -20,7 +20,7 @@ export const JUSTIFY_CSS_CLASES = {
 })
 export class UiToolbarComponent {
     @Input() justify: JusfityType = 'start';
-    @Input() background: 'transparent' | 'none' = 'none';
+    @Input() background: 'transparent' | 'default' = 'default';
 
     getJustifyClass(): string {
         return JUSTIFY_CSS_CLASES[this.justify];
