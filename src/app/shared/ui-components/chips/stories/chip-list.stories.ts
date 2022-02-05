@@ -1,8 +1,7 @@
-import { CommonModule } from '@angular/common';
 import { moduleMetadata } from '@storybook/angular';
 import { Story } from '@storybook/angular/types-6-0';
 import { UiChipListComponent } from '../chip-list/ui-chip-list.component';
-import { UiChipComponent } from '../chip/ui-chip.component';
+import { UiChipsModule } from '../ui-chips.module';
 
 // This exports the Stories group for this component
 export default {
@@ -13,24 +12,17 @@ export default {
     // The component related to the Stories
     component: UiChipListComponent,
 
-    subcomponents: { UiChipComponent },
-
     decorators: [
         // The necessary modules for the component to work on Storybook
         moduleMetadata({
-            declarations: [UiChipListComponent],
-            imports: [CommonModule],
+            imports: [UiChipsModule],
         }),
     ],
 };
 // This creates a Story for the component
 const Template: Story<UiChipListComponent> = (args: UiChipListComponent) => ({
     props: args,
-    moduleMetadata: {
-        declarations: [UiChipListComponent],
-        imports: [CommonModule],
-    },
-    template: `<ui-chip-list><ui-chip>Two</ui-chip><ui-chip>Three</ui-chip><ui-chip>Four</ui-chip><ui-chip>Five</ui-chip></ui-chip-list>`,
+    template: `<ui-chip-list><ui-chip>One</ui-chip><ui-chip>Two</ui-chip></ui-chip-list>`,
 });
 
 export const Basic = Template.bind({});
