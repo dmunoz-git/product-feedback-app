@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UIBadgeDirective } from './ui-badge.directive';
+import { NgModule } from '@angular/core';
+import { UiBadgeDirective } from './ui-badge.directive';
 
 @NgModule({
-    declarations: [UIBadgeDirective],
+    declarations: [UiBadgeDirective],
     imports: [CommonModule],
-    exports: [UIBadgeDirective],
+    exports: [UiBadgeDirective],
 })
-export class UIBadgeModule {}
+export class UiBadgeModule {}

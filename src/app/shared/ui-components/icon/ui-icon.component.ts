@@ -7,7 +7,7 @@ export const ICONS_BASE_PATH = '/assets/images/icons';
     selector: 'ui-icon',
     templateUrl: './ui-icon.component.html',
 })
-export class UIIconComponent {
+export class UiIconComponent {
     @Input() name!: string;
     @Input() type: 'desktop' | 'mobile' = 'desktop';
 

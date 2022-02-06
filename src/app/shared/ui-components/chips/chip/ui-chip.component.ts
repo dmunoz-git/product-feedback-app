@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
@@ -8,9 +8,7 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core';
     </span>`,
     styleUrls: ['./ui-chip.component.scss'],
 })
-export class UIChipComponent {
-    @ViewChild('text') textElement!: ElementRef;
+export class UiChipComponent {
     @Input() selectable: boolean = true;
-    @Input() value: string = '';
     @Input() active: boolean = false;
 }

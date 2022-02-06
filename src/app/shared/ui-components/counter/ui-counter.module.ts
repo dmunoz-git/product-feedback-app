@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UICounterComponent } from './ui-counter.component';
+import { NgModule } from '@angular/core';
+import { UiCounterComponent } from './ui-counter.component';
 
 @NgModule({
-    declarations: [UICounterComponent],
+    declarations: [UiCounterComponent],
     imports: [CommonModule],
-    exports: [UICounterComponent],
+    exports: [UiCounterComponent],
 })
-export class UICounterModule {}
+export class UiCounterModule {}

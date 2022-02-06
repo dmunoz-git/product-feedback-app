@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UIInputDirective } from './ui-input.directive';
+import { NgModule } from '@angular/core';
+import { UiInputDirective } from './ui-input.directive';
 
 @NgModule({
-    declarations: [UIInputDirective],
+    declarations: [UiInputDirective],
     imports: [CommonModule],
-    exports: [UIInputDirective],
+    exports: [UiInputDirective],
 })
-export class UIInputModule {}
+export class UiInputModule {}
