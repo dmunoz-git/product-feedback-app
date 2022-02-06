@@ -1,12 +1,14 @@
 @use 'tools/mixins';
+@use 'settings/layout';
 
 // Layout
 .layout {
     display: flex;
     flex-wrap: wrap;
     gap: 1.875rem;
-    padding: 5.875rem 0 8.0625rem 0;
-
+    padding: 5.875rem 1.5rem 8.0625rem 1.5rem;
+    width: min(100%, layout.$min-container-width);
+    margin: 0 auto;
     .main {
         flex: 1;
         flex-grow: 315;
