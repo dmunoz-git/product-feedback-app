@@ -13,18 +13,18 @@ import { UiFeedbackCardModule } from '../../shared/ui-components/feedback-card/f
 import { BannerModule } from './components/banner/banner.module';
 import { CategoryFilterComponent } from './components/category-filter/category-filter.component';
 import { EmptyFeedbacksModule } from './components/empty-feedbacks/empty-feedbacks.module';
-import { SuggestionsLayoutComponent } from './layout/suggestions-layout.component';
+import { HomeComponent } from './layout/home.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: SuggestionsLayoutComponent,
+        component: HomeComponent,
         pathMatch: 'full',
     },
 ];
 
 @NgModule({
-    declarations: [SuggestionsLayoutComponent, CategoryFilterComponent],
+    declarations: [HomeComponent, CategoryFilterComponent],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
@@ -42,4 +42,4 @@ const routes: Routes = [
     ],
     exports: [RouterModule],
 })
-export class SuggestionsModule {}
+export class HomeModule {}
