@@ -6,7 +6,9 @@ import { UiButtonModule } from '@shared/ui-components/button/ui-button.module';
 import { UiChipsModule } from '@shared/ui-components/chips/ui-chips.module';
 import { UiCounterModule } from '@shared/ui-components/counter/ui-counter.module';
 import { UiFeedbackCardModule } from '@shared/ui-components/feedback-card/feedback-card.module';
+import { UiFormFieldModule } from '@shared/ui-components/form-field/ui-form-field.module';
 import { UiIconModule } from '@shared/ui-components/icon/ui-icon.module';
+import { UiInputModule } from '@shared/ui-components/input/ui-input.module';
 import { UiToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';
 import { BackBtnComponent } from './components/back-btn/back-btn.component';
 import { FormCardComponent } from './components/form-card/form-card.component';
@@ -43,6 +45,8 @@ const routes: Routes = [
         UiCounterModule,
         UiChipsModule,
         UiBadgeModule,
+        UiFormFieldModule,
+        UiInputModule,
     ],
     exports: [RouterModule],
 })
