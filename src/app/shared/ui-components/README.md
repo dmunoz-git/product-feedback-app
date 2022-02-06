@@ -1,11 +1,11 @@
-# UI-Components
+# Ui-Components
 
-This folder contains all the UI components that are used in the application. Defined in the
+This folder contains all the Ui components that are used in the application. Defined in the
 Figma design file. All components are prefiexed with the component name `<ui-**>`.
 
 ## Buttons
 
-Import the module `UIButtonModule` from the `shared/ui-components/button/ui-button.module` file.
+Import the module `UiButtonModule` from the `shared/ui-components/button/ui-button.module` file.
 
 ```html
 <button ui-button color="primary"></button>
@@ -18,7 +18,7 @@ Import the module `UIButtonModule` from the `shared/ui-components/button/ui-butt
 
 ## Badge
 
-Import the module `UIBadgeModule` from the `shared/ui-components/badge/ui-badge.module` file.
+Import the module `UiBadgeModule` from the `shared/ui-components/badge/ui-badge.module` file.
 
 ```html
 <img src="" alt="" ui-badge value="0" />
@@ -26,7 +26,7 @@ Import the module `UIBadgeModule` from the `shared/ui-components/badge/ui-badge.
 
 ## Chips
 
-Import the module `UIChipModule` from the `shared/ui-components/chip/ui-chip.module` file.
+Import the module `UiChipModule` from the `shared/ui-components/chip/ui-chip.module` file.
 
 ```html
 <ui-chip>Chip</ui-chip>
@@ -34,7 +34,7 @@ Import the module `UIChipModule` from the `shared/ui-components/chip/ui-chip.mod
 
 ## Counter
 
-Import the module `UICounterModule` from the `shared/ui-components/counter/ui-counter.module` file.
+Import the module `UiCounterModule` from the `shared/ui-components/counter/ui-counter.module` file.
 
 ```html
 <ui-counter [(ngModel)]="field"></ui-counter> <ui-counter [FormControl]="field"></ui-counter>
@@ -44,7 +44,7 @@ The component implements ControlValueAccessor interface. So it can be used as a 
 
 ## Dropdown Menu
 
-Import the module `UIDropdownModule` from the `shared/ui-components/dropdown/ui-dropdown.module` file.
+Import the module `UiDropdownModule` from the `shared/ui-components/dropdown/ui-dropdown.module` file.
 
 ```html
 <button ui-button [uiDropdownTriggerFor]="menu">Menu</button>
@@ -57,7 +57,7 @@ Import the module `UIDropdownModule` from the `shared/ui-components/dropdown/ui-
 
 ## Divider
 
-Import the module `UIDividerModule` from the `shared/ui-components/divider/ui-divider.module` file.
+Import the module `UiDividerModule` from the `shared/ui-components/divider/ui-divider.module` file.
 
 ```html
 <ui-divider></ui-divider>
@@ -65,7 +65,7 @@ Import the module `UIDividerModule` from the `shared/ui-components/divider/ui-di
 
 ## Icons
 
-Import the module `UIIconModule` from the `shared/ui-components/icon/ui-icon.module` file.
+Import the module `UiIconModule` from the `shared/ui-components/icon/ui-icon.module` file.
 
 ```html
 <ui-icon name="home"></ui-icon> <ui-icon type="desktop" name="home"></ui-icon>
@@ -89,7 +89,7 @@ Mobile type icons:
 
 ## Input
 
-Import the module `UIInputModule` from the `shared/ui-components/input/ui-input.module` file.
+Import the module `UiInputModule` from the `shared/ui-components/input/ui-input.module` file.
 
 ```html
 <input uiInput [ngModel]="value" />
@@ -97,7 +97,7 @@ Import the module `UIInputModule` from the `shared/ui-components/input/ui-input.
 
 ## Selector
 
-Import the module `UISelectorModule` from the `shared/ui-components/selector/ui-selector.module` file.
+Import the module `UiSelectorModule` from the `shared/ui-components/selector/ui-selector.module` file.
 
 ```html
 <ui-select label="Name" [(ngModel)]="field">
@@ -109,13 +109,13 @@ Import the module `UISelectorModule` from the `shared/ui-components/selector/ui-
 
 ## Toast
 
-Import the module `UIToastModule` from the `shared/ui-components/toast/ui-toast.module` file.
+Import the module `UiToastModule` from the `shared/ui-components/toast/ui-toast.module` file.
 
 ```ts
-constructor(private toast: UIToastService) {}
+constructor(private toast: UiToastService) {}
 
 open() {
-  this.toast.open(UIToastComponent, {
+  this.toast.open(UiToastComponent, {
 	message: 'This is a toast message',
 	duration: 3000,
   });
@@ -131,7 +131,7 @@ In template:
 
 ## Toolbar
 
-Import the module `UIToolbarModule` from the `shared/ui-components/toolbar/ui-toolbar.module` file.
+Import the module `UiToolbarModule` from the `shared/ui-components/toolbar/ui-toolbar.module` file.
 
 ```html
 <ui-toolbar></ui-toolbar>

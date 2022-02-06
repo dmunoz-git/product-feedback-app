@@ -1,25 +1,23 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { UiSelectOptionComponent } from './ui-select-option.component';
 
-import { UISelectOptionComponent } from './ui-select-option.component';
+describe('UiSelectOptionComponent', () => {
+    let component: UiSelectOptionComponent;
+    let fixture: ComponentFixture<UiSelectOptionComponent>;
 
-describe('UISelectOptionComponent', () => {
-  let component: UISelectOptionComponent;
-  let fixture: ComponentFixture<UISelectOptionComponent>;
+    beforeEach(async () => {
+        await TestBed.configureTestingModule({
+            declarations: [UiSelectOptionComponent],
+        }).compileComponents();
+    });
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ UISelectOptionComponent ]
-    })
-    .compileComponents();
-  });
+    beforeEach(() => {
+        fixture = TestBed.createComponent(UiSelectOptionComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
+    });
 
-  beforeEach(() => {
-    fixture = TestBed.createComponent(UISelectOptionComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it('should create', () => {
+        expect(component).toBeTruthy();
+    });
 });

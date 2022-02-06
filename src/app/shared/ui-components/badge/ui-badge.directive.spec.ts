@@ -1,7 +1,7 @@
 import { Component, ElementRef } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
-import { UIBadgeDirective } from './ui-badge.directive';
+import { UiBadgeDirective } from './ui-badge.directive';
 
 @Component({
     template: ` <button ui-badge [value]="value">Button</button>`,
@@ -23,13 +23,13 @@ class MockElementRef extends ElementRef {
 
 let mockElementRef = new MockElementRef(0);
 
-describe('UIBadgeDirective', () => {
+describe('UiBadgeDirective', () => {
     let fixture: ComponentFixture<TestComponent>;
     let component: TestComponent;
 
     beforeEach(() => {
         fixture = TestBed.configureTestingModule({
-            declarations: [UIBadgeDirective, TestComponent],
+            declarations: [UiBadgeDirective, TestComponent],
         }).createComponent(TestComponent);
 
         component = fixture.componentInstance;
@@ -37,7 +37,7 @@ describe('UIBadgeDirective', () => {
         fixture.detectChanges();
     });
     it('should create an instance', () => {
-        const directive = new UIBadgeDirective(document, mockElementRef);
+        const directive = new UiBadgeDirective(document, mockElementRef);
         expect(directive).toBeTruthy();
     });
 

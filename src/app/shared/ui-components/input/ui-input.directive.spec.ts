@@ -1,8 +1,8 @@
-import { UIInputDirective } from './ui-input.directive';
+import { UiInputDirective } from './ui-input.directive';
 
-describe('UIInputDirective', () => {
-  it('should create an instance', () => {
-    const directive = new UIInputDirective();
-    expect(directive).toBeTruthy();
-  });
+describe('UiInputDirective', () => {
+    it('should create an instance', () => {
+        const directive = new UiInputDirective();
+        expect(directive).toBeTruthy();
+    });
 });

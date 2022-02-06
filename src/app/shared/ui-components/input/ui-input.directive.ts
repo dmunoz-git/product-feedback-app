@@ -4,6 +4,6 @@ import { Directive, HostBinding } from '@angular/core';
     // eslint-disable-next-line @angular-eslint/directive-selector
     selector: '[uiInput]',
 })
-export class UIInputDirective {
+export class UiInputDirective {
     @HostBinding('class') elementClass = 'ui-input';
 }

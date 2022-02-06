@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UIIconComponent } from './ui-icon.component';
+import { NgModule } from '@angular/core';
+import { UiIconComponent } from './ui-icon.component';
 
 @NgModule({
-    declarations: [UIIconComponent],
+    declarations: [UiIconComponent],
     imports: [CommonModule],
-    exports: [UIIconComponent],
+    exports: [UiIconComponent],
 })
-export class UIIconModule {}
+export class UiIconModule {}

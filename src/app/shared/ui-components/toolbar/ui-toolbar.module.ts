@@ -1,10 +1,10 @@
-import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { UIToolbarComponent } from './ui-toolbar.component';
+import { NgModule } from '@angular/core';
+import { UiToolbarComponent } from './ui-toolbar.component';
 
 @NgModule({
-    declarations: [UIToolbarComponent],
+    declarations: [UiToolbarComponent],
     imports: [CommonModule],
-    exports: [UIToolbarComponent],
+    exports: [UiToolbarComponent],
 })
-export class UIToolbarModule {}
+export class UiToolbarModule {}

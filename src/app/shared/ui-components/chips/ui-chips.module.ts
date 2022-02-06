@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { UIChipListComponent } from './chip-list/ui-chip-list.component';
-import { UIChipComponent } from './chip/ui-chip.component';
+import { UiChipListComponent } from './chip-list/ui-chip-list.component';
+import { UiChipComponent } from './chip/ui-chip.component';
 
 @NgModule({
-    declarations: [UIChipComponent, UIChipListComponent],
+    declarations: [UiChipComponent, UiChipListComponent],
     imports: [CommonModule],
-    exports: [UIChipComponent, UIChipListComponent],
+    exports: [UiChipComponent, UiChipListComponent],
 })
-export class UIChipsModule {}
+export class UiChipsModule {}

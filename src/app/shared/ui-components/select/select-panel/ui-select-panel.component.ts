@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ContentChildren, forwardRef, Input, QueryList, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { fadeInOut } from '@shared/ui-components/animations/fade.animation';
-import { UISelectOptionComponent } from '../select-option/ui-select-option.component';
+import { UiSelectOptionComponent } from '../select-option/ui-select-option.component';
 import { UiSelectService } from '../ui-select.service';
 
 @Component({
@@ -14,19 +14,19 @@ import { UiSelectService } from '../ui-select.service';
     providers: [
         {
             provide: NG_VALUE_ACCESSOR,
-            useExisting: forwardRef(() => UISelectPanelComponent),
+            useExisting: forwardRef(() => UiSelectPanelComponent),
             multi: true,
         },
     ],
 })
-export class UISelectPanelComponent implements AfterViewInit, ControlValueAccessor {
+export class UiSelectPanelComponent implements AfterViewInit, ControlValueAccessor {
     @Input() selected: string = '';
     @Input() placeholder: string = '';
     @Input() disabled: boolean = false;
 
-    @ContentChildren(UISelectOptionComponent) options!: QueryList<UISelectOptionComponent>;
+    @ContentChildren(UiSelectOptionComponent) options!: QueryList<UiSelectOptionComponent>;
 
-    selectedOption!: UISelectOptionComponent;
+    selectedOption!: UiSelectOptionComponent;
     displayedText: string = '';
 
     isDropdownOpen: boolean = false;
@@ -51,7 +51,7 @@ export class UISelectPanelComponent implements AfterViewInit, ControlValueAccess
         this.isDropdownOpen ? (this.isDropdownOpen = false) : (this.isDropdownOpen = true);
     }
 
-    selectOption(option: UISelectOptionComponent) {
+    selectOption(option: UiSelectOptionComponent) {
         this.selectedOption = option;
         this.selected = option.value;
         this.displayedText = this.selectedOption && this.selected !== '' ? option.textElement.nativeElement.innerText : '';

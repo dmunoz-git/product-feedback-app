@@ -6,4 +6,4 @@ import { Component } from '@angular/core';
     templateUrl: './ui-chip-list.component.html',
     styleUrls: ['./ui-chip-list.component.scss'],
 })
-export class UIChipListComponent {}
+export class UiChipListComponent {}

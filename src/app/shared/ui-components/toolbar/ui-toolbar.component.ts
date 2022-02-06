@@ -18,9 +18,9 @@ export const JUSTIFY_CSS_CLASES = {
     </div> `,
     styleUrls: ['./ui-toolbar.component.scss'],
 })
-export class UIToolbarComponent {
+export class UiToolbarComponent {
     @Input() justify: JusfityType = 'start';
-    @Input() background: 'transparent' | 'none' = 'none';
+    @Input() background: 'transparent' | 'default' = 'default';
 
     getJustifyClass(): string {
         return JUSTIFY_CSS_CLASES[this.justify];
