@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { TranslocoModule } from '@ngneat/transloco';
 import { UiBadgeModule } from '@shared/ui-components/badge/ui-badge.module';
 import { UiButtonModule } from '@shared/ui-components/button/ui-button.module';
 import { UiChipsModule } from '@shared/ui-components/chips/ui-chips.module';
@@ -9,6 +10,7 @@ import { UiFeedbackCardModule } from '@shared/ui-components/feedback-card/feedba
 import { UiFormFieldModule } from '@shared/ui-components/form-field/ui-form-field.module';
 import { UiIconModule } from '@shared/ui-components/icon/ui-icon.module';
 import { UiInputModule } from '@shared/ui-components/input/ui-input.module';
+import { UiSelectModule } from '@shared/ui-components/select/ui-select.module';
 import { UiToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';
 import { BackBtnComponent } from './components/back-btn/back-btn.component';
 import { FormCardComponent } from './components/form-card/form-card.component';
@@ -47,6 +49,8 @@ const routes: Routes = [
         UiBadgeModule,
         UiFormFieldModule,
         UiInputModule,
+        UiSelectModule,
+        TranslocoModule,
     ],
     exports: [RouterModule],
 })

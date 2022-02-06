@@ -1,9 +1,11 @@
-<section class="feedback-create">
-    <app-back-btn>Go Back</app-back-btn>
+<section class="feedback-create" *transloco="let t">
+    <app-back-btn>{{ t('back') }}</app-back-btn>
     <app-form-card class="feedback-create__card" iconPath="/assets/images/icons/icon-new-feedback.svg">
         <form action="">
-            <h1>Create New Feedback</h1>
+            <h1>{{ t('newFeedback') }}</h1>
+            <h4>{{ t('formFields.title') }}</h4>
             <ui-form-field size="fluent">
+                <ui-label>Label</ui-label>
                 <input uiInput type="text" />
             </ui-form-field>
         </form>

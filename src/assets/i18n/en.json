@@ -3,12 +3,10 @@
 	"subtitle": "Feedback board",
 	"toolbarTitle": "Suggestions",
 	"createFeedbackLabelButton": "Add feedback",
-
 	"emptyFeedbackList": {
 		"title": "There is no feedback yet.",
 		"description": "Got a suggestion? Found a bug that needs to be squashed?\n We love hearing about new ideas to improve our app."
 	},
-
 	"categoriesFeedbackFilter": {
 		"all": "All",
 		"ui": "UI",
@@ -16,5 +14,15 @@
 		"enhancement": "Enhancement",
 		"bug": "Bug",
 		"feature": "Feature"
+	},
+	"back": "Go back",
+	"newFeedback": "Create New Feedback",
+	"formFields": {
+		"title": "Feedback Title",
+		"titleLabel": "Add a short, descriptive headline",
+		"category": "Category",
+		"categoryLabel": "Choose the category of your feedback",
+		"detail": "Feedback Detail",
+		"detailLabel": "Include any specific comments on what should be improved, added, etc."
 	}
 }
