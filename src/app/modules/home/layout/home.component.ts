@@ -5,11 +5,11 @@ import { FeedbackService } from 'src/app/core/http/feedback.service';
 import { Feedback } from 'src/app/core/models/feedback.model';
 
 @Component({
-    selector: 'app-suggestions-layout',
-    templateUrl: './suggestions-layout.component.html',
-    styleUrls: ['./suggestions-layout.component.scss'],
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
 })
-export class SuggestionsLayoutComponent implements OnInit {
+export class HomeComponent implements OnInit {
     feedbacks$!: Observable<Feedback[]>;
 
     constructor(private feedbacks: FeedbackService, private router: Router) {

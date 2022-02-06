@@ -4,7 +4,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SuggestionsModule } from './modules/suggestions/suggestions.module';
+import { FeedbackModule } from './modules/feedback/feedback.module';
+import { HomeModule } from './modules/home/home.module';
 import { TranslocoRootModule } from './transloco-root.module';
 
 @NgModule({
@@ -17,7 +18,8 @@ import { TranslocoRootModule } from './transloco-root.module';
         TranslocoRootModule,
 
         // Modules
-        SuggestionsModule,
+        HomeModule,
+        FeedbackModule,
     ],
     providers: [],
     bootstrap: [AppComponent],
