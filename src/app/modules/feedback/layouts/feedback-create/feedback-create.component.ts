@@ -7,9 +7,11 @@ import { FormBuilder } from '@angular/forms';
     styleUrls: ['./feedback-create.component.scss'],
 })
 export class FeedbackCreateComponent {
-    feedbackForm = this.fb.group({
+    public feedbackForm = this.fb.group({
         title: [''],
-        category: [''],
+        category: ['feature'],
     });
+
+    public readonly categories = ['feature', 'bug', 'enhancement', 'ui', 'ux'];
     constructor(private fb: FormBuilder) {}
 }

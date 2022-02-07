@@ -11,12 +11,12 @@
             </ui-form-field>
 
             <h4 class="form-field-title">{{ t('formFields.category') }}</h4>
-            <ui-form-field>
+            <ui-form-field size="fluent">
                 <ui-label>{{ t('formFields.categoryLabel') }}</ui-label>
                 <ui-select formControlName="category">
-                    <ui-select-option>One</ui-select-option>
-                    <ui-select-option>Two</ui-select-option>
-                    <ui-select-option>Three</ui-select-option>
+                    <ui-select-option *ngFor="let category of categories" value="{{ category }}">{{
+                        t('categoriesFeedbackFilter.' + category)
+                    }}</ui-select-option>
                 </ui-select>
             </ui-form-field>
         </form>
