@@ -1,12 +1,23 @@
 <section class="feedback-create" *transloco="let t">
     <app-back-btn>{{ t('back') }}</app-back-btn>
     <app-form-card class="feedback-create__card" iconPath="/assets/images/icons/icon-new-feedback.svg">
-        <form action="">
+        <form [formGroup]="feedbackForm">
             <h1>{{ t('newFeedback') }}</h1>
-            <h4>{{ t('formFields.title') }}</h4>
+
+            <h4 class="form-field-title">{{ t('formFields.title') }}</h4>
             <ui-form-field size="fluent">
-                <ui-label>Label</ui-label>
-                <input uiInput type="text" />
+                <ui-label>{{ t('formFields.titleLabel') }}</ui-label>
+                <input uiInput type="text" formControlName="title" />
+            </ui-form-field>
+
+            <h4 class="form-field-title">{{ t('formFields.category') }}</h4>
+            <ui-form-field>
+                <ui-label>{{ t('formFields.categoryLabel') }}</ui-label>
+                <ui-select formControlName="category">
+                    <ui-select-option>One</ui-select-option>
+                    <ui-select-option>Two</ui-select-option>
+                    <ui-select-option>Three</ui-select-option>
+                </ui-select>
             </ui-form-field>
         </form>
     </app-form-card>
