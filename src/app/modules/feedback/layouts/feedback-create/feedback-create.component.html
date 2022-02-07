@@ -15,7 +15,7 @@
                 <ui-label>{{ t('formFields.categoryLabel') }}</ui-label>
                 <ui-select formControlName="category">
                     <ui-select-option *ngFor="let category of categories" value="{{ category }}">{{
-                        t('categoriesFeedbackFilter.' + category)
+                        t('categories.' + category)
                     }}</ui-select-option>
                 </ui-select>
             </ui-form-field>

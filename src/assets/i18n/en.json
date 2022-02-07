@@ -7,7 +7,7 @@
 		"title": "There is no feedback yet.",
 		"description": "Got a suggestion? Found a bug that needs to be squashed?\n We love hearing about new ideas to improve our app."
 	},
-	"categoriesFeedbackFilter": {
+	"categories": {
 		"all": "All",
 		"ui": "UI",
 		"ux": "UX",
