@@ -11,3 +11,12 @@
 .form-field-title {
     margin: 0.125rem 0;
 }
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    &__item:not(:last-child) {
+        margin-right: 1rem;
+    }
+}

@@ -10,8 +10,11 @@ export class FeedbackCreateComponent {
     public feedbackForm = this.fb.group({
         title: [''],
         category: ['feature'],
+        detail: [''],
     });
 
     public readonly categories = ['feature', 'bug', 'enhancement', 'ui', 'ux'];
     constructor(private fb: FormBuilder) {}
+
+    createFeedback() {}
 }

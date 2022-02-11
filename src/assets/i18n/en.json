@@ -24,5 +24,10 @@
 		"categoryLabel": "Choose the category of your feedback",
 		"detail": "Feedback Detail",
 		"detailLabel": "Include any specific comments on what should be improved, added, etc."
+	},
+
+	"buttons": {
+		"cancel": "Cancel",
+		"addFeedbacks": "Add Feedback"
 	}
 }
