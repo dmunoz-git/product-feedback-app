@@ -20,6 +20,24 @@ export class UiLabelComponent {}
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
+    selector: 'ui-error',
+    template: `<span class="ui-error"><ng-content></ng-content></span>`,
+    styles: [
+        `
+            @use 'settings/colors';
+
+            .ui-error {
+                font-size: 0.875rem;
+                color: colors.$error-color;
+                margin: 0.25rem 0;
+            }
+        `,
+    ],
+})
+export class UiErrorComponent {}
+
+@Component({
+    // eslint-disable-next-line @angular-eslint/component-selector
     selector: 'ui-form-field',
     templateUrl: './ui-form-field.component.html',
     styleUrls: ['./ui-form-field.component.scss'],

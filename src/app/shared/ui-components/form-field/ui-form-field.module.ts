@@ -1,10 +1,10 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { UiFormFieldComponent, UiLabelComponent } from './ui-form-field.component';
+import { UiErrorComponent, UiFormFieldComponent, UiLabelComponent } from './ui-form-field.component';
 
 @NgModule({
-    declarations: [UiFormFieldComponent, UiLabelComponent],
+    declarations: [UiFormFieldComponent, UiLabelComponent, UiErrorComponent],
     imports: [CommonModule],
-    exports: [UiFormFieldComponent, UiLabelComponent],
+    exports: [UiFormFieldComponent, UiLabelComponent, UiErrorComponent],
 })
 export class UiFormFieldModule {}
