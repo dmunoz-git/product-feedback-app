@@ -36,7 +36,9 @@
                 <button ui-button color="dark" type="button" class="form-buttons__item" [routerLink]="['/']">
                     {{ t('buttons.cancel') }}
                 </button>
-                <button ui-button color="primary" type="submit" class="form-buttons__item">{{ t('buttons.addFeedbacks') }}</button>
+                <button ui-button color="primary" type="submit" class="form-buttons__item" [disabled]="feedbackForm.invalid">
+                    {{ t('buttons.addFeedbacks') }}
+                </button>
             </div>
         </form>
     </app-form-card>

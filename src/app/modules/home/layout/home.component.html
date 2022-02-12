@@ -43,7 +43,7 @@
         <app-empty-feedbacks *ngIf="(feedbacks$ | async)!.length === 0">
             <h1 empty-feedbacks-title>{{ t('emptyFeedbackList.title') }}</h1>
             <p empty-feedbacks-body>{{ t('emptyFeedbackList.description') }}</p>
-            <button ui-button color="primary" empty-feedbacks-button>
+            <button ui-button color="primary" empty-feedbacks-button routerLink="/feedback/new">
                 <ui-icon name="plus"></ui-icon> {{ t('createFeedbackLabelButton') }}
             </button>
         </app-empty-feedbacks>
