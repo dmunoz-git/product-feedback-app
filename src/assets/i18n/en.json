@@ -29,5 +29,9 @@
 	"buttons": {
 		"cancel": "Cancel",
 		"addFeedbacks": "Add Feedback"
+	},
+
+	"errors": {
+		"empty": "Can't be empty"
 	}
 }

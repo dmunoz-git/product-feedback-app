@@ -74,8 +74,11 @@ export class UiSelectPanelComponent implements AfterViewInit, ControlValueAccess
     }
 
     writeValue(fn: any): void {
-        this.onChangeFn = fn;
+        this.displayedText = fn;
+        this.selected = fn;
+        this.setSelected();
     }
+
     registerOnChange(fn: any): void {
         this.onChangeFn = fn;
     }

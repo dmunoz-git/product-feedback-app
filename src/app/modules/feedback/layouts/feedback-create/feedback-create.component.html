@@ -8,7 +8,9 @@
             <ui-form-field size="fluent">
                 <ui-label>{{ t('formFields.titleLabel') }}</ui-label>
                 <input uiInput type="text" formControlName="title" />
-                <ui-error *ngIf="title?.hasError('required')"></ui-error>
+                <ui-error *ngIf="title?.hasError('required')">
+                    {{ t('errors.empty') }}
+                </ui-error>
             </ui-form-field>
 
             <h4 class="form-field-title">{{ t('formFields.category') }}</h4>
@@ -18,7 +20,6 @@
                     <ui-select-option *ngFor="let category of categories" value="{{ category }}">{{
                         t('categories.' + category)
                     }}</ui-select-option>
-                    <ui-error *ngIf="title?.hasError('required')"></ui-error>
                 </ui-select>
             </ui-form-field>
 
@@ -26,7 +27,9 @@
             <ui-form-field size="fluent">
                 <ui-label>{{ t('formFields.detailLabel') }}</ui-label>
                 <textarea uiInput formControlName="detail" rows="4"></textarea>
-                <ui-error *ngIf="title?.hasError('required')"></ui-error>
+                <ui-error *ngIf="detail?.hasError('required')">
+                    {{ t('errors.empty') }}
+                </ui-error>
             </ui-form-field>
 
             <div class="form-buttons">

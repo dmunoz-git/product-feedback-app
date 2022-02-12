@@ -7,13 +7,13 @@ import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
     styleUrls: ['./feedback-create.component.scss'],
 })
 export class FeedbackCreateComponent {
+    public readonly categories = ['feature', 'bug', 'enhancement', 'ui', 'ux'];
+
     public feedbackForm = this.fb.group({
         title: ['', Validators.required],
-        category: ['ux', Validators.required],
+        category: [this.categories[0], Validators.required],
         detail: ['', Validators.required],
     });
-
-    public readonly categories = ['feature', 'bug', 'enhancement', 'ui', 'ux'];
 
     constructor(private fb: FormBuilder) {}
 
