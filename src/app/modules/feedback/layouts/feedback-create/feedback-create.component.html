@@ -8,7 +8,7 @@
             <ui-form-field size="fluent">
                 <ui-label>{{ t('formFields.titleLabel') }}</ui-label>
                 <input uiInput type="text" formControlName="title" />
-                <ui-error *ngIf="title?.hasError('required')">
+                <ui-error *ngIf="title?.errors && title?.hasError('required') && title?.touched">
                     {{ t('errors.empty') }}
                 </ui-error>
             </ui-form-field>
@@ -27,7 +27,7 @@
             <ui-form-field size="fluent">
                 <ui-label>{{ t('formFields.detailLabel') }}</ui-label>
                 <textarea uiInput formControlName="detail" rows="4"></textarea>
-                <ui-error *ngIf="detail?.hasError('required')">
+                <ui-error *ngIf="detail?.errors && detail?.hasError('required') && detail?.touched">
                     {{ t('errors.empty') }}
                 </ui-error>
             </ui-form-field>
