@@ -7,8 +7,8 @@
             <h4 class="form-field-title">{{ t('formFields.title') }}</h4>
             <ui-form-field size="fluent">
                 <ui-label>{{ t('formFields.titleLabel') }}</ui-label>
-                <input uiInput type="text" formControlName="title" />
-                <ui-error *ngIf="title?.errors && title?.hasError('required') && title?.touched">
+                <input uiInput type="text" formControlName="title" data-cy="title-field" />
+                <ui-error *ngIf="title?.errors && title?.hasError('required') && title?.touched" data-cy="field-error">
                     {{ t('errors.empty') }}
                 </ui-error>
             </ui-form-field>
@@ -26,17 +26,24 @@
             <h4 class="form-field-title">{{ t('formFields.detail') }}</h4>
             <ui-form-field size="fluent">
                 <ui-label>{{ t('formFields.detailLabel') }}</ui-label>
-                <textarea uiInput formControlName="description" rows="4"></textarea>
-                <ui-error *ngIf="description?.errors && description?.hasError('required') && description?.touched">
+                <textarea uiInput formControlName="description" rows="4" data-cy="description-field"></textarea>
+                <ui-error *ngIf="description?.errors && description?.hasError('required') && description?.touched" data-cy="field-error">
                     {{ t('errors.empty') }}
                 </ui-error>
             </ui-form-field>
 
             <div class="form-buttons">
-                <button ui-button color="dark" type="button" class="form-buttons__item" [routerLink]="['/']">
+                <button ui-button color="dark" type="button" class="form-buttons__item" [routerLink]="['/']" data-cy="cancel">
                     {{ t('buttons.cancel') }}
                 </button>
-                <button ui-button color="primary" type="submit" class="form-buttons__item" [disabled]="feedbackForm.invalid">
+                <button
+                    ui-button
+                    color="primary"
+                    type="submit"
+                    class="form-buttons__item"
+                    [disabled]="feedbackForm.invalid"
+                    data-cy="submit"
+                >
                     {{ t('buttons.addFeedbacks') }}
                 </button>
             </div>
