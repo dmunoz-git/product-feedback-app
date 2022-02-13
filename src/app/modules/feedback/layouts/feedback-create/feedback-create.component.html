@@ -26,8 +26,8 @@
             <h4 class="form-field-title">{{ t('formFields.detail') }}</h4>
             <ui-form-field size="fluent">
                 <ui-label>{{ t('formFields.detailLabel') }}</ui-label>
-                <textarea uiInput formControlName="detail" rows="4"></textarea>
-                <ui-error *ngIf="detail?.errors && detail?.hasError('required') && detail?.touched">
+                <textarea uiInput formControlName="description" rows="4"></textarea>
+                <ui-error *ngIf="description?.errors && description?.hasError('required') && description?.touched">
                     {{ t('errors.empty') }}
                 </ui-error>
             </ui-form-field>

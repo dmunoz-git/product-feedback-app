@@ -14,7 +14,7 @@ export class FeedbackCreateComponent {
     public feedbackForm = this.fb.group({
         title: ['', Validators.required],
         category: [this.categories[0], Validators.required],
-        detail: ['', Validators.required],
+        description: ['', Validators.required],
     });
 
     constructor(private fb: FormBuilder, private feedbacks: FeedbackService, private router: Router) {}
@@ -27,7 +27,7 @@ export class FeedbackCreateComponent {
         return this.feedbackForm.get('category');
     }
 
-    get detail(): AbstractControl | null {
+    get description(): AbstractControl | null {
         return this.feedbackForm.get('detail');
     }
 
