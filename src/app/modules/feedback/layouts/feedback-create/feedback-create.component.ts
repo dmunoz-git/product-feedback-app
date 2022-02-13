@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { FeedbackService } from 'src/app/core/http/feedback.service';
+import { FeedbackService } from '@core/http/feedback.service';
 
 @Component({
     selector: 'app-feedback-create',
@@ -28,7 +28,7 @@ export class FeedbackCreateComponent {
     }
 
     get description(): AbstractControl | null {
-        return this.feedbackForm.get('detail');
+        return this.feedbackForm.get('description');
     }
 
     createFeedback() {
