@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { FeedbackService } from 'src/app/core/http/feedback.service';
 
 @Component({
     selector: 'app-feedback-create',
@@ -15,7 +17,7 @@ export class FeedbackCreateComponent {
         detail: ['', Validators.required],
     });
 
-    constructor(private fb: FormBuilder) {}
+    constructor(private fb: FormBuilder, private feedbacks: FeedbackService, private router: Router) {}
 
     get title(): AbstractControl | null {
         return this.feedbackForm.get('title');
@@ -29,5 +31,7 @@ export class FeedbackCreateComponent {
         return this.feedbackForm.get('detail');
     }
 
-    createFeedback() {}
+    createFeedback() {
+        this.feedbacks.createFeedback(this.feedbackForm.value).subscribe(() => this.router.navigate(['/']));
+    }
 }

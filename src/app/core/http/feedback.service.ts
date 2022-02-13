@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import data from '../mocks/data.json';
 import { Feedback } from '../models/feedback.model';
 import { endpoints } from './endpoints';
@@ -11,8 +11,18 @@ import { endpoints } from './endpoints';
 export class FeedbackService {
     constructor(private http: HttpClient) {}
 
-    createFeedback(feedback: Feedback): Observable<void> {
-        return this.http.post<void>(endpoints.feedbacks, feedback);
+    createFeedback(feedback: Feedback) {
+        const newFeedbackData = {
+            id: data.productRequests.length + 1,
+            title: feedback.title,
+            category: feedback.category,
+            upvotes: 0,
+            status: feedback.status,
+            description: feedback.description,
+            comments: [],
+        };
+
+        return new BehaviorSubject<boolean>(true).pipe(map(() => data.productRequests.push(newFeedbackData)));
     }
 
     getFeedbackDetail(id: number): Observable<Feedback | undefined> {
