@@ -1,5 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterTestingModule } from '@angular/router/testing';
+import { FeedbackService } from '../../../../core/http/feedback.service';
 import { FeedbackCreateComponent } from './feedback-create.component';
 
 describe('FeedbackCreateComponent', () => {
@@ -9,7 +11,8 @@ describe('FeedbackCreateComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [FeedbackCreateComponent],
-            imports: [ReactiveFormsModule, FormsModule],
+            imports: [ReactiveFormsModule, FormsModule, RouterTestingModule],
+            providers: [FeedbackService],
         }).compileComponents();
     });
 
