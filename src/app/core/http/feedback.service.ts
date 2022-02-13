@@ -1,15 +1,13 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import { BehaviorSubject, map, Observable, of } from 'rxjs';
 import data from '../mocks/data.json';
 import { Feedback } from '../models/feedback.model';
-import { endpoints } from './endpoints';
 
 @Injectable({
     providedIn: 'root',
 })
 export class FeedbackService {
-    constructor(private http: HttpClient) {}
+    constructor() {}
 
     createFeedback(feedback: Feedback) {
         const newFeedbackData = {
@@ -34,11 +32,11 @@ export class FeedbackService {
         return new BehaviorSubject<Feedback[]>(data.productRequests).asObservable();
     }
 
-    updateFeedback(id: number, feedback: Feedback): Observable<void> {
-        return this.http.put<void>(`${endpoints.feedbacks}/${id}`, feedback);
+    updateFeedback(id: number, feedback: Feedback): Observable<null> {
+        return of(null);
     }
 
-    deleteFeedback(id: number): Observable<void> {
-        return this.http.delete<void>(`${endpoints.feedbacks}/${id}`);
+    deleteFeedback(id: number): Observable<null> {
+        return of(null);
     }
 }

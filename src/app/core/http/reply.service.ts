@@ -1,8 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, of } from 'rxjs';
 import { Reply } from '../models/reply.model';
-import { endpoints } from './endpoints';
 
 @Injectable({
     providedIn: 'root',
@@ -10,23 +9,23 @@ import { endpoints } from './endpoints';
 export class ReplyService {
     constructor(private http: HttpClient) {}
 
-    createReply(reply: Reply): Observable<void> {
-        return this.http.post<void>(endpoints.replies, reply);
+    createReply(reply: Reply): Observable<null> {
+        return of(null);
     }
 
-    getReplyDetail(id: number): Observable<Reply> {
-        return this.http.get<Reply>(`${endpoints.replies}/${id}`);
+    getReplyDetail(id: number): Observable<null> {
+        return of(null);
     }
 
-    getReplies(): Observable<Reply[]> {
-        return this.http.get<Reply[]>(endpoints.replies);
+    getReplies(): Observable<null> {
+        return of(null);
     }
 
-    updateReply(id: number, reply: Reply): Observable<void> {
-        return this.http.put<void>(`${endpoints.replies}/${id}`, reply);
+    updateReply(id: number, reply: Reply): Observable<null> {
+        return of(null);
     }
 
-    deleteReply(id: number): Observable<void> {
-        return this.http.delete<void>(`${endpoints.replies}/${id}`);
+    deleteReply(id: number): Observable<null> {
+        return of(null);
     }
 }

@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { endpoints } from './endpoints';
+import { Observable, of } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
@@ -9,23 +8,23 @@ import { endpoints } from './endpoints';
 export class CommentService {
     constructor(private http: HttpClient) {}
 
-    createComment(comment: Comment): Observable<void> {
-        return this.http.post<void>(endpoints.comments, comment);
+    createComment(comment: Comment): Observable<null> {
+        return of(null);
     }
 
-    getCommentDetail(id: number): Observable<Comment> {
-        return this.http.get<Comment>(`${endpoints.comments}/${id}`);
+    getCommentDetail(id: number): Observable<null> {
+        return of(null);
     }
 
-    getComments(): Observable<Comment[]> {
-        return this.http.get<Comment[]>(endpoints.comments);
+    getComments(): Observable<null> {
+        return of(null);
     }
 
-    updateComment(id: number, comment: Comment): Observable<void> {
-        return this.http.put<void>(`${endpoints.comments}/${id}`, comment);
+    updateComment(id: number, comment: Comment): Observable<null> {
+        return of(null);
     }
 
-    deleteComment(id: number): Observable<void> {
-        return this.http.delete<void>(`${endpoints.comments}/${id}`);
+    deleteComment(id: number): Observable<null> {
+        return of(null);
     }
 }
