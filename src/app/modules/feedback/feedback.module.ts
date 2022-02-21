@@ -14,6 +14,7 @@ import { UiInputModule } from '@shared/ui-components/input/ui-input.module';
 import { UiSelectModule } from '@shared/ui-components/select/ui-select.module';
 import { UiToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';
 import { BackBtnComponent } from './components/back-btn/back-btn.component';
+import { CommentModule } from './components/comment/comment.module';
 import { FormCardComponent } from './components/form-card/form-card.component';
 import { FeedbackCreateComponent } from './layouts/feedback-create/feedback-create.component';
 import { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';
@@ -51,6 +52,7 @@ const routes: Routes = [
         UiFormFieldModule,
         UiInputModule,
         UiSelectModule,
+        CommentModule,
         TranslocoModule,
         ReactiveFormsModule,
     ],
