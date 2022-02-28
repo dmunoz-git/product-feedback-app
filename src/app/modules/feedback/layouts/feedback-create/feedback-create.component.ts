@@ -1,15 +1,18 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { FeedbackService } from '@core/http/feedback.service';
+import { Feedback } from '@core/models/feedback.model';
+import { Subscription } from 'rxjs';
 
 @Component({
     selector: 'app-feedback-create',
     templateUrl: './feedback-create.component.html',
     styleUrls: ['./feedback-create.component.scss'],
 })
-export class FeedbackCreateComponent {
+export class FeedbackCreateComponent implements OnInit, OnDestroy {
     public readonly categories = ['feature', 'bug', 'enhancement', 'ui', 'ux'];
+    public feedback: Feedback | undefined;
 
     public feedbackForm = this.fb.group({
         title: ['', Validators.required],
@@ -17,7 +20,21 @@ export class FeedbackCreateComponent {
         description: ['', Validators.required],
     });
 
-    constructor(private fb: FormBuilder, private feedbacks: FeedbackService, private router: Router) {}
+    private feedbackId: number = -1;
+    private subscription: Subscription = new Subscription();
+
+    constructor(private fb: FormBuilder, private feedbacks: FeedbackService, private router: Router, private route: ActivatedRoute) {}
+
+    ngOnInit(): void {
+        this.feedbackId = Number(this.route.snapshot.paramMap.get('id'));
+        if (this.feedbackId >= 0) {
+            this.getFeedback(this.feedbackId);
+        }
+    }
+
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
+    }
 
     get title(): AbstractControl | null {
         return this.feedbackForm.get('title');
@@ -32,6 +49,21 @@ export class FeedbackCreateComponent {
     }
 
     createFeedback() {
-        this.feedbacks.createFeedback(this.feedbackForm.value).subscribe(() => this.router.navigate(['/']));
+        this.subscription.add(this.feedbacks.createFeedback(this.feedbackForm.value).subscribe(() => this.router.navigate(['/'])));
+    }
+
+    getFeedback(feedbackId: number) {
+        this.subscription.add(
+            this.feedbacks.getFeedbackDetail(feedbackId).subscribe((feedback) => {
+                if (feedback) {
+                    this.feedback = feedback;
+                    this.feedbackForm.patchValue({
+                        title: feedback.title,
+                        category: feedback.category,
+                        description: feedback.description,
+                    });
+                }
+            })
+        );
     }
 }

@@ -28,12 +28,11 @@ const routes: Routes = [
         path: 'new',
         component: FeedbackCreateComponent,
     },
-    /*
+
     {
         path: 'edit/:id',
-        component: FeedbackEditComponent,
+        component: FeedbackCreateComponent,
     },
-	*/
 ];
 
 @NgModule({
