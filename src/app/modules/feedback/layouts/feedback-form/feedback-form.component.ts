@@ -5,11 +5,11 @@ import { FeedbackService } from '@core/http/feedback.service';
 import { Subscription } from 'rxjs';
 
 @Component({
-    selector: 'app-feedback-create',
-    templateUrl: './feedback-create.component.html',
-    styleUrls: ['./feedback-create.component.scss'],
+    selector: 'app-feedback-form',
+    templateUrl: './feedback-form.component.html',
+    styleUrls: ['./feedback-form.component.scss'],
 })
-export class FeedbackCreateComponent implements OnInit, OnDestroy {
+export class FeedbackFormComponent implements OnInit, OnDestroy {
     public readonly categories = ['feature', 'bug', 'enhancement', 'ui', 'ux'];
     public readonly statuses = ['planned', 'inProgress', 'live', 'suggestion', 'closed'];
     public update: boolean = false;

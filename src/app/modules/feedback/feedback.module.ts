@@ -15,8 +15,8 @@ import { UiSelectModule } from '@shared/ui-components/select/ui-select.module';
 import { UiToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';
 import { BackBtnComponent } from './components/back-btn/back-btn.component';
 import { FormCardComponent } from './components/form-card/form-card.component';
-import { FeedbackCreateComponent } from './layouts/feedback-create/feedback-create.component';
 import { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';
+import { FeedbackFormComponent } from './layouts/feedback-form/feedback-form.component';
 
 const routes: Routes = [
     {
@@ -25,17 +25,17 @@ const routes: Routes = [
     },
     {
         path: 'new',
-        component: FeedbackCreateComponent,
+        component: FeedbackFormComponent,
     },
 
     {
         path: 'edit/:id',
-        component: FeedbackCreateComponent,
+        component: FeedbackFormComponent,
     },
 ];
 
 @NgModule({
-    declarations: [FeedbackDetailComponent, FeedbackCreateComponent, BackBtnComponent, FormCardComponent],
+    declarations: [FeedbackDetailComponent, FeedbackFormComponent, BackBtnComponent, FormCardComponent],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
