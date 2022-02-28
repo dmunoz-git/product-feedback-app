@@ -21,6 +21,23 @@ export class FeedbackService {
         return new BehaviorSubject<boolean>(true).pipe(map(() => data.productRequests.push(newFeedbackData)));
     }
 
+    updateFeedback(id: number, feedback: Feedback) {
+        const index = data.productRequests.findIndex((x) => x.id === id);
+        return new BehaviorSubject<boolean>(true).pipe(
+            map(() => {
+                data.productRequests[index].title = feedback.title;
+                data.productRequests[index].category = feedback.category;
+                data.productRequests[index].status = feedback.status;
+                data.productRequests[index].description = feedback.description;
+            })
+        );
+    }
+
+    deleteFeedback(id: number) {
+        const index = data.productRequests.findIndex((x) => x.id === id);
+        return new BehaviorSubject<boolean>(true).pipe(map(() => data.productRequests.splice(index, 1)));
+    }
+
     getFeedbackDetail(id: number): Observable<Feedback | undefined> {
         const feedback = data.productRequests.find((x) => x.id === id);
         return new BehaviorSubject<Feedback | undefined>(feedback).asObservable();
