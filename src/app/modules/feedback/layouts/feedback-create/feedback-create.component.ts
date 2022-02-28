@@ -72,7 +72,11 @@ export class FeedbackCreateComponent implements OnInit, OnDestroy {
         );
     }
 
-    updateFeedback() {}
+    updateFeedback() {
+        const feedback = this.feedbackForm.value;
+        feedback.status = this.statusControl.value;
+        this.subscription.add(this.feedbacks.updateFeedback(this.feedbackId, feedback).subscribe(() => this.router.navigate(['/'])));
+    }
 
     deleteFeedback() {
         this.subscription.add(this.feedbacks.deleteFeedback(this.feedbackId).subscribe(() => this.router.navigate(['/'])));
