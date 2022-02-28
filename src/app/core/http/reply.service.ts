@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { Reply } from '../models/reply.model';
@@ -7,7 +6,7 @@ import { Reply } from '../models/reply.model';
     providedIn: 'root',
 })
 export class ReplyService {
-    constructor(private http: HttpClient) {}
+    constructor() {}
 
     createReply(reply: Reply): Observable<null> {
         return of(null);

@@ -1,8 +1,8 @@
-import { BannerDirective } from './banner.directive';
+import { BannerSubtitleDirective } from './banner.directive';
 
 describe('BannerDirective', () => {
-  it('should create an instance', () => {
-    const directive = new BannerDirective();
-    expect(directive).toBeTruthy();
-  });
+    it('should create an instance', () => {
+        const directive = new BannerSubtitleDirective();
+        expect(directive).toBeTruthy();
+    });
 });

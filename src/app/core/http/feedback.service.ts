@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable, of } from 'rxjs';
-import data from '../mocks/data.json';
-import { Feedback } from '../models/feedback.model';
+import data from '@core/mocks/data.json';
+import { Feedback } from '@core/models/feedback.model';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
 })
 export class FeedbackService {
-    constructor() {}
-
     createFeedback(feedback: Feedback) {
         const newFeedbackData = {
             id: data.productRequests.length + 1,
@@ -30,13 +28,5 @@ export class FeedbackService {
 
     getFeedbackList(): Observable<Feedback[]> {
         return new BehaviorSubject<Feedback[]>(data.productRequests).asObservable();
-    }
-
-    updateFeedback(id: number, feedback: Feedback): Observable<null> {
-        return of(null);
-    }
-
-    deleteFeedback(id: number): Observable<null> {
-        return of(null);
     }
 }

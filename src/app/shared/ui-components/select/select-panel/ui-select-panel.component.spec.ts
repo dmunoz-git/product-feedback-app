@@ -1,3 +1,4 @@
+import { OverlayModule } from '@angular/cdk/overlay';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { UiSelectPanelComponent } from './ui-select-panel.component';
 
@@ -8,6 +9,7 @@ describe('UiSelectPanelComponent', () => {
     beforeEach(async () => {
         await TestBed.configureTestingModule({
             declarations: [UiSelectPanelComponent],
+            imports: [OverlayModule],
         }).compileComponents();
     });
 

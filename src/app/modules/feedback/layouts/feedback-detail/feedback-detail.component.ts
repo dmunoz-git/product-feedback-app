@@ -1,8 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { FeedbackService } from '@core/http/feedback.service';
+import { Feedback } from '@core/models/feedback.model';
 import { Subscription } from 'rxjs';
-import { FeedbackService } from 'src/app/core/http/feedback.service';
-import { Feedback } from 'src/app/core/models/feedback.model';
 
 @Component({
     selector: 'app-feedback-detail',

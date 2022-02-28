@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
@@ -6,7 +5,7 @@ import { Observable, of } from 'rxjs';
     providedIn: 'root',
 })
 export class CommentService {
-    constructor(private http: HttpClient) {}
+    constructor() {}
 
     createComment(comment: Comment): Observable<null> {
         return of(null);

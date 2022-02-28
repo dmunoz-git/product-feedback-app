@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FeedbackService } from '@core/http/feedback.service';
+import { Feedback } from '@core/models/feedback.model';
 import { map, Observable } from 'rxjs';
-import { FeedbackService } from 'src/app/core/http/feedback.service';
-import { Feedback } from 'src/app/core/models/feedback.model';
 
 @Component({
     selector: 'app-home',
