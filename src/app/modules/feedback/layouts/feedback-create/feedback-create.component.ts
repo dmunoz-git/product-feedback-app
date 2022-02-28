@@ -2,7 +2,6 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FeedbackService } from '@core/http/feedback.service';
-import { Feedback } from '@core/models/feedback.model';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -12,7 +11,7 @@ import { Subscription } from 'rxjs';
 })
 export class FeedbackCreateComponent implements OnInit, OnDestroy {
     public readonly categories = ['feature', 'bug', 'enhancement', 'ui', 'ux'];
-    public feedback: Feedback | undefined;
+    public update: boolean = false;
 
     public feedbackForm = this.fb.group({
         title: ['', Validators.required],
@@ -56,7 +55,6 @@ export class FeedbackCreateComponent implements OnInit, OnDestroy {
         this.subscription.add(
             this.feedbacks.getFeedbackDetail(feedbackId).subscribe((feedback) => {
                 if (feedback) {
-                    this.feedback = feedback;
                     this.feedbackForm.patchValue({
                         title: feedback.title,
                         category: feedback.category,

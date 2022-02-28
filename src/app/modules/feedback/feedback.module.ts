@@ -17,7 +17,6 @@ import { BackBtnComponent } from './components/back-btn/back-btn.component';
 import { FormCardComponent } from './components/form-card/form-card.component';
 import { FeedbackCreateComponent } from './layouts/feedback-create/feedback-create.component';
 import { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';
-import { FeedbackEditComponent } from './layouts/feedback-edit/feedback-edit.component';
 
 const routes: Routes = [
     {
@@ -36,7 +35,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [FeedbackDetailComponent, FeedbackCreateComponent, FeedbackEditComponent, BackBtnComponent, FormCardComponent],
+    declarations: [FeedbackDetailComponent, FeedbackCreateComponent, BackBtnComponent, FormCardComponent],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
