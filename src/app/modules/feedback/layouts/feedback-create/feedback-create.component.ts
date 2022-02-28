@@ -27,8 +27,9 @@ export class FeedbackCreateComponent implements OnInit, OnDestroy {
     constructor(private fb: FormBuilder, private feedbacks: FeedbackService, private router: Router, private route: ActivatedRoute) {}
 
     ngOnInit(): void {
-        this.feedbackId = Number(this.route.snapshot.paramMap.get('id'));
-        if (this.feedbackId >= 0) {
+        if (this.route.snapshot.paramMap.get('id')) {
+            this.feedbackId = Number(this.route.snapshot.paramMap.get('id'));
+
             this.getFeedback(this.feedbackId);
         }
     }
