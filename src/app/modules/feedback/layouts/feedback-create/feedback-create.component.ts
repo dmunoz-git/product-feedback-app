@@ -11,7 +11,9 @@ import { Subscription } from 'rxjs';
 })
 export class FeedbackCreateComponent implements OnInit, OnDestroy {
     public readonly categories = ['feature', 'bug', 'enhancement', 'ui', 'ux'];
+    public readonly statuses = ['planned', 'inProgress', 'live', 'suggestion', 'closed'];
     public update: boolean = false;
+    public statusControl = this.fb.control('', [Validators.required]);
 
     public feedbackForm = this.fb.group({
         title: ['', Validators.required],
@@ -55,11 +57,16 @@ export class FeedbackCreateComponent implements OnInit, OnDestroy {
         this.subscription.add(
             this.feedbacks.getFeedbackDetail(feedbackId).subscribe((feedback) => {
                 if (feedback) {
+                    this.update = true;
                     this.feedbackForm.patchValue({
                         title: feedback.title,
                         category: feedback.category,
                         description: feedback.description,
                     });
+
+                    this.statusControl.setValue(feedback.status);
+                } else {
+                    this.router.navigate(['/']);
                 }
             })
         );

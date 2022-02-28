@@ -20,10 +20,20 @@
 	"formFields": {
 		"title": "Feedback Title",
 		"titleLabel": "Add a short, descriptive headline",
+		"status": "Update status",
+		"statusLabel": "Change feedback state",
 		"category": "Category",
 		"categoryLabel": "Choose the category of your feedback",
 		"detail": "Feedback Detail",
 		"detailLabel": "Include any specific comments on what should be improved, added, etc."
+	},
+
+	"status": {
+		"planned": "Planned",
+		"inProgress": "In Progress",
+		"live": "Live",
+		"suggestion": "Suggestion",
+		"closed": "Closed"
 	},
 
 	"buttons": {

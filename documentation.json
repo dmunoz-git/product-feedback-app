@@ -214,7 +214,7 @@
     "injectables": [
         {
             "name": "CommentService",
-            "id": "injectable-CommentService-bf6fb8d7e82f2b746d8efef073fb0d5736433a3bf9903ad5f8aad2b35a19a1622bee1ef751806c75430051be186656609f1eddd7608736b92725953066757e6d",
+            "id": "injectable-CommentService-da160f608a584aa5f733af80bba07fe448db278db7d1913a8effb5efc02cb9689b9d972484ca65eb83cb810630a7e2ec62e47ffa91e1812455880e6de2da1f79",
             "file": "src/app/core/http/comment.service.ts",
             "properties": [],
             "methods": [
@@ -229,9 +229,9 @@
                         }
                     ],
                     "optional": false,
-                    "returnType": "Observable<void>",
+                    "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 12,
+                    "line": 10,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -257,9 +257,9 @@
                         }
                     ],
                     "optional": false,
-                    "returnType": "Observable<void>",
+                    "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 28,
+                    "line": 26,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -285,9 +285,9 @@
                         }
                     ],
                     "optional": false,
-                    "returnType": "Observable<Comment>",
+                    "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 16,
+                    "line": 14,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -306,9 +306,9 @@
                     "name": "getComments",
                     "args": [],
                     "optional": false,
-                    "returnType": "Observable<Comment[]>",
+                    "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 20,
+                    "line": 18,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -329,9 +329,9 @@
                         }
                     ],
                     "optional": false,
-                    "returnType": "Observable<void>",
+                    "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 22,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -360,38 +360,20 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\nimport { Observable } from 'rxjs';\nimport { endpoints } from './endpoints';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class CommentService {\n    constructor(private http: HttpClient) {}\n\n    createComment(comment: Comment): Observable<void> {\n        return this.http.post<void>(endpoints.comments, comment);\n    }\n\n    getCommentDetail(id: number): Observable<Comment> {\n        return this.http.get<Comment>(`${endpoints.comments}/${id}`);\n    }\n\n    getComments(): Observable<Comment[]> {\n        return this.http.get<Comment[]>(endpoints.comments);\n    }\n\n    updateComment(id: number, comment: Comment): Observable<void> {\n        return this.http.put<void>(`${endpoints.comments}/${id}`, comment);\n    }\n\n    deleteComment(id: number): Observable<void> {\n        return this.http.delete<void>(`${endpoints.comments}/${id}`);\n    }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Observable, of } from 'rxjs';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class CommentService {\n    constructor() {}\n\n    createComment(comment: Comment): Observable<null> {\n        return of(null);\n    }\n\n    getCommentDetail(id: number): Observable<null> {\n        return of(null);\n    }\n\n    getComments(): Observable<null> {\n        return of(null);\n    }\n\n    updateComment(id: number, comment: Comment): Observable<null> {\n        return of(null);\n    }\n\n    deleteComment(id: number): Observable<null> {\n        return of(null);\n    }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "http",
-                        "type": "HttpClient",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 9,
-                "jsdoctags": [
-                    {
-                        "name": "http",
-                        "type": "HttpClient",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
+                "args": [],
+                "line": 7
             },
             "type": "injectable"
         },
         {
             "name": "FeedbackService",
-            "id": "injectable-FeedbackService-01ff95d253dbb36b4102b77020fe41f6e4d6ac1c8f7b511e70ad01ff568136ca9629f714d57429a9c1f7b8b3fda3b0355726f5709b67ebc04b8126eb48d5251d",
+            "id": "injectable-FeedbackService-a86c3b545ebdab593d78cd91483ba247b9c4ffbf2cb47241ac0b5397bdb5bb684f5d855a853ec1f163613b946741375bf84fae48443124185d96dcf3f304fc2e",
             "file": "src/app/core/http/feedback.service.ts",
             "properties": [],
             "methods": [
@@ -406,43 +388,15 @@
                         }
                     ],
                     "optional": false,
-                    "returnType": "Observable<void>",
+                    "returnType": "any",
                     "typeParameters": [],
-                    "line": 14,
+                    "line": 10,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
                             "name": "feedback",
                             "type": "Feedback",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "deleteFeedback",
-                    "args": [
-                        {
-                            "name": "id",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "Observable<void>",
-                    "typeParameters": [],
-                    "line": 31,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "id",
-                            "type": "number",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -464,7 +418,7 @@
                     "optional": false,
                     "returnType": "Observable<Feedback | undefined>",
                     "typeParameters": [],
-                    "line": 18,
+                    "line": 24,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -485,90 +439,21 @@
                     "optional": false,
                     "returnType": "Observable<Feedback[]>",
                     "typeParameters": [],
-                    "line": 23,
+                    "line": 29,
                     "deprecated": false,
                     "deprecationMessage": ""
-                },
-                {
-                    "name": "updateFeedback",
-                    "args": [
-                        {
-                            "name": "id",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        },
-                        {
-                            "name": "feedback",
-                            "type": "Feedback",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "Observable<void>",
-                    "typeParameters": [],
-                    "line": 27,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "id",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        },
-                        {
-                            "name": "feedback",
-                            "type": "Feedback",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport data from '../mocks/data.json';\nimport { Feedback } from '../models/feedback.model';\nimport { endpoints } from './endpoints';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class FeedbackService {\n    constructor(private http: HttpClient) {}\n\n    createFeedback(feedback: Feedback): Observable<void> {\n        return this.http.post<void>(endpoints.feedbacks, feedback);\n    }\n\n    getFeedbackDetail(id: number): Observable<Feedback | undefined> {\n        const feedback = data.productRequests.find((x) => x.id === id);\n        return new BehaviorSubject<Feedback | undefined>(feedback).asObservable();\n    }\n\n    getFeedbackList(): Observable<Feedback[]> {\n        return new BehaviorSubject<Feedback[]>(data.productRequests).asObservable();\n    }\n\n    updateFeedback(id: number, feedback: Feedback): Observable<void> {\n        return this.http.put<void>(`${endpoints.feedbacks}/${id}`, feedback);\n    }\n\n    deleteFeedback(id: number): Observable<void> {\n        return this.http.delete<void>(`${endpoints.feedbacks}/${id}`);\n    }\n}\n",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "http",
-                        "type": "HttpClient",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 11,
-                "jsdoctags": [
-                    {
-                        "name": "http",
-                        "type": "HttpClient",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport data from '@core/mocks/data.json';\nimport { Feedback } from '@core/models/feedback.model';\nimport { BehaviorSubject, map, Observable } from 'rxjs';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class FeedbackService {\n    createFeedback(feedback: Feedback) {\n        const newFeedbackData = {\n            id: data.productRequests.length + 1,\n            title: feedback.title,\n            category: feedback.category,\n            upvotes: 0,\n            status: feedback.status,\n            description: feedback.description,\n            comments: [],\n        };\n\n        return new BehaviorSubject<boolean>(true).pipe(map(() => data.productRequests.push(newFeedbackData)));\n    }\n\n    getFeedbackDetail(id: number): Observable<Feedback | undefined> {\n        const feedback = data.productRequests.find((x) => x.id === id);\n        return new BehaviorSubject<Feedback | undefined>(feedback).asObservable();\n    }\n\n    getFeedbackList(): Observable<Feedback[]> {\n        return new BehaviorSubject<Feedback[]>(data.productRequests).asObservable();\n    }\n}\n",
             "type": "injectable"
         },
         {
             "name": "ReplyService",
-            "id": "injectable-ReplyService-97acd977a96562850652cf23be0d3ec0a4f7be7b68c2dfe90aa3c4d08ce8482e3bc338c3948500b64ea482112aee2489bbbe5b29edb623a5859a1794a7d0745a",
+            "id": "injectable-ReplyService-560018670536755b720d52b1a81dcf63e261635e68620068e41acd63a7e675b7f94a06eb6c30d39c894337490d8e3943724d325ecf52f9d85b4f3a55fb70fae6",
             "file": "src/app/core/http/reply.service.ts",
             "properties": [],
             "methods": [
@@ -583,9 +468,9 @@
                         }
                     ],
                     "optional": false,
-                    "returnType": "Observable<void>",
+                    "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 13,
+                    "line": 11,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -611,9 +496,9 @@
                         }
                     ],
                     "optional": false,
-                    "returnType": "Observable<void>",
+                    "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 29,
+                    "line": 27,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -632,9 +517,9 @@
                     "name": "getReplies",
                     "args": [],
                     "optional": false,
-                    "returnType": "Observable<Reply[]>",
+                    "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 19,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -649,9 +534,9 @@
                         }
                     ],
                     "optional": false,
-                    "returnType": "Observable<Reply>",
+                    "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 17,
+                    "line": 15,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -683,9 +568,9 @@
                         }
                     ],
                     "optional": false,
-                    "returnType": "Observable<void>",
+                    "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 25,
+                    "line": 23,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -714,32 +599,14 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\nimport { Observable } from 'rxjs';\nimport { Reply } from '../models/reply.model';\nimport { endpoints } from './endpoints';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class ReplyService {\n    constructor(private http: HttpClient) {}\n\n    createReply(reply: Reply): Observable<void> {\n        return this.http.post<void>(endpoints.replies, reply);\n    }\n\n    getReplyDetail(id: number): Observable<Reply> {\n        return this.http.get<Reply>(`${endpoints.replies}/${id}`);\n    }\n\n    getReplies(): Observable<Reply[]> {\n        return this.http.get<Reply[]>(endpoints.replies);\n    }\n\n    updateReply(id: number, reply: Reply): Observable<void> {\n        return this.http.put<void>(`${endpoints.replies}/${id}`, reply);\n    }\n\n    deleteReply(id: number): Observable<void> {\n        return this.http.delete<void>(`${endpoints.replies}/${id}`);\n    }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Observable, of } from 'rxjs';\nimport { Reply } from '../models/reply.model';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class ReplyService {\n    constructor() {}\n\n    createReply(reply: Reply): Observable<null> {\n        return of(null);\n    }\n\n    getReplyDetail(id: number): Observable<null> {\n        return of(null);\n    }\n\n    getReplies(): Observable<null> {\n        return of(null);\n    }\n\n    updateReply(id: number, reply: Reply): Observable<null> {\n        return of(null);\n    }\n\n    deleteReply(id: number): Observable<null> {\n        return of(null);\n    }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "http",
-                        "type": "HttpClient",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 10,
-                "jsdoctags": [
-                    {
-                        "name": "http",
-                        "type": "HttpClient",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
+                "args": [],
+                "line": 8
             },
             "type": "injectable"
         },
@@ -884,7 +751,7 @@
         },
         {
             "name": "UserService",
-            "id": "injectable-UserService-d1d8b8b39f960ec593a7319a98e5653c9b342c3f83275be0e4b61285f3ca6f46fedf28a4944a6f6077586ea27d099af6a901416343e7c16d06d6bd0f15940a14",
+            "id": "injectable-UserService-4ef11116f6e5041f0e22021e0b8d34b7b711d3de3fd7cfeb20d50b4fc5559ac9cf2d524fd06623feefc14bb531bbf12031c0b1e89a3845fa73ff66f5d5848189",
             "file": "src/app/core/http/user.service.ts",
             "properties": [],
             "methods": [
@@ -894,7 +761,7 @@
                     "optional": false,
                     "returnType": "Observable<User>",
                     "typeParameters": [],
-                    "line": 13,
+                    "line": 12,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -903,32 +770,14 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Injectable } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport data from '../mocks/data.json';\nimport { User } from '../models/user.model';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class UserService {\n    constructor(private http: HttpClient) {}\n\n    getAuthendicatedUser(): Observable<User> {\n        return new BehaviorSubject<User>(data.currentUser).asObservable();\n    }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport data from '../mocks/data.json';\nimport { User } from '../models/user.model';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class UserService {\n    constructor() {}\n\n    getAuthendicatedUser(): Observable<User> {\n        return new BehaviorSubject<User>(data.currentUser).asObservable();\n    }\n}\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "http",
-                        "type": "HttpClient",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 10,
-                "jsdoctags": [
-                    {
-                        "name": "http",
-                        "type": "HttpClient",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
+                "args": [],
+                "line": 9
             },
             "type": "injectable"
         }
@@ -940,7 +789,7 @@
         {
             "name": "BannerSubtitleDirective",
             "id": "directive-BannerSubtitleDirective-8be170e1d4fe83eabfdd4ce7709e2cd0f3148ad2c387d3f67b8e5b23f9053fe846eb4b8b59a0b8f4ad2f156de2ef399fae309e4cfdb6069155e7cad11b2d2ae5",
-            "file": "src/app/modules/suggestions/components/banner/banner.directive.ts",
+            "file": "src/app/modules/home/components/banner/banner.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
@@ -986,7 +835,7 @@
         {
             "name": "BannerTitleDirective",
             "id": "directive-BannerTitleDirective-8be170e1d4fe83eabfdd4ce7709e2cd0f3148ad2c387d3f67b8e5b23f9053fe846eb4b8b59a0b8f4ad2f156de2ef399fae309e4cfdb6069155e7cad11b2d2ae5",
-            "file": "src/app/modules/suggestions/components/banner/banner.directive.ts",
+            "file": "src/app/modules/home/components/banner/banner.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
@@ -1032,7 +881,7 @@
         {
             "name": "EmptyFeedbacksBodyDirective",
             "id": "directive-EmptyFeedbacksBodyDirective-2bf75979a2b97a0e56575488f0a5e35749197346a2e8d15c2954ae5a99391f98c7ec78bb31ed7317deb9e73df0bb87648ebac4701e8b780a04bc9c0ea3268ff4",
-            "file": "src/app/modules/suggestions/components/empty-feedbacks/empty-feedbacks.directive.ts",
+            "file": "src/app/modules/home/components/empty-feedbacks/empty-feedbacks.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
@@ -1078,7 +927,7 @@
         {
             "name": "EmptyFeedbacksTitleDirective",
             "id": "directive-EmptyFeedbacksTitleDirective-2bf75979a2b97a0e56575488f0a5e35749197346a2e8d15c2954ae5a99391f98c7ec78bb31ed7317deb9e73df0bb87648ebac4701e8b780a04bc9c0ea3268ff4",
-            "file": "src/app/modules/suggestions/components/empty-feedbacks/empty-feedbacks.directive.ts",
+            "file": "src/app/modules/home/components/empty-feedbacks/empty-feedbacks.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
@@ -1546,55 +1395,28 @@
         },
         {
             "name": "UiInputDirective",
-            "id": "directive-UiInputDirective-c94f7ad7d9926c285821b837e75b4a831a3c32d4913f51bc2ec4ff7e327ec6811ec615b8c77187d6827f5e66685d232501c7d2168e1033932464409eff954214",
+            "id": "directive-UiInputDirective-8708d8e125266f4837ae96028e46f36b2769c10781e757e83807ddc0e6251944b76f3a0f020d83d27695d28804259ac20cfbf25c405285880a39c52a5536cef7",
             "file": "src/app/shared/ui-components/input/ui-input.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, HostBinding } from '@angular/core';\n\n@Directive({\n    // eslint-disable-next-line @angular-eslint/directive-selector\n    selector: '[uiInput]',\n})\nexport class UiInputDirective {\n    @HostBinding('class') elementClass = 'ui-input';\n}\n",
+            "sourceCode": "import { Directive } from '@angular/core';\n\n@Directive({\n    // eslint-disable-next-line @angular-eslint/directive-selector\n    selector: '[uiInput]',\n    // eslint-disable-next-line @angular-eslint/no-host-metadata-property\n    host: {\n        class: 'ui-input',\n    },\n})\nexport class UiInputDirective {}\n",
             "selector": "[uiInput]",
             "providers": [],
             "inputsClass": [],
             "outputsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
-            "hostBindings": [
-                {
-                    "name": "class",
-                    "defaultValue": "'ui-input'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 8,
-                    "type": "string",
-                    "decorators": []
-                }
-            ],
+            "hostBindings": [],
             "hostListeners": [],
-            "propertiesClass": [
-                {
-                    "name": "elementClass",
-                    "defaultValue": "'ui-input'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 8,
-                    "decorators": [
-                        {
-                            "name": "HostBinding",
-                            "stringifiedArguments": "'class'"
-                        }
-                    ]
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": []
         }
     ],
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-889ed38e04fa7c2d39bbc2867e4b452ac4e97f8b3f29d35aaedcb014410f822a58386a1a35d4872eeb96f12fcb5dbb34482c931ca93e12ac1133f91c362b80a9",
+            "id": "component-AppComponent-db1822cf97cfee865d8c5662109f5709f6c1e4990ee1fc68528ac4a1a9d97b3ed4597a39b7302b98b9a302b5da326f1bfae4462f851af27f79b2f9c17ee43d39",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1606,7 +1428,7 @@
                 "./app.component.scss"
             ],
             "styles": [],
-            "template": "<div class=\"container\"><router-outlet></router-outlet></div>",
+            "template": "<router-outlet></router-outlet>",
             "templateUrl": [],
             "viewProviders": [],
             "inputsClass": [],
@@ -1620,7 +1442,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n    selector: 'app-root',\n    template: `<div class=\"container\"><router-outlet></router-outlet></div>`,\n    styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent {}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n    selector: 'app-root',\n    template: `<router-outlet></router-outlet>`,\n    styleUrls: ['./app.component.scss'],\n})\nexport class AppComponent {}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1710,7 +1532,7 @@
         {
             "name": "BannerComponent",
             "id": "component-BannerComponent-7e18004769c1c755a3424c1890c5483eeec4f64497ede2ebd22d292eb46c5e5644c4f05de65cec5fa6f7894b785b2eafd774f65cb171313107a63ba019c74188",
-            "file": "src/app/modules/suggestions/components/banner/banner.component.ts",
+            "file": "src/app/modules/home/components/banner/banner.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1750,7 +1572,7 @@
         {
             "name": "CategoryFilterComponent",
             "id": "component-CategoryFilterComponent-9ac80d3ceefade3d2a7cb5deffa2221bb1877da070c61318f50f4f9f74f727b1c8750e913117a929a4ed7f94460bf6cc0444dda613c9827a1564d92f81bb834c",
-            "file": "src/app/modules/suggestions/components/category-filter/category-filter.component.ts",
+            "file": "src/app/modules/home/components/category-filter/category-filter.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -1862,12 +1684,12 @@
                 }
             ],
             "stylesData": "",
-            "templateData": "<ui-chip-list *transloco=\"let t\" aria-label=\"Feedbacks category filter\">\n    <ui-chip *ngFor=\"let category of categories\" [active]=\"getCategoryActive(category.name)\" (click)=\"setCategory(category.name)\">{{\n        t('categoriesFeedbackFilter.' + category.name)\n    }}</ui-chip>\n</ui-chip-list>\n"
+            "templateData": "<ui-chip-list *transloco=\"let t\" aria-label=\"Feedbacks category filter\">\n    <ui-chip *ngFor=\"let category of categories\" [active]=\"getCategoryActive(category.name)\" (click)=\"setCategory(category.name)\">{{\n        t('categories.' + category.name)\n    }}</ui-chip>\n</ui-chip-list>\n"
         },
         {
             "name": "EmptyFeedbacksComponent",
             "id": "component-EmptyFeedbacksComponent-057a08c06a521da201a1ffdaf56ad6c06bfffedf50033535d89462c9cba678ab12918c620c800ce4af999cdcb77bd6b3ebf9740920551e5f00d024ea351c3a77",
-            "file": "src/app/modules/suggestions/components/empty-feedbacks/empty-feedbacks.component.ts",
+            "file": "src/app/modules/home/components/empty-feedbacks/empty-feedbacks.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
             ],
@@ -1949,8 +1771,278 @@
             "templateData": "<div class=\"feedback-card\">\n    <div class=\"feedback-card__side\">\n        <ng-content select=\"[feedback-card-aside]\"></ng-content>\n    </div>\n    <article class=\"feedback-card__body\">\n        <div class=\"feedback-card__title\">\n            <ng-content select=\"[feedback-card-title]\"></ng-content>\n        </div>\n\n        <div class=\"feedback-card__content\">\n            <ng-content select=\"[feedback-card-content]\"></ng-content>\n        </div>\n\n        <div class=\"feedback-card__footer\">\n            <ng-content select=\"[feedback-card-footer]\"></ng-content>\n        </div>\n    </article>\n</div>\n"
         },
         {
+            "name": "FeedbackCreateComponent",
+            "id": "component-FeedbackCreateComponent-656db89e900b10e93d4ba2fbf91452c70e4f930f917cfb6631741d73282dc37c909bda0474f7b299092570645d18386fb77b66ae27d0b07569e7bf013de02641",
+            "file": "src/app/modules/feedback/layouts/feedback-create/feedback-create.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-feedback-create",
+            "styleUrls": [
+                "./feedback-create.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./feedback-create.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "categories",
+                    "defaultValue": "['feature', 'bug', 'enhancement', 'ui', 'ux']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        123,
+                        144
+                    ]
+                },
+                {
+                    "name": "feedbackForm",
+                    "defaultValue": "this.fb.group({\n        title: ['', Validators.required],\n        category: [this.categories[0], Validators.required],\n        description: ['', Validators.required],\n    })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "feedbackId",
+                    "defaultValue": "-1",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 22,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "subscription",
+                    "defaultValue": "new Subscription()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subscription",
+                    "optional": false,
+                    "description": "",
+                    "line": 23,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "update",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "createFeedback",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 50,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getFeedback",
+                    "args": [
+                        {
+                            "name": "feedbackId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 54,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "feedbackId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 34,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 27,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnDestroy, OnInit } from '@angular/core';\nimport { AbstractControl, FormBuilder, Validators } from '@angular/forms';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { FeedbackService } from '@core/http/feedback.service';\nimport { Subscription } from 'rxjs';\n\n@Component({\n    selector: 'app-feedback-create',\n    templateUrl: './feedback-create.component.html',\n    styleUrls: ['./feedback-create.component.scss'],\n})\nexport class FeedbackCreateComponent implements OnInit, OnDestroy {\n    public readonly categories = ['feature', 'bug', 'enhancement', 'ui', 'ux'];\n    public update: boolean = false;\n\n    public feedbackForm = this.fb.group({\n        title: ['', Validators.required],\n        category: [this.categories[0], Validators.required],\n        description: ['', Validators.required],\n    });\n\n    private feedbackId: number = -1;\n    private subscription: Subscription = new Subscription();\n\n    constructor(private fb: FormBuilder, private feedbacks: FeedbackService, private router: Router, private route: ActivatedRoute) {}\n\n    ngOnInit(): void {\n        this.feedbackId = Number(this.route.snapshot.paramMap.get('id'));\n        if (this.feedbackId >= 0) {\n            this.getFeedback(this.feedbackId);\n        }\n    }\n\n    ngOnDestroy(): void {\n        this.subscription.unsubscribe();\n    }\n\n    get title(): AbstractControl | null {\n        return this.feedbackForm.get('title');\n    }\n\n    get category(): AbstractControl | null {\n        return this.feedbackForm.get('category');\n    }\n\n    get description(): AbstractControl | null {\n        return this.feedbackForm.get('description');\n    }\n\n    createFeedback() {\n        this.subscription.add(this.feedbacks.createFeedback(this.feedbackForm.value).subscribe(() => this.router.navigate(['/'])));\n    }\n\n    getFeedback(feedbackId: number) {\n        this.subscription.add(\n            this.feedbacks.getFeedbackDetail(feedbackId).subscribe((feedback) => {\n                if (feedback) {\n                    this.update = true;\n                    this.feedbackForm.patchValue({\n                        title: feedback.title,\n                        category: feedback.category,\n                        description: feedback.description,\n                    });\n                } else {\n                    this.router.navigate(['/']);\n                }\n            })\n        );\n    }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".feedback-create {\n    width: 33.75rem;\n    margin: 5.75rem auto 0 auto;\n    padding: 0 1.5rem;\n\n    &__card {\n        margin-top: 4.25rem;\n    }\n}\n\n.form-field-title {\n    margin: 0.125rem 0;\n}\n\n.form-buttons {\n    display: flex;\n    justify-content: flex-end;\n    flex-wrap: wrap;\n    &__item:not(:last-child) {\n        margin-right: 1rem;\n    }\n}\n",
+                    "styleUrl": "./feedback-create.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "feedbacks",
+                        "type": "FeedbackService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 23,
+                "jsdoctags": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "feedbacks",
+                        "type": "FeedbackService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit",
+                "OnDestroy"
+            ],
+            "accessors": {
+                "title": {
+                    "name": "title",
+                    "getSignature": {
+                        "name": "title",
+                        "type": "",
+                        "returnType": "AbstractControl | null",
+                        "line": 38
+                    }
+                },
+                "category": {
+                    "name": "category",
+                    "getSignature": {
+                        "name": "category",
+                        "type": "",
+                        "returnType": "AbstractControl | null",
+                        "line": 42
+                    }
+                },
+                "description": {
+                    "name": "description",
+                    "getSignature": {
+                        "name": "description",
+                        "type": "",
+                        "returnType": "AbstractControl | null",
+                        "line": 46
+                    }
+                }
+            },
+            "templateData": "<section class=\"feedback-create\" *transloco=\"let t\">\n    <app-back-btn>{{ t('back') }}</app-back-btn>\n    <app-form-card\n        class=\"feedback-create__card\"\n        [iconPath]=\"update ? '/assets/images/icons/icon-edit-feedback.svg' : '/assets/images/icons/icon-new-feedback.svg'\"\n    >\n        <form [formGroup]=\"feedbackForm\" (ngSubmit)=\"createFeedback()\">\n            <h1 *ngIf=\"!update\">{{ t('newFeedback') }}</h1>\n            <h1 *ngIf=\"update\">Editing \"{{ title?.value }}\"</h1>\n\n            <h4 class=\"form-field-title\">{{ t('formFields.title') }}</h4>\n            <ui-form-field size=\"fluent\">\n                <ui-label>{{ t('formFields.titleLabel') }}</ui-label>\n                <input uiInput type=\"text\" formControlName=\"title\" data-cy=\"title-field\" />\n                <ui-error *ngIf=\"title?.errors && title?.hasError('required') && title?.touched\" data-cy=\"field-error\">\n                    {{ t('errors.empty') }}\n                </ui-error>\n            </ui-form-field>\n\n            <h4 class=\"form-field-title\">{{ t('formFields.category') }}</h4>\n            <ui-form-field size=\"fluent\">\n                <ui-label>{{ t('formFields.categoryLabel') }}</ui-label>\n                <ui-select formControlName=\"category\">\n                    <ui-select-option *ngFor=\"let category of categories\" value=\"{{ category }}\">{{\n                        t('categories.' + category)\n                    }}</ui-select-option>\n                </ui-select>\n            </ui-form-field>\n\n            <h4 class=\"form-field-title\">{{ t('formFields.detail') }}</h4>\n            <ui-form-field size=\"fluent\">\n                <ui-label>{{ t('formFields.detailLabel') }}</ui-label>\n                <textarea uiInput formControlName=\"description\" rows=\"4\" data-cy=\"description-field\"></textarea>\n                <ui-error *ngIf=\"description?.errors && description?.hasError('required') && description?.touched\" data-cy=\"field-error\">\n                    {{ t('errors.empty') }}\n                </ui-error>\n            </ui-form-field>\n\n            <div class=\"form-buttons\">\n                <button ui-button color=\"dark\" type=\"button\" class=\"form-buttons__item\" [routerLink]=\"['/']\" data-cy=\"cancel\">\n                    {{ t('buttons.cancel') }}\n                </button>\n                <button\n                    ui-button\n                    color=\"primary\"\n                    type=\"submit\"\n                    class=\"form-buttons__item\"\n                    [disabled]=\"feedbackForm.invalid\"\n                    data-cy=\"submit\"\n                >\n                    {{ t('buttons.addFeedbacks') }}\n                </button>\n            </div>\n        </form>\n    </app-form-card>\n</section>\n"
+        },
+        {
             "name": "FeedbackDetailComponent",
-            "id": "component-FeedbackDetailComponent-36d187cbc70c50e444884c36b315b56e9da100c666ac1ab1fe4efb4cc524fa505817242d4d74426cdf85198736afa244f267a46fa72f02bd454c3098616bc142",
+            "id": "component-FeedbackDetailComponent-79504cd275d6fb6a8e22e438877e2ce43635955782cde8602660d95995ccb058da7c86bb1ec4648af0d3adbe2e3c330c744c3ffbf97e8d17f3c7b2f152241b5e",
             "file": "src/app/modules/feedback/layouts/feedback-detail/feedback-detail.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2028,11 +2120,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnDestroy, OnInit } from '@angular/core';\nimport { ActivatedRoute } from '@angular/router';\nimport { Subscription } from 'rxjs';\nimport { FeedbackService } from 'src/app/core/http/feedback.service';\nimport { Feedback } from 'src/app/core/models/feedback.model';\n\n@Component({\n    selector: 'app-feedback-detail',\n    templateUrl: './feedback-detail.component.html',\n    styleUrls: ['./feedback-detail.component.scss'],\n})\nexport class FeedbackDetailComponent implements OnInit, OnDestroy {\n    subscription: Subscription = new Subscription();\n    id: number = 0;\n    feedback!: Feedback;\n\n    constructor(private readonly feedbackService: FeedbackService, private route: ActivatedRoute) {}\n\n    ngOnDestroy(): void {\n        this.subscription.unsubscribe();\n    }\n\n    ngOnInit(): void {\n        this.id = Number(this.route.snapshot.paramMap.get('id'));\n\n        this.subscription.add(\n            this.feedbackService.getFeedbackDetail(this.id).subscribe((feedback) => {\n                this.feedback = feedback as Feedback;\n            })\n        );\n    }\n}\n",
+            "sourceCode": "import { Component, OnDestroy, OnInit } from '@angular/core';\nimport { ActivatedRoute } from '@angular/router';\nimport { FeedbackService } from '@core/http/feedback.service';\nimport { Feedback } from '@core/models/feedback.model';\nimport { Subscription } from 'rxjs';\n\n@Component({\n    selector: 'app-feedback-detail',\n    templateUrl: './feedback-detail.component.html',\n    styleUrls: ['./feedback-detail.component.scss'],\n})\nexport class FeedbackDetailComponent implements OnInit, OnDestroy {\n    subscription: Subscription = new Subscription();\n    id: number = 0;\n    feedback!: Feedback;\n\n    constructor(private readonly feedbackService: FeedbackService, private route: ActivatedRoute) {}\n\n    ngOnDestroy(): void {\n        this.subscription.unsubscribe();\n    }\n\n    ngOnInit(): void {\n        this.id = Number(this.route.snapshot.paramMap.get('id'));\n\n        this.subscription.add(\n            this.feedbackService.getFeedbackDetail(this.id).subscribe((feedback) => {\n                this.feedback = feedback as Feedback;\n            })\n        );\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".layout {\n    margin: 3.9375rem;\n}\n\n.toolbar {\n    margin-bottom: 0.625rem;\n}\n",
+                    "data": ".layout {\n    margin: 3.9375rem auto 0 auto;\n    width: min(45.625rem, 100%);\n}\n\n.toolbar {\n    margin-bottom: 0.625rem;\n}\n",
                     "styleUrl": "./feedback-detail.component.scss"
                 }
             ],
@@ -2082,24 +2174,83 @@
                 "OnInit",
                 "OnDestroy"
             ],
-            "templateData": "<section class=\"layout\">\n    <ui-toolbar class=\"toolbar\" justify=\"between\" background=\"transparent\">\n        <app-back-btn>Go Back</app-back-btn>\n        <button ui-button color=\"secondary\">Edit Feedback</button>\n    </ui-toolbar>\n    <app-feedback-card>\n        <ui-counter feedback-card-aside class=\"hide-mobile\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n        <ng-container feedback-card-aside>\n            <section class=\"show-only-mobile\">\n                <div class=\"feedback-aside-mobile\">\n                    <ui-counter order=\"row\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                    <ui-icon name=\"comments\" ui-badge></ui-icon>\n                </div>\n            </section>\n        </ng-container>\n        <h3 feedback-card-title>{{ feedback.title }}</h3>\n        <div feedback-card-content>\n            <p class=\"text\">{{ feedback.description }}</p>\n            <ui-icon class=\"hide-mobile\" name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n        </div>\n        <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n    </app-feedback-card>\n</section>\n"
+            "templateData": "<section class=\"layout\">\n    <ui-toolbar class=\"toolbar\" justify=\"between\" background=\"transparent\">\n        <app-back-btn>Go Back</app-back-btn>\n        <button ui-button color=\"secondary\" routerLink=\"/feedback/edit/{{ feedback.id }}\">Edit Feedback</button>\n    </ui-toolbar>\n    <app-feedback-card>\n        <ui-counter feedback-card-aside class=\"hide-mobile\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n        <ng-container feedback-card-aside>\n            <section class=\"show-only-mobile\">\n                <div class=\"feedback-aside-mobile\">\n                    <ui-counter order=\"row\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                    <ui-icon name=\"comments\" ui-badge></ui-icon>\n                </div>\n            </section>\n        </ng-container>\n        <h3 feedback-card-title>{{ feedback.title }}</h3>\n        <div feedback-card-content>\n            <p class=\"text\">{{ feedback.description }}</p>\n            <ui-icon class=\"hide-mobile\" name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n        </div>\n        <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n    </app-feedback-card>\n</section>\n"
         },
         {
-            "name": "SuggestionsLayoutComponent",
-            "id": "component-SuggestionsLayoutComponent-62e4a5628fdc2fb49501478e708df4d91d428ec525a1466b8e6ff8d2dcbc5f9ed345285e09d8eaee2aa2bcfdcecd250d69830ffa656b66373eb4d8f99de39c31",
-            "file": "src/app/modules/suggestions/layout/suggestions-layout.component.ts",
+            "name": "FormCardComponent",
+            "id": "component-FormCardComponent-91536a0bc4046dc357956b0b7f33f8dcf9f5840206d0d0e106c85e2005cdbce2a7fd860bbf8f30a95c2f3376f84c394f844b0024fb6b9552dffd5842ebfe98ff",
+            "file": "src/app/modules/feedback/components/form-card/form-card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "app-suggestions-layout",
+            "selector": "app-form-card",
             "styleUrls": [
-                "./suggestions-layout.component.scss"
+                "./form-card.component.scss"
             ],
             "styles": [],
             "templateUrl": [
-                "./suggestions-layout.component.html"
+                "./form-card.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "altText",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "iconPath",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 9,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    selector: 'app-form-card',\n    templateUrl: './form-card.component.html',\n    styleUrls: ['./form-card.component.scss'],\n})\nexport class FormCardComponent {\n    @Input() iconPath: string = '';\n    @Input() altText: string = '';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n    display: block;\n}\n\n.form-card {\n    position: relative;\n    background: white;\n    padding: 3.25rem 2.625rem 2.5rem 2.625rem;\n    border-radius: 0.625rem;\n\n    &__icon {\n        position: absolute;\n        top: -1.75rem;\n        width: 3.5rem;\n        height: 3.5rem;\n    }\n}\n",
+                    "styleUrl": "./form-card.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"form-card\">\n    <img class=\"form-card__icon\" src=\"{{ iconPath }}\" alt=\"{{ altText }}\" />\n    <ng-content></ng-content>\n</div>\n"
+        },
+        {
+            "name": "HomeComponent",
+            "id": "component-HomeComponent-622b8b1bae28bcc7817fea6a924e829b433f8fbfee99b942e76579ee764df5b7095ad9268cecf8f9c04702d4af33878c5a53db9598bf198841e61e0a3ac22c1a",
+            "file": "src/app/modules/home/layout/home.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-home",
+            "styleUrls": [
+                "./home.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./home.component.html"
             ],
             "viewProviders": [],
             "inputsClass": [],
@@ -2193,12 +2344,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { map, Observable } from 'rxjs';\nimport { FeedbackService } from 'src/app/core/http/feedback.service';\nimport { Feedback } from 'src/app/core/models/feedback.model';\n\n@Component({\n    selector: 'app-suggestions-layout',\n    templateUrl: './suggestions-layout.component.html',\n    styleUrls: ['./suggestions-layout.component.scss'],\n})\nexport class SuggestionsLayoutComponent implements OnInit {\n    feedbacks$!: Observable<Feedback[]>;\n\n    constructor(private feedbacks: FeedbackService, private router: Router) {\n        this.feedbacks$ = feedbacks.getFeedbackList();\n    }\n\n    ngOnInit(): void {\n        this.feedbacks$ = this.feedbacks.getFeedbackList();\n    }\n\n    filterFeedbacks(category: string) {\n        this.feedbacks$ = category !== 'all' ? this.getFeedbacksFiltered(category) : this.feedbacks.getFeedbackList();\n    }\n\n    private getFeedbacksFiltered(category: string): Observable<Feedback[]> {\n        return this.feedbacks\n            .getFeedbackList()\n            .pipe(map((feedbacks: Feedback[]) => feedbacks.filter((feedback: Feedback) => feedback.category === category)));\n    }\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { Router } from '@angular/router';\nimport { FeedbackService } from '@core/http/feedback.service';\nimport { Feedback } from '@core/models/feedback.model';\nimport { map, Observable } from 'rxjs';\n\n@Component({\n    selector: 'app-home',\n    templateUrl: './home.component.html',\n    styleUrls: ['./home.component.scss'],\n})\nexport class HomeComponent implements OnInit {\n    feedbacks$!: Observable<Feedback[]>;\n\n    constructor(private feedbacks: FeedbackService, private router: Router) {\n        this.feedbacks$ = feedbacks.getFeedbackList();\n    }\n\n    ngOnInit(): void {\n        this.feedbacks$ = this.feedbacks.getFeedbackList();\n    }\n\n    filterFeedbacks(category: string) {\n        this.feedbacks$ = category !== 'all' ? this.getFeedbacksFiltered(category) : this.feedbacks.getFeedbackList();\n    }\n\n    private getFeedbacksFiltered(category: string): Observable<Feedback[]> {\n        return this.feedbacks\n            .getFeedbackList()\n            .pipe(map((feedbacks: Feedback[]) => feedbacks.filter((feedback: Feedback) => feedback.category === category)));\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use 'tools/mixins';\n\n// Layout\n.layout {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 1.875rem;\n    padding: 5.875rem 0 8.0625rem 0;\n\n    .main {\n        flex: 1;\n        flex-grow: 315;\n    }\n\n    .aside {\n        display: flex;\n        flex-direction: column;\n        gap: 1.5rem;\n        flex-basis: 15.9375rem;\n        flex-grow: 1;\n    }\n}\n\n.pointer {\n    cursor: pointer;\n}\n\n// Feedback card margins\n.feedback-list {\n    display: flex;\n    flex-direction: column;\n    gap: 1.5rem;\n}\n\n// Feedback aside mobile\n.feedback-aside-mobile {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    width: 100%;\n}\n\n// Toolbar classes\n.toolbar {\n    margin-bottom: 1.5rem;\n\n    &__header {\n        display: flex;\n        align-items: center;\n        gap: 1rem;\n    }\n}\n",
-                    "styleUrl": "./suggestions-layout.component.scss"
+                    "data": "@use 'tools/mixins';\n@use 'settings/layout';\n\n// Layout\n.layout {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 1.875rem;\n    padding: 5.875rem 1.5rem 8.0625rem 1.5rem;\n    width: min(100%, layout.$min-container-width);\n    margin: 0 auto;\n    .main {\n        flex: 1;\n        flex-grow: 315;\n    }\n\n    .aside {\n        display: flex;\n        flex-direction: column;\n        gap: 1.5rem;\n        flex-basis: 15.9375rem;\n        flex-grow: 1;\n    }\n}\n\n.pointer {\n    cursor: pointer;\n}\n\n// Feedback card margins\n.feedback-list {\n    display: flex;\n    flex-direction: column;\n    gap: 1.5rem;\n}\n\n// Feedback aside mobile\n.feedback-aside-mobile {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    width: 100%;\n}\n\n// Toolbar classes\n.toolbar {\n    margin-bottom: 1.5rem;\n\n    &__header {\n        display: flex;\n        align-items: center;\n        gap: 1rem;\n    }\n}\n",
+                    "styleUrl": "./home.component.scss"
                 }
             ],
             "stylesData": "",
@@ -2246,7 +2397,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div *transloco=\"let t\" class=\"layout\">\n    <aside class=\"aside\">\n        <app-banner>\n            <h2 app-banner-title class=\"text-white\">{{ t('title') }}</h2>\n            <span app-banner-subtitle>{{ t('subtitle') }}</span>\n        </app-banner>\n        <app-category-filter (categorySelected)=\"filterFeedbacks($event)\"></app-category-filter>\n    </aside>\n    <main class=\"main\">\n        <ui-toolbar class=\"toolbar\" justify=\"between\">\n            <div class=\"toolbar__header\">\n                <img src=\"/assets/images/suggestions/icon-suggestions.svg\" alt=\"\" />\n                <h3 class=\"text-white\">{{ (feedbacks$ | async)?.length }} {{ t('toolbarTitle') }}</h3>\n            </div>\n            <button ui-button color=\"primary\"><ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}</button>\n        </ui-toolbar>\n        <section class=\"feedback-list\" *ngIf=\"(feedbacks$ | async)!.length > 0\">\n            <app-feedback-card class=\"pointer\" *ngFor=\"let feedback of feedbacks$ | async\" routerLink=\"/feedback/detail/{{ feedback.id }}\">\n                <ui-counter feedback-card-aside class=\"hide-mobile\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                <ng-container feedback-card-aside>\n                    <section class=\"show-only-mobile\">\n                        <div class=\"feedback-aside-mobile\">\n                            <ui-counter order=\"row\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                            <ui-icon name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n                        </div>\n                    </section>\n                </ng-container>\n                <h3 feedback-card-title>{{ feedback.title }}</h3>\n                <div feedback-card-content>\n                    <p class=\"text\">{{ feedback.description }}</p>\n                    <ui-icon\n                        class=\"hide-mobile\"\n                        name=\"comments\"\n                        ui-badge\n                        [value]=\"feedback.comments ? feedback.comments.length : 0\"\n                    ></ui-icon>\n                </div>\n                <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n            </app-feedback-card>\n        </section>\n        <app-empty-feedbacks *ngIf=\"(feedbacks$ | async)!.length === 0\">\n            <h1 empty-feedbacks-title>{{ t('emptyFeedbackList.title') }}</h1>\n            <p empty-feedbacks-body>{{ t('emptyFeedbackList.description') }}</p>\n            <button ui-button color=\"primary\" empty-feedbacks-button>\n                <ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}\n            </button>\n        </app-empty-feedbacks>\n    </main>\n</div>\n"
+            "templateData": "<div *transloco=\"let t\" class=\"layout\">\n    <aside class=\"aside\">\n        <app-banner>\n            <h2 app-banner-title class=\"text-white\">{{ t('title') }}</h2>\n            <span app-banner-subtitle>{{ t('subtitle') }}</span>\n        </app-banner>\n        <app-category-filter (categorySelected)=\"filterFeedbacks($event)\"></app-category-filter>\n    </aside>\n    <main class=\"main\">\n        <ui-toolbar class=\"toolbar\" justify=\"between\">\n            <div class=\"toolbar__header\">\n                <img src=\"/assets/images/suggestions/icon-suggestions.svg\" alt=\"\" />\n                <h3 class=\"text-white\">{{ (feedbacks$ | async)?.length }} {{ t('toolbarTitle') }}</h3>\n            </div>\n            <button ui-button color=\"primary\" routerLink=\"/feedback/new\">\n                <ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}\n            </button>\n        </ui-toolbar>\n        <section class=\"feedback-list\" *ngIf=\"(feedbacks$ | async)!.length > 0\" data-cy=\"feedback-list\">\n            <app-feedback-card class=\"pointer\" *ngFor=\"let feedback of feedbacks$ | async\" routerLink=\"/feedback/detail/{{ feedback.id }}\">\n                <ui-counter feedback-card-aside class=\"hide-mobile\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                <ng-container feedback-card-aside>\n                    <section class=\"show-only-mobile\">\n                        <div class=\"feedback-aside-mobile\">\n                            <ui-counter order=\"row\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                            <ui-icon name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n                        </div>\n                    </section>\n                </ng-container>\n                <h3 feedback-card-title>{{ feedback.title }}</h3>\n                <div feedback-card-content>\n                    <p class=\"text\">{{ feedback.description }}</p>\n                    <ui-icon\n                        class=\"hide-mobile\"\n                        name=\"comments\"\n                        ui-badge\n                        [value]=\"feedback.comments ? feedback.comments.length : 0\"\n                    ></ui-icon>\n                </div>\n                <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n            </app-feedback-card>\n        </section>\n        <app-empty-feedbacks *ngIf=\"(feedbacks$ | async)!.length === 0\">\n            <h1 empty-feedbacks-title>{{ t('emptyFeedbackList.title') }}</h1>\n            <p empty-feedbacks-body>{{ t('emptyFeedbackList.description') }}</p>\n            <button ui-button color=\"primary\" empty-feedbacks-button routerLink=\"/feedback/new\">\n                <ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}\n            </button>\n        </app-empty-feedbacks>\n    </main>\n</div>\n"
         },
         {
             "name": "UiChipComponent",
@@ -2481,6 +2632,89 @@
             "stylesData": ""
         },
         {
+            "name": "UiErrorComponent",
+            "id": "component-UiErrorComponent-9378c74f7acf43ca2bad9ae98ba4fc71d436947bc38ce4ba4f3e52604e7c74b0384e4e7ae874f527a53dcb4cd0ef2c4e8ca7a2846395a4208b24bdecbf1e18d4",
+            "file": "src/app/shared/ui-components/form-field/ui-form-field.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-error",
+            "styleUrls": [],
+            "styles": [
+                "\n            @use 'settings/colors';\n\n            .ui-error {\n                font-size: 0.875rem;\n                color: colors.$error-color;\n                margin: 0.25rem 0;\n            }\n        "
+            ],
+            "template": "<span class=\"ui-error\"><ng-content></ng-content></span>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-label',\n    template: `<span class=\"ui-label\"><ng-content></ng-content></span>`,\n    styles: [\n        `\n            @use 'settings/colors';\n\n            .ui-label {\n                font-size: 0.875rem;\n                color: colors.$text-color;\n                margin: 1rem 0;\n            }\n        `,\n    ],\n})\nexport class UiLabelComponent {}\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-error',\n    template: `<span class=\"ui-error\"><ng-content></ng-content></span>`,\n    styles: [\n        `\n            @use 'settings/colors';\n\n            .ui-error {\n                font-size: 0.875rem;\n                color: colors.$error-color;\n                margin: 0.25rem 0;\n            }\n        `,\n    ],\n})\nexport class UiErrorComponent {}\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-form-field',\n    templateUrl: './ui-form-field.component.html',\n    styleUrls: ['./ui-form-field.component.scss'],\n})\nexport class UiFormFieldComponent {\n    @Input() size: 'fluent' | 'default' = 'default';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n            @use 'settings/colors';\n\n            .ui-error {\n                font-size: 0.875rem;\n                color: colors.$error-color;\n                margin: 0.25rem 0;\n            }\n        \n"
+        },
+        {
+            "name": "UiFormFieldComponent",
+            "id": "component-UiFormFieldComponent-9378c74f7acf43ca2bad9ae98ba4fc71d436947bc38ce4ba4f3e52604e7c74b0384e4e7ae874f527a53dcb4cd0ef2c4e8ca7a2846395a4208b24bdecbf1e18d4",
+            "file": "src/app/shared/ui-components/form-field/ui-form-field.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-form-field",
+            "styleUrls": [
+                "./ui-form-field.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./ui-form-field.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "size",
+                    "defaultValue": "'default'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 46,
+                    "type": "\"fluent\" | \"default\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-label',\n    template: `<span class=\"ui-label\"><ng-content></ng-content></span>`,\n    styles: [\n        `\n            @use 'settings/colors';\n\n            .ui-label {\n                font-size: 0.875rem;\n                color: colors.$text-color;\n                margin: 1rem 0;\n            }\n        `,\n    ],\n})\nexport class UiLabelComponent {}\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-error',\n    template: `<span class=\"ui-error\"><ng-content></ng-content></span>`,\n    styles: [\n        `\n            @use 'settings/colors';\n\n            .ui-error {\n                font-size: 0.875rem;\n                color: colors.$error-color;\n                margin: 0.25rem 0;\n            }\n        `,\n    ],\n})\nexport class UiErrorComponent {}\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-form-field',\n    templateUrl: './ui-form-field.component.html',\n    styleUrls: ['./ui-form-field.component.scss'],\n})\nexport class UiFormFieldComponent {\n    @Input() size: 'fluent' | 'default' = 'default';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n    display: block;\n}\n\n.ui-form-field {\n    max-width: 15.9375rem;\n    width: 100%;\n\n    &--fluent {\n        min-width: 100%;\n    }\n}\n",
+                    "styleUrl": "./ui-form-field.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"ui-form-field\" [class.ui-form-field--fluent]=\"size === 'fluent'\">\n    <ng-content select=\"ui-label\"></ng-content>\n    <ng-content select=\"[uiInput]\"></ng-content>\n    <ng-content select=\"ui-select\"></ng-content>\n    <ng-content select=\"ui-error\"></ng-content>\n</div>\n"
+        },
+        {
             "name": "UiIconComponent",
             "id": "component-UiIconComponent-ffb3448aabb87c845b122dc89c81dbdddc8b3cc3da2774d035dc8022aaa52180d0a41dbccf869ad168b2792d4d8eacb06fc1a8e5e3317d2c39208c6778b4f64c",
             "file": "src/app/shared/ui-components/icon/ui-icon.component.ts",
@@ -2541,6 +2775,39 @@
             "styleUrlsData": "",
             "stylesData": "",
             "templateData": "<img *ngIf=\"name\" [src]=\"getIconPath()\" alt=\"\"/>\n"
+        },
+        {
+            "name": "UiLabelComponent",
+            "id": "component-UiLabelComponent-9378c74f7acf43ca2bad9ae98ba4fc71d436947bc38ce4ba4f3e52604e7c74b0384e4e7ae874f527a53dcb4cd0ef2c4e8ca7a2846395a4208b24bdecbf1e18d4",
+            "file": "src/app/shared/ui-components/form-field/ui-form-field.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-label",
+            "styleUrls": [],
+            "styles": [
+                "\n            @use 'settings/colors';\n\n            .ui-label {\n                font-size: 0.875rem;\n                color: colors.$text-color;\n                margin: 1rem 0;\n            }\n        "
+            ],
+            "template": "<span class=\"ui-label\"><ng-content></ng-content></span>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-label',\n    template: `<span class=\"ui-label\"><ng-content></ng-content></span>`,\n    styles: [\n        `\n            @use 'settings/colors';\n\n            .ui-label {\n                font-size: 0.875rem;\n                color: colors.$text-color;\n                margin: 1rem 0;\n            }\n        `,\n    ],\n})\nexport class UiLabelComponent {}\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-error',\n    template: `<span class=\"ui-error\"><ng-content></ng-content></span>`,\n    styles: [\n        `\n            @use 'settings/colors';\n\n            .ui-error {\n                font-size: 0.875rem;\n                color: colors.$error-color;\n                margin: 0.25rem 0;\n            }\n        `,\n    ],\n})\nexport class UiErrorComponent {}\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-form-field',\n    templateUrl: './ui-form-field.component.html',\n    styleUrls: ['./ui-form-field.component.scss'],\n})\nexport class UiFormFieldComponent {\n    @Input() size: 'fluent' | 'default' = 'default';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n            @use 'settings/colors';\n\n            .ui-label {\n                font-size: 0.875rem;\n                color: colors.$text-color;\n                margin: 1rem 0;\n            }\n        \n"
         },
         {
             "name": "UiSelectOptionComponent",
@@ -2674,7 +2941,7 @@
         },
         {
             "name": "UiSelectPanelComponent",
-            "id": "component-UiSelectPanelComponent-852666ebc31398c104948d041b88510f1b353ab31d72258ec95f1006e51c83cef2217ab732a273d30fa919e497d78142832ced17a2577602e7e58c581cfd4aa3",
+            "id": "component-UiSelectPanelComponent-dfba8d7da0742eb054696a88e8a780ba8c85619f03d2aacc4b962840ac43a1ec481a041a37c99f97c827410a0e908230528c43fc5ec4de321eb39e0fd64c291d",
             "file": "src/app/shared/ui-components/select/select-panel/ui-select-panel.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -2837,7 +3104,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 79,
+                    "line": 81,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2865,7 +3132,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 83,
+                    "line": 85,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2921,7 +3188,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 87,
+                    "line": 89,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2992,11 +3259,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { AfterViewInit, Component, ContentChildren, forwardRef, Input, QueryList, ViewEncapsulation } from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\nimport { fadeInOut } from '@shared/ui-components/animations/fade.animation';\nimport { UiSelectOptionComponent } from '../select-option/ui-select-option.component';\nimport { UiSelectService } from '../ui-select.service';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-select',\n    templateUrl: './ui-select-panel.component.html',\n    styleUrls: ['./ui-select-panel.component.scss'],\n    animations: [fadeInOut],\n    encapsulation: ViewEncapsulation.None,\n    providers: [\n        {\n            provide: NG_VALUE_ACCESSOR,\n            useExisting: forwardRef(() => UiSelectPanelComponent),\n            multi: true,\n        },\n    ],\n})\nexport class UiSelectPanelComponent implements AfterViewInit, ControlValueAccessor {\n    @Input() selected: string = '';\n    @Input() placeholder: string = '';\n    @Input() disabled: boolean = false;\n\n    @ContentChildren(UiSelectOptionComponent) options!: QueryList<UiSelectOptionComponent>;\n\n    selectedOption!: UiSelectOptionComponent;\n    displayedText: string = '';\n\n    isDropdownOpen: boolean = false;\n\n    constructor(private select: UiSelectService) {\n        this.select.register(this);\n    }\n\n    ngAfterViewInit(): void {\n        if (this.selected !== '') {\n            this.setSelected();\n        }\n    }\n\n    onTouchedFn = () => {};\n\n    // eslint-disable-next-line @typescript-eslint/no-unused-vars\n    onChangeFn = (_: any) => {};\n\n    toggleDropdown() {\n        // eslint-disable-next-line @typescript-eslint/no-unused-expressions\n        this.isDropdownOpen ? (this.isDropdownOpen = false) : (this.isDropdownOpen = true);\n    }\n\n    selectOption(option: UiSelectOptionComponent) {\n        this.selectedOption = option;\n        this.selected = option.value;\n        this.displayedText = this.selectedOption && this.selected !== '' ? option.textElement.nativeElement.innerText : '';\n        this.isDropdownOpen = false;\n        this.setSelected();\n        this.onChangeFn(this.selected);\n    }\n\n    onOpened() {\n        this.isDropdownOpen = true;\n        this.onTouchedFn();\n    }\n\n    onClose() {\n        this.isDropdownOpen = false;\n    }\n\n    setSelected() {\n        this.options.forEach((opt) => (opt.selected = opt.value === this.selected));\n    }\n\n    writeValue(fn: any): void {\n        this.onChangeFn = fn;\n    }\n    registerOnChange(fn: any): void {\n        this.onChangeFn = fn;\n    }\n\n    registerOnTouched(fn: any): void {\n        this.onTouchedFn = fn;\n    }\n\n    setDisabledState(isDisabled: boolean): void {\n        this.disabled = isDisabled;\n    }\n}\n",
+            "sourceCode": "import { AfterViewInit, Component, ContentChildren, forwardRef, Input, QueryList, ViewEncapsulation } from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\nimport { fadeInOut } from '@shared/ui-components/animations/fade.animation';\nimport { UiSelectOptionComponent } from '../select-option/ui-select-option.component';\nimport { UiSelectService } from '../ui-select.service';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-select',\n    templateUrl: './ui-select-panel.component.html',\n    styleUrls: ['./ui-select-panel.component.scss'],\n    animations: [fadeInOut],\n    encapsulation: ViewEncapsulation.None,\n    providers: [\n        {\n            provide: NG_VALUE_ACCESSOR,\n            useExisting: forwardRef(() => UiSelectPanelComponent),\n            multi: true,\n        },\n    ],\n})\nexport class UiSelectPanelComponent implements AfterViewInit, ControlValueAccessor {\n    @Input() selected: string = '';\n    @Input() placeholder: string = '';\n    @Input() disabled: boolean = false;\n\n    @ContentChildren(UiSelectOptionComponent) options!: QueryList<UiSelectOptionComponent>;\n\n    selectedOption!: UiSelectOptionComponent;\n    displayedText: string = '';\n\n    isDropdownOpen: boolean = false;\n\n    constructor(private select: UiSelectService) {\n        this.select.register(this);\n    }\n\n    ngAfterViewInit(): void {\n        if (this.selected !== '') {\n            this.setSelected();\n        }\n    }\n\n    onTouchedFn = () => {};\n\n    // eslint-disable-next-line @typescript-eslint/no-unused-vars\n    onChangeFn = (_: any) => {};\n\n    toggleDropdown() {\n        // eslint-disable-next-line @typescript-eslint/no-unused-expressions\n        this.isDropdownOpen ? (this.isDropdownOpen = false) : (this.isDropdownOpen = true);\n    }\n\n    selectOption(option: UiSelectOptionComponent) {\n        this.selectedOption = option;\n        this.selected = option.value;\n        this.displayedText = this.selectedOption && this.selected !== '' ? option.textElement.nativeElement.innerText : '';\n        this.isDropdownOpen = false;\n        this.setSelected();\n        this.onChangeFn(this.selected);\n    }\n\n    onOpened() {\n        this.isDropdownOpen = true;\n        this.onTouchedFn();\n    }\n\n    onClose() {\n        this.isDropdownOpen = false;\n    }\n\n    setSelected() {\n        this.options.forEach((opt) => (opt.selected = opt.value === this.selected));\n    }\n\n    writeValue(fn: any): void {\n        this.displayedText = fn;\n        this.selected = fn;\n    }\n\n    registerOnChange(fn: any): void {\n        this.onChangeFn = fn;\n    }\n\n    registerOnTouched(fn: any): void {\n        this.onTouchedFn = fn;\n    }\n\n    setDisabledState(isDisabled: boolean): void {\n        this.disabled = isDisabled;\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use 'settings/colors';\n\n.ui-selector {\n    background-color: colors.$bg-input-color;\n    padding: 0.8125em 1.5em;\n    border-radius: 5px;\n    width: fit-content;\n    cursor: pointer;\n\n    &__input {\n        border: 0;\n        background-color: inherit;\n        cursor: pointer;\n\n        &:focus {\n            outline: none;\n        }\n    }\n\n    &--active {\n        outline: 1px solid colors.$outline-active-color;\n    }\n\n    &--error {\n        outline: 1px solid colors.$outline-error-color;\n    }\n\n    &--focus {\n        outline: 1px solid colors.$outline-active-color;\n    }\n}\n\n.ui-select-panel {\n    display: flex;\n    flex-direction: column;\n\n    min-width: 15.9375rem;\n    background-color: white;\n    border-radius: 0.625rem;\n    box-shadow: 0px 0.625rem 2.5rem -0.4375rem rgba(55, 63, 104, 0.350492);\n\n    & > ui-select-option:not(:last-child) {\n        border: none;\n        border-bottom: 1px solid hsla(0, 0, 53, 45%);\n    }\n}\n",
+                    "data": "@use 'settings/colors';\n\n.ui-selector {\n    display: flex;\n    align-items: center;\n    justify-content: space-between;\n    background-color: colors.$bg-input-color;\n    padding: 0.8125em 1.5em;\n    border-radius: 5px;\n    cursor: pointer;\n    margin: 1rem 0;\n\n    &__input {\n        border: 0;\n        background-color: inherit;\n        cursor: pointer;\n\n        &:focus {\n            outline: none;\n        }\n    }\n\n    &--active {\n        outline: 1px solid colors.$outline-active-color;\n    }\n\n    &--error {\n        outline: 1px solid colors.$outline-error-color;\n    }\n\n    &--focus {\n        outline: 1px solid colors.$outline-active-color;\n    }\n}\n\n.ui-select-panel {\n    display: flex;\n    flex-direction: column;\n\n    min-width: 15.9375rem;\n    background-color: white;\n    border-radius: 0.625rem;\n    box-shadow: 0px 0.625rem 2.5rem -0.4375rem rgba(55, 63, 104, 0.350492);\n\n    & > ui-select-option:not(:last-child) {\n        border: none;\n        border-bottom: 1px solid hsla(0, 0, 53, 45%);\n    }\n}\n",
                     "styleUrl": "./ui-select-panel.component.scss"
                 }
             ],
@@ -3031,7 +3298,7 @@
                 "AfterViewInit",
                 "ControlValueAccessor"
             ],
-            "templateData": "<div\n    class=\"ui-selector\"\n    [class.ui-selector--focus]=\"isDropdownOpen\"\n    cdkOverlayOrigin\n    (click)=\"toggleDropdown()\"\n    #trigger=\"cdkOverlayOrigin\"\n>\n    <input class=\"ui-selector__input\" [value]=\"displayedText\" [placeholder]=\"placeholder\" type=\"text\" readonly autocomplete=\"off\" />\n    <img class=\"ui-selector__icon\" src=\"assets/images/icons/icon-arrow-down.svg\" alt=\"Arrow down icon\" />\n</div>\n\n<ng-template\n    cdkConnectedOverlay\n    cdkConnectedOverlayLockPosition\n    cdkConnectedOverlayHasBackdrop\n    cdkConnectedOverlayBackdropClass=\"cdk-overlay-transparent-backdrop\"\n    [cdkConnectedOverlayOrigin]=\"trigger\"\n    [cdkConnectedOverlayOpen]=\"isDropdownOpen\"\n    (backdropClick)=\"isDropdownOpen = false\"\n    (opened)=\"onOpened()\"\n    (closed)=\"onClosed()\"\n>\n    <div class=\"ui-select-panel\" @fadeInOut>\n        <ng-content></ng-content>\n    </div>\n</ng-template>\n"
+            "templateData": "<div\n    class=\"ui-selector\"\n    [class.ui-selector--focus]=\"isDropdownOpen\"\n    cdkOverlayOrigin\n    (click)=\"toggleDropdown()\"\n    #trigger=\"cdkOverlayOrigin\"\n>\n    <input class=\"ui-selector__input\" [value]=\"displayedText\" [placeholder]=\"placeholder\" type=\"text\" readonly autocomplete=\"off\" />\n    <img *ngIf=\"!isDropdownOpen\" class=\"ui-selector__icon\" src=\"assets/images/icons/icon-arrow-down.svg\" alt=\"Selector displayed\" />\n    <img *ngIf=\"isDropdownOpen\" class=\"ui-selector__icon\" src=\"assets/images/icons/icon-arrow-up.svg\" alt=\"Selector displayed\" />\n</div>\n\n<ng-template\n    cdkConnectedOverlay\n    cdkConnectedOverlayLockPosition\n    cdkConnectedOverlayHasBackdrop\n    cdkConnectedOverlayBackdropClass=\"cdk-overlay-transparent-backdrop\"\n    [cdkConnectedOverlayOrigin]=\"trigger\"\n    [cdkConnectedOverlayOpen]=\"isDropdownOpen\"\n    (backdropClick)=\"isDropdownOpen = false\"\n    (opened)=\"onOpened()\"\n    (closed)=\"onClosed()\"\n>\n    <div class=\"ui-select-panel\" @fadeInOut>\n        <ng-content></ng-content>\n    </div>\n</ng-template>\n"
         },
         {
             "name": "UiToolbarComponent",
@@ -3105,13 +3372,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-026f7b2e689f0d925a83e8c7482cf6c61bbdacfd6890e9b4b2e10d438c81b2f21e07996eb0f0547b287d978163ea6a2cc4e85dcbb6f97ce348277d2b91974271",
+            "id": "module-AppModule-fa20bba699bfab13abd4db576dd47c6cebe64c8d8a4f14dd653b5534622176e870a4a50aa75675ce643ebc0b87333e113f70691d73270958965beaa3692f7d88",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { HttpClientModule } from '@angular/common/http';\nimport { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { SuggestionsModule } from './modules/suggestions/suggestions.module';\nimport { TranslocoRootModule } from './transloco-root.module';\n\n@NgModule({\n    declarations: [AppComponent],\n    imports: [\n        BrowserModule,\n        BrowserAnimationsModule,\n        AppRoutingModule,\n        HttpClientModule,\n        TranslocoRootModule,\n\n        // Modules\n        SuggestionsModule,\n    ],\n    providers: [],\n    bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
+            "sourceCode": "import { HttpClientModule } from '@angular/common/http';\nimport { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { FeedbackModule } from './modules/feedback/feedback.module';\nimport { HomeModule } from './modules/home/home.module';\nimport { TranslocoRootModule } from './transloco-root.module';\n\n@NgModule({\n    declarations: [AppComponent],\n    imports: [\n        BrowserModule,\n        BrowserAnimationsModule,\n        AppRoutingModule,\n        HttpClientModule,\n        TranslocoRootModule,\n\n        // Modules\n        HomeModule,\n        FeedbackModule,\n    ],\n    providers: [],\n    bootstrap: [AppComponent],\n})\nexport class AppModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -3132,7 +3399,10 @@
                             "name": "AppRoutingModule"
                         },
                         {
-                            "name": "SuggestionsModule"
+                            "name": "FeedbackModule"
+                        },
+                        {
+                            "name": "HomeModule"
                         },
                         {
                             "name": "TranslocoRootModule"
@@ -3159,13 +3429,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-73c169430b7ce3932bb1a37f2df5429e0b9db97173081a68c172cb3b399e57332338900adc7866a6cd8df463bdaedbd6cf680f57ca7fcd2e0c438c7cb851bd5e",
+            "id": "module-AppRoutingModule-e08e1a32482334620f67f5584e7f57f25f2722376a7061df4a85dfc26e8a82251d6314b240f3e2c8ed69e1480ec5c32a516e90bc543c67dc141e6c3765e95a1a",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [\n    {\n        path: '',\n        loadChildren: () => \"import('./modules/suggestions/suggestions.module').then((m) => m.SuggestionsModule)\",\n    },\n\n    {\n        path: 'feedback',\n        loadChildren: () => \"import('./modules/feedback/feedback.module').then((m) => m.FeedbackModule)\",\n    },\n\n    {\n        path: '**',\n        redirectTo: '',\n    },\n];\n\n@NgModule({\n    imports: [RouterModule.forRoot(routes)],\n    exports: [RouterModule],\n})\nexport class AppRoutingModule {}\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [\n    {\n        path: '',\n        loadChildren: () => \"import('./modules/home/home.module').then((m) => m.HomeModule)\",\n    },\n\n    {\n        path: 'feedback',\n        loadChildren: () => \"import('./modules/feedback/feedback.module').then((m) => m.FeedbackModule)\",\n    },\n\n    {\n        path: '**',\n        redirectTo: '',\n    },\n];\n\n@NgModule({\n    imports: [RouterModule.forRoot(routes)],\n    exports: [RouterModule],\n})\nexport class AppRoutingModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -3199,7 +3469,7 @@
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "src/app/modules/suggestions/components/banner/banner.module.ts",
+            "file": "src/app/modules/home/components/banner/banner.module.ts",
             "methods": [],
             "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { BannerComponent } from './banner.component';\nimport { BannerSubtitleDirective, BannerTitleDirective } from './banner.directive';\n\n@NgModule({\n    declarations: [BannerTitleDirective, BannerSubtitleDirective, BannerComponent],\n    imports: [CommonModule],\n    exports: [BannerTitleDirective, BannerSubtitleDirective, BannerComponent],\n})\nexport class BannerModule {}\n",
             "children": [
@@ -3255,7 +3525,7 @@
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "src/app/modules/suggestions/components/empty-feedbacks/empty-feedbacks.module.ts",
+            "file": "src/app/modules/home/components/empty-feedbacks/empty-feedbacks.module.ts",
             "methods": [],
             "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { EmptyFeedbacksComponent } from './empty-feedbacks.component';\nimport { EmptyFeedbacksBodyDirective, EmptyFeedbacksTitleDirective } from './empty-feedbacks.directive';\n\n@NgModule({\n    declarations: [EmptyFeedbacksComponent, EmptyFeedbacksBodyDirective, EmptyFeedbacksTitleDirective],\n    imports: [CommonModule],\n    exports: [EmptyFeedbacksComponent, EmptyFeedbacksBodyDirective, EmptyFeedbacksTitleDirective],\n})\nexport class EmptyFeedbacksModule {}\n",
             "children": [
@@ -3307,13 +3577,13 @@
         },
         {
             "name": "FeedbackModule",
-            "id": "module-FeedbackModule-6571e7eae8006d12c65a9800f2b5251b105b5560d511e9c6ee8e6d8fbb14d43d39156a04d119c305f9100c4030087d2e024cf094b7734c6f978d102e4657a523",
+            "id": "module-FeedbackModule-1de702c4e8dd5d11d680b2b92edbe2ba21d722e6e04f5fa4cee9b8b92a5327673f6f8448ef6fb741575d465d14ef8ad73be1b6c1c88aec2197054f54f967be7b",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/modules/feedback/feedback.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\nimport { UiBadgeModule } from '@shared/ui-components/badge/ui-badge.module';\nimport { UiButtonModule } from '@shared/ui-components/button/ui-button.module';\nimport { UiChipsModule } from '@shared/ui-components/chips/ui-chips.module';\nimport { UiCounterModule } from '@shared/ui-components/counter/ui-counter.module';\nimport { UiFeedbackCardModule } from '@shared/ui-components/feedback-card/feedback-card.module';\nimport { UiIconModule } from '@shared/ui-components/icon/ui-icon.module';\nimport { UiToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';\nimport { BackBtnComponent } from './components/back-btn/back-btn.component';\nimport { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';\n\nconst routes: Routes = [\n    {\n        path: 'detail/:id',\n        component: FeedbackDetailComponent,\n    },\n];\n\n@NgModule({\n    declarations: [FeedbackDetailComponent, BackBtnComponent],\n    imports: [\n        CommonModule,\n        RouterModule.forChild(routes),\n        UiToolbarModule,\n        UiButtonModule,\n        UiIconModule,\n        UiFeedbackCardModule,\n        UiCounterModule,\n        UiChipsModule,\n        UiBadgeModule,\n    ],\n    exports: [RouterModule],\n})\nexport class FeedbackModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { RouterModule, Routes } from '@angular/router';\nimport { TranslocoModule } from '@ngneat/transloco';\nimport { UiBadgeModule } from '@shared/ui-components/badge/ui-badge.module';\nimport { UiButtonModule } from '@shared/ui-components/button/ui-button.module';\nimport { UiChipsModule } from '@shared/ui-components/chips/ui-chips.module';\nimport { UiCounterModule } from '@shared/ui-components/counter/ui-counter.module';\nimport { UiFeedbackCardModule } from '@shared/ui-components/feedback-card/feedback-card.module';\nimport { UiFormFieldModule } from '@shared/ui-components/form-field/ui-form-field.module';\nimport { UiIconModule } from '@shared/ui-components/icon/ui-icon.module';\nimport { UiInputModule } from '@shared/ui-components/input/ui-input.module';\nimport { UiSelectModule } from '@shared/ui-components/select/ui-select.module';\nimport { UiToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';\nimport { BackBtnComponent } from './components/back-btn/back-btn.component';\nimport { FormCardComponent } from './components/form-card/form-card.component';\nimport { FeedbackCreateComponent } from './layouts/feedback-create/feedback-create.component';\nimport { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';\n\nconst routes: Routes = [\n    {\n        path: 'detail/:id',\n        component: FeedbackDetailComponent,\n    },\n    {\n        path: 'new',\n        component: FeedbackCreateComponent,\n    },\n\n    {\n        path: 'edit/:id',\n        component: FeedbackCreateComponent,\n    },\n];\n\n@NgModule({\n    declarations: [FeedbackDetailComponent, FeedbackCreateComponent, BackBtnComponent, FormCardComponent],\n    imports: [\n        CommonModule,\n        RouterModule.forChild(routes),\n        UiToolbarModule,\n        UiButtonModule,\n        UiIconModule,\n        UiFeedbackCardModule,\n        UiCounterModule,\n        UiChipsModule,\n        UiBadgeModule,\n        UiFormFieldModule,\n        UiInputModule,\n        UiSelectModule,\n        TranslocoModule,\n        ReactiveFormsModule,\n    ],\n    exports: [RouterModule],\n})\nexport class FeedbackModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -3326,7 +3596,13 @@
                             "name": "BackBtnComponent"
                         },
                         {
+                            "name": "FeedbackCreateComponent"
+                        },
+                        {
                             "name": "FeedbackDetailComponent"
+                        },
+                        {
+                            "name": "FormCardComponent"
                         }
                     ]
                 },
@@ -3349,7 +3625,16 @@
                             "name": "UiFeedbackCardModule"
                         },
                         {
+                            "name": "UiFormFieldModule"
+                        },
+                        {
                             "name": "UiIconModule"
+                        },
+                        {
+                            "name": "UiInputModule"
+                        },
+                        {
+                            "name": "UiSelectModule"
                         },
                         {
                             "name": "UiToolbarModule"
@@ -3371,14 +3656,14 @@
             ]
         },
         {
-            "name": "SuggestionsModule",
-            "id": "module-SuggestionsModule-8a20f0e890efc514c687357e3cd4bc89dd1a1636e9de2dd952801648145356032e61883e3730602a11cd43dd2bb850114715c7e01f3a79583ba43202f94a3e4d",
+            "name": "HomeModule",
+            "id": "module-HomeModule-06673d6b77b627279662619ca5bdb7025db54dbd20c08fb80acb78b092480eb73086c7c5cdac3bf0794cbc823f7383946e105c745b6d58b726b67cc165297b6b",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "src/app/modules/suggestions/suggestions.module.ts",
+            "file": "src/app/modules/home/home.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { RouterModule, Routes } from '@angular/router';\nimport { TranslocoModule } from '@ngneat/transloco';\nimport { UiBadgeModule } from '@shared/ui-components/badge/ui-badge.module';\nimport { UiButtonModule } from '@shared/ui-components/button/ui-button.module';\nimport { UiChipsModule } from '@shared/ui-components/chips/ui-chips.module';\nimport { UiCounterModule } from '@shared/ui-components/counter/ui-counter.module';\nimport { UiIconModule } from '@shared/ui-components/icon/ui-icon.module';\nimport { UiToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';\nimport { UiFeedbackCardModule } from '../../shared/ui-components/feedback-card/feedback-card.module';\nimport { BannerModule } from './components/banner/banner.module';\nimport { CategoryFilterComponent } from './components/category-filter/category-filter.component';\nimport { EmptyFeedbacksModule } from './components/empty-feedbacks/empty-feedbacks.module';\nimport { SuggestionsLayoutComponent } from './layout/suggestions-layout.component';\n\nconst routes: Routes = [\n    {\n        path: '',\n        component: SuggestionsLayoutComponent,\n        pathMatch: 'full',\n    },\n];\n\n@NgModule({\n    declarations: [SuggestionsLayoutComponent, CategoryFilterComponent],\n    imports: [\n        CommonModule,\n        RouterModule.forChild(routes),\n        ReactiveFormsModule,\n        UiCounterModule,\n        UiBadgeModule,\n        UiChipsModule,\n        UiIconModule,\n        UiToolbarModule,\n        UiButtonModule,\n        UiFeedbackCardModule,\n        EmptyFeedbacksModule,\n        BannerModule,\n        TranslocoModule,\n    ],\n    exports: [RouterModule],\n})\nexport class SuggestionsModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { RouterModule, Routes } from '@angular/router';\nimport { TranslocoModule } from '@ngneat/transloco';\nimport { UiBadgeModule } from '@shared/ui-components/badge/ui-badge.module';\nimport { UiButtonModule } from '@shared/ui-components/button/ui-button.module';\nimport { UiChipsModule } from '@shared/ui-components/chips/ui-chips.module';\nimport { UiCounterModule } from '@shared/ui-components/counter/ui-counter.module';\nimport { UiIconModule } from '@shared/ui-components/icon/ui-icon.module';\nimport { UiToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';\nimport { UiFeedbackCardModule } from '../../shared/ui-components/feedback-card/feedback-card.module';\nimport { BannerModule } from './components/banner/banner.module';\nimport { CategoryFilterComponent } from './components/category-filter/category-filter.component';\nimport { EmptyFeedbacksModule } from './components/empty-feedbacks/empty-feedbacks.module';\nimport { HomeComponent } from './layout/home.component';\n\nconst routes: Routes = [\n    {\n        path: '',\n        component: HomeComponent,\n        pathMatch: 'full',\n    },\n];\n\n@NgModule({\n    declarations: [HomeComponent, CategoryFilterComponent],\n    imports: [\n        CommonModule,\n        RouterModule.forChild(routes),\n        ReactiveFormsModule,\n        UiCounterModule,\n        UiBadgeModule,\n        UiChipsModule,\n        UiIconModule,\n        UiToolbarModule,\n        UiButtonModule,\n        UiFeedbackCardModule,\n        EmptyFeedbacksModule,\n        BannerModule,\n        TranslocoModule,\n    ],\n    exports: [RouterModule],\n})\nexport class HomeModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -3391,7 +3676,7 @@
                             "name": "CategoryFilterComponent"
                         },
                         {
-                            "name": "SuggestionsLayoutComponent"
+                            "name": "HomeComponent"
                         }
                     ]
                 },
@@ -3728,6 +4013,62 @@
             ]
         },
         {
+            "name": "UiFormFieldModule",
+            "id": "module-UiFormFieldModule-33624eaa5b6bcd921c09c839704f0ec492ace0880e9015647056938713ad56d3b44ef2c4757eb5d3b77659d1663c0b5cb8febc81dc981605925a6e67122c99fc",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/shared/ui-components/form-field/ui-form-field.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiErrorComponent, UiFormFieldComponent, UiLabelComponent } from './ui-form-field.component';\n\n@NgModule({\n    declarations: [UiFormFieldComponent, UiLabelComponent, UiErrorComponent],\n    imports: [CommonModule],\n    exports: [UiFormFieldComponent, UiLabelComponent, UiErrorComponent],\n})\nexport class UiFormFieldModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "UiErrorComponent"
+                        },
+                        {
+                            "name": "UiFormFieldComponent"
+                        },
+                        {
+                            "name": "UiLabelComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "UiErrorComponent"
+                        },
+                        {
+                            "name": "UiFormFieldComponent"
+                        },
+                        {
+                            "name": "UiLabelComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "UiIconModule",
             "id": "module-UiIconModule-ce2e8605a5fef4847f19b3601787f57dda1d7d941d35cc7f42d257b9e6905529ac83f1e9554d2b0f5c36e3719c1d0d2a17f1d7900530e8cd381567a32fa4c66a",
             "description": "",
@@ -3966,7 +4307,7 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/select/select.stories.ts",
+                "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -3976,7 +4317,7 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                "file": "src/app/shared/ui-components/select/select.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4011,16 +4352,6 @@
                 "deprecationMessage": "",
                 "type": "",
                 "defaultValue": "(configure: ConfigureFn, compilerOptions: CompilerOptions = {}) => {\n  const compilerConfig: CompilerOptions = {\n    preserveWhitespaces: false,\n    ...compilerOptions,\n  };\n\n  const configuredTestBed = TestBed.configureCompiler(compilerConfig);\n\n  configure(configuredTestBed);\n\n  return configuredTestBed.compileComponents().then(() => configuredTestBed);\n}"
-            },
-            {
-                "name": "endpoints",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/app/core/http/endpoints.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "object",
-                "defaultValue": "{\n    users: `${environment.apiUrl}/users`,\n    comments: `${environment.apiUrl}/comments`,\n    feedbacks: `${environment.apiUrl}/feedbacks`,\n    replies: `${environment.apiUrl}/replies`,\n}"
             },
             {
                 "name": "environment",
@@ -4136,21 +4467,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/select/select.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<UiSelectPanelComponent>",
-                "defaultValue": "(args: UiSelectPanelComponent) => ({\n    props: args,\n    moduleMetadata: {\n        imports: [UiSelectModule],\n    },\n    template: `\n\t<ui-select label=\"Name\" placeholder=\"Select the option\">\n\t\t<ui-select-option value=\"option1\">Option 1</ui-select-option>\n\t\t<ui-select-option value=\"option2\">Option 2</ui-select-option>\n\t\t<ui-select-option value=\"option3\">Option 3</ui-select-option>\n\t</ui-select>\n`,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UiToolbarComponent>",
                 "defaultValue": "(args: UiToolbarComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiToolbarComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-toolbar>Toolbar</ui-toolbar>`,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui-components/select/select.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<UiSelectPanelComponent>",
+                "defaultValue": "(args: UiSelectPanelComponent) => ({\n    props: args,\n    moduleMetadata: {\n        imports: [UiSelectModule],\n    },\n    template: `\n\t<ui-select label=\"Name\" placeholder=\"Select the option\">\n\t\t<ui-select-option value=\"option1\">Option 1</ui-select-option>\n\t\t<ui-select-option value=\"option2\">Option 2</ui-select-option>\n\t\t<ui-select-option value=\"option3\">Option 3</ui-select-option>\n\t</ui-select>\n`,\n})"
             },
             {
                 "name": "Template",
@@ -4394,28 +4725,6 @@
                     "defaultValue": "(args: UiInputDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiInputDirective],\n        imports: [CommonModule],\n    },\n    template: `<input uiInput [ngModel]=\"value\" placeholder=\"This is sparta!\"/>`,\n})"
                 }
             ],
-            "src/app/shared/ui-components/select/select.stories.ts": [
-                {
-                    "name": "Basic",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/ui-components/select/select.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/ui-components/select/select.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<UiSelectPanelComponent>",
-                    "defaultValue": "(args: UiSelectPanelComponent) => ({\n    props: args,\n    moduleMetadata: {\n        imports: [UiSelectModule],\n    },\n    template: `\n\t<ui-select label=\"Name\" placeholder=\"Select the option\">\n\t\t<ui-select-option value=\"option1\">Option 1</ui-select-option>\n\t\t<ui-select-option value=\"option2\">Option 2</ui-select-option>\n\t\t<ui-select-option value=\"option3\">Option 3</ui-select-option>\n\t</ui-select>\n`,\n})"
-                }
-            ],
             "src/app/shared/ui-components/toolbar/toolbar.stories.ts": [
                 {
                     "name": "Basic",
@@ -4478,6 +4787,28 @@
                     "defaultValue": "TemplateWithLogo.bind({})"
                 }
             ],
+            "src/app/shared/ui-components/select/select.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/select/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/select/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<UiSelectPanelComponent>",
+                    "defaultValue": "(args: UiSelectPanelComponent) => ({\n    props: args,\n    moduleMetadata: {\n        imports: [UiSelectModule],\n    },\n    template: `\n\t<ui-select label=\"Name\" placeholder=\"Select the option\">\n\t\t<ui-select-option value=\"option1\">Option 1</ui-select-option>\n\t\t<ui-select-option value=\"option2\">Option 2</ui-select-option>\n\t\t<ui-select-option value=\"option3\">Option 3</ui-select-option>\n\t</ui-select>\n`,\n})"
+                }
+            ],
             "src/app/shared/ui-components/chips/stories/chip-list.stories.ts": [
                 {
                     "name": "Basic",
@@ -4532,18 +4863,6 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "(configure: ConfigureFn, compilerOptions: CompilerOptions = {}) => {\n  const compilerConfig: CompilerOptions = {\n    preserveWhitespaces: false,\n    ...compilerOptions,\n  };\n\n  const configuredTestBed = TestBed.configureCompiler(compilerConfig);\n\n  configure(configuredTestBed);\n\n  return configuredTestBed.compileComponents().then(() => configuredTestBed);\n}"
-                }
-            ],
-            "src/app/core/http/endpoints.ts": [
-                {
-                    "name": "endpoints",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/core/http/endpoints.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "object",
-                    "defaultValue": "{\n    users: `${environment.apiUrl}/users`,\n    comments: `${environment.apiUrl}/comments`,\n    feedbacks: `${environment.apiUrl}/feedbacks`,\n    replies: `${environment.apiUrl}/replies`,\n}"
                 }
             ],
             "src/environments/environment.prod.ts": [
@@ -4708,31 +5027,11 @@
                 "children": [
                     {
                         "path": "",
-                        "loadChildren": "./modules/suggestions/suggestions.module#SuggestionsModule"
+                        "loadChildren": "./modules/home/home.module#HomeModule"
                     },
                     {
                         "path": "feedback",
-                        "loadChildren": "./modules/feedback/feedback.module#FeedbackModule",
-                        "children": [
-                            {
-                                "kind": "module",
-                                "children": [
-                                    {
-                                        "name": "routes",
-                                        "filename": "src/app/modules/feedback/feedback.module.ts",
-                                        "module": "FeedbackModule",
-                                        "children": [
-                                            {
-                                                "path": "detail/:id",
-                                                "component": "FeedbackDetailComponent"
-                                            }
-                                        ],
-                                        "kind": "module"
-                                    }
-                                ],
-                                "module": "FeedbackModule"
-                            }
-                        ]
+                        "loadChildren": "./modules/feedback/feedback.module#FeedbackModule"
                     },
                     {
                         "path": "**",
@@ -4743,12 +5042,32 @@
             },
             {
                 "name": "routes",
-                "filename": "src/app/modules/suggestions/suggestions.module.ts",
-                "module": "SuggestionsModule",
+                "filename": "src/app/modules/feedback/feedback.module.ts",
+                "module": "FeedbackModule",
+                "children": [
+                    {
+                        "path": "detail/:id",
+                        "component": "FeedbackDetailComponent"
+                    },
+                    {
+                        "path": "new",
+                        "component": "FeedbackCreateComponent"
+                    },
+                    {
+                        "path": "edit/:id",
+                        "component": "FeedbackCreateComponent"
+                    }
+                ],
+                "kind": "module"
+            },
+            {
+                "name": "routes",
+                "filename": "src/app/modules/home/home.module.ts",
+                "module": "HomeModule",
                 "children": [
                     {
                         "path": "",
-                        "component": "SuggestionsLayoutComponent",
+                        "component": "HomeComponent",
                         "pathMatch": "full"
                     }
                 ],
@@ -4789,22 +5108,12 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/core/http/endpoints.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "endpoints",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "src/app/core/http/feedback.service.ts",
                 "type": "injectable",
                 "linktype": "injectable",
                 "name": "FeedbackService",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -4871,6 +5180,24 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/modules/feedback/components/form-card/form-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FormCardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/feedback/layouts/feedback-create/feedback-create.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FeedbackCreateComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/modules/feedback/layouts/feedback-detail/feedback-detail.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -4880,7 +5207,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/modules/suggestions/components/banner/banner.component.ts",
+                "filePath": "src/app/modules/home/components/banner/banner.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "BannerComponent",
@@ -4889,7 +5216,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/modules/suggestions/components/banner/banner.directive.ts",
+                "filePath": "src/app/modules/home/components/banner/banner.directive.ts",
                 "type": "directive",
                 "linktype": "directive",
                 "name": "BannerSubtitleDirective",
@@ -4898,7 +5225,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/modules/suggestions/components/banner/banner.directive.ts",
+                "filePath": "src/app/modules/home/components/banner/banner.directive.ts",
                 "type": "directive",
                 "linktype": "directive",
                 "name": "BannerTitleDirective",
@@ -4907,7 +5234,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/modules/suggestions/components/category-filter/category-filter.component.ts",
+                "filePath": "src/app/modules/home/components/category-filter/category-filter.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "CategoryFilterComponent",
@@ -4916,7 +5243,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/modules/suggestions/components/empty-feedbacks/empty-feedbacks.component.ts",
+                "filePath": "src/app/modules/home/components/empty-feedbacks/empty-feedbacks.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "EmptyFeedbacksComponent",
@@ -4925,7 +5252,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/modules/suggestions/components/empty-feedbacks/empty-feedbacks.directive.ts",
+                "filePath": "src/app/modules/home/components/empty-feedbacks/empty-feedbacks.directive.ts",
                 "type": "directive",
                 "linktype": "directive",
                 "name": "EmptyFeedbacksBodyDirective",
@@ -4934,7 +5261,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/modules/suggestions/components/empty-feedbacks/empty-feedbacks.directive.ts",
+                "filePath": "src/app/modules/home/components/empty-feedbacks/empty-feedbacks.directive.ts",
                 "type": "directive",
                 "linktype": "directive",
                 "name": "EmptyFeedbacksTitleDirective",
@@ -4943,10 +5270,10 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/modules/suggestions/layout/suggestions-layout.component.ts",
+                "filePath": "src/app/modules/home/layout/home.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "SuggestionsLayoutComponent",
+                "name": "HomeComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
                 "status": "low"
@@ -5152,6 +5479,33 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/shared/ui-components/form-field/ui-form-field.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiErrorComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui-components/form-field/ui-form-field.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiFormFieldComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/shared/ui-components/form-field/ui-form-field.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiLabelComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/shared/ui-components/icon/icon.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -5216,7 +5570,7 @@
                 "linktype": "directive",
                 "name": "UiInputDirective",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
