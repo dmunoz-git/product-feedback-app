@@ -2,22 +2,22 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { FeedbackService } from '@core/http/feedback.service';
-import { FeedbackCreateComponent } from './feedback-create.component';
+import { FeedbackFormComponent } from './feedback-form.component';
 
-describe('FeedbackCreateComponent', () => {
-    let component: FeedbackCreateComponent;
-    let fixture: ComponentFixture<FeedbackCreateComponent>;
+describe('FeedbackFormComponent', () => {
+    let component: FeedbackFormComponent;
+    let fixture: ComponentFixture<FeedbackFormComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [FeedbackCreateComponent],
+            declarations: [FeedbackFormComponent],
             imports: [ReactiveFormsModule, FormsModule, RouterTestingModule],
             providers: [FeedbackService],
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(FeedbackCreateComponent);
+        fixture = TestBed.createComponent(FeedbackFormComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

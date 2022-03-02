@@ -7,8 +7,6 @@ import { User } from '../models/user.model';
     providedIn: 'root',
 })
 export class UserService {
-    constructor() {}
-
     getAuthendicatedUser(): Observable<User> {
         return new BehaviorSubject<User>(data.currentUser).asObservable();
     }
