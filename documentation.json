@@ -373,7 +373,7 @@
         },
         {
             "name": "FeedbackService",
-            "id": "injectable-FeedbackService-a86c3b545ebdab593d78cd91483ba247b9c4ffbf2cb47241ac0b5397bdb5bb684f5d855a853ec1f163613b946741375bf84fae48443124185d96dcf3f304fc2e",
+            "id": "injectable-FeedbackService-d810694d3e7ecd1f6aaa01c7795d5f4f877572cd166a6c939f94e2a384a0846ba29db8c332ffa430f9f3b7395a7e15b376665ecf1eb1a46df50cd58b9c12754c",
             "file": "src/app/core/http/feedback.service.ts",
             "properties": [],
             "methods": [
@@ -406,6 +406,34 @@
                     ]
                 },
                 {
+                    "name": "deleteFeedback",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 36,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
                     "name": "getFeedbackDetail",
                     "args": [
                         {
@@ -418,7 +446,7 @@
                     "optional": false,
                     "returnType": "Observable<Feedback | undefined>",
                     "typeParameters": [],
-                    "line": 24,
+                    "line": 41,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -439,16 +467,59 @@
                     "optional": false,
                     "returnType": "Observable<Feedback[]>",
                     "typeParameters": [],
-                    "line": 29,
+                    "line": 46,
                     "deprecated": false,
                     "deprecationMessage": ""
+                },
+                {
+                    "name": "updateFeedback",
+                    "args": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "feedback",
+                            "type": "Feedback",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "any",
+                    "typeParameters": [],
+                    "line": 24,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "id",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "feedback",
+                            "type": "Feedback",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport data from '@core/mocks/data.json';\nimport { Feedback } from '@core/models/feedback.model';\nimport { BehaviorSubject, map, Observable } from 'rxjs';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class FeedbackService {\n    createFeedback(feedback: Feedback) {\n        const newFeedbackData = {\n            id: data.productRequests.length + 1,\n            title: feedback.title,\n            category: feedback.category,\n            upvotes: 0,\n            status: feedback.status,\n            description: feedback.description,\n            comments: [],\n        };\n\n        return new BehaviorSubject<boolean>(true).pipe(map(() => data.productRequests.push(newFeedbackData)));\n    }\n\n    getFeedbackDetail(id: number): Observable<Feedback | undefined> {\n        const feedback = data.productRequests.find((x) => x.id === id);\n        return new BehaviorSubject<Feedback | undefined>(feedback).asObservable();\n    }\n\n    getFeedbackList(): Observable<Feedback[]> {\n        return new BehaviorSubject<Feedback[]>(data.productRequests).asObservable();\n    }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport data from '@core/mocks/data.json';\nimport { Feedback } from '@core/models/feedback.model';\nimport { BehaviorSubject, map, Observable } from 'rxjs';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class FeedbackService {\n    createFeedback(feedback: Feedback) {\n        const newFeedbackData = {\n            id: data.productRequests.length + 1,\n            title: feedback.title,\n            category: feedback.category,\n            upvotes: 0,\n            status: feedback.status,\n            description: feedback.description,\n            comments: [],\n        };\n\n        return new BehaviorSubject<boolean>(true).pipe(map(() => data.productRequests.push(newFeedbackData)));\n    }\n\n    updateFeedback(id: number, feedback: Feedback) {\n        const index = data.productRequests.findIndex((x) => x.id === id);\n        return new BehaviorSubject<boolean>(true).pipe(\n            map(() => {\n                data.productRequests[index].title = feedback.title;\n                data.productRequests[index].category = feedback.category;\n                data.productRequests[index].status = feedback.status;\n                data.productRequests[index].description = feedback.description;\n            })\n        );\n    }\n\n    deleteFeedback(id: number) {\n        const index = data.productRequests.findIndex((x) => x.id === id);\n        return new BehaviorSubject<boolean>(true).pipe(map(() => data.productRequests.splice(index, 1)));\n    }\n\n    getFeedbackDetail(id: number): Observable<Feedback | undefined> {\n        const feedback = data.productRequests.find((x) => x.id === id);\n        return new BehaviorSubject<Feedback | undefined>(feedback).asObservable();\n    }\n\n    getFeedbackList(): Observable<Feedback[]> {\n        return new BehaviorSubject<Feedback[]>(data.productRequests).asObservable();\n    }\n}\n",
             "type": "injectable"
         },
         {
@@ -751,7 +822,7 @@
         },
         {
             "name": "UserService",
-            "id": "injectable-UserService-4ef11116f6e5041f0e22021e0b8d34b7b711d3de3fd7cfeb20d50b4fc5559ac9cf2d524fd06623feefc14bb531bbf12031c0b1e89a3845fa73ff66f5d5848189",
+            "id": "injectable-UserService-2fc3f701a7c85ec02fda5febcb2bc190d1b37ee2fba1088c2f06a32d68f422645e76ff0a6e1d8d2bf2655e7a88951ad4589895e6b2c173ab60bef61ea7eb1c0a",
             "file": "src/app/core/http/user.service.ts",
             "properties": [],
             "methods": [
@@ -761,7 +832,7 @@
                     "optional": false,
                     "returnType": "Observable<User>",
                     "typeParameters": [],
-                    "line": 12,
+                    "line": 10,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -770,15 +841,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport data from '../mocks/data.json';\nimport { User } from '../models/user.model';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class UserService {\n    constructor() {}\n\n    getAuthendicatedUser(): Observable<User> {\n        return new BehaviorSubject<User>(data.currentUser).asObservable();\n    }\n}\n",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 9
-            },
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { BehaviorSubject, Observable } from 'rxjs';\nimport data from '../mocks/data.json';\nimport { User } from '../models/user.model';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class UserService {\n    getAuthendicatedUser(): Observable<User> {\n        return new BehaviorSubject<User>(data.currentUser).asObservable();\n    }\n}\n",
             "type": "injectable"
         }
     ],
@@ -876,6 +939,90 @@
                     ]
                 }
             ],
+            "methodsClass": []
+        },
+        {
+            "name": "CommentAvatarDirective",
+            "id": "directive-CommentAvatarDirective-6fb5460006bf7d3ef101576875eab1b502e4cd5157d61908b43c084991f9faf96c5fdb6abab9e8d077371a9b26db91e3c076a19db200c774f755fdfcd2a6e9ff",
+            "file": "src/app/modules/feedback/components/comment/comment.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n",
+            "selector": "[comment-avatar]",
+            "providers": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [
+                {
+                    "name": "class",
+                    "defaultValue": "'comment__avatar'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "hostListeners": [],
+            "propertiesClass": [
+                {
+                    "name": "class",
+                    "defaultValue": "'comment__avatar'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 17,
+                    "decorators": [
+                        {
+                            "name": "HostBinding",
+                            "stringifiedArguments": "'class'"
+                        }
+                    ]
+                }
+            ],
+            "methodsClass": []
+        },
+        {
+            "name": "CommentIdDirective",
+            "id": "directive-CommentIdDirective-6fb5460006bf7d3ef101576875eab1b502e4cd5157d61908b43c084991f9faf96c5fdb6abab9e8d077371a9b26db91e3c076a19db200c774f755fdfcd2a6e9ff",
+            "file": "src/app/modules/feedback/components/comment/comment.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n",
+            "selector": "[comment-id]",
+            "providers": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": []
+        },
+        {
+            "name": "CommentNameDirective",
+            "id": "directive-CommentNameDirective-6fb5460006bf7d3ef101576875eab1b502e4cd5157d61908b43c084991f9faf96c5fdb6abab9e8d077371a9b26db91e3c076a19db200c774f755fdfcd2a6e9ff",
+            "file": "src/app/modules/feedback/components/comment/comment.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n",
+            "selector": "[comment-name]",
+            "providers": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
             "methodsClass": []
         },
         {
@@ -1687,6 +1834,48 @@
             "templateData": "<ui-chip-list *transloco=\"let t\" aria-label=\"Feedbacks category filter\">\n    <ui-chip *ngFor=\"let category of categories\" [active]=\"getCategoryActive(category.name)\" (click)=\"setCategory(category.name)\">{{\n        t('categories.' + category.name)\n    }}</ui-chip>\n</ui-chip-list>\n"
         },
         {
+            "name": "CommentComponent",
+            "id": "component-CommentComponent-6fb5460006bf7d3ef101576875eab1b502e4cd5157d61908b43c084991f9faf96c5fdb6abab9e8d077371a9b26db91e3c076a19db200c774f755fdfcd2a6e9ff",
+            "file": "src/app/modules/feedback/components/comment/comment.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-comment",
+            "styleUrls": [
+                "./comment.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./comment.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use 'settings/colors';\n\n.comment {\n    display: flex;\n    align-items: flex-start;\n    gap: 2rem;\n\n    &__name {\n        margin: 0;\n    }\n\n    &__id {\n        font-size: 0.875rem;\n        color: colors.$text-color;\n        margin: 0;\n    }\n\n    &__avatar {\n        width: min(100%, 2.5rem);\n        height: min(100%, 2.5rem);\n        border-radius: 50%;\n    }\n}\n",
+                    "styleUrl": "./comment.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<div class=\"comment\">\n    <ng-content select=\"[comment-avatar]\"></ng-content>\n    <div class=\"comment__body\">\n        <div class=\"comment__user\">\n            <ng-content select=\"[comment-name]\"></ng-content>\n            <ng-content select=\"[comment-id]\"></ng-content>\n        </div>\n        <ng-content select=\"[comment-text]\"></ng-content>\n    </div>\n</div>\n"
+        },
+        {
             "name": "EmptyFeedbacksComponent",
             "id": "component-EmptyFeedbacksComponent-057a08c06a521da201a1ffdaf56ad6c06bfffedf50033535d89462c9cba678ab12918c620c800ce4af999cdcb77bd6b3ebf9740920551e5f00d024ea351c3a77",
             "file": "src/app/modules/home/components/empty-feedbacks/empty-feedbacks.component.ts",
@@ -1769,276 +1958,6 @@
             ],
             "stylesData": "",
             "templateData": "<div class=\"feedback-card\">\n    <div class=\"feedback-card__side\">\n        <ng-content select=\"[feedback-card-aside]\"></ng-content>\n    </div>\n    <article class=\"feedback-card__body\">\n        <div class=\"feedback-card__title\">\n            <ng-content select=\"[feedback-card-title]\"></ng-content>\n        </div>\n\n        <div class=\"feedback-card__content\">\n            <ng-content select=\"[feedback-card-content]\"></ng-content>\n        </div>\n\n        <div class=\"feedback-card__footer\">\n            <ng-content select=\"[feedback-card-footer]\"></ng-content>\n        </div>\n    </article>\n</div>\n"
-        },
-        {
-            "name": "FeedbackCreateComponent",
-            "id": "component-FeedbackCreateComponent-656db89e900b10e93d4ba2fbf91452c70e4f930f917cfb6631741d73282dc37c909bda0474f7b299092570645d18386fb77b66ae27d0b07569e7bf013de02641",
-            "file": "src/app/modules/feedback/layouts/feedback-create/feedback-create.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "app-feedback-create",
-            "styleUrls": [
-                "./feedback-create.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./feedback-create.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "categories",
-                    "defaultValue": "['feature', 'bug', 'enhancement', 'ui', 'ux']",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "optional": false,
-                    "description": "",
-                    "line": 13,
-                    "modifierKind": [
-                        123,
-                        144
-                    ]
-                },
-                {
-                    "name": "feedbackForm",
-                    "defaultValue": "this.fb.group({\n        title: ['', Validators.required],\n        category: [this.categories[0], Validators.required],\n        description: ['', Validators.required],\n    })",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "optional": false,
-                    "description": "",
-                    "line": 16,
-                    "modifierKind": [
-                        123
-                    ]
-                },
-                {
-                    "name": "feedbackId",
-                    "defaultValue": "-1",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "number",
-                    "optional": false,
-                    "description": "",
-                    "line": 22,
-                    "modifierKind": [
-                        121
-                    ]
-                },
-                {
-                    "name": "subscription",
-                    "defaultValue": "new Subscription()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Subscription",
-                    "optional": false,
-                    "description": "",
-                    "line": 23,
-                    "modifierKind": [
-                        121
-                    ]
-                },
-                {
-                    "name": "update",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "boolean",
-                    "optional": false,
-                    "description": "",
-                    "line": 14,
-                    "modifierKind": [
-                        123
-                    ]
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "createFeedback",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 50,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "getFeedback",
-                    "args": [
-                        {
-                            "name": "feedbackId",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 54,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "feedbackId",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "ngOnDestroy",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 34,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 27,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnDestroy, OnInit } from '@angular/core';\nimport { AbstractControl, FormBuilder, Validators } from '@angular/forms';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { FeedbackService } from '@core/http/feedback.service';\nimport { Subscription } from 'rxjs';\n\n@Component({\n    selector: 'app-feedback-create',\n    templateUrl: './feedback-create.component.html',\n    styleUrls: ['./feedback-create.component.scss'],\n})\nexport class FeedbackCreateComponent implements OnInit, OnDestroy {\n    public readonly categories = ['feature', 'bug', 'enhancement', 'ui', 'ux'];\n    public update: boolean = false;\n\n    public feedbackForm = this.fb.group({\n        title: ['', Validators.required],\n        category: [this.categories[0], Validators.required],\n        description: ['', Validators.required],\n    });\n\n    private feedbackId: number = -1;\n    private subscription: Subscription = new Subscription();\n\n    constructor(private fb: FormBuilder, private feedbacks: FeedbackService, private router: Router, private route: ActivatedRoute) {}\n\n    ngOnInit(): void {\n        this.feedbackId = Number(this.route.snapshot.paramMap.get('id'));\n        if (this.feedbackId >= 0) {\n            this.getFeedback(this.feedbackId);\n        }\n    }\n\n    ngOnDestroy(): void {\n        this.subscription.unsubscribe();\n    }\n\n    get title(): AbstractControl | null {\n        return this.feedbackForm.get('title');\n    }\n\n    get category(): AbstractControl | null {\n        return this.feedbackForm.get('category');\n    }\n\n    get description(): AbstractControl | null {\n        return this.feedbackForm.get('description');\n    }\n\n    createFeedback() {\n        this.subscription.add(this.feedbacks.createFeedback(this.feedbackForm.value).subscribe(() => this.router.navigate(['/'])));\n    }\n\n    getFeedback(feedbackId: number) {\n        this.subscription.add(\n            this.feedbacks.getFeedbackDetail(feedbackId).subscribe((feedback) => {\n                if (feedback) {\n                    this.update = true;\n                    this.feedbackForm.patchValue({\n                        title: feedback.title,\n                        category: feedback.category,\n                        description: feedback.description,\n                    });\n                } else {\n                    this.router.navigate(['/']);\n                }\n            })\n        );\n    }\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".feedback-create {\n    width: 33.75rem;\n    margin: 5.75rem auto 0 auto;\n    padding: 0 1.5rem;\n\n    &__card {\n        margin-top: 4.25rem;\n    }\n}\n\n.form-field-title {\n    margin: 0.125rem 0;\n}\n\n.form-buttons {\n    display: flex;\n    justify-content: flex-end;\n    flex-wrap: wrap;\n    &__item:not(:last-child) {\n        margin-right: 1rem;\n    }\n}\n",
-                    "styleUrl": "./feedback-create.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "fb",
-                        "type": "FormBuilder",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "feedbacks",
-                        "type": "FeedbackService",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "router",
-                        "type": "Router",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    },
-                    {
-                        "name": "route",
-                        "type": "ActivatedRoute",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 23,
-                "jsdoctags": [
-                    {
-                        "name": "fb",
-                        "type": "FormBuilder",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "feedbacks",
-                        "type": "FeedbackService",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "router",
-                        "type": "Router",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    },
-                    {
-                        "name": "route",
-                        "type": "ActivatedRoute",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
-            "implements": [
-                "OnInit",
-                "OnDestroy"
-            ],
-            "accessors": {
-                "title": {
-                    "name": "title",
-                    "getSignature": {
-                        "name": "title",
-                        "type": "",
-                        "returnType": "AbstractControl | null",
-                        "line": 38
-                    }
-                },
-                "category": {
-                    "name": "category",
-                    "getSignature": {
-                        "name": "category",
-                        "type": "",
-                        "returnType": "AbstractControl | null",
-                        "line": 42
-                    }
-                },
-                "description": {
-                    "name": "description",
-                    "getSignature": {
-                        "name": "description",
-                        "type": "",
-                        "returnType": "AbstractControl | null",
-                        "line": 46
-                    }
-                }
-            },
-            "templateData": "<section class=\"feedback-create\" *transloco=\"let t\">\n    <app-back-btn>{{ t('back') }}</app-back-btn>\n    <app-form-card\n        class=\"feedback-create__card\"\n        [iconPath]=\"update ? '/assets/images/icons/icon-edit-feedback.svg' : '/assets/images/icons/icon-new-feedback.svg'\"\n    >\n        <form [formGroup]=\"feedbackForm\" (ngSubmit)=\"createFeedback()\">\n            <h1 *ngIf=\"!update\">{{ t('newFeedback') }}</h1>\n            <h1 *ngIf=\"update\">Editing \"{{ title?.value }}\"</h1>\n\n            <h4 class=\"form-field-title\">{{ t('formFields.title') }}</h4>\n            <ui-form-field size=\"fluent\">\n                <ui-label>{{ t('formFields.titleLabel') }}</ui-label>\n                <input uiInput type=\"text\" formControlName=\"title\" data-cy=\"title-field\" />\n                <ui-error *ngIf=\"title?.errors && title?.hasError('required') && title?.touched\" data-cy=\"field-error\">\n                    {{ t('errors.empty') }}\n                </ui-error>\n            </ui-form-field>\n\n            <h4 class=\"form-field-title\">{{ t('formFields.category') }}</h4>\n            <ui-form-field size=\"fluent\">\n                <ui-label>{{ t('formFields.categoryLabel') }}</ui-label>\n                <ui-select formControlName=\"category\">\n                    <ui-select-option *ngFor=\"let category of categories\" value=\"{{ category }}\">{{\n                        t('categories.' + category)\n                    }}</ui-select-option>\n                </ui-select>\n            </ui-form-field>\n\n            <h4 class=\"form-field-title\">{{ t('formFields.detail') }}</h4>\n            <ui-form-field size=\"fluent\">\n                <ui-label>{{ t('formFields.detailLabel') }}</ui-label>\n                <textarea uiInput formControlName=\"description\" rows=\"4\" data-cy=\"description-field\"></textarea>\n                <ui-error *ngIf=\"description?.errors && description?.hasError('required') && description?.touched\" data-cy=\"field-error\">\n                    {{ t('errors.empty') }}\n                </ui-error>\n            </ui-form-field>\n\n            <div class=\"form-buttons\">\n                <button ui-button color=\"dark\" type=\"button\" class=\"form-buttons__item\" [routerLink]=\"['/']\" data-cy=\"cancel\">\n                    {{ t('buttons.cancel') }}\n                </button>\n                <button\n                    ui-button\n                    color=\"primary\"\n                    type=\"submit\"\n                    class=\"form-buttons__item\"\n                    [disabled]=\"feedbackForm.invalid\"\n                    data-cy=\"submit\"\n                >\n                    {{ t('buttons.addFeedbacks') }}\n                </button>\n            </div>\n        </form>\n    </app-form-card>\n</section>\n"
         },
         {
             "name": "FeedbackDetailComponent",
@@ -2124,7 +2043,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".layout {\n    margin: 3.9375rem auto 0 auto;\n    width: min(45.625rem, 100%);\n}\n\n.toolbar {\n    margin-bottom: 0.625rem;\n}\n",
+                    "data": "@use 'settings/colors';\n\n.layout {\n    margin: 3.9375rem auto 0 auto;\n    width: min(45.625rem, 100%);\n}\n\n.toolbar {\n    margin-bottom: 0.625rem;\n}\n\n.comment-section {\n    background: white;\n    border-radius: 0.625rem;\n    padding: 1.5rem 2.125rem;\n    margin-top: 1.5rem;\n}\n\n.divider {\n    width: 100%;\n    height: 1px;\n    color: colors.$text-color;\n    margin: 2rem 0;\n}\n",
                     "styleUrl": "./feedback-detail.component.scss"
                 }
             ],
@@ -2174,7 +2093,324 @@
                 "OnInit",
                 "OnDestroy"
             ],
-            "templateData": "<section class=\"layout\">\n    <ui-toolbar class=\"toolbar\" justify=\"between\" background=\"transparent\">\n        <app-back-btn>Go Back</app-back-btn>\n        <button ui-button color=\"secondary\" routerLink=\"/feedback/edit/{{ feedback.id }}\">Edit Feedback</button>\n    </ui-toolbar>\n    <app-feedback-card>\n        <ui-counter feedback-card-aside class=\"hide-mobile\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n        <ng-container feedback-card-aside>\n            <section class=\"show-only-mobile\">\n                <div class=\"feedback-aside-mobile\">\n                    <ui-counter order=\"row\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                    <ui-icon name=\"comments\" ui-badge></ui-icon>\n                </div>\n            </section>\n        </ng-container>\n        <h3 feedback-card-title>{{ feedback.title }}</h3>\n        <div feedback-card-content>\n            <p class=\"text\">{{ feedback.description }}</p>\n            <ui-icon class=\"hide-mobile\" name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n        </div>\n        <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n    </app-feedback-card>\n</section>\n"
+            "templateData": "<section class=\"layout\">\n    <ui-toolbar class=\"toolbar\" justify=\"between\" background=\"transparent\">\n        <app-back-btn>Go Back</app-back-btn>\n        <button ui-button color=\"secondary\" routerLink=\"/feedback/edit/{{ feedback.id }}\" data-cy=\"edit\">Edit Feedback</button>\n    </ui-toolbar>\n    <app-feedback-card>\n        <ui-counter feedback-card-aside class=\"hide-mobile\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n        <ng-container feedback-card-aside>\n            <section class=\"show-only-mobile\">\n                <div class=\"feedback-aside-mobile\">\n                    <ui-counter order=\"row\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                    <ui-icon name=\"comments\" ui-badge></ui-icon>\n                </div>\n            </section>\n        </ng-container>\n        <h3 feedback-card-title data-cy=\"title\">{{ feedback.title }}</h3>\n        <div feedback-card-content>\n            <p class=\"text\" data-cy=\"description\">{{ feedback.description }}</p>\n            <ui-icon class=\"hide-mobile\" name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n        </div>\n        <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n    </app-feedback-card>\n\n    <section class=\"comment-section\">\n        <app-comment *ngFor=\"let comment of feedback.comments; let i = index\">\n            <img src=\"{{ comment.user.image }}\" alt=\"{{ comment.user.name }}\" comment-avatar />\n            <h4 comment-name>{{ comment.user.name | titlecase }}</h4>\n            <span comment-id>@{{ comment.user.username }}</span>\n            <p comment-text>{{ comment.content }}</p>\n        </app-comment>\n    </section>\n</section>\n"
+        },
+        {
+            "name": "FeedbackFormComponent",
+            "id": "component-FeedbackFormComponent-7c66e2c64989b74a4948a3123f211fdf122b9873d0dcc321368e02f8e8be739d5e50aa31b29dd90f741702a90071647365f24f3a74b824b4e9dc34cf9638515d",
+            "file": "src/app/modules/feedback/layouts/feedback-form/feedback-form.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-feedback-form",
+            "styleUrls": [
+                "./feedback-form.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./feedback-form.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "categories",
+                    "defaultValue": "['feature', 'bug', 'enhancement', 'ui', 'ux']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 13,
+                    "modifierKind": [
+                        123,
+                        144
+                    ]
+                },
+                {
+                    "name": "feedbackForm",
+                    "defaultValue": "this.fb.group({\n        title: ['', Validators.required],\n        category: [this.categories[0], Validators.required],\n        description: ['', Validators.required],\n    })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 18,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "feedbackId",
+                    "defaultValue": "-1",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 24,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "statusControl",
+                    "defaultValue": "this.fb.control('', [Validators.required])",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 16,
+                    "modifierKind": [
+                        123
+                    ]
+                },
+                {
+                    "name": "statuses",
+                    "defaultValue": "['planned', 'inProgress', 'live', 'suggestion', 'closed']",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 14,
+                    "modifierKind": [
+                        123,
+                        144
+                    ]
+                },
+                {
+                    "name": "subscription",
+                    "defaultValue": "new Subscription()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Subscription",
+                    "optional": false,
+                    "description": "",
+                    "line": 25,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "update",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 15,
+                    "modifierKind": [
+                        123
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "createFeedback",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 53,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "deleteFeedback",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 82,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "getFeedback",
+                    "args": [
+                        {
+                            "name": "feedbackId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 57,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "feedbackId",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "ngOnDestroy",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 37,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 29,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "updateFeedback",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 76,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, OnDestroy, OnInit } from '@angular/core';\nimport { AbstractControl, FormBuilder, Validators } from '@angular/forms';\nimport { ActivatedRoute, Router } from '@angular/router';\nimport { FeedbackService } from '@core/http/feedback.service';\nimport { Subscription } from 'rxjs';\n\n@Component({\n    selector: 'app-feedback-form',\n    templateUrl: './feedback-form.component.html',\n    styleUrls: ['./feedback-form.component.scss'],\n})\nexport class FeedbackFormComponent implements OnInit, OnDestroy {\n    public readonly categories = ['feature', 'bug', 'enhancement', 'ui', 'ux'];\n    public readonly statuses = ['planned', 'inProgress', 'live', 'suggestion', 'closed'];\n    public update: boolean = false;\n    public statusControl = this.fb.control('', [Validators.required]);\n\n    public feedbackForm = this.fb.group({\n        title: ['', Validators.required],\n        category: [this.categories[0], Validators.required],\n        description: ['', Validators.required],\n    });\n\n    private feedbackId: number = -1;\n    private subscription: Subscription = new Subscription();\n\n    constructor(private fb: FormBuilder, private feedbacks: FeedbackService, private router: Router, private route: ActivatedRoute) {}\n\n    ngOnInit(): void {\n        if (this.route.snapshot.paramMap.get('id')) {\n            this.feedbackId = Number(this.route.snapshot.paramMap.get('id'));\n\n            this.getFeedback(this.feedbackId);\n        }\n    }\n\n    ngOnDestroy(): void {\n        this.subscription.unsubscribe();\n    }\n\n    get title(): AbstractControl | null {\n        return this.feedbackForm.get('title');\n    }\n\n    get category(): AbstractControl | null {\n        return this.feedbackForm.get('category');\n    }\n\n    get description(): AbstractControl | null {\n        return this.feedbackForm.get('description');\n    }\n\n    createFeedback() {\n        this.subscription.add(this.feedbacks.createFeedback(this.feedbackForm.value).subscribe(() => this.router.navigate(['/'])));\n    }\n\n    getFeedback(feedbackId: number) {\n        this.subscription.add(\n            this.feedbacks.getFeedbackDetail(feedbackId).subscribe((feedback) => {\n                if (feedback) {\n                    this.update = true;\n                    this.feedbackForm.patchValue({\n                        title: feedback.title,\n                        category: feedback.category,\n                        description: feedback.description,\n                    });\n\n                    this.statusControl.setValue(feedback.status);\n                } else {\n                    this.router.navigate(['/']);\n                }\n            })\n        );\n    }\n\n    updateFeedback() {\n        const feedback = this.feedbackForm.value;\n        feedback.status = this.statusControl.value;\n        this.subscription.add(this.feedbacks.updateFeedback(this.feedbackId, feedback).subscribe(() => this.router.navigate(['/'])));\n    }\n\n    deleteFeedback() {\n        this.subscription.add(this.feedbacks.deleteFeedback(this.feedbackId).subscribe(() => this.router.navigate(['/'])));\n    }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".feedback-create {\n    width: 33.75rem;\n    margin: 5.75rem auto 1rem auto;\n    padding: 0 1.5rem;\n\n    &__card {\n        margin-top: 4.25rem;\n    }\n}\n\n.form-field-title {\n    margin: 0.125rem 0;\n}\n\n.form-buttons {\n    display: flex;\n    justify-content: flex-end;\n    flex-wrap: wrap;\n\n    &__action:not(:last-child) {\n        margin-right: 1rem;\n    }\n\n    &__delete {\n        margin-right: auto;\n    }\n}\n",
+                    "styleUrl": "./feedback-form.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "feedbacks",
+                        "type": "FeedbackService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 25,
+                "jsdoctags": [
+                    {
+                        "name": "fb",
+                        "type": "FormBuilder",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "feedbacks",
+                        "type": "FeedbackService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "router",
+                        "type": "Router",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "implements": [
+                "OnInit",
+                "OnDestroy"
+            ],
+            "accessors": {
+                "title": {
+                    "name": "title",
+                    "getSignature": {
+                        "name": "title",
+                        "type": "",
+                        "returnType": "AbstractControl | null",
+                        "line": 41
+                    }
+                },
+                "category": {
+                    "name": "category",
+                    "getSignature": {
+                        "name": "category",
+                        "type": "",
+                        "returnType": "AbstractControl | null",
+                        "line": 45
+                    }
+                },
+                "description": {
+                    "name": "description",
+                    "getSignature": {
+                        "name": "description",
+                        "type": "",
+                        "returnType": "AbstractControl | null",
+                        "line": 49
+                    }
+                }
+            },
+            "templateData": "<section class=\"feedback-create\" *transloco=\"let t\">\n    <app-back-btn data-cy=\"back\">{{ t('back') }}</app-back-btn>\n    <app-form-card\n        class=\"feedback-create__card\"\n        [iconPath]=\"update ? '/assets/images/icons/icon-edit-feedback.svg' : '/assets/images/icons/icon-new-feedback.svg'\"\n    >\n        <form [formGroup]=\"feedbackForm\" (ngSubmit)=\"createFeedback()\">\n            <h1 *ngIf=\"!update\">{{ t('newFeedback') }}</h1>\n            <h1 *ngIf=\"update\">Editing \"{{ title?.value }}\"</h1>\n\n            <h4 class=\"form-field-title\">{{ t('formFields.title') }}</h4>\n            <ui-form-field size=\"fluent\">\n                <ui-label>{{ t('formFields.titleLabel') }}</ui-label>\n                <input uiInput type=\"text\" formControlName=\"title\" data-cy=\"title-field\" />\n                <ui-error *ngIf=\"title?.errors && title?.hasError('required') && title?.touched\" data-cy=\"field-error\">\n                    {{ t('errors.empty') }}\n                </ui-error>\n            </ui-form-field>\n\n            <h4 class=\"form-field-title\">{{ t('formFields.category') }}</h4>\n            <ui-form-field size=\"fluent\">\n                <ui-label>{{ t('formFields.categoryLabel') }}</ui-label>\n                <ui-select formControlName=\"category\">\n                    <ui-select-option *ngFor=\"let category of categories\" value=\"{{ category }}\">{{\n                        t('categories.' + category)\n                    }}</ui-select-option>\n                </ui-select>\n            </ui-form-field>\n\n            <h4 class=\"form-field-title\">Update status</h4>\n            <ui-form-field size=\"fluent\" *ngIf=\"update\">\n                <ui-label>{{ t('formFields.statusLabel') }}</ui-label>\n                <ui-select [formControl]=\"statusControl\">\n                    <ui-select-option *ngFor=\"let status of statuses\" value=\"{{ status }}\">{{ t('status.' + status) }}</ui-select-option>\n                </ui-select>\n            </ui-form-field>\n\n            <h4 class=\"form-field-title\">{{ t('formFields.detail') }}</h4>\n            <ui-form-field size=\"fluent\">\n                <ui-label>{{ t('formFields.detailLabel') }}</ui-label>\n                <textarea uiInput formControlName=\"description\" rows=\"4\" data-cy=\"description-field\"></textarea>\n                <ui-error *ngIf=\"description?.errors && description?.hasError('required') && description?.touched\" data-cy=\"field-error\">\n                    {{ t('errors.empty') }}\n                </ui-error>\n            </ui-form-field>\n\n            <div class=\"form-buttons\">\n                <button\n                    ui-button\n                    color=\"error\"\n                    type=\"button\"\n                    class=\"form-buttons__delete\"\n                    *ngIf=\"update\"\n                    (click)=\"deleteFeedback()\"\n                    data-cy=\"delete\"\n                >\n                    Delete\n                </button>\n                <button ui-button color=\"dark\" type=\"button\" class=\"form-buttons__action\" [routerLink]=\"['/']\" data-cy=\"cancel\">\n                    {{ t('buttons.cancel') }}\n                </button>\n                <button\n                    *ngIf=\"update\"\n                    ui-button\n                    color=\"primary\"\n                    type=\"button\"\n                    class=\"form-buttons__action\"\n                    [disabled]=\"feedbackForm.invalid\"\n                    (click)=\"updateFeedback()\"\n                    data-cy=\"edit\"\n                >\n                    {{ t('buttons.addFeedbacks') }}\n                </button>\n                <button\n                    *ngIf=\"!update\"\n                    ui-button\n                    color=\"primary\"\n                    type=\"submit\"\n                    class=\"form-buttons__action\"\n                    [disabled]=\"feedbackForm.invalid\"\n                    data-cy=\"submit\"\n                >\n                    {{ t('buttons.addFeedbacks') }}\n                </button>\n            </div>\n        </form>\n    </app-form-card>\n</section>\n"
         },
         {
             "name": "FormCardComponent",
@@ -3520,6 +3756,68 @@
             ]
         },
         {
+            "name": "CommentModule",
+            "id": "module-CommentModule-1f1c30af559b5b116321d53c3399191675830a3128b0ba74764b1fc2bef10fef5985d615bfa51f2cb858e4aaf2ef98ff6652d4c79ef0a9d16469e8b3300fc31b",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/modules/feedback/components/comment/comment.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { CommentAvatarDirective, CommentComponent, CommentIdDirective, CommentNameDirective } from './comment';\n\n@NgModule({\n    declarations: [CommentComponent, CommentIdDirective, CommentAvatarDirective, CommentNameDirective],\n    imports: [CommonModule],\n    exports: [CommentComponent, CommentIdDirective, CommentAvatarDirective, CommentNameDirective],\n})\nexport class CommentModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "CommentAvatarDirective"
+                        },
+                        {
+                            "name": "CommentComponent"
+                        },
+                        {
+                            "name": "CommentIdDirective"
+                        },
+                        {
+                            "name": "CommentNameDirective"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "CommentAvatarDirective"
+                        },
+                        {
+                            "name": "CommentComponent"
+                        },
+                        {
+                            "name": "CommentIdDirective"
+                        },
+                        {
+                            "name": "CommentNameDirective"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "EmptyFeedbacksModule",
             "id": "module-EmptyFeedbacksModule-081271e4856f40522ca623e944cc661ba0418d18260b11be25ae8aa671a6d4a4c2a094f8735c891ffd1bc24392be5bbda210d779c39bb0a2ac40d7307c9a7d9f",
             "description": "",
@@ -3577,13 +3875,13 @@
         },
         {
             "name": "FeedbackModule",
-            "id": "module-FeedbackModule-1de702c4e8dd5d11d680b2b92edbe2ba21d722e6e04f5fa4cee9b8b92a5327673f6f8448ef6fb741575d465d14ef8ad73be1b6c1c88aec2197054f54f967be7b",
+            "id": "module-FeedbackModule-536ff820663d6b011c027fe3410adefb8b6fd891252ac7f2fa70239f1f0063ec8fcb07788b74714ae4b44e85034dced5a721f4704bfeb322bb567917fb439fcb",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/modules/feedback/feedback.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { RouterModule, Routes } from '@angular/router';\nimport { TranslocoModule } from '@ngneat/transloco';\nimport { UiBadgeModule } from '@shared/ui-components/badge/ui-badge.module';\nimport { UiButtonModule } from '@shared/ui-components/button/ui-button.module';\nimport { UiChipsModule } from '@shared/ui-components/chips/ui-chips.module';\nimport { UiCounterModule } from '@shared/ui-components/counter/ui-counter.module';\nimport { UiFeedbackCardModule } from '@shared/ui-components/feedback-card/feedback-card.module';\nimport { UiFormFieldModule } from '@shared/ui-components/form-field/ui-form-field.module';\nimport { UiIconModule } from '@shared/ui-components/icon/ui-icon.module';\nimport { UiInputModule } from '@shared/ui-components/input/ui-input.module';\nimport { UiSelectModule } from '@shared/ui-components/select/ui-select.module';\nimport { UiToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';\nimport { BackBtnComponent } from './components/back-btn/back-btn.component';\nimport { FormCardComponent } from './components/form-card/form-card.component';\nimport { FeedbackCreateComponent } from './layouts/feedback-create/feedback-create.component';\nimport { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';\n\nconst routes: Routes = [\n    {\n        path: 'detail/:id',\n        component: FeedbackDetailComponent,\n    },\n    {\n        path: 'new',\n        component: FeedbackCreateComponent,\n    },\n\n    {\n        path: 'edit/:id',\n        component: FeedbackCreateComponent,\n    },\n];\n\n@NgModule({\n    declarations: [FeedbackDetailComponent, FeedbackCreateComponent, BackBtnComponent, FormCardComponent],\n    imports: [\n        CommonModule,\n        RouterModule.forChild(routes),\n        UiToolbarModule,\n        UiButtonModule,\n        UiIconModule,\n        UiFeedbackCardModule,\n        UiCounterModule,\n        UiChipsModule,\n        UiBadgeModule,\n        UiFormFieldModule,\n        UiInputModule,\n        UiSelectModule,\n        TranslocoModule,\n        ReactiveFormsModule,\n    ],\n    exports: [RouterModule],\n})\nexport class FeedbackModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { RouterModule, Routes } from '@angular/router';\nimport { TranslocoModule } from '@ngneat/transloco';\nimport { UiBadgeModule } from '@shared/ui-components/badge/ui-badge.module';\nimport { UiButtonModule } from '@shared/ui-components/button/ui-button.module';\nimport { UiChipsModule } from '@shared/ui-components/chips/ui-chips.module';\nimport { UiCounterModule } from '@shared/ui-components/counter/ui-counter.module';\nimport { UiFeedbackCardModule } from '@shared/ui-components/feedback-card/feedback-card.module';\nimport { UiFormFieldModule } from '@shared/ui-components/form-field/ui-form-field.module';\nimport { UiIconModule } from '@shared/ui-components/icon/ui-icon.module';\nimport { UiInputModule } from '@shared/ui-components/input/ui-input.module';\nimport { UiSelectModule } from '@shared/ui-components/select/ui-select.module';\nimport { UiToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';\nimport { BackBtnComponent } from './components/back-btn/back-btn.component';\nimport { CommentModule } from './components/comment/comment.module';\nimport { FormCardComponent } from './components/form-card/form-card.component';\nimport { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';\nimport { FeedbackFormComponent } from './layouts/feedback-form/feedback-form.component';\n\nconst routes: Routes = [\n    {\n        path: 'detail/:id',\n        component: FeedbackDetailComponent,\n    },\n    {\n        path: 'new',\n        component: FeedbackFormComponent,\n    },\n\n    {\n        path: 'edit/:id',\n        component: FeedbackFormComponent,\n    },\n];\n\n@NgModule({\n    declarations: [FeedbackDetailComponent, FeedbackFormComponent, BackBtnComponent, FormCardComponent],\n    imports: [\n        CommonModule,\n        RouterModule.forChild(routes),\n        UiToolbarModule,\n        UiButtonModule,\n        UiIconModule,\n        UiFeedbackCardModule,\n        UiCounterModule,\n        UiChipsModule,\n        UiBadgeModule,\n        UiFormFieldModule,\n        UiInputModule,\n        UiSelectModule,\n        CommentModule,\n        TranslocoModule,\n        ReactiveFormsModule,\n    ],\n    exports: [RouterModule],\n})\nexport class FeedbackModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -3596,10 +3894,10 @@
                             "name": "BackBtnComponent"
                         },
                         {
-                            "name": "FeedbackCreateComponent"
+                            "name": "FeedbackDetailComponent"
                         },
                         {
-                            "name": "FeedbackDetailComponent"
+                            "name": "FeedbackFormComponent"
                         },
                         {
                             "name": "FormCardComponent"
@@ -3609,6 +3907,9 @@
                 {
                     "type": "imports",
                     "elements": [
+                        {
+                            "name": "CommentModule"
+                        },
                         {
                             "name": "UiBadgeModule"
                         },
@@ -4307,7 +4608,7 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                "file": "src/app/shared/ui-components/select/select.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4317,7 +4618,7 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/select/select.stories.ts",
+                "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4467,21 +4768,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<UiToolbarComponent>",
-                "defaultValue": "(args: UiToolbarComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiToolbarComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-toolbar>Toolbar</ui-toolbar>`,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/shared/ui-components/select/select.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UiSelectPanelComponent>",
                 "defaultValue": "(args: UiSelectPanelComponent) => ({\n    props: args,\n    moduleMetadata: {\n        imports: [UiSelectModule],\n    },\n    template: `\n\t<ui-select label=\"Name\" placeholder=\"Select the option\">\n\t\t<ui-select-option value=\"option1\">Option 1</ui-select-option>\n\t\t<ui-select-option value=\"option2\">Option 2</ui-select-option>\n\t\t<ui-select-option value=\"option3\">Option 3</ui-select-option>\n\t</ui-select>\n`,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<UiToolbarComponent>",
+                "defaultValue": "(args: UiToolbarComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiToolbarComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-toolbar>Toolbar</ui-toolbar>`,\n})"
             },
             {
                 "name": "Template",
@@ -4725,6 +5026,28 @@
                     "defaultValue": "(args: UiInputDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiInputDirective],\n        imports: [CommonModule],\n    },\n    template: `<input uiInput [ngModel]=\"value\" placeholder=\"This is sparta!\"/>`,\n})"
                 }
             ],
+            "src/app/shared/ui-components/select/select.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/select/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/shared/ui-components/select/select.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<UiSelectPanelComponent>",
+                    "defaultValue": "(args: UiSelectPanelComponent) => ({\n    props: args,\n    moduleMetadata: {\n        imports: [UiSelectModule],\n    },\n    template: `\n\t<ui-select label=\"Name\" placeholder=\"Select the option\">\n\t\t<ui-select-option value=\"option1\">Option 1</ui-select-option>\n\t\t<ui-select-option value=\"option2\">Option 2</ui-select-option>\n\t\t<ui-select-option value=\"option3\">Option 3</ui-select-option>\n\t</ui-select>\n`,\n})"
+                }
+            ],
             "src/app/shared/ui-components/toolbar/toolbar.stories.ts": [
                 {
                     "name": "Basic",
@@ -4785,28 +5108,6 @@
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "TemplateWithLogo.bind({})"
-                }
-            ],
-            "src/app/shared/ui-components/select/select.stories.ts": [
-                {
-                    "name": "Basic",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/ui-components/select/select.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/shared/ui-components/select/select.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<UiSelectPanelComponent>",
-                    "defaultValue": "(args: UiSelectPanelComponent) => ({\n    props: args,\n    moduleMetadata: {\n        imports: [UiSelectModule],\n    },\n    template: `\n\t<ui-select label=\"Name\" placeholder=\"Select the option\">\n\t\t<ui-select-option value=\"option1\">Option 1</ui-select-option>\n\t\t<ui-select-option value=\"option2\">Option 2</ui-select-option>\n\t\t<ui-select-option value=\"option3\">Option 3</ui-select-option>\n\t</ui-select>\n`,\n})"
                 }
             ],
             "src/app/shared/ui-components/chips/stories/chip-list.stories.ts": [
@@ -5051,11 +5352,11 @@
                     },
                     {
                         "path": "new",
-                        "component": "FeedbackCreateComponent"
+                        "component": "FeedbackFormComponent"
                     },
                     {
                         "path": "edit/:id",
-                        "component": "FeedbackCreateComponent"
+                        "component": "FeedbackFormComponent"
                     }
                 ],
                 "kind": "module"
@@ -5113,7 +5414,7 @@
                 "linktype": "injectable",
                 "name": "FeedbackService",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -5131,7 +5432,7 @@
                 "linktype": "injectable",
                 "name": "UserService",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -5180,6 +5481,42 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/modules/feedback/components/comment/comment.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CommentComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/feedback/components/comment/comment.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "CommentAvatarDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/feedback/components/comment/comment.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "CommentIdDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/feedback/components/comment/comment.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "CommentNameDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/modules/feedback/components/form-card/form-card.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -5189,21 +5526,21 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/modules/feedback/layouts/feedback-create/feedback-create.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "FeedbackCreateComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/11",
-                "status": "low"
-            },
-            {
                 "filePath": "src/app/modules/feedback/layouts/feedback-detail/feedback-detail.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "FeedbackDetailComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/feedback/layouts/feedback-form/feedback-form.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FeedbackFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/15",
                 "status": "low"
             },
             {
