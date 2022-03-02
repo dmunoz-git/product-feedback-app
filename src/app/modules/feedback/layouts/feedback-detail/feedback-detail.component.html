@@ -1,7 +1,7 @@
 <section class="layout">
     <ui-toolbar class="toolbar" justify="between" background="transparent">
         <app-back-btn>Go Back</app-back-btn>
-        <button ui-button color="secondary" routerLink="/feedback/edit/{{ feedback.id }}">Edit Feedback</button>
+        <button ui-button color="secondary" routerLink="/feedback/edit/{{ feedback.id }}" data-cy="edit">Edit Feedback</button>
     </ui-toolbar>
     <app-feedback-card>
         <ui-counter feedback-card-aside class="hide-mobile" [limitClicksTo]="1" [value]="feedback.upvotes"></ui-counter>
@@ -13,20 +13,22 @@
                 </div>
             </section>
         </ng-container>
-        <h3 feedback-card-title>{{ feedback.title }}</h3>
+        <h3 feedback-card-title data-cy="title">{{ feedback.title }}</h3>
         <div feedback-card-content>
-            <p class="text">{{ feedback.description }}</p>
+            <p class="text" data-cy="description">{{ feedback.description }}</p>
             <ui-icon class="hide-mobile" name="comments" ui-badge [value]="feedback.comments ? feedback.comments.length : 0"></ui-icon>
         </div>
         <ui-chip feedback-card-footer [selectable]="false">{{ feedback.category | titlecase }}</ui-chip>
     </app-feedback-card>
-
     <section class="comment-section">
-        <app-comment *ngFor="let comment of feedback.comments; let i = index">
-            <img src="{{ comment.user.image }}" alt="{{ comment.user.name }}" comment-avatar />
-            <h4 comment-name>{{ comment.user.name | titlecase }}</h4>
-            <span comment-id>@{{ comment.user.username }}</span>
-            <p comment-text>{{ comment.content }}</p>
-        </app-comment>
+        <div *ngFor="let comment of feedback.comments; let i = index">
+            <app-comment>
+                <img src="{{ comment.user.image }}" alt="{{ comment.user.name }}" comment-avatar />
+                <h4 comment-name>{{ comment.user.name | titlecase }}</h4>
+                <span comment-id>@{{ comment.user.username }}</span>
+                <p comment-text>{{ comment.content }}</p>
+            </app-comment>
+            <ui-divider *ngIf="i < feedback.comments!.length - 1"></ui-divider>
+        </div>
     </section>
 </section>

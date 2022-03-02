@@ -1,6 +1,6 @@
 .feedback-create {
     width: 33.75rem;
-    margin: 5.75rem auto 0 auto;
+    margin: 5.75rem auto 1rem auto;
     padding: 0 1.5rem;
 
     &__card {
@@ -16,7 +16,12 @@
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
-    &__item:not(:last-child) {
+
+    &__action:not(:last-child) {
         margin-right: 1rem;
+    }
+
+    &__delete {
+        margin-right: auto;
     }
 }

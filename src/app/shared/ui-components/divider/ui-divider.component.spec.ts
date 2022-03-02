@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CommentComponent } from './comment';
+import { UiDividerComponent } from './ui-divider.component';
 
-describe('CommentComponent', () => {
-    let component: CommentComponent;
-    let fixture: ComponentFixture<CommentComponent>;
+describe('DividerComponent', () => {
+    let component: UiDividerComponent;
+    let fixture: ComponentFixture<UiDividerComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            declarations: [CommentComponent],
+            declarations: [UiDividerComponent],
         }).compileComponents();
     });
 
     beforeEach(() => {
-        fixture = TestBed.createComponent(CommentComponent);
+        fixture = TestBed.createComponent(UiDividerComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

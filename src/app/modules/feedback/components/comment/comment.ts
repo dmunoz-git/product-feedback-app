@@ -32,3 +32,11 @@ export class CommentNameDirective {}
     },
 })
 export class CommentIdDirective {}
+
+@Directive({
+    selector: '[comment-text]',
+    host: {
+        class: 'comment__text',
+    },
+})
+export class CommentTextDirective {}

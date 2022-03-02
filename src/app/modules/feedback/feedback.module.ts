@@ -7,6 +7,7 @@ import { UiBadgeModule } from '@shared/ui-components/badge/ui-badge.module';
 import { UiButtonModule } from '@shared/ui-components/button/ui-button.module';
 import { UiChipsModule } from '@shared/ui-components/chips/ui-chips.module';
 import { UiCounterModule } from '@shared/ui-components/counter/ui-counter.module';
+import { UiDividerModule } from '@shared/ui-components/divider/ui-divider.module';
 import { UiFeedbackCardModule } from '@shared/ui-components/feedback-card/feedback-card.module';
 import { UiFormFieldModule } from '@shared/ui-components/form-field/ui-form-field.module';
 import { UiIconModule } from '@shared/ui-components/icon/ui-icon.module';
@@ -16,9 +17,8 @@ import { UiToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module
 import { BackBtnComponent } from './components/back-btn/back-btn.component';
 import { CommentModule } from './components/comment/comment.module';
 import { FormCardComponent } from './components/form-card/form-card.component';
-import { FeedbackCreateComponent } from './layouts/feedback-create/feedback-create.component';
 import { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';
-import { FeedbackEditComponent } from './layouts/feedback-edit/feedback-edit.component';
+import { FeedbackFormComponent } from './layouts/feedback-form/feedback-form.component';
 
 const routes: Routes = [
     {
@@ -27,18 +27,17 @@ const routes: Routes = [
     },
     {
         path: 'new',
-        component: FeedbackCreateComponent,
+        component: FeedbackFormComponent,
     },
-    /*
+
     {
         path: 'edit/:id',
-        component: FeedbackEditComponent,
+        component: FeedbackFormComponent,
     },
-	*/
 ];
 
 @NgModule({
-    declarations: [FeedbackDetailComponent, FeedbackCreateComponent, FeedbackEditComponent, BackBtnComponent, FormCardComponent],
+    declarations: [FeedbackDetailComponent, FeedbackFormComponent, BackBtnComponent, FormCardComponent],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
@@ -52,6 +51,7 @@ const routes: Routes = [
         UiFormFieldModule,
         UiInputModule,
         UiSelectModule,
+        UiDividerModule,
         CommentModule,
         TranslocoModule,
         ReactiveFormsModule,

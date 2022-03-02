@@ -20,4 +20,8 @@
         height: min(100%, 2.5rem);
         border-radius: 50%;
     }
+
+    &__text {
+        margin-bottom: 0;
+    }
 }
