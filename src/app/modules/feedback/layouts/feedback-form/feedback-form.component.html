@@ -1,5 +1,5 @@
 <section class="feedback-create" *transloco="let t">
-    <app-back-btn>{{ t('back') }}</app-back-btn>
+    <app-back-btn data-cy="back">{{ t('back') }}</app-back-btn>
     <app-form-card
         class="feedback-create__card"
         [iconPath]="update ? '/assets/images/icons/icon-edit-feedback.svg' : '/assets/images/icons/icon-new-feedback.svg'"
@@ -45,7 +45,15 @@
             </ui-form-field>
 
             <div class="form-buttons">
-                <button ui-button color="error" type="button" class="form-buttons__delete" *ngIf="update" (click)="deleteFeedback()">
+                <button
+                    ui-button
+                    color="error"
+                    type="button"
+                    class="form-buttons__delete"
+                    *ngIf="update"
+                    (click)="deleteFeedback()"
+                    data-cy="delete"
+                >
                     Delete
                 </button>
                 <button ui-button color="dark" type="button" class="form-buttons__action" [routerLink]="['/']" data-cy="cancel">
@@ -59,7 +67,7 @@
                     class="form-buttons__action"
                     [disabled]="feedbackForm.invalid"
                     (click)="updateFeedback()"
-                    data-cy="submit"
+                    data-cy="edit"
                 >
                     {{ t('buttons.addFeedbacks') }}
                 </button>

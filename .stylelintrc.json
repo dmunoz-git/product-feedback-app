@@ -1,7 +1,7 @@
 {
 	"extends": [
 		"stylelint-config-standard-scss", 
-		"tylelint-config-prettier"
+		"stylelint-config-prettier"
 	],
 	"overrides": [{
 		"files": ["**/*.scss"],
