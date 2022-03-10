@@ -31,12 +31,5 @@
             <ui-divider *ngIf="i < feedback.comments!.length - 1"></ui-divider>
         </div>
     </section>
-    <section class="section comment-form">
-        <h3 class="comment-form__title">Add Comment</h3>
-        <textarea uiInput class="comment-form__textarea" name="" id="" cols="30" rows="10"></textarea>
-        <div class="comment-form__footer">
-            <p class="comment-form___counter">225 characters left</p>
-            <button ui-button color="primary" class="comment-form__button">Post Comment</button>
-        </div>
-    </section>
+    <app-comment-form></app-comment-form>
 </section>
