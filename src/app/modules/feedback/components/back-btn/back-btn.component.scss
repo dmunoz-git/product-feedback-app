@@ -1,0 +1,13 @@
+@use 'settings/colors';
+
+.back {
+    display: flex;
+    gap: 1.2294rem;
+    color: colors.$dark-color;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,27 @@
+@use 'settings/colors';
+
+.comment {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+
+    &__name {
+        margin: 0;
+    }
+
+    &__id {
+        font-size: 0.875rem;
+        color: colors.$text-color;
+        margin: 0;
+    }
+
+    &__avatar {
+        width: min(100%, 2.5rem);
+        height: min(100%, 2.5rem);
+        border-radius: 50%;
+    }
+
+    &__text {
+        margin-bottom: 0;
+    }
+}

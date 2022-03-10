@@ -1,0 +1,18 @@
+{
+	"extends": [
+		"stylelint-config-standard-scss", 
+		"stylelint-config-prettier"
+	],
+	"overrides": [{
+		"files": ["**/*.scss"],
+		"rules": {
+			"max-line-length": [
+				"warn",
+				{
+					"length": 140,
+					"ignore": ["comments"]
+				}
+			]
+		}
+	}]
+}

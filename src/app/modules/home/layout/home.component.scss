@@ -1,0 +1,54 @@
+@use 'tools/mixins';
+@use 'settings/layout';
+
+// Layout
+.layout {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.875rem;
+    padding: 5.875rem 1.5rem 8.0625rem 1.5rem;
+    width: min(100%, layout.$min-container-width);
+    margin: 0 auto;
+    .main {
+        flex: 1;
+        flex-grow: 315;
+    }
+
+    .aside {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        flex-basis: 15.9375rem;
+        flex-grow: 1;
+    }
+}
+
+.pointer {
+    cursor: pointer;
+}
+
+// Feedback card margins
+.feedback-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+// Feedback aside mobile
+.feedback-aside-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+// Toolbar classes
+.toolbar {
+    margin-bottom: 1.5rem;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+}

@@ -1,0 +1,5 @@
+<ui-chip-list *transloco="let t" aria-label="Feedbacks category filter">
+    <ui-chip *ngFor="let category of categories" [active]="getCategoryActive(category.name)" (click)="setCategory(category.name)">{{
+        t('categories.' + category.name)
+    }}</ui-chip>
+</ui-chip-list>

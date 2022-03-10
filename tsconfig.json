@@ -3,6 +3,12 @@
   "compileOnSave": false,
   "compilerOptions": {
     "baseUrl": "./",
+	"paths": {
+		"@core/*": ["src/app/core/*"],
+		"@modules/*": ["src/app/modules/*"],
+		"@shared/*": ["src/app/shared/*"],
+		"@enviroments/*": ["src/environments/*"],
+	},
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
@@ -15,6 +21,8 @@
     "downlevelIteration": true,
     "experimentalDecorators": true,
     "moduleResolution": "node",
+	"allowSyntheticDefaultImports": true,
+	"resolveJsonModule": true,
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",

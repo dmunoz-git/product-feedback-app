@@ -1,0 +1,27 @@
+.feedback-create {
+    width: 33.75rem;
+    margin: 5.75rem auto 1rem auto;
+    padding: 0 1.5rem;
+
+    &__card {
+        margin-top: 4.25rem;
+    }
+}
+
+.form-field-title {
+    margin: 0.125rem 0;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    &__action:not(:last-child) {
+        margin-right: 1rem;
+    }
+
+    &__delete {
+        margin-right: auto;
+    }
+}
