@@ -27,7 +27,7 @@
                 </ui-select>
             </ui-form-field>
 
-            <h4 class="form-field-title">Update status</h4>
+            <h4 class="form-field-title" *ngIf="update">Update status</h4>
             <ui-form-field size="fluent" *ngIf="update">
                 <ui-label>{{ t('formFields.statusLabel') }}</ui-label>
                 <ui-select [formControl]="statusControl">
