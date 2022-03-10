@@ -1,6 +1,6 @@
 # ProductFeedbackApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+This project is a frontendmentor for the [ProductFeedback](https://www.frontendmentor.io/challenges/product-feedback-app-wbvUYqjR6) project. This simlates a feedback app where tester clients can submit features, bugs, enhancement, ui and ux purpose for a project. Then the project manager can review the feedback and make changes to the project. This changes are reporter to the client chaging the status of the feedback.
 
 ## Development server
 
@@ -18,9 +18,21 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Running end-to-end tests with cypress
 
 Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+
+## Runing storybook
+
+Run `npm run storybook` to run the storybook.
+
+## Creating coverage
+
+Run `ng test --coverage` to generate the coverage report.
+
+## Generating component documentation
+
+Run `npm run docs:json` to generate the documentation.
 
 ## Further help
 
