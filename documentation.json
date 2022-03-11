@@ -752,7 +752,7 @@
         {
             "name": "UiSelectService",
             "id": "injectable-UiSelectService-38dd2a2c8599d14726ceb66354dc79a9b3a938cf66b1d670a822f637c59a85474cd765eba2bbdc83b5c7cb658a7ada10145531d3ce1e0289c6bb72a222f43e85",
-            "file": "src/app/shared/ui-components/select/ui-select.service.ts",
+            "file": "src/app/components/select/ui-select.service.ts",
             "properties": [
                 {
                     "name": "select",
@@ -943,12 +943,12 @@
         },
         {
             "name": "CommentAvatarDirective",
-            "id": "directive-CommentAvatarDirective-6fb5460006bf7d3ef101576875eab1b502e4cd5157d61908b43c084991f9faf96c5fdb6abab9e8d077371a9b26db91e3c076a19db200c774f755fdfcd2a6e9ff",
+            "id": "directive-CommentAvatarDirective-9317132de29572985ba9bef7ca572366eb71f13464f673a4af868320ff37d4a9de3027e9330683abb9a7067f1cea161f80e65e5724559724f55521118ee86378",
             "file": "src/app/modules/feedback/components/comment/comment.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n",
+            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n\n@Directive({\n    selector: '[comment-text]',\n    host: {\n        class: 'comment__text',\n    },\n})\nexport class CommentTextDirective {}\n",
             "selector": "[comment-avatar]",
             "providers": [],
             "inputsClass": [],
@@ -989,12 +989,12 @@
         },
         {
             "name": "CommentIdDirective",
-            "id": "directive-CommentIdDirective-6fb5460006bf7d3ef101576875eab1b502e4cd5157d61908b43c084991f9faf96c5fdb6abab9e8d077371a9b26db91e3c076a19db200c774f755fdfcd2a6e9ff",
+            "id": "directive-CommentIdDirective-9317132de29572985ba9bef7ca572366eb71f13464f673a4af868320ff37d4a9de3027e9330683abb9a7067f1cea161f80e65e5724559724f55521118ee86378",
             "file": "src/app/modules/feedback/components/comment/comment.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n",
+            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n\n@Directive({\n    selector: '[comment-text]',\n    host: {\n        class: 'comment__text',\n    },\n})\nexport class CommentTextDirective {}\n",
             "selector": "[comment-id]",
             "providers": [],
             "inputsClass": [],
@@ -1008,13 +1008,32 @@
         },
         {
             "name": "CommentNameDirective",
-            "id": "directive-CommentNameDirective-6fb5460006bf7d3ef101576875eab1b502e4cd5157d61908b43c084991f9faf96c5fdb6abab9e8d077371a9b26db91e3c076a19db200c774f755fdfcd2a6e9ff",
+            "id": "directive-CommentNameDirective-9317132de29572985ba9bef7ca572366eb71f13464f673a4af868320ff37d4a9de3027e9330683abb9a7067f1cea161f80e65e5724559724f55521118ee86378",
             "file": "src/app/modules/feedback/components/comment/comment.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n",
+            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n\n@Directive({\n    selector: '[comment-text]',\n    host: {\n        class: 'comment__text',\n    },\n})\nexport class CommentTextDirective {}\n",
             "selector": "[comment-name]",
+            "providers": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": []
+        },
+        {
+            "name": "CommentTextDirective",
+            "id": "directive-CommentTextDirective-9317132de29572985ba9bef7ca572366eb71f13464f673a4af868320ff37d4a9de3027e9330683abb9a7067f1cea161f80e65e5724559724f55521118ee86378",
+            "file": "src/app/modules/feedback/components/comment/comment.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n\n@Directive({\n    selector: '[comment-text]',\n    host: {\n        class: 'comment__text',\n    },\n})\nexport class CommentTextDirective {}\n",
+            "selector": "[comment-text]",
             "providers": [],
             "inputsClass": [],
             "outputsClass": [],
@@ -1120,7 +1139,7 @@
         {
             "name": "FeedbackCardContentDirective",
             "id": "directive-FeedbackCardContentDirective-9b6a1fce083b1d6319142f98d41a4a89959523c571f641d38e69b793eb7c6479f0cb65c7de4d78accf192972caffbe08f06b6faf80700ccfabf9d92e3c083e79",
-            "file": "src/app/shared/ui-components/feedback-card/feeed-card.directive.ts",
+            "file": "src/app/components/feedback-card/feeed-card.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
@@ -1166,7 +1185,7 @@
         {
             "name": "FeedbackCardFooterDirective",
             "id": "directive-FeedbackCardFooterDirective-9b6a1fce083b1d6319142f98d41a4a89959523c571f641d38e69b793eb7c6479f0cb65c7de4d78accf192972caffbe08f06b6faf80700ccfabf9d92e3c083e79",
-            "file": "src/app/shared/ui-components/feedback-card/feeed-card.directive.ts",
+            "file": "src/app/components/feedback-card/feeed-card.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
@@ -1212,7 +1231,7 @@
         {
             "name": "FeedbackCardSideDirective",
             "id": "directive-FeedbackCardSideDirective-9b6a1fce083b1d6319142f98d41a4a89959523c571f641d38e69b793eb7c6479f0cb65c7de4d78accf192972caffbe08f06b6faf80700ccfabf9d92e3c083e79",
-            "file": "src/app/shared/ui-components/feedback-card/feeed-card.directive.ts",
+            "file": "src/app/components/feedback-card/feeed-card.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
@@ -1258,7 +1277,7 @@
         {
             "name": "FeedbackCardTitleDirective",
             "id": "directive-FeedbackCardTitleDirective-9b6a1fce083b1d6319142f98d41a4a89959523c571f641d38e69b793eb7c6479f0cb65c7de4d78accf192972caffbe08f06b6faf80700ccfabf9d92e3c083e79",
-            "file": "src/app/shared/ui-components/feedback-card/feeed-card.directive.ts",
+            "file": "src/app/components/feedback-card/feeed-card.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
@@ -1304,7 +1323,7 @@
         {
             "name": "UiBadgeDirective",
             "id": "directive-UiBadgeDirective-ec59242ca21f4a7aba8ab18d6b775cc52659c41f8f03992a113ebd264871ecde257abcfc6512befa7380a0a3256e60d97457c07c6e915bf41911a77fe576db68",
-            "file": "src/app/shared/ui-components/badge/ui-badge.directive.ts",
+            "file": "src/app/components/badge/ui-badge.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
@@ -1505,7 +1524,7 @@
         {
             "name": "UiButtonDirective",
             "id": "directive-UiButtonDirective-76ef230405429c5f1b7e839f0261990e64383f3849e3a17d87a9d6a59401ec6f3b2a747f02c9fdc7f2b40e3489dc03314f4207ff429ae02977c9c6f0649eaecb",
-            "file": "src/app/shared/ui-components/button/ui-button.directive.ts",
+            "file": "src/app/components/button/ui-button.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
@@ -1543,7 +1562,7 @@
         {
             "name": "UiInputDirective",
             "id": "directive-UiInputDirective-8708d8e125266f4837ae96028e46f36b2769c10781e757e83807ddc0e6251944b76f3a0f020d83d27695d28804259ac20cfbf25c405285880a39c52a5536cef7",
-            "file": "src/app/shared/ui-components/input/ui-input.directive.ts",
+            "file": "src/app/components/input/ui-input.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
@@ -1835,7 +1854,7 @@
         },
         {
             "name": "CommentComponent",
-            "id": "component-CommentComponent-6fb5460006bf7d3ef101576875eab1b502e4cd5157d61908b43c084991f9faf96c5fdb6abab9e8d077371a9b26db91e3c076a19db200c774f755fdfcd2a6e9ff",
+            "id": "component-CommentComponent-9317132de29572985ba9bef7ca572366eb71f13464f673a4af868320ff37d4a9de3027e9330683abb9a7067f1cea161f80e65e5724559724f55521118ee86378",
             "file": "src/app/modules/feedback/components/comment/comment.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -1864,16 +1883,124 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n",
+            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n\n@Directive({\n    selector: '[comment-text]',\n    host: {\n        class: 'comment__text',\n    },\n})\nexport class CommentTextDirective {}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use 'settings/colors';\n\n.comment {\n    display: flex;\n    align-items: flex-start;\n    gap: 2rem;\n\n    &__name {\n        margin: 0;\n    }\n\n    &__id {\n        font-size: 0.875rem;\n        color: colors.$text-color;\n        margin: 0;\n    }\n\n    &__avatar {\n        width: min(100%, 2.5rem);\n        height: min(100%, 2.5rem);\n        border-radius: 50%;\n    }\n}\n",
+                    "data": "@use 'settings/colors';\n\n.comment {\n    display: flex;\n    align-items: flex-start;\n    gap: 2rem;\n\n    &__name {\n        margin: 0;\n    }\n\n    &__id {\n        font-size: 0.875rem;\n        color: colors.$text-color;\n        margin: 0;\n    }\n\n    &__avatar {\n        width: min(100%, 2.5rem);\n        height: min(100%, 2.5rem);\n        border-radius: 50%;\n    }\n\n    &__text {\n        margin-bottom: 0;\n    }\n}\n",
                     "styleUrl": "./comment.component.scss"
                 }
             ],
             "stylesData": "",
             "templateData": "<div class=\"comment\">\n    <ng-content select=\"[comment-avatar]\"></ng-content>\n    <div class=\"comment__body\">\n        <div class=\"comment__user\">\n            <ng-content select=\"[comment-name]\"></ng-content>\n            <ng-content select=\"[comment-id]\"></ng-content>\n        </div>\n        <ng-content select=\"[comment-text]\"></ng-content>\n    </div>\n</div>\n"
+        },
+        {
+            "name": "CommentFormComponent",
+            "id": "component-CommentFormComponent-1d5e2ddb33a633c6af495b2c506f70eda2942e62650b85e80c4eeb99871d7c3fe4df917036be09d35cad689d4edfaa62671473564d2b80e230361c8a217d7f7c",
+            "file": "src/app/modules/feedback/components/comment-form/comment-form.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-comment-form",
+            "styleUrls": [
+                "./comment-form.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./comment-form.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "buttonLabel",
+                    "defaultValue": "'Add comment'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "charCounterLabel",
+                    "defaultValue": "'characters left'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "maxLength",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "sectionLabel",
+                    "defaultValue": "'New comment'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "comment",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "EventEmitter<string>"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "text",
+                    "defaultValue": "new FormControl('', Validators.maxLength(this.maxLength))",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FormControl",
+                    "optional": false,
+                    "description": "",
+                    "line": 16
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "sendComment",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\nimport { FormControl, Validators } from '@angular/forms';\n\n@Component({\n    selector: 'app-comment-form',\n    templateUrl: './comment-form.component.html',\n    styleUrls: ['./comment-form.component.scss'],\n})\nexport class CommentFormComponent {\n    @Input() maxLength: number = 0; //Whitout limit\n    @Input() sectionLabel: string = 'New comment';\n    @Input() charCounterLabel: string = 'characters left';\n    @Input() buttonLabel: string = 'Add comment';\n    @Output() comment: EventEmitter<string> = new EventEmitter<string>();\n\n    text: FormControl = new FormControl('', Validators.maxLength(this.maxLength));\n\n    sendComment() {\n        if (this.text.valid) {\n            this.text.setValue('');\n            this.comment.emit(this.text.value);\n        }\n    }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".comment-form {\n    background: white;\n    border-radius: 0.625rem;\n    padding: 1.5rem 2.125rem;\n    margin-top: 1.5rem;\n    margin-bottom: 8.5625rem;\n\n    &__footer {\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n    }\n\n    &__textarea {\n        resize: none;\n        max-height: 5rem;\n    }\n}\n",
+                    "styleUrl": "./comment-form.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": "<section class=\"section comment-form\">\n    <h3 class=\"comment-form__title\">{{ sectionLabel }}</h3>\n    <textarea uiInput [formControl]=\"text\" class=\"comment-form__textarea\" name=\"\" id=\"\" cols=\"30\" rows=\"10\"></textarea>\n    <div class=\"comment-form__footer\">\n        <p class=\"comment-form___counter\">225 {{ charCounterLabel }}</p>\n        <button ui-button color=\"primary\" class=\"comment-form__button\">{{ buttonLabel }}</button>\n    </div>\n</section>\n"
         },
         {
             "name": "EmptyFeedbacksComponent",
@@ -1920,7 +2047,7 @@
         {
             "name": "FeedbackCardComponent",
             "id": "component-FeedbackCardComponent-49f69f245cb6108770e4eab831f2974f16d4b4fc3d2786ef2241f6f4385e25695aebef7b631c92c560f71b48f6f16db233bdbcef4dadae9f6d8f7b133151b8b8",
-            "file": "src/app/shared/ui-components/feedback-card/feedback-card.component.ts",
+            "file": "src/app/components/feedback-card/feedback-card.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
             ],
@@ -2043,7 +2170,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use 'settings/colors';\n\n.layout {\n    margin: 3.9375rem auto 0 auto;\n    width: min(45.625rem, 100%);\n}\n\n.toolbar {\n    margin-bottom: 0.625rem;\n}\n\n.comment-section {\n    background: white;\n    border-radius: 0.625rem;\n    padding: 1.5rem 2.125rem;\n    margin-top: 1.5rem;\n}\n\n.divider {\n    width: 100%;\n    height: 1px;\n    color: colors.$text-color;\n    margin: 2rem 0;\n}\n",
+                    "data": "@use 'settings/colors';\n\n.layout {\n    margin: 3.9375rem auto 0 auto;\n    width: min(45.625rem, 100%);\n}\n\n.toolbar {\n    margin-bottom: 0.625rem;\n}\n\n.section {\n    background: white;\n    border-radius: 0.625rem;\n    padding: 1.5rem 2.125rem;\n    margin-top: 1.5rem;\n}\n\n.comment-form {\n    background: white;\n    border-radius: 0.625rem;\n    padding: 1.5rem 2.125rem;\n    margin-top: 1.5rem;\n    margin-bottom: 8.5625rem;\n\n    &__footer {\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n    }\n\n    &__textarea {\n        resize: none;\n        max-height: 5rem;\n    }\n}\n\n.divider {\n    width: 100%;\n    height: 1px;\n    color: colors.$text-color;\n    margin: 2rem 0;\n}\n",
                     "styleUrl": "./feedback-detail.component.scss"
                 }
             ],
@@ -2093,7 +2220,7 @@
                 "OnInit",
                 "OnDestroy"
             ],
-            "templateData": "<section class=\"layout\">\n    <ui-toolbar class=\"toolbar\" justify=\"between\" background=\"transparent\">\n        <app-back-btn>Go Back</app-back-btn>\n        <button ui-button color=\"secondary\" routerLink=\"/feedback/edit/{{ feedback.id }}\" data-cy=\"edit\">Edit Feedback</button>\n    </ui-toolbar>\n    <app-feedback-card>\n        <ui-counter feedback-card-aside class=\"hide-mobile\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n        <ng-container feedback-card-aside>\n            <section class=\"show-only-mobile\">\n                <div class=\"feedback-aside-mobile\">\n                    <ui-counter order=\"row\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                    <ui-icon name=\"comments\" ui-badge></ui-icon>\n                </div>\n            </section>\n        </ng-container>\n        <h3 feedback-card-title data-cy=\"title\">{{ feedback.title }}</h3>\n        <div feedback-card-content>\n            <p class=\"text\" data-cy=\"description\">{{ feedback.description }}</p>\n            <ui-icon class=\"hide-mobile\" name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n        </div>\n        <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n    </app-feedback-card>\n\n    <section class=\"comment-section\">\n        <app-comment *ngFor=\"let comment of feedback.comments; let i = index\">\n            <img src=\"{{ comment.user.image }}\" alt=\"{{ comment.user.name }}\" comment-avatar />\n            <h4 comment-name>{{ comment.user.name | titlecase }}</h4>\n            <span comment-id>@{{ comment.user.username }}</span>\n            <p comment-text>{{ comment.content }}</p>\n        </app-comment>\n    </section>\n</section>\n"
+            "templateData": "<section class=\"layout\">\n    <ui-toolbar class=\"toolbar\" justify=\"between\" background=\"transparent\">\n        <app-back-btn>Go Back</app-back-btn>\n        <button ui-button color=\"secondary\" routerLink=\"/feedback/edit/{{ feedback.id }}\" data-cy=\"edit\">Edit Feedback</button>\n    </ui-toolbar>\n    <app-feedback-card>\n        <ui-counter feedback-card-aside class=\"hide-mobile\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n        <ng-container feedback-card-aside>\n            <section class=\"show-only-mobile\">\n                <div class=\"feedback-aside-mobile\">\n                    <ui-counter order=\"row\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                    <ui-icon name=\"comments\" ui-badge></ui-icon>\n                </div>\n            </section>\n        </ng-container>\n        <h3 feedback-card-title data-cy=\"title\">{{ feedback.title }}</h3>\n        <div feedback-card-content>\n            <p class=\"text\" data-cy=\"description\">{{ feedback.description }}</p>\n            <ui-icon class=\"hide-mobile\" name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n        </div>\n        <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n    </app-feedback-card>\n    <section class=\"section\" *ngIf=\"feedback.comments\">\n        <div *ngFor=\"let comment of feedback.comments; let i = index\">\n            <app-comment>\n                <img src=\"{{ comment.user.image }}\" alt=\"{{ comment.user.name }}\" comment-avatar />\n                <h4 comment-name>{{ comment.user.name | titlecase }}</h4>\n                <span comment-id>@{{ comment.user.username }}</span>\n                <p comment-text>{{ comment.content }}</p>\n            </app-comment>\n            <ui-divider *ngIf=\"i < feedback.comments!.length - 1\"></ui-divider>\n        </div>\n    </section>\n    <app-comment-form></app-comment-form>\n</section>\n"
         },
         {
             "name": "FeedbackFormComponent",
@@ -2410,7 +2537,7 @@
                     }
                 }
             },
-            "templateData": "<section class=\"feedback-create\" *transloco=\"let t\">\n    <app-back-btn data-cy=\"back\">{{ t('back') }}</app-back-btn>\n    <app-form-card\n        class=\"feedback-create__card\"\n        [iconPath]=\"update ? '/assets/images/icons/icon-edit-feedback.svg' : '/assets/images/icons/icon-new-feedback.svg'\"\n    >\n        <form [formGroup]=\"feedbackForm\" (ngSubmit)=\"createFeedback()\">\n            <h1 *ngIf=\"!update\">{{ t('newFeedback') }}</h1>\n            <h1 *ngIf=\"update\">Editing \"{{ title?.value }}\"</h1>\n\n            <h4 class=\"form-field-title\">{{ t('formFields.title') }}</h4>\n            <ui-form-field size=\"fluent\">\n                <ui-label>{{ t('formFields.titleLabel') }}</ui-label>\n                <input uiInput type=\"text\" formControlName=\"title\" data-cy=\"title-field\" />\n                <ui-error *ngIf=\"title?.errors && title?.hasError('required') && title?.touched\" data-cy=\"field-error\">\n                    {{ t('errors.empty') }}\n                </ui-error>\n            </ui-form-field>\n\n            <h4 class=\"form-field-title\">{{ t('formFields.category') }}</h4>\n            <ui-form-field size=\"fluent\">\n                <ui-label>{{ t('formFields.categoryLabel') }}</ui-label>\n                <ui-select formControlName=\"category\">\n                    <ui-select-option *ngFor=\"let category of categories\" value=\"{{ category }}\">{{\n                        t('categories.' + category)\n                    }}</ui-select-option>\n                </ui-select>\n            </ui-form-field>\n\n            <h4 class=\"form-field-title\">Update status</h4>\n            <ui-form-field size=\"fluent\" *ngIf=\"update\">\n                <ui-label>{{ t('formFields.statusLabel') }}</ui-label>\n                <ui-select [formControl]=\"statusControl\">\n                    <ui-select-option *ngFor=\"let status of statuses\" value=\"{{ status }}\">{{ t('status.' + status) }}</ui-select-option>\n                </ui-select>\n            </ui-form-field>\n\n            <h4 class=\"form-field-title\">{{ t('formFields.detail') }}</h4>\n            <ui-form-field size=\"fluent\">\n                <ui-label>{{ t('formFields.detailLabel') }}</ui-label>\n                <textarea uiInput formControlName=\"description\" rows=\"4\" data-cy=\"description-field\"></textarea>\n                <ui-error *ngIf=\"description?.errors && description?.hasError('required') && description?.touched\" data-cy=\"field-error\">\n                    {{ t('errors.empty') }}\n                </ui-error>\n            </ui-form-field>\n\n            <div class=\"form-buttons\">\n                <button\n                    ui-button\n                    color=\"error\"\n                    type=\"button\"\n                    class=\"form-buttons__delete\"\n                    *ngIf=\"update\"\n                    (click)=\"deleteFeedback()\"\n                    data-cy=\"delete\"\n                >\n                    Delete\n                </button>\n                <button ui-button color=\"dark\" type=\"button\" class=\"form-buttons__action\" [routerLink]=\"['/']\" data-cy=\"cancel\">\n                    {{ t('buttons.cancel') }}\n                </button>\n                <button\n                    *ngIf=\"update\"\n                    ui-button\n                    color=\"primary\"\n                    type=\"button\"\n                    class=\"form-buttons__action\"\n                    [disabled]=\"feedbackForm.invalid\"\n                    (click)=\"updateFeedback()\"\n                    data-cy=\"edit\"\n                >\n                    {{ t('buttons.addFeedbacks') }}\n                </button>\n                <button\n                    *ngIf=\"!update\"\n                    ui-button\n                    color=\"primary\"\n                    type=\"submit\"\n                    class=\"form-buttons__action\"\n                    [disabled]=\"feedbackForm.invalid\"\n                    data-cy=\"submit\"\n                >\n                    {{ t('buttons.addFeedbacks') }}\n                </button>\n            </div>\n        </form>\n    </app-form-card>\n</section>\n"
+            "templateData": "<section class=\"feedback-create\" *transloco=\"let t\">\n    <app-back-btn data-cy=\"back\">{{ t('back') }}</app-back-btn>\n    <app-form-card\n        class=\"feedback-create__card\"\n        [iconPath]=\"update ? '/assets/images/icons/icon-edit-feedback.svg' : '/assets/images/icons/icon-new-feedback.svg'\"\n    >\n        <form [formGroup]=\"feedbackForm\" (ngSubmit)=\"createFeedback()\">\n            <h1 *ngIf=\"!update\">{{ t('newFeedback') }}</h1>\n            <h1 *ngIf=\"update\">Editing \"{{ title?.value }}\"</h1>\n\n            <h4 class=\"form-field-title\">{{ t('formFields.title') }}</h4>\n            <ui-form-field size=\"fluent\">\n                <ui-label>{{ t('formFields.titleLabel') }}</ui-label>\n                <input uiInput type=\"text\" formControlName=\"title\" data-cy=\"title-field\" />\n                <ui-error *ngIf=\"title?.errors && title?.hasError('required') && title?.touched\" data-cy=\"field-error\">\n                    {{ t('errors.empty') }}\n                </ui-error>\n            </ui-form-field>\n\n            <h4 class=\"form-field-title\">{{ t('formFields.category') }}</h4>\n            <ui-form-field size=\"fluent\">\n                <ui-label>{{ t('formFields.categoryLabel') }}</ui-label>\n                <ui-select formControlName=\"category\">\n                    <ui-select-option *ngFor=\"let category of categories\" value=\"{{ category }}\">{{\n                        t('categories.' + category)\n                    }}</ui-select-option>\n                </ui-select>\n            </ui-form-field>\n\n            <h4 class=\"form-field-title\" *ngIf=\"update\">Update status</h4>\n            <ui-form-field size=\"fluent\" *ngIf=\"update\">\n                <ui-label>{{ t('formFields.statusLabel') }}</ui-label>\n                <ui-select [formControl]=\"statusControl\">\n                    <ui-select-option *ngFor=\"let status of statuses\" value=\"{{ status }}\">{{ t('status.' + status) }}</ui-select-option>\n                </ui-select>\n            </ui-form-field>\n\n            <h4 class=\"form-field-title\">{{ t('formFields.detail') }}</h4>\n            <ui-form-field size=\"fluent\">\n                <ui-label>{{ t('formFields.detailLabel') }}</ui-label>\n                <textarea uiInput formControlName=\"description\" rows=\"4\" data-cy=\"description-field\"></textarea>\n                <ui-error *ngIf=\"description?.errors && description?.hasError('required') && description?.touched\" data-cy=\"field-error\">\n                    {{ t('errors.empty') }}\n                </ui-error>\n            </ui-form-field>\n\n            <div class=\"form-buttons\">\n                <button\n                    ui-button\n                    color=\"error\"\n                    type=\"button\"\n                    class=\"form-buttons__delete\"\n                    *ngIf=\"update\"\n                    (click)=\"deleteFeedback()\"\n                    data-cy=\"delete\"\n                >\n                    Delete\n                </button>\n                <button ui-button color=\"dark\" type=\"button\" class=\"form-buttons__action\" [routerLink]=\"['/']\" data-cy=\"cancel\">\n                    {{ t('buttons.cancel') }}\n                </button>\n                <button\n                    *ngIf=\"update\"\n                    ui-button\n                    color=\"primary\"\n                    type=\"button\"\n                    class=\"form-buttons__action\"\n                    [disabled]=\"feedbackForm.invalid\"\n                    (click)=\"updateFeedback()\"\n                    data-cy=\"edit\"\n                >\n                    {{ t('buttons.addFeedbacks') }}\n                </button>\n                <button\n                    *ngIf=\"!update\"\n                    ui-button\n                    color=\"primary\"\n                    type=\"submit\"\n                    class=\"form-buttons__action\"\n                    [disabled]=\"feedbackForm.invalid\"\n                    data-cy=\"submit\"\n                >\n                    {{ t('buttons.addFeedbacks') }}\n                </button>\n            </div>\n        </form>\n    </app-form-card>\n</section>\n"
         },
         {
             "name": "FormCardComponent",
@@ -2638,7 +2765,7 @@
         {
             "name": "UiChipComponent",
             "id": "component-UiChipComponent-707ba43c5ec8772f819acd9e1067029c67ccfc3e400b042faca09f2e1eb81ba70ab8daca1c53308e8f316b6db5049865b9e3f358baf1a59805b9f09ece7a1924",
-            "file": "src/app/shared/ui-components/chips/chip/ui-chip.component.ts",
+            "file": "src/app/components/chips/chip/ui-chip.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2695,7 +2822,7 @@
         {
             "name": "UiChipListComponent",
             "id": "component-UiChipListComponent-b0e2c92e12ac45f617c88f0d9a1faf237085c494db0bd99e8e1ff205b1a0ed549b881f27530c82e72b0d47601972fbcad90240b040f04396eb8f031ad89679b4",
-            "file": "src/app/shared/ui-components/chips/chip-list/ui-chip-list.component.ts",
+            "file": "src/app/components/chips/chip-list/ui-chip-list.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2735,7 +2862,7 @@
         {
             "name": "UiCounterComponent",
             "id": "component-UiCounterComponent-3311cf623700e93088a62423f5b6bed596827e304307d0b6833f9193b0bc07c359062fa7f13703bf6486416c191ea322d1ca299bcc416020311bd01fd789deb4",
-            "file": "src/app/shared/ui-components/counter/ui-counter.component.ts",
+            "file": "src/app/components/counter/ui-counter.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2868,9 +2995,49 @@
             "stylesData": ""
         },
         {
+            "name": "UiDividerComponent",
+            "id": "component-UiDividerComponent-a8091ffb4d7452612ed161b8551d765c3cb88163ddcafd5b83fff244ab2479ce7ec26c1a5b8d86680117035f54c6020d6bd9fc9c05d8b182a200895641b7586b",
+            "file": "src/app/components/divider/ui-divider.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "ui-divider",
+            "styleUrls": [
+                "./ui-divider.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./ui-divider.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-divider',\n    templateUrl: './ui-divider.component.html',\n    styleUrls: ['./ui-divider.component.scss'],\n})\nexport class UiDividerComponent {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "@use 'settings/colors';\n\n:host {\n    display: block;\n    margin: 2rem auto;\n    height: 1px;\n    width: 100%;\n    background-color: colors.$divider-background;\n}\n",
+                    "styleUrl": "./ui-divider.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "templateData": ""
+        },
+        {
             "name": "UiErrorComponent",
             "id": "component-UiErrorComponent-9378c74f7acf43ca2bad9ae98ba4fc71d436947bc38ce4ba4f3e52604e7c74b0384e4e7ae874f527a53dcb4cd0ef2c4e8ca7a2846395a4208b24bdecbf1e18d4",
-            "file": "src/app/shared/ui-components/form-field/ui-form-field.component.ts",
+            "file": "src/app/components/form-field/ui-form-field.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2903,7 +3070,7 @@
         {
             "name": "UiFormFieldComponent",
             "id": "component-UiFormFieldComponent-9378c74f7acf43ca2bad9ae98ba4fc71d436947bc38ce4ba4f3e52604e7c74b0384e4e7ae874f527a53dcb4cd0ef2c4e8ca7a2846395a4208b24bdecbf1e18d4",
-            "file": "src/app/shared/ui-components/form-field/ui-form-field.component.ts",
+            "file": "src/app/components/form-field/ui-form-field.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -2953,7 +3120,7 @@
         {
             "name": "UiIconComponent",
             "id": "component-UiIconComponent-ffb3448aabb87c845b122dc89c81dbdddc8b3cc3da2774d035dc8022aaa52180d0a41dbccf869ad168b2792d4d8eacb06fc1a8e5e3317d2c39208c6778b4f64c",
-            "file": "src/app/shared/ui-components/icon/ui-icon.component.ts",
+            "file": "src/app/components/icon/ui-icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -3015,7 +3182,7 @@
         {
             "name": "UiLabelComponent",
             "id": "component-UiLabelComponent-9378c74f7acf43ca2bad9ae98ba4fc71d436947bc38ce4ba4f3e52604e7c74b0384e4e7ae874f527a53dcb4cd0ef2c4e8ca7a2846395a4208b24bdecbf1e18d4",
-            "file": "src/app/shared/ui-components/form-field/ui-form-field.component.ts",
+            "file": "src/app/components/form-field/ui-form-field.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -3048,7 +3215,7 @@
         {
             "name": "UiSelectOptionComponent",
             "id": "component-UiSelectOptionComponent-9a3ec77e877d3b2911b1cd148c3bf8cd8af06fcedd73b48014e35810bd7db20c686a3e0d4c3f23ada0d1a2e088089e47699b0506dde3bde85afe003970c62180",
-            "file": "src/app/shared/ui-components/select/select-option/ui-select-option.component.ts",
+            "file": "src/app/components/select/select-option/ui-select-option.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
             ],
@@ -3177,8 +3344,8 @@
         },
         {
             "name": "UiSelectPanelComponent",
-            "id": "component-UiSelectPanelComponent-dfba8d7da0742eb054696a88e8a780ba8c85619f03d2aacc4b962840ac43a1ec481a041a37c99f97c827410a0e908230528c43fc5ec4de321eb39e0fd64c291d",
-            "file": "src/app/shared/ui-components/select/select-panel/ui-select-panel.component.ts",
+            "id": "component-UiSelectPanelComponent-0e3cc46777a311bea98b039beb5bd053900058620014de179f87a5e97f0d0226b196823f5739505568e95dfcdcc0d99b1fc68063ea6de8afb83250bda05ff228",
+            "file": "src/app/components/select/select-panel/ui-select-panel.component.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
             ],
@@ -3495,7 +3662,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { AfterViewInit, Component, ContentChildren, forwardRef, Input, QueryList, ViewEncapsulation } from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\nimport { fadeInOut } from '@shared/ui-components/animations/fade.animation';\nimport { UiSelectOptionComponent } from '../select-option/ui-select-option.component';\nimport { UiSelectService } from '../ui-select.service';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-select',\n    templateUrl: './ui-select-panel.component.html',\n    styleUrls: ['./ui-select-panel.component.scss'],\n    animations: [fadeInOut],\n    encapsulation: ViewEncapsulation.None,\n    providers: [\n        {\n            provide: NG_VALUE_ACCESSOR,\n            useExisting: forwardRef(() => UiSelectPanelComponent),\n            multi: true,\n        },\n    ],\n})\nexport class UiSelectPanelComponent implements AfterViewInit, ControlValueAccessor {\n    @Input() selected: string = '';\n    @Input() placeholder: string = '';\n    @Input() disabled: boolean = false;\n\n    @ContentChildren(UiSelectOptionComponent) options!: QueryList<UiSelectOptionComponent>;\n\n    selectedOption!: UiSelectOptionComponent;\n    displayedText: string = '';\n\n    isDropdownOpen: boolean = false;\n\n    constructor(private select: UiSelectService) {\n        this.select.register(this);\n    }\n\n    ngAfterViewInit(): void {\n        if (this.selected !== '') {\n            this.setSelected();\n        }\n    }\n\n    onTouchedFn = () => {};\n\n    // eslint-disable-next-line @typescript-eslint/no-unused-vars\n    onChangeFn = (_: any) => {};\n\n    toggleDropdown() {\n        // eslint-disable-next-line @typescript-eslint/no-unused-expressions\n        this.isDropdownOpen ? (this.isDropdownOpen = false) : (this.isDropdownOpen = true);\n    }\n\n    selectOption(option: UiSelectOptionComponent) {\n        this.selectedOption = option;\n        this.selected = option.value;\n        this.displayedText = this.selectedOption && this.selected !== '' ? option.textElement.nativeElement.innerText : '';\n        this.isDropdownOpen = false;\n        this.setSelected();\n        this.onChangeFn(this.selected);\n    }\n\n    onOpened() {\n        this.isDropdownOpen = true;\n        this.onTouchedFn();\n    }\n\n    onClose() {\n        this.isDropdownOpen = false;\n    }\n\n    setSelected() {\n        this.options.forEach((opt) => (opt.selected = opt.value === this.selected));\n    }\n\n    writeValue(fn: any): void {\n        this.displayedText = fn;\n        this.selected = fn;\n    }\n\n    registerOnChange(fn: any): void {\n        this.onChangeFn = fn;\n    }\n\n    registerOnTouched(fn: any): void {\n        this.onTouchedFn = fn;\n    }\n\n    setDisabledState(isDisabled: boolean): void {\n        this.disabled = isDisabled;\n    }\n}\n",
+            "sourceCode": "import { AfterViewInit, Component, ContentChildren, forwardRef, Input, QueryList, ViewEncapsulation } from '@angular/core';\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\nimport { fadeInOut } from '@components/animations/fade.animation';\nimport { UiSelectOptionComponent } from '../select-option/ui-select-option.component';\nimport { UiSelectService } from '../ui-select.service';\n\n@Component({\n    // eslint-disable-next-line @angular-eslint/component-selector\n    selector: 'ui-select',\n    templateUrl: './ui-select-panel.component.html',\n    styleUrls: ['./ui-select-panel.component.scss'],\n    animations: [fadeInOut],\n    encapsulation: ViewEncapsulation.None,\n    providers: [\n        {\n            provide: NG_VALUE_ACCESSOR,\n            useExisting: forwardRef(() => UiSelectPanelComponent),\n            multi: true,\n        },\n    ],\n})\nexport class UiSelectPanelComponent implements AfterViewInit, ControlValueAccessor {\n    @Input() selected: string = '';\n    @Input() placeholder: string = '';\n    @Input() disabled: boolean = false;\n\n    @ContentChildren(UiSelectOptionComponent) options!: QueryList<UiSelectOptionComponent>;\n\n    selectedOption!: UiSelectOptionComponent;\n    displayedText: string = '';\n\n    isDropdownOpen: boolean = false;\n\n    constructor(private select: UiSelectService) {\n        this.select.register(this);\n    }\n\n    ngAfterViewInit(): void {\n        if (this.selected !== '') {\n            this.setSelected();\n        }\n    }\n\n    onTouchedFn = () => {};\n\n    // eslint-disable-next-line @typescript-eslint/no-unused-vars\n    onChangeFn = (_: any) => {};\n\n    toggleDropdown() {\n        // eslint-disable-next-line @typescript-eslint/no-unused-expressions\n        this.isDropdownOpen ? (this.isDropdownOpen = false) : (this.isDropdownOpen = true);\n    }\n\n    selectOption(option: UiSelectOptionComponent) {\n        this.selectedOption = option;\n        this.selected = option.value;\n        this.displayedText = this.selectedOption && this.selected !== '' ? option.textElement.nativeElement.innerText : '';\n        this.isDropdownOpen = false;\n        this.setSelected();\n        this.onChangeFn(this.selected);\n    }\n\n    onOpened() {\n        this.isDropdownOpen = true;\n        this.onTouchedFn();\n    }\n\n    onClose() {\n        this.isDropdownOpen = false;\n    }\n\n    setSelected() {\n        this.options.forEach((opt) => (opt.selected = opt.value === this.selected));\n    }\n\n    writeValue(fn: any): void {\n        this.displayedText = fn;\n        this.selected = fn;\n    }\n\n    registerOnChange(fn: any): void {\n        this.onChangeFn = fn;\n    }\n\n    registerOnTouched(fn: any): void {\n        this.onTouchedFn = fn;\n    }\n\n    setDisabledState(isDisabled: boolean): void {\n        this.disabled = isDisabled;\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3539,7 +3706,7 @@
         {
             "name": "UiToolbarComponent",
             "id": "component-UiToolbarComponent-f5a449329782d419d80d774f0e55223d6d833ed566dce599adac8cb1040c095803892a4e9e67483b5e1a5492eb9677109812097d8bdc163951e5f2fc8bb6dd3b",
-            "file": "src/app/shared/ui-components/toolbar/ui-toolbar.component.ts",
+            "file": "src/app/components/toolbar/ui-toolbar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -3757,13 +3924,13 @@
         },
         {
             "name": "CommentModule",
-            "id": "module-CommentModule-1f1c30af559b5b116321d53c3399191675830a3128b0ba74764b1fc2bef10fef5985d615bfa51f2cb858e4aaf2ef98ff6652d4c79ef0a9d16469e8b3300fc31b",
+            "id": "module-CommentModule-796dd968676a88d3fde9a461baf316850f61725235d8fccad190477a996d33877d53e0e1777dd8475c17b9cb88d7ba4e2ad9a7be9549c79ac073519a7c6f9256",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/modules/feedback/components/comment/comment.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { CommentAvatarDirective, CommentComponent, CommentIdDirective, CommentNameDirective } from './comment';\n\n@NgModule({\n    declarations: [CommentComponent, CommentIdDirective, CommentAvatarDirective, CommentNameDirective],\n    imports: [CommonModule],\n    exports: [CommentComponent, CommentIdDirective, CommentAvatarDirective, CommentNameDirective],\n})\nexport class CommentModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { CommentAvatarDirective, CommentComponent, CommentIdDirective, CommentNameDirective, CommentTextDirective } from './comment';\n\n@NgModule({\n    declarations: [CommentComponent, CommentIdDirective, CommentAvatarDirective, CommentNameDirective, CommentTextDirective],\n    imports: [CommonModule],\n    exports: [CommentComponent, CommentIdDirective, CommentAvatarDirective, CommentNameDirective, CommentTextDirective],\n})\nexport class CommentModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -3783,6 +3950,9 @@
                         },
                         {
                             "name": "CommentNameDirective"
+                        },
+                        {
+                            "name": "CommentTextDirective"
                         }
                     ]
                 },
@@ -3804,6 +3974,9 @@
                         },
                         {
                             "name": "CommentNameDirective"
+                        },
+                        {
+                            "name": "CommentTextDirective"
                         }
                     ]
                 },
@@ -3875,13 +4048,13 @@
         },
         {
             "name": "FeedbackModule",
-            "id": "module-FeedbackModule-536ff820663d6b011c027fe3410adefb8b6fd891252ac7f2fa70239f1f0063ec8fcb07788b74714ae4b44e85034dced5a721f4704bfeb322bb567917fb439fcb",
+            "id": "module-FeedbackModule-435a167158e89e72ff73c9a468cb37662fa264e81a28d9b958f05508be3ecf16d07659045a3d8de9a6b3e415810e32287a7d049a39551a9c800c34e7f27df6f0",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/modules/feedback/feedback.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { RouterModule, Routes } from '@angular/router';\nimport { TranslocoModule } from '@ngneat/transloco';\nimport { UiBadgeModule } from '@shared/ui-components/badge/ui-badge.module';\nimport { UiButtonModule } from '@shared/ui-components/button/ui-button.module';\nimport { UiChipsModule } from '@shared/ui-components/chips/ui-chips.module';\nimport { UiCounterModule } from '@shared/ui-components/counter/ui-counter.module';\nimport { UiFeedbackCardModule } from '@shared/ui-components/feedback-card/feedback-card.module';\nimport { UiFormFieldModule } from '@shared/ui-components/form-field/ui-form-field.module';\nimport { UiIconModule } from '@shared/ui-components/icon/ui-icon.module';\nimport { UiInputModule } from '@shared/ui-components/input/ui-input.module';\nimport { UiSelectModule } from '@shared/ui-components/select/ui-select.module';\nimport { UiToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';\nimport { BackBtnComponent } from './components/back-btn/back-btn.component';\nimport { CommentModule } from './components/comment/comment.module';\nimport { FormCardComponent } from './components/form-card/form-card.component';\nimport { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';\nimport { FeedbackFormComponent } from './layouts/feedback-form/feedback-form.component';\n\nconst routes: Routes = [\n    {\n        path: 'detail/:id',\n        component: FeedbackDetailComponent,\n    },\n    {\n        path: 'new',\n        component: FeedbackFormComponent,\n    },\n\n    {\n        path: 'edit/:id',\n        component: FeedbackFormComponent,\n    },\n];\n\n@NgModule({\n    declarations: [FeedbackDetailComponent, FeedbackFormComponent, BackBtnComponent, FormCardComponent],\n    imports: [\n        CommonModule,\n        RouterModule.forChild(routes),\n        UiToolbarModule,\n        UiButtonModule,\n        UiIconModule,\n        UiFeedbackCardModule,\n        UiCounterModule,\n        UiChipsModule,\n        UiBadgeModule,\n        UiFormFieldModule,\n        UiInputModule,\n        UiSelectModule,\n        CommentModule,\n        TranslocoModule,\n        ReactiveFormsModule,\n    ],\n    exports: [RouterModule],\n})\nexport class FeedbackModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { RouterModule, Routes } from '@angular/router';\nimport { UiBadgeModule } from '@components/badge/ui-badge.module';\nimport { UiButtonModule } from '@components/button/ui-button.module';\nimport { UiChipsModule } from '@components/chips/ui-chips.module';\nimport { UiCounterModule } from '@components/counter/ui-counter.module';\nimport { UiDividerModule } from '@components/divider/ui-divider.module';\nimport { UiFeedbackCardModule } from '@components/feedback-card/feedback-card.module';\nimport { UiFormFieldModule } from '@components/form-field/ui-form-field.module';\nimport { UiIconModule } from '@components/icon/ui-icon.module';\nimport { UiInputModule } from '@components/input/ui-input.module';\nimport { UiSelectModule } from '@components/select/ui-select.module';\nimport { UiToolbarModule } from '@components/toolbar/ui-toolbar.module';\nimport { TranslocoModule } from '@ngneat/transloco';\nimport { BackBtnComponent } from './components/back-btn/back-btn.component';\nimport { CommentFormComponent } from './components/comment-form/comment-form.component';\nimport { CommentModule } from './components/comment/comment.module';\nimport { FormCardComponent } from './components/form-card/form-card.component';\nimport { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';\nimport { FeedbackFormComponent } from './layouts/feedback-form/feedback-form.component';\n\nconst routes: Routes = [\n    {\n        path: 'detail/:id',\n        component: FeedbackDetailComponent,\n    },\n    {\n        path: 'new',\n        component: FeedbackFormComponent,\n    },\n\n    {\n        path: 'edit/:id',\n        component: FeedbackFormComponent,\n    },\n];\n\n@NgModule({\n    declarations: [FeedbackDetailComponent, FeedbackFormComponent, BackBtnComponent, FormCardComponent, CommentFormComponent],\n    imports: [\n        CommonModule,\n        RouterModule.forChild(routes),\n        UiToolbarModule,\n        UiButtonModule,\n        UiIconModule,\n        UiFeedbackCardModule,\n        UiCounterModule,\n        UiChipsModule,\n        UiBadgeModule,\n        UiFormFieldModule,\n        UiInputModule,\n        UiSelectModule,\n        UiDividerModule,\n        CommentModule,\n        TranslocoModule,\n        ReactiveFormsModule,\n    ],\n    exports: [RouterModule],\n})\nexport class FeedbackModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -3892,6 +4065,9 @@
                     "elements": [
                         {
                             "name": "BackBtnComponent"
+                        },
+                        {
+                            "name": "CommentFormComponent"
                         },
                         {
                             "name": "FeedbackDetailComponent"
@@ -3921,6 +4097,9 @@
                         },
                         {
                             "name": "UiCounterModule"
+                        },
+                        {
+                            "name": "UiDividerModule"
                         },
                         {
                             "name": "UiFeedbackCardModule"
@@ -3958,13 +4137,13 @@
         },
         {
             "name": "HomeModule",
-            "id": "module-HomeModule-06673d6b77b627279662619ca5bdb7025db54dbd20c08fb80acb78b092480eb73086c7c5cdac3bf0794cbc823f7383946e105c745b6d58b726b67cc165297b6b",
+            "id": "module-HomeModule-86d0e7db218521629facfe20fb0b2904b30c1d5c3a9d9d0d13966df417d0d3d065b38885f2a6dea11560f782060fe51e44dcdaa7bed9b0ba387395172b46501d",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/modules/home/home.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { RouterModule, Routes } from '@angular/router';\nimport { TranslocoModule } from '@ngneat/transloco';\nimport { UiBadgeModule } from '@shared/ui-components/badge/ui-badge.module';\nimport { UiButtonModule } from '@shared/ui-components/button/ui-button.module';\nimport { UiChipsModule } from '@shared/ui-components/chips/ui-chips.module';\nimport { UiCounterModule } from '@shared/ui-components/counter/ui-counter.module';\nimport { UiIconModule } from '@shared/ui-components/icon/ui-icon.module';\nimport { UiToolbarModule } from '@shared/ui-components/toolbar/ui-toolbar.module';\nimport { UiFeedbackCardModule } from '../../shared/ui-components/feedback-card/feedback-card.module';\nimport { BannerModule } from './components/banner/banner.module';\nimport { CategoryFilterComponent } from './components/category-filter/category-filter.component';\nimport { EmptyFeedbacksModule } from './components/empty-feedbacks/empty-feedbacks.module';\nimport { HomeComponent } from './layout/home.component';\n\nconst routes: Routes = [\n    {\n        path: '',\n        component: HomeComponent,\n        pathMatch: 'full',\n    },\n];\n\n@NgModule({\n    declarations: [HomeComponent, CategoryFilterComponent],\n    imports: [\n        CommonModule,\n        RouterModule.forChild(routes),\n        ReactiveFormsModule,\n        UiCounterModule,\n        UiBadgeModule,\n        UiChipsModule,\n        UiIconModule,\n        UiToolbarModule,\n        UiButtonModule,\n        UiFeedbackCardModule,\n        EmptyFeedbacksModule,\n        BannerModule,\n        TranslocoModule,\n    ],\n    exports: [RouterModule],\n})\nexport class HomeModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { RouterModule, Routes } from '@angular/router';\nimport { UiBadgeModule } from '@components/badge/ui-badge.module';\nimport { UiButtonModule } from '@components/button/ui-button.module';\nimport { UiChipsModule } from '@components/chips/ui-chips.module';\nimport { UiCounterModule } from '@components/counter/ui-counter.module';\nimport { UiFeedbackCardModule } from '@components/feedback-card/feedback-card.module';\nimport { UiIconModule } from '@components/icon/ui-icon.module';\nimport { UiToolbarModule } from '@components/toolbar/ui-toolbar.module';\nimport { TranslocoModule } from '@ngneat/transloco';\nimport { BannerModule } from './components/banner/banner.module';\nimport { CategoryFilterComponent } from './components/category-filter/category-filter.component';\nimport { EmptyFeedbacksModule } from './components/empty-feedbacks/empty-feedbacks.module';\nimport { HomeComponent } from './layout/home.component';\n\nconst routes: Routes = [\n    {\n        path: '',\n        component: HomeComponent,\n        pathMatch: 'full',\n    },\n];\n\n@NgModule({\n    declarations: [HomeComponent, CategoryFilterComponent],\n    imports: [\n        CommonModule,\n        RouterModule.forChild(routes),\n        ReactiveFormsModule,\n        UiCounterModule,\n        UiBadgeModule,\n        UiChipsModule,\n        UiIconModule,\n        UiToolbarModule,\n        UiButtonModule,\n        UiFeedbackCardModule,\n        EmptyFeedbacksModule,\n        BannerModule,\n        TranslocoModule,\n    ],\n    exports: [RouterModule],\n})\nexport class HomeModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4069,7 +4248,7 @@
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "src/app/shared/ui-components/badge/ui-badge.module.ts",
+            "file": "src/app/components/badge/ui-badge.module.ts",
             "methods": [],
             "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiBadgeDirective } from './ui-badge.directive';\n\n@NgModule({\n    declarations: [UiBadgeDirective],\n    imports: [CommonModule],\n    exports: [UiBadgeDirective],\n})\nexport class UiBadgeModule {}\n",
             "children": [
@@ -4113,7 +4292,7 @@
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "src/app/shared/ui-components/button/ui-button.module.ts",
+            "file": "src/app/components/button/ui-button.module.ts",
             "methods": [],
             "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiButtonDirective } from './ui-button.directive';\n\n@NgModule({\n    declarations: [UiButtonDirective],\n    imports: [CommonModule],\n    exports: [UiButtonDirective],\n})\nexport class UiButtonModule {}\n",
             "children": [
@@ -4157,7 +4336,7 @@
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "src/app/shared/ui-components/chips/ui-chips.module.ts",
+            "file": "src/app/components/chips/ui-chips.module.ts",
             "methods": [],
             "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiChipListComponent } from './chip-list/ui-chip-list.component';\nimport { UiChipComponent } from './chip/ui-chip.component';\n\n@NgModule({\n    declarations: [UiChipComponent, UiChipListComponent],\n    imports: [CommonModule],\n    exports: [UiChipComponent, UiChipListComponent],\n})\nexport class UiChipsModule {}\n",
             "children": [
@@ -4207,7 +4386,7 @@
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "src/app/shared/ui-components/counter/ui-counter.module.ts",
+            "file": "src/app/components/counter/ui-counter.module.ts",
             "methods": [],
             "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiCounterComponent } from './ui-counter.component';\n\n@NgModule({\n    declarations: [UiCounterComponent],\n    imports: [CommonModule],\n    exports: [UiCounterComponent],\n})\nexport class UiCounterModule {}\n",
             "children": [
@@ -4246,12 +4425,56 @@
             ]
         },
         {
+            "name": "UiDividerModule",
+            "id": "module-UiDividerModule-61a32d25cc06e076af464b44bb0939c89c91ed58faad9ef7835765d2509d6b8a01944b5ce6dc66c40a36209ad77e08e7ceee7d9fd3bb0a181948a114868a1a4c",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "src/app/components/divider/ui-divider.module.ts",
+            "methods": [],
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiDividerComponent } from './ui-divider.component';\n\n@NgModule({\n    declarations: [UiDividerComponent],\n    imports: [CommonModule],\n    exports: [UiDividerComponent],\n})\nexport class UiDividerModule {}\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "UiDividerComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "UiDividerComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
+        {
             "name": "UiFeedbackCardModule",
             "id": "module-UiFeedbackCardModule-afa8a8b3dd55ba5ff034205566ffe4b83d35e10524624e0b5923578d8c7e4d45c18816e6f99bdb5d048c2e277e659b1cc12970177a9c7ca9ae837262450c3c85",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "src/app/shared/ui-components/feedback-card/feedback-card.module.ts",
+            "file": "src/app/components/feedback-card/feedback-card.module.ts",
             "methods": [],
             "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { FeedbackCardComponent } from './feedback-card.component';\nimport {\n    FeedbackCardContentDirective,\n    FeedbackCardFooterDirective,\n    FeedbackCardSideDirective,\n    FeedbackCardTitleDirective,\n} from './feeed-card.directive';\n\n@NgModule({\n    declarations: [\n        FeedbackCardComponent,\n        FeedbackCardContentDirective,\n        FeedbackCardFooterDirective,\n        FeedbackCardTitleDirective,\n        FeedbackCardSideDirective,\n    ],\n    imports: [CommonModule],\n    exports: [\n        FeedbackCardComponent,\n        FeedbackCardContentDirective,\n        FeedbackCardFooterDirective,\n        FeedbackCardTitleDirective,\n        FeedbackCardSideDirective,\n    ],\n})\nexport class UiFeedbackCardModule {}\n",
             "children": [
@@ -4319,7 +4542,7 @@
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "src/app/shared/ui-components/form-field/ui-form-field.module.ts",
+            "file": "src/app/components/form-field/ui-form-field.module.ts",
             "methods": [],
             "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiErrorComponent, UiFormFieldComponent, UiLabelComponent } from './ui-form-field.component';\n\n@NgModule({\n    declarations: [UiFormFieldComponent, UiLabelComponent, UiErrorComponent],\n    imports: [CommonModule],\n    exports: [UiFormFieldComponent, UiLabelComponent, UiErrorComponent],\n})\nexport class UiFormFieldModule {}\n",
             "children": [
@@ -4375,7 +4598,7 @@
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "src/app/shared/ui-components/icon/ui-icon.module.ts",
+            "file": "src/app/components/icon/ui-icon.module.ts",
             "methods": [],
             "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiIconComponent } from './ui-icon.component';\n\n@NgModule({\n    declarations: [UiIconComponent],\n    imports: [CommonModule],\n    exports: [UiIconComponent],\n})\nexport class UiIconModule {}\n",
             "children": [
@@ -4419,7 +4642,7 @@
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "src/app/shared/ui-components/input/ui-input.module.ts",
+            "file": "src/app/components/input/ui-input.module.ts",
             "methods": [],
             "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiInputDirective } from './ui-input.directive';\n\n@NgModule({\n    declarations: [UiInputDirective],\n    imports: [CommonModule],\n    exports: [UiInputDirective],\n})\nexport class UiInputModule {}\n",
             "children": [
@@ -4463,7 +4686,7 @@
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "src/app/shared/ui-components/select/ui-select.module.ts",
+            "file": "src/app/components/select/ui-select.module.ts",
             "methods": [],
             "sourceCode": "import { OverlayModule } from '@angular/cdk/overlay';\nimport { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiSelectOptionComponent } from './select-option/ui-select-option.component';\nimport { UiSelectPanelComponent } from './select-panel/ui-select-panel.component';\n\n@NgModule({\n    declarations: [UiSelectPanelComponent, UiSelectOptionComponent],\n    imports: [CommonModule, OverlayModule],\n    exports: [UiSelectPanelComponent, UiSelectOptionComponent],\n})\nexport class UiSelectModule {}\n",
             "children": [
@@ -4513,7 +4736,7 @@
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "src/app/shared/ui-components/toolbar/ui-toolbar.module.ts",
+            "file": "src/app/components/toolbar/ui-toolbar.module.ts",
             "methods": [],
             "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { UiToolbarComponent } from './ui-toolbar.component';\n\n@NgModule({\n    declarations: [UiToolbarComponent],\n    imports: [CommonModule],\n    exports: [UiToolbarComponent],\n})\nexport class UiToolbarModule {}\n",
             "children": [
@@ -4558,7 +4781,7 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/badge/badge.stories.ts",
+                "file": "src/app/components/badge/badge.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4568,7 +4791,7 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/button/button.stories.ts",
+                "file": "src/app/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4578,7 +4801,7 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/counter/counter.stories.ts",
+                "file": "src/app/components/counter/counter.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4588,7 +4811,7 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/icon/icon.stories.ts",
+                "file": "src/app/components/icon/icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4598,7 +4821,7 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/input/input.stories.ts",
+                "file": "src/app/components/input/input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4608,7 +4831,7 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/select/select.stories.ts",
+                "file": "src/app/components/select/select.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4618,7 +4841,7 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                "file": "src/app/components/toolbar/toolbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4628,7 +4851,7 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/chips/stories/chip-list.stories.ts",
+                "file": "src/app/components/chips/stories/chip-list.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4638,7 +4861,7 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/chips/stories/chip.stories.ts",
+                "file": "src/app/components/chips/stories/chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4678,7 +4901,7 @@
                 "name": "fadeInOut",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/animations/fade.animation.ts",
+                "file": "src/app/components/animations/fade.animation.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4688,7 +4911,7 @@
                 "name": "ICONS_BASE_PATH",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/icon/ui-icon.component.ts",
+                "file": "src/app/components/icon/ui-icon.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "string",
@@ -4698,7 +4921,7 @@
                 "name": "JUSTIFY_CSS_CLASES",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/toolbar/ui-toolbar.component.ts",
+                "file": "src/app/components/toolbar/ui-toolbar.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
@@ -4718,7 +4941,7 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/badge/badge.stories.ts",
+                "file": "src/app/components/badge/badge.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UiBadgeDirective>",
@@ -4728,7 +4951,7 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/button/button.stories.ts",
+                "file": "src/app/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UiButtonDirective>",
@@ -4738,7 +4961,7 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/counter/counter.stories.ts",
+                "file": "src/app/components/counter/counter.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UiCounterComponent>",
@@ -4748,7 +4971,7 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/icon/icon.stories.ts",
+                "file": "src/app/components/icon/icon.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UiIconComponent>",
@@ -4758,7 +4981,7 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/input/input.stories.ts",
+                "file": "src/app/components/input/input.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UiInputDirective>",
@@ -4768,7 +4991,7 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/select/select.stories.ts",
+                "file": "src/app/components/select/select.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UiSelectPanelComponent>",
@@ -4778,7 +5001,7 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                "file": "src/app/components/toolbar/toolbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UiToolbarComponent>",
@@ -4788,7 +5011,7 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/chips/stories/chip-list.stories.ts",
+                "file": "src/app/components/chips/stories/chip-list.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UiChipListComponent>",
@@ -4798,7 +5021,7 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/chips/stories/chip.stories.ts",
+                "file": "src/app/components/chips/stories/chip.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UiChipComponent>",
@@ -4808,7 +5031,7 @@
                 "name": "TemplateTransparent",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                "file": "src/app/components/toolbar/toolbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UiToolbarComponent>",
@@ -4818,7 +5041,7 @@
                 "name": "TemplateWithLogo",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                "file": "src/app/components/toolbar/toolbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UiToolbarComponent>",
@@ -4828,7 +5051,7 @@
                 "name": "Transparent",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                "file": "src/app/components/toolbar/toolbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4838,7 +5061,7 @@
                 "name": "WithLogo",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                "file": "src/app/components/toolbar/toolbar.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -4852,7 +5075,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"primary\" | \"secondary\" | \"light\" | \"dark\" | \"error\" | \"default\"",
-                "file": "src/app/shared/ui-components/button/ui-button.directive.ts",
+                "file": "src/app/components/button/ui-button.directive.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4863,7 +5086,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"long\" | \"default\"",
-                "file": "src/app/shared/ui-components/button/ui-button.directive.ts",
+                "file": "src/app/components/button/ui-button.directive.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4874,7 +5097,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"button\" | \"submit\" | \"reset\"",
-                "file": "src/app/shared/ui-components/button/ui-button.directive.ts",
+                "file": "src/app/components/button/ui-button.directive.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4907,7 +5130,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "\"start\" | \"end\" | \"center\" | \"between\" | \"around\"",
-                "file": "src/app/shared/ui-components/toolbar/ui-toolbar.component.ts",
+                "file": "src/app/components/toolbar/ui-toolbar.component.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4916,12 +5139,12 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "src/app/shared/ui-components/badge/badge.stories.ts": [
+            "src/app/components/badge/badge.stories.ts": [
                 {
                     "name": "Basic",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/badge/badge.stories.ts",
+                    "file": "src/app/components/badge/badge.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -4931,19 +5154,19 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/badge/badge.stories.ts",
+                    "file": "src/app/components/badge/badge.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<UiBadgeDirective>",
                     "defaultValue": "(args: UiBadgeDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiBadgeDirective],\n        imports: [CommonModule],\n    },\n    template: `<ui-icon name=\"comments\" ui-badge value=\"3\"></ui-icon>`,\n})"
                 }
             ],
-            "src/app/shared/ui-components/button/button.stories.ts": [
+            "src/app/components/button/button.stories.ts": [
                 {
                     "name": "Basic",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/button/button.stories.ts",
+                    "file": "src/app/components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -4953,19 +5176,19 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/button/button.stories.ts",
+                    "file": "src/app/components/button/button.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<UiButtonDirective>",
                     "defaultValue": "(args: UiButtonDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiButtonDirective],\n        imports: [CommonModule],\n    },\n    template: `<button ui-button [color]=\"color\" [size]=\"size\">Button</button>`,\n})"
                 }
             ],
-            "src/app/shared/ui-components/counter/counter.stories.ts": [
+            "src/app/components/counter/counter.stories.ts": [
                 {
                     "name": "Basic",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/counter/counter.stories.ts",
+                    "file": "src/app/components/counter/counter.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -4975,19 +5198,19 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/counter/counter.stories.ts",
+                    "file": "src/app/components/counter/counter.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<UiCounterComponent>",
                     "defaultValue": "(args: UiCounterComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiCounterComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-counter></ui-counter>`,\n})"
                 }
             ],
-            "src/app/shared/ui-components/icon/icon.stories.ts": [
+            "src/app/components/icon/icon.stories.ts": [
                 {
                     "name": "Basic",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/icon/icon.stories.ts",
+                    "file": "src/app/components/icon/icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -4997,19 +5220,19 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/icon/icon.stories.ts",
+                    "file": "src/app/components/icon/icon.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<UiIconComponent>",
                     "defaultValue": "(args: UiIconComponent) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiIconComponent],\n        imports: [CommonModule],\n    },\n    template: `<ui-icon name=\"comments\"></ui-icon> `,\n})"
                 }
             ],
-            "src/app/shared/ui-components/input/input.stories.ts": [
+            "src/app/components/input/input.stories.ts": [
                 {
                     "name": "Basic",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/input/input.stories.ts",
+                    "file": "src/app/components/input/input.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -5019,19 +5242,19 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/input/input.stories.ts",
+                    "file": "src/app/components/input/input.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<UiInputDirective>",
                     "defaultValue": "(args: UiInputDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiInputDirective],\n        imports: [CommonModule],\n    },\n    template: `<input uiInput [ngModel]=\"value\" placeholder=\"This is sparta!\"/>`,\n})"
                 }
             ],
-            "src/app/shared/ui-components/select/select.stories.ts": [
+            "src/app/components/select/select.stories.ts": [
                 {
                     "name": "Basic",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/select/select.stories.ts",
+                    "file": "src/app/components/select/select.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -5041,19 +5264,19 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/select/select.stories.ts",
+                    "file": "src/app/components/select/select.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<UiSelectPanelComponent>",
                     "defaultValue": "(args: UiSelectPanelComponent) => ({\n    props: args,\n    moduleMetadata: {\n        imports: [UiSelectModule],\n    },\n    template: `\n\t<ui-select label=\"Name\" placeholder=\"Select the option\">\n\t\t<ui-select-option value=\"option1\">Option 1</ui-select-option>\n\t\t<ui-select-option value=\"option2\">Option 2</ui-select-option>\n\t\t<ui-select-option value=\"option3\">Option 3</ui-select-option>\n\t</ui-select>\n`,\n})"
                 }
             ],
-            "src/app/shared/ui-components/toolbar/toolbar.stories.ts": [
+            "src/app/components/toolbar/toolbar.stories.ts": [
                 {
                     "name": "Basic",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                    "file": "src/app/components/toolbar/toolbar.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -5063,7 +5286,7 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                    "file": "src/app/components/toolbar/toolbar.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<UiToolbarComponent>",
@@ -5073,7 +5296,7 @@
                     "name": "TemplateTransparent",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                    "file": "src/app/components/toolbar/toolbar.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<UiToolbarComponent>",
@@ -5083,7 +5306,7 @@
                     "name": "TemplateWithLogo",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                    "file": "src/app/components/toolbar/toolbar.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<UiToolbarComponent>",
@@ -5093,7 +5316,7 @@
                     "name": "Transparent",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                    "file": "src/app/components/toolbar/toolbar.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -5103,19 +5326,19 @@
                     "name": "WithLogo",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
+                    "file": "src/app/components/toolbar/toolbar.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "TemplateWithLogo.bind({})"
                 }
             ],
-            "src/app/shared/ui-components/chips/stories/chip-list.stories.ts": [
+            "src/app/components/chips/stories/chip-list.stories.ts": [
                 {
                     "name": "Basic",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/chips/stories/chip-list.stories.ts",
+                    "file": "src/app/components/chips/stories/chip-list.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -5125,19 +5348,19 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/chips/stories/chip-list.stories.ts",
+                    "file": "src/app/components/chips/stories/chip-list.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<UiChipListComponent>",
                     "defaultValue": "(args: UiChipListComponent) => ({\n    props: args,\n    template: `<ui-chip-list><ui-chip>One</ui-chip><ui-chip>Two</ui-chip></ui-chip-list>`,\n})"
                 }
             ],
-            "src/app/shared/ui-components/chips/stories/chip.stories.ts": [
+            "src/app/components/chips/stories/chip.stories.ts": [
                 {
                     "name": "Basic",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/chips/stories/chip.stories.ts",
+                    "file": "src/app/components/chips/stories/chip.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
@@ -5147,7 +5370,7 @@
                     "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/chips/stories/chip.stories.ts",
+                    "file": "src/app/components/chips/stories/chip.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<UiChipComponent>",
@@ -5190,36 +5413,36 @@
                     "defaultValue": "{\n    production: false,\n\n    apiUrl: 'http://localhost:3000/api/v1',\n}"
                 }
             ],
-            "src/app/shared/ui-components/animations/fade.animation.ts": [
+            "src/app/components/animations/fade.animation.ts": [
                 {
                     "name": "fadeInOut",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/animations/fade.animation.ts",
+                    "file": "src/app/components/animations/fade.animation.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
                     "defaultValue": "trigger('fadeInOut', [\n    transition(':enter', [style({ opacity: 0 }), animate('.3s ease-out', style({ opacity: 1 }))]),\n    transition(':leave', [animate('.3s ease-in', style({ opacity: 0 }))]),\n])"
                 }
             ],
-            "src/app/shared/ui-components/icon/ui-icon.component.ts": [
+            "src/app/components/icon/ui-icon.component.ts": [
                 {
                     "name": "ICONS_BASE_PATH",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/icon/ui-icon.component.ts",
+                    "file": "src/app/components/icon/ui-icon.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
                     "defaultValue": "'/assets/images/icons'"
                 }
             ],
-            "src/app/shared/ui-components/toolbar/ui-toolbar.component.ts": [
+            "src/app/components/toolbar/ui-toolbar.component.ts": [
                 {
                     "name": "JUSTIFY_CSS_CLASES",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/app/shared/ui-components/toolbar/ui-toolbar.component.ts",
+                    "file": "src/app/components/toolbar/ui-toolbar.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
@@ -5242,13 +5465,13 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "src/app/shared/ui-components/button/ui-button.directive.ts": [
+            "src/app/components/button/ui-button.directive.ts": [
                 {
                     "name": "ButtonColors",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "\"primary\" | \"secondary\" | \"light\" | \"dark\" | \"error\" | \"default\"",
-                    "file": "src/app/shared/ui-components/button/ui-button.directive.ts",
+                    "file": "src/app/components/button/ui-button.directive.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -5259,7 +5482,7 @@
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "\"long\" | \"default\"",
-                    "file": "src/app/shared/ui-components/button/ui-button.directive.ts",
+                    "file": "src/app/components/button/ui-button.directive.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -5270,7 +5493,7 @@
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "\"button\" | \"submit\" | \"reset\"",
-                    "file": "src/app/shared/ui-components/button/ui-button.directive.ts",
+                    "file": "src/app/components/button/ui-button.directive.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -5301,13 +5524,13 @@
                     "kind": 178
                 }
             ],
-            "src/app/shared/ui-components/toolbar/ui-toolbar.component.ts": [
+            "src/app/components/toolbar/ui-toolbar.component.ts": [
                 {
                     "name": "JusfityType",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "\"start\" | \"end\" | \"center\" | \"between\" | \"around\"",
-                    "file": "src/app/shared/ui-components/toolbar/ui-toolbar.component.ts",
+                    "file": "src/app/components/toolbar/ui-toolbar.component.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -5400,6 +5623,436 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/animations/fade.animation.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "fadeInOut",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/badge/badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/badge/badge.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/badge/ui-badge.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "UiBadgeDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/9",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/button.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/button/ui-button.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "UiButtonDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/chips/chip-list/ui-chip-list.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiChipListComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/chips/chip/ui-chip.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiChipComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/chips/stories/chip-list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/chips/stories/chip-list.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/chips/stories/chip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/chips/stories/chip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/counter/counter.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/counter/counter.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/counter/ui-counter.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiCounterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/divider/ui-divider.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiDividerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/feedback-card/feedback-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FeedbackCardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/feedback-card/feeed-card.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "FeedbackCardContentDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/feedback-card/feeed-card.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "FeedbackCardFooterDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/feedback-card/feeed-card.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "FeedbackCardSideDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/feedback-card/feeed-card.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "FeedbackCardTitleDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/form-field/ui-form-field.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiErrorComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/form-field/ui-form-field.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiFormFieldComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/form-field/ui-form-field.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiLabelComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/icon/icon.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/icon/ui-icon.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiIconComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/icon/ui-icon.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ICONS_BASE_PATH",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/input/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/input/input.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/input/ui-input.directive.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "UiInputDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/select/select-option/ui-select-option.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiSelectOptionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/select/select-panel/ui-select-panel.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiSelectPanelComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/21",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/select/select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/select/select.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/select/ui-select.service.ts",
+                "type": "injectable",
+                "linktype": "injectable",
+                "name": "UiSelectService",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/toolbar/toolbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Basic",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/toolbar/toolbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/toolbar/toolbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TemplateTransparent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/toolbar/toolbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TemplateWithLogo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/toolbar/toolbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Transparent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/toolbar/toolbar.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "WithLogo",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/toolbar/ui-toolbar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "UiToolbarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/toolbar/ui-toolbar.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "JUSTIFY_CSS_CLASES",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/core/http/comment.service.ts",
                 "type": "injectable",
                 "linktype": "injectable",
@@ -5481,6 +6134,15 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/modules/feedback/components/comment-form/comment-form.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CommentFormComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/modules/feedback/components/comment/comment.ts",
                 "type": "component",
                 "linktype": "component",
@@ -5512,6 +6174,15 @@
                 "type": "directive",
                 "linktype": "directive",
                 "name": "CommentNameDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/feedback/components/comment/comment.ts",
+                "type": "directive",
+                "linktype": "directive",
+                "name": "CommentTextDirective",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -5613,427 +6284,6 @@
                 "name": "HomeComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/animations/fade.animation.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "fadeInOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/badge/badge.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Basic",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/badge/badge.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/badge/ui-badge.directive.ts",
-                "type": "directive",
-                "linktype": "directive",
-                "name": "UiBadgeDirective",
-                "coveragePercent": 0,
-                "coverageCount": "0/9",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Basic",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/button/ui-button.directive.ts",
-                "type": "directive",
-                "linktype": "directive",
-                "name": "UiButtonDirective",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/chips/chip-list/ui-chip-list.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "UiChipListComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/chips/chip/ui-chip.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "UiChipComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/chips/stories/chip-list.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Basic",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/chips/stories/chip-list.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/chips/stories/chip.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Basic",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/chips/stories/chip.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/counter/counter.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Basic",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/counter/counter.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/counter/ui-counter.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "UiCounterComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/7",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/feedback-card/feedback-card.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "FeedbackCardComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/feedback-card/feeed-card.directive.ts",
-                "type": "directive",
-                "linktype": "directive",
-                "name": "FeedbackCardContentDirective",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/feedback-card/feeed-card.directive.ts",
-                "type": "directive",
-                "linktype": "directive",
-                "name": "FeedbackCardFooterDirective",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/feedback-card/feeed-card.directive.ts",
-                "type": "directive",
-                "linktype": "directive",
-                "name": "FeedbackCardSideDirective",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/feedback-card/feeed-card.directive.ts",
-                "type": "directive",
-                "linktype": "directive",
-                "name": "FeedbackCardTitleDirective",
-                "coveragePercent": 0,
-                "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/form-field/ui-form-field.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "UiErrorComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/form-field/ui-form-field.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "UiFormFieldComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/form-field/ui-form-field.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "UiLabelComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/icon/icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Basic",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/icon/icon.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/icon/ui-icon.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "UiIconComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/icon/ui-icon.component.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "ICONS_BASE_PATH",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/input/input.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Basic",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/input/input.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/input/ui-input.directive.ts",
-                "type": "directive",
-                "linktype": "directive",
-                "name": "UiInputDirective",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/select/select-option/ui-select-option.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "UiSelectOptionComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/7",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/select/select-panel/ui-select-panel.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "UiSelectPanelComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/21",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/select/select.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Basic",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/select/select.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/select/ui-select.service.ts",
-                "type": "injectable",
-                "linktype": "injectable",
-                "name": "UiSelectService",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Basic",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "TemplateTransparent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "TemplateWithLogo",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Transparent",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/toolbar/toolbar.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "WithLogo",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/toolbar/ui-toolbar.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "UiToolbarComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/4",
-                "status": "low"
-            },
-            {
-                "filePath": "src/app/shared/ui-components/toolbar/ui-toolbar.component.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "JUSTIFY_CSS_CLASES",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
                 "status": "low"
             },
             {

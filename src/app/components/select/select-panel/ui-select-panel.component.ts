@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ContentChildren, forwardRef, Input, QueryList, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { fadeInOut } from '@shared/ui-components/animations/fade.animation';
+import { fadeInOut } from '@components/animations/fade.animation';
 import { UiSelectOptionComponent } from '../select-option/ui-select-option.component';
 import { UiSelectService } from '../ui-select.service';
 
