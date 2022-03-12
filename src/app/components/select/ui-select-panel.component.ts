@@ -1,8 +1,8 @@
 import { AfterViewInit, Component, ContentChildren, forwardRef, Input, QueryList, ViewEncapsulation } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { fadeInOut } from '@components/animations/fade.animation';
-import { UiSelectOptionComponent } from '../select-option/ui-select-option.component';
-import { UiSelectService } from '../ui-select.service';
+import { UiSelectOptionComponent } from './ui-select-option.component';
+import { UiSelectService } from './ui-select.service';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector

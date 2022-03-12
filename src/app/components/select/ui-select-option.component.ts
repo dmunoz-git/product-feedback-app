@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, Input, ViewChild, ViewEncapsulation } from '@angular/core';
-import { UiSelectService } from '../ui-select.service';
+import { UiSelectService } from './ui-select.service';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
