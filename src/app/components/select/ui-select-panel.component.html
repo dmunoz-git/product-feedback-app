@@ -3,7 +3,8 @@
     [class.ui-selector--focus]="isDropdownOpen"
     cdkOverlayOrigin
     (click)="toggleDropdown()"
-    #trigger="cdkOverlayOrigin"
+    #origin="cdkOverlayOrigin"
+    #trigger
 >
     <input class="ui-selector__input" [value]="displayedText" [placeholder]="placeholder" type="text" readonly autocomplete="off" />
     <img *ngIf="!isDropdownOpen" class="ui-selector__icon" src="assets/images/icons/icon-arrow-down.svg" alt="Selector displayed" />
@@ -15,11 +16,10 @@
     cdkConnectedOverlayLockPosition
     cdkConnectedOverlayHasBackdrop
     cdkConnectedOverlayBackdropClass="cdk-overlay-transparent-backdrop"
-    [cdkConnectedOverlayOrigin]="trigger"
+    [cdkConnectedOverlayOrigin]="origin"
     [cdkConnectedOverlayOpen]="isDropdownOpen"
+    [cdkConnectedOverlayMinWidth]="_triggerRect?.width!"
     (backdropClick)="isDropdownOpen = false"
-    (opened)="onOpened()"
-    (closed)="onClosed()"
 >
     <div class="ui-select-panel" @fadeInOut>
         <ng-content></ng-content>
