@@ -29,4 +29,8 @@ export class FeedbackDetailComponent implements OnInit, OnDestroy {
             })
         );
     }
+
+    createComment(comment: string) {
+        this.subscription.add(this.feedbackService.createComment(this.id, comment).subscribe(() => {}));
+    }
 }

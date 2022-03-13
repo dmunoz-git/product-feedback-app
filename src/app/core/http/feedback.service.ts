@@ -1,12 +1,16 @@
 import { Injectable } from '@angular/core';
 import data from '@core/mocks/data.json';
 import { Feedback } from '@core/models/feedback.model';
-import { BehaviorSubject, map, Observable } from 'rxjs';
+import { User } from '@core/models/user.model';
+import { BehaviorSubject, map, mergeMap, Observable } from 'rxjs';
+import { UserService } from './user.service';
 
 @Injectable({
     providedIn: 'root',
 })
 export class FeedbackService {
+    constructor(private userService: UserService) {}
+
     createFeedback(feedback: Feedback) {
         const newFeedbackData = {
             id: data.productRequests.length + 1,
@@ -45,5 +49,24 @@ export class FeedbackService {
 
     getFeedbackList(): Observable<Feedback[]> {
         return new BehaviorSubject<Feedback[]>(data.productRequests).asObservable();
+    }
+
+    createComment(feedbackId: number, comment: string) {
+        const index = data.productRequests.findIndex((x) => x.id === feedbackId);
+
+        return new BehaviorSubject<boolean>(true).pipe(
+            mergeMap(() => this.userService.getAuthendicatedUser()),
+            map((user: User) => {
+                if (!data.productRequests[index].comments) {
+                    data.productRequests[index].comments = [];
+                }
+
+                data.productRequests[index].comments?.push({
+                    id: data.productRequests[index].comments!.length + 1,
+                    content: comment,
+                    user,
+                });
+            })
+        );
     }
 }

@@ -31,5 +31,5 @@
             <ui-divider *ngIf="i < feedback.comments!.length - 1"></ui-divider>
         </div>
     </section>
-    <app-comment-form [maxLength]="225"></app-comment-form>
+    <app-comment-form [maxLength]="225" (comment)="createComment($event)"></app-comment-form>
 </section>

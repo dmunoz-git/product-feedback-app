@@ -5,6 +5,6 @@
         <p class="comment-form___counter" [class.comment-form--error]="maxLength - input.value!.length < 0">
             {{ maxLength - (input.value?.length || 0) }} {{ charCounterLabel }}
         </p>
-        <button ui-button color="primary" class="comment-form__button">{{ buttonLabel }}</button>
+        <button ui-button color="primary" class="comment-form__button" (click)="sendComment()">{{ buttonLabel }}</button>
     </div>
 </section>
