@@ -15,6 +15,10 @@ export class CommentFormComponent {
 
     text: FormControl = new FormControl('', Validators.maxLength(this.maxLength));
 
+    get textLength() {
+        return this.text.value.length;
+    }
+
     sendComment() {
         if (this.text.valid) {
             this.text.setValue('');

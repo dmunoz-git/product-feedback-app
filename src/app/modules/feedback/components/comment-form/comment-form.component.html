@@ -1,8 +1,10 @@
 <section class="section comment-form">
     <h3 class="comment-form__title">{{ sectionLabel }}</h3>
-    <textarea uiInput [formControl]="text" class="comment-form__textarea" name="" id="" cols="30" rows="10"></textarea>
+    <textarea uiInput #input [formControl]="text" class="comment-form__textarea" name="" id="" cols="30" rows="10"></textarea>
     <div class="comment-form__footer">
-        <p class="comment-form___counter">225 {{ charCounterLabel }}</p>
+        <p class="comment-form___counter" [class.comment-form--error]="maxLength - input.value!.length < 0">
+            {{ maxLength - (input.value?.length || 0) }} {{ charCounterLabel }}
+        </p>
         <button ui-button color="primary" class="comment-form__button">{{ buttonLabel }}</button>
     </div>
 </section>
