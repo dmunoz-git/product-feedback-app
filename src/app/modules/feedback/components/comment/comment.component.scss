@@ -5,7 +5,6 @@
     grid-template-columns:  2.5rem auto;
     grid-template-rows: 2.5rem auto;
     align-items: flex-start;
-    column-gap: 2rem;
     row-gap: 1.0625rem;
 
     &__name {
@@ -30,6 +29,7 @@
 
     &__body {
         grid-column: 2;
+        margin-left: 2rem;
     }
 
     &__replies{
@@ -43,5 +43,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        margin-left: 2rem;
     }
 }
