@@ -38,4 +38,10 @@
        gap: 2rem;
        padding: 2rem 0;
     }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
