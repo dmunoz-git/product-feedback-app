@@ -27,6 +27,14 @@
                 <h4 comment-name>{{ comment.user.name | titlecase }}</h4>
                 <span comment-id>@{{ comment.user.username }}</span>
                 <p comment-text>{{ comment.content }}</p>
+                <div comments-replies *ngIf="comment.replies?.length! > 0">
+                    <app-comment *ngFor="let reply of comment.replies">
+                        <img comment-avatar src="{{ reply.user.image }}" alt="{{ reply.user.name }}"  />
+                        <h4 comment-name>{{ reply.user.name | titlecase }}</h4>
+                        <span comment-id>@{{ reply.user.username }}</span>
+                        <p comment-text>@{{ comment.user.username }} {{ reply.content }}</p>
+                    </app-comment>
+                </div>
             </app-comment>
             <ui-divider *ngIf="i < feedback.comments!.length - 1"></ui-divider>
         </div>

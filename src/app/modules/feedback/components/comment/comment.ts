@@ -40,3 +40,10 @@ export class CommentIdDirective {}
     },
 })
 export class CommentTextDirective {}
+
+@Directive({
+    selector: '[comments-replies]',
+    host: {
+        class: 'comment__replies'
+    }
+})export class CommentRepliesDirective{}
