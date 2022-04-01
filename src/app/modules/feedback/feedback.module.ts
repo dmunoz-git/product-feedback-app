@@ -20,6 +20,7 @@ import { CommentModule } from './components/comment/comment.module';
 import { FormCardComponent } from './components/form-card/form-card.component';
 import { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';
 import { FeedbackFormComponent } from './layouts/feedback-form/feedback-form.component';
+import { ReplyComponent } from './components/reply/reply.component';
 
 const routes: Routes = [
     {
@@ -38,7 +39,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [FeedbackDetailComponent, FeedbackFormComponent, BackBtnComponent, FormCardComponent, CommentFormComponent],
+    declarations: [FeedbackDetailComponent, FeedbackFormComponent, BackBtnComponent, FormCardComponent, CommentFormComponent, ReplyComponent],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
