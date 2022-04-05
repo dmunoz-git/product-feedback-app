@@ -21,7 +21,7 @@
 
     &__list {
         padding-left: 0;
-        margin: 1.5rem 0;
+        margin: 1.5rem 0 0 0;
 
     }
 
@@ -48,8 +48,25 @@
             border-radius: 50%;
         }
 
+        &--planned::before{
+            background: colors.$tertiary-color;
+        }
+
+        &--progress::before{
+            background: colors.$primary-color;
+        }
+
+        &--live::before{
+            background: colors.$link-hover-color;
+        }
+
         &:not(:last-child) {
             margin-bottom: 0.5rem;
         }
+    }
+
+    &__counter {
+        color: colors.$title-color;
+        font-weight: bold;
     }
 }
