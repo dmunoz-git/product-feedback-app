@@ -14,6 +14,7 @@ import { BannerModule } from './components/banner/banner.module';
 import { CategoryFilterComponent } from './components/category-filter/category-filter.component';
 import { EmptyFeedbacksModule } from './components/empty-feedbacks/empty-feedbacks.module';
 import { HomeComponent } from './layout/home.component';
+import { RoadmapComponent } from './components/roadmap/roadmap.component';
 
 const routes: Routes = [
     {
@@ -24,7 +25,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [HomeComponent, CategoryFilterComponent],
+    declarations: [HomeComponent, CategoryFilterComponent, RoadmapComponent],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
