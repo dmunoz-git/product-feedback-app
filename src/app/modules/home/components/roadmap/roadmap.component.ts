@@ -8,6 +8,5 @@ import { Component, Input } from '@angular/core';
 export class RoadmapComponent {
   @Input() title: string = "";
   @Input() linkLabel: string = "";
-  @Input() redirectPath: string = "";
-
+  @Input() redirectPath: string = '';
 }

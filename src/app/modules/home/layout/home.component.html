@@ -5,7 +5,7 @@
             <span app-banner-subtitle>{{ t('subtitle') }}</span>
         </app-banner>
         <app-category-filter (categorySelected)="filterFeedbacks($event)"></app-category-filter>
-        <app-roadmap linkLabel="View" title="Roadmap">
+        <app-roadmap linkLabel="View" title="Roadmap" [redirectPath]="'/roadmap/' + category">
             <app-roadmap-item color="primary" [amound]="(feebacksByStatus('planned') | async)!.length">Planned</app-roadmap-item>
             <app-roadmap-item color="tertiary" [amound]="(feebacksByStatus('in-progress') | async)!.length">In-Progress</app-roadmap-item>
             <app-roadmap-item color="link" [amound]="(feebacksByStatus('live') | async)!.length">Lived</app-roadmap-item>
