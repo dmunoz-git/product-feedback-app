@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FeedbackService } from '@core/http/feedback.service';
 import { Feedback } from '@core/models/feedback.model';
-import { map, Observable } from 'rxjs';
+import { filter, map, Observable } from 'rxjs';
 
 @Component({
     selector: 'app-home',
@@ -22,6 +22,10 @@ export class HomeComponent implements OnInit {
 
     filterFeedbacks(category: string) {
         this.feedbacks$ = category !== 'all' ? this.getFeedbacksFiltered(category) : this.feedbacks.getFeedbackList();
+    }
+
+    feebacksByStatus(status: string) {
+        return this.feedbacks$.pipe(map(feedbacks => feedbacks.filter(feedback => feedback.status === status)));
     }
 
     private getFeedbacksFiltered(category: string): Observable<Feedback[]> {

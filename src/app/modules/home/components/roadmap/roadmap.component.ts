@@ -1,17 +1,13 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-roadmap',
   templateUrl: './roadmap.component.html',
   styleUrls: ['./roadmap.component.scss']
 })
-export class RoadmapComponent implements OnInit {
+export class RoadmapComponent {
   @Input() title: string = "";
   @Input() linkLabel: string = "";
-  
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  @Input() redirectPath: string = "";
 
 }
