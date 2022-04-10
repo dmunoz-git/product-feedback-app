@@ -4,34 +4,16 @@
     display: block;
 }
 
-.roadmap {
-    background: colors.$white-color;
-    border-radius: 0.625rem;
-    padding: 1.1875rem 1.5rem;
-
-    &__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
-
-    &__title {
-        margin: 0;
-    }
-
-    &__list {
-        padding-left: 0;
-        margin: 1rem 0 0 0;
-
-    }
-
-    &__item{
-        display: flex;
-        width: 100%;
-    }
+.roadmap-item {
+    display: flex;
+    width: 100%;
+    padding: 0;
+    margin-top: 0.5rem;
 
     &__counter{
         margin-left: auto;
+        color: colors.$title-color;
+        font-weight: bold;
     }
 
     &__status {
@@ -48,25 +30,20 @@
             border-radius: 50%;
         }
 
-        &--planned::before{
+        &--tertiary::before{
             background: colors.$tertiary-color;
         }
 
-        &--progress::before{
+        &--primary::before{
             background: colors.$primary-color;
         }
 
-        &--live::before{
+        &--link::before{
             background: colors.$link-hover-color;
         }
 
         &:not(:last-child) {
             margin-bottom: 0.5rem;
         }
-    }
-
-    &__counter {
-        color: colors.$title-color;
-        font-weight: bold;
     }
 }
