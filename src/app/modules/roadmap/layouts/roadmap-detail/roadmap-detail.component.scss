@@ -1,0 +1,26 @@
+
+.layout {
+    margin: 4.875rem auto 0 auto;
+    width: min(69.375rem, 100%);
+}
+
+.back {
+    display: flex;
+    justify-items: center;
+    gap: 1.2294rem;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    &__text{
+        margin: 0;
+        color: white;
+    }
+
+    &__icon {
+        filter: brightness(4);
+    }
+}

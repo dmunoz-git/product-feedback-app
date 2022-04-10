@@ -1,0 +1,14 @@
+<section class="layout" *transloco="let t">
+    <ui-toolbar justify="between" class="toolbar">
+        <div class="toolbar__header">
+            <span class="back" (click)="back()">
+                <ui-icon class="back__icon" name="arrow-left"></ui-icon>
+                <span class="back__text">Go back!</span>
+            </span>
+            <h3 class="text-white">Roadmap</h3>
+        </div>
+        <button ui-button color="primary" routerLink="/feedback/new">
+            <ui-icon name="plus"></ui-icon> {{ t('createFeedbackLabelButton') }}
+        </button>
+    </ui-toolbar>
+</section>
