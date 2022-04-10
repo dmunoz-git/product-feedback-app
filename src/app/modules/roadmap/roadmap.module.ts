@@ -6,6 +6,7 @@ import { UiToolbarModule } from '@components/toolbar/ui-toolbar.module';
 import { UiButtonModule } from '@components/button/ui-button.module';
 import { UiIconModule } from '@components/icon/ui-icon.module';
 import { TranslocoModule } from '@ngneat/transloco';
+import { KanbanCardModule } from './components/kanban-card/kanban-card.module';
 
 const routes = [
   {
@@ -25,7 +26,8 @@ const routes = [
     TranslocoModule,
     UiToolbarModule,
     UiButtonModule,
-    UiIconModule
+    UiIconModule,
+    KanbanCardModule
   ]
 })
 export class RoadmapModule { }

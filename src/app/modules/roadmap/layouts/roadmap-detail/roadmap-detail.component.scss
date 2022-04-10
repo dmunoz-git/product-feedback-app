@@ -1,5 +1,9 @@
 
 .layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2.625rem;
+    
     margin: 4.875rem auto 0 auto;
     width: min(69.375rem, 100%);
 }
