@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-kanban-card',
@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./kanban-card.component.scss']
 })
 export class KanbanCardComponent  {
-
+  @Input() color: 'primary' | 'link' | 'tertiary' | 'none' = 'none';
 
 }

@@ -1,10 +1,10 @@
-<div class="kanban-card">
-    <span class="kanban-card__status">Planned</span>
+<div class="kanban-card" [ngClass]="'kanban-card--' + color">
+    <span class="kanban-card__status" [ngClass]="'kanban-card__status--' + color">Planned</span>
     <h3 class="kanban-card__title">More comprehensive reports</h3>
     <div class="kanban-card__body">
         <p class="kanban-card__text">
             It would be great to see a more detailed breakdown of solutions.
         </p>
+        <ng-content></ng-content>
     </div>
-    <ng-content></ng-content>
 </div>
