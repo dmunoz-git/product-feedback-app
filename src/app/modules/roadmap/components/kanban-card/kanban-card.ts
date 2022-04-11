@@ -8,6 +8,7 @@ import { Component, Directive, Input, ViewEncapsulation } from '@angular/core';
 })
 export class KanbanCardComponent  {
   @Input() color: 'primary' | 'link' | 'tertiary' | 'none' = 'none';
+  @Input() status: string = "status";
 }
 
 

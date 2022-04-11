@@ -28,4 +28,17 @@
     &__icon {
         filter: brightness(4);
     }
+
+    &__title {
+        margin: 0;
+    }
+}
+
+.toolbar {
+    &__header {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 1rem 0.8125rem;
+    }
 }
