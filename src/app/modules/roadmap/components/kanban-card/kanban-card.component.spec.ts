@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { KanbanCardComponent } from './kanban-card.component';
+import { KanbanCardComponent } from './kanban-card';
 
 describe('KanbanCardComponent', () => {
   let component: KanbanCardComponent;
