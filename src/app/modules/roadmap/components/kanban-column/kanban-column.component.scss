@@ -1,0 +1,15 @@
+:host {
+    display: block;
+}
+
+.kanban-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    &__row{
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}

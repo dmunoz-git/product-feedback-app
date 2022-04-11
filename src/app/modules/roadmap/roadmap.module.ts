@@ -7,6 +7,8 @@ import { UiButtonModule } from '@components/button/ui-button.module';
 import { UiIconModule } from '@components/icon/ui-icon.module';
 import { TranslocoModule } from '@ngneat/transloco';
 import { KanbanCardModule } from './components/kanban-card/kanban-card.module';
+import { KanbanColumnComponent } from './components/kanban-column/kanban-column.component';
+import { KanbanBoardComponent } from './components/kanban-board/kanban-board.component';
 
 const routes = [
   {
@@ -19,6 +21,8 @@ const routes = [
 @NgModule({
   declarations: [
     RoadmapDetailComponent,
+    KanbanColumnComponent,
+    KanbanBoardComponent,
   ],
   imports: [
     CommonModule,
