@@ -9,6 +9,9 @@ import { TranslocoModule } from '@ngneat/transloco';
 import { KanbanCardModule } from './components/kanban-card/kanban-card.module';
 import { KanbanColumnComponent } from './components/kanban-column/kanban-column.component';
 import { KanbanBoardComponent } from './components/kanban-board/kanban-board.component';
+import { UiCounterModule } from '@components/counter/ui-counter.module';
+import { UiBadgeModule } from '@components/badge/ui-badge.module';
+import { UiChipsModule } from '@components/chips/ui-chips.module';
 
 const routes = [
   {
@@ -31,7 +34,10 @@ const routes = [
     UiToolbarModule,
     UiButtonModule,
     UiIconModule,
-    KanbanCardModule
+    KanbanCardModule,
+    UiCounterModule,
+    UiBadgeModule,
+    UiChipsModule
   ]
 })
 export class RoadmapModule { }

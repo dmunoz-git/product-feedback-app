@@ -1,3 +1,4 @@
+@use "settings/colors";
 
 .layout {
     display: flex;
@@ -41,4 +42,35 @@
         gap: 0.5rem;
         padding: 1rem 0.8125rem;
     }
+}
+
+.board-margin {
+    margin-bottom: 11.1875rem;
+}
+
+.kanban-card {
+    &__footer {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, auto);
+        gap: 1rem;
+        margin-top: 1rem;
+        
+    }
+
+    &__title:hover {
+        color: colors.$secondary-color;
+        cursor: pointer;
+    }
+
+    &__counter {
+        grid-row: 2;
+    }
+
+    &__comments {
+        grid-row: 2;
+        justify-self: flex-end;
+    }
+
+
 }
