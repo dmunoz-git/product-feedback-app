@@ -14,6 +14,7 @@ import { BannerModule } from './components/banner/banner.module';
 import { CategoryFilterComponent } from './components/category-filter/category-filter.component';
 import { EmptyFeedbacksModule } from './components/empty-feedbacks/empty-feedbacks.module';
 import { HomeComponent } from './layout/home.component';
+import { RoadmapModule } from './components/roadmap/roadmap.module';
 
 const routes: Routes = [
     {
@@ -39,6 +40,7 @@ const routes: Routes = [
         EmptyFeedbacksModule,
         BannerModule,
         TranslocoModule,
+        RoadmapModule
     ],
     exports: [RouterModule],
 })
