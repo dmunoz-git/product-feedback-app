@@ -69,4 +69,9 @@
         color: colors.$title-color;
         font-weight: bold;
     }
+
+    &__link--disabled {
+        pointer-events: none;
+        color: lighten(colors.$secondary-color, 10%);
+    }
 }
