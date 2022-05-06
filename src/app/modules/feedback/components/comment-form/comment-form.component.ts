@@ -16,7 +16,8 @@ export class CommentFormComponent implements OnInit {
     text: FormControl = new FormControl({ value: '', disabled: false });
 
     ngOnInit(): void {
-        this.text.addValidators([Validators.maxLength(this.maxLength), Validators.minLength(1)]);
+        // eslint-disable-next-line @typescript-eslint/no-unused-expressions
+        this.maxLength === 0 ? this.text.addValidators([Validators.minLength(1)]) : this.text.addValidators([Validators.maxLength(this.maxLength), Validators.minLength(1)]);
     }
 
     get textLength() {
