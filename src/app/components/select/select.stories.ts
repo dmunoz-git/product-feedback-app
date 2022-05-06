@@ -1,6 +1,6 @@
 import { moduleMetadata } from '@storybook/angular';
 import { Story } from '@storybook/angular/types-6-0';
-import { UiSelectPanelComponent } from './select-panel/ui-select-panel.component';
+import { UiSelectPanelComponent } from './ui-select-panel.component';
 import { UiSelectModule } from './ui-select.module';
 
 // This exports the Stories group for this component

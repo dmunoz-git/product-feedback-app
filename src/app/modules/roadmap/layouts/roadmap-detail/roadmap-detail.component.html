@@ -1,0 +1,69 @@
+<section class="layout" *transloco="let t">
+    <ui-toolbar justify="between" class="toolbar">
+        <div class="toolbar__header">
+            <span class="back" (click)="goBack()">
+                <ui-icon class="back__icon" name="arrow-left"></ui-icon>
+                <span class="back__text">Go back!</span>
+            </span>
+            <h3 class="back__title text-white">Roadmap</h3>
+        </div>
+        <button ui-button color="primary" routerLink="/feedback/new">
+            <ui-icon name="plus"></ui-icon> {{ t('createFeedbackLabelButton') }}
+        </button>
+    </ui-toolbar>
+    <app-kanban-board class="board-margin">
+        <app-kanban-column [title]="'Planned (' + (feebacksByStatus('planned') | async)?.length + ')'" subtitle="Ideas prioritized for research" >
+            <app-kanban-card [color]="'link'" *ngFor="let feedback of feebacksByStatus('planned') | async" status="Planned">
+                <h3 kanban-card-title class="kanban-card__title" routerLink="/feedback/detail/{{ feedback.id }}">{{ feedback.title }}</h3>
+                <p kanban-card-text>{{ feedback.description }}</p>
+                <div class="kanban-card__footer">
+                    <ui-chip class="kanban-card__feature" [selectable]="false">{{ feedback.category | titlecase }}</ui-chip>
+
+                    <ui-counter
+                        class="kanban-card__counter"
+                        [value]="feedback.upvotes"
+                        [limitClicksTo]="1"
+                        [order]="'row'"
+                    ></ui-counter>
+                    <ui-icon class="kanban-card__comments" name="comments" ui-badge [value]="feedback.comments ? feedback.comments.length : 0"></ui-icon>
+                </div>
+            </app-kanban-card>
+        </app-kanban-column>
+
+        <app-kanban-column [title]="'In-progress (' + (feebacksByStatus('in-progress') | async)?.length + ')'" subtitle="Currently being developed">
+            <app-kanban-card [color]="'primary'" *ngFor="let feedback of feebacksByStatus('in-progress') | async" status="In Progress">
+                <h3 kanban-card-title class="kanban-card__title" routerLink="/feedback/detail/{{ feedback.id }}">{{ feedback.title }}</h3>
+                <p kanban-card-text>{{ feedback.description }}</p>
+                <div class="kanban-card__footer">
+                    <ui-chip class="kanban-card__feature" [selectable]="false">{{ feedback.category | titlecase }}</ui-chip>
+
+                    <ui-counter
+                        class="kanban-card__counter"
+                        [value]="feedback.upvotes"
+                        [limitClicksTo]="1"
+                        [order]="'row'"
+                    ></ui-counter>
+                    <ui-icon class="kanban-card__comments" name="comments" ui-badge [value]="feedback.comments ? feedback.comments.length : 0"></ui-icon>
+                </div>
+            </app-kanban-card>
+        </app-kanban-column>
+
+        <app-kanban-column [title]="'Live (' + (feebacksByStatus('live') | async)?.length + ')'" subtitle="Released features">
+            <app-kanban-card [color]="'tertiary'" *ngFor="let feedback of feebacksByStatus('live') | async" status="Live">
+                <h3 kanban-card-title class="kanban-card__title" routerLink="/feedback/detail/{{ feedback.id }}">{{ feedback.title }}</h3>
+                <p kanban-card-text>{{ feedback.description }}</p>
+                <div class="kanban-card__footer">
+                    <ui-chip class="kanban-card__feature" [selectable]="false">{{ feedback.category | titlecase }}</ui-chip>
+
+                    <ui-counter
+                        class="kanban-card__counter"
+                        [value]="feedback.upvotes"
+                        [limitClicksTo]="1"
+                        [order]="'row'"
+                    ></ui-counter>
+                    <ui-icon class="kanban-card__comments" name="comments" ui-badge [value]="feedback.comments ? feedback.comments.length : 0"></ui-icon>
+                </div>
+            </app-kanban-card>
+        </app-kanban-column>
+    </app-kanban-board>
+</section>

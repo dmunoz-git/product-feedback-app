@@ -13,6 +13,11 @@ const routes: Routes = [
     },
 
     {
+        path: 'roadmap',
+        loadChildren: () => import('./modules/roadmap/roadmap.module').then((m)=> m.RoadmapModule)
+    },
+
+    {
         path: '**',
         redirectTo: '',
     },

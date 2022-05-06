@@ -1,6 +1,6 @@
 import { OverlayModule } from '@angular/cdk/overlay';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { UiSelectPanelComponent } from './ui-select-panel.component';
+import { UiSelectPanelComponent } from '../ui-select-panel.component';
 
 describe('UiSelectPanelComponent', () => {
     let component: UiSelectPanelComponent;

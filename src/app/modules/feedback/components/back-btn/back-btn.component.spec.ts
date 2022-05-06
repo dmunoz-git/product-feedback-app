@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { UiIconModule } from '@shared/ui-components/icon/ui-icon.module';
+import { UiIconModule } from '@components/icon/ui-icon.module';
 import { BackBtnComponent } from './back-btn.component';
 
 describe('BackBtnComponent', () => {

@@ -1,8 +1,18 @@
-import { AfterViewInit, Component, ContentChildren, forwardRef, Input, QueryList, ViewEncapsulation } from '@angular/core';
+import {
+    AfterViewInit,
+    Component,
+    ContentChildren,
+    ElementRef,
+    forwardRef,
+    Input,
+    QueryList,
+    ViewChild,
+    ViewEncapsulation,
+} from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { fadeInOut } from '@shared/ui-components/animations/fade.animation';
-import { UiSelectOptionComponent } from '../select-option/ui-select-option.component';
-import { UiSelectService } from '../ui-select.service';
+import { fadeInOut } from '@components/animations/fade.animation';
+import { UiSelectOptionComponent } from './ui-select-option.component';
+import { UiSelectService } from './ui-select.service';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
@@ -23,11 +33,14 @@ export class UiSelectPanelComponent implements AfterViewInit, ControlValueAccess
     @Input() selected: string = '';
     @Input() placeholder: string = '';
     @Input() disabled: boolean = false;
+    @ViewChild('trigger') trigger!: ElementRef;
 
     @ContentChildren(UiSelectOptionComponent) options!: QueryList<UiSelectOptionComponent>;
 
     selectedOption!: UiSelectOptionComponent;
     displayedText: string = '';
+
+    _triggerRect: any = null;
 
     isDropdownOpen: boolean = false;
 
@@ -48,7 +61,7 @@ export class UiSelectPanelComponent implements AfterViewInit, ControlValueAccess
 
     toggleDropdown() {
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
-        this.isDropdownOpen ? (this.isDropdownOpen = false) : (this.isDropdownOpen = true);
+        this.isDropdownOpen ? this.onClose() : this.onOpened();
     }
 
     selectOption(option: UiSelectOptionComponent) {
@@ -61,6 +74,7 @@ export class UiSelectPanelComponent implements AfterViewInit, ControlValueAccess
     }
 
     onOpened() {
+        this._triggerRect = this.trigger?.nativeElement.getBoundingClientRect();
         this.isDropdownOpen = true;
         this.onTouchedFn();
     }
