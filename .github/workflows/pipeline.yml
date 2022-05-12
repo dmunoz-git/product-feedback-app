@@ -20,5 +20,8 @@ jobs:
         run: npm install
       - name: Linting the project
         run: npm run lint
+      - name: Running unit tests
+        run: npm run test:unit
       - name: Building the project
         run: npm run build
+      
