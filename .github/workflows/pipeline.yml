@@ -1,0 +1,21 @@
+name: Github actions for integration
+
+on: 
+  push:
+    branches:
+      - develop
+      - master
+    
+jobs:
+  install:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+         fetch-depth: 0
+      - uses: actions/setup-node@v1
+        run: npm install
+      - name: Linting your code
+        run: npm run lint
+      - name: Building your code
+        run: npm run build
