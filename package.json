@@ -57,6 +57,8 @@
     "@storybook/angular": "^6.4.18",
     "@storybook/builder-webpack5": "^6.4.18",
     "@storybook/manager-webpack5": "^6.4.18",
+    "@testing-library/angular": "^11.0.4",
+    "@testing-library/jest-dom": "^5.16.4",
     "@types/jest": "latest",
     "@types/node": "^12.11.1",
     "@typescript-eslint/eslint-plugin": "5.3.0",

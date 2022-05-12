@@ -1012,12 +1012,12 @@
         },
         {
             "name": "CommentAvatarDirective",
-            "id": "directive-CommentAvatarDirective-9317132de29572985ba9bef7ca572366eb71f13464f673a4af868320ff37d4a9de3027e9330683abb9a7067f1cea161f80e65e5724559724f55521118ee86378",
+            "id": "directive-CommentAvatarDirective-cb2fad86d5758570b13832fb0d416260a7ed4cbc2ad511b59ab032a1698297661e9de2c45c34059194eccd23e82f4b5a405cbab8a5fd7fd69bc42d4b2277b3ed",
             "file": "src/app/modules/feedback/components/comment/comment.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n\n@Directive({\n    selector: '[comment-text]',\n    host: {\n        class: 'comment__text',\n    },\n})\nexport class CommentTextDirective {}\n",
+            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n\n@Directive({\n    selector: '[comment-text]',\n    host: {\n        class: 'comment__text',\n    },\n})\nexport class CommentTextDirective {}\n\n@Directive({\n    selector: '[comments-replies]',\n    host: {\n        class: 'comment__replies'\n    }\n})export class CommentRepliesDirective{}",
             "selector": "[comment-avatar]",
             "providers": [],
             "inputsClass": [],
@@ -1058,12 +1058,12 @@
         },
         {
             "name": "CommentIdDirective",
-            "id": "directive-CommentIdDirective-9317132de29572985ba9bef7ca572366eb71f13464f673a4af868320ff37d4a9de3027e9330683abb9a7067f1cea161f80e65e5724559724f55521118ee86378",
+            "id": "directive-CommentIdDirective-cb2fad86d5758570b13832fb0d416260a7ed4cbc2ad511b59ab032a1698297661e9de2c45c34059194eccd23e82f4b5a405cbab8a5fd7fd69bc42d4b2277b3ed",
             "file": "src/app/modules/feedback/components/comment/comment.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n\n@Directive({\n    selector: '[comment-text]',\n    host: {\n        class: 'comment__text',\n    },\n})\nexport class CommentTextDirective {}\n",
+            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n\n@Directive({\n    selector: '[comment-text]',\n    host: {\n        class: 'comment__text',\n    },\n})\nexport class CommentTextDirective {}\n\n@Directive({\n    selector: '[comments-replies]',\n    host: {\n        class: 'comment__replies'\n    }\n})export class CommentRepliesDirective{}",
             "selector": "[comment-id]",
             "providers": [],
             "inputsClass": [],
@@ -1077,12 +1077,12 @@
         },
         {
             "name": "CommentNameDirective",
-            "id": "directive-CommentNameDirective-9317132de29572985ba9bef7ca572366eb71f13464f673a4af868320ff37d4a9de3027e9330683abb9a7067f1cea161f80e65e5724559724f55521118ee86378",
+            "id": "directive-CommentNameDirective-cb2fad86d5758570b13832fb0d416260a7ed4cbc2ad511b59ab032a1698297661e9de2c45c34059194eccd23e82f4b5a405cbab8a5fd7fd69bc42d4b2277b3ed",
             "file": "src/app/modules/feedback/components/comment/comment.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n\n@Directive({\n    selector: '[comment-text]',\n    host: {\n        class: 'comment__text',\n    },\n})\nexport class CommentTextDirective {}\n",
+            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n\n@Directive({\n    selector: '[comment-text]',\n    host: {\n        class: 'comment__text',\n    },\n})\nexport class CommentTextDirective {}\n\n@Directive({\n    selector: '[comments-replies]',\n    host: {\n        class: 'comment__replies'\n    }\n})export class CommentRepliesDirective{}",
             "selector": "[comment-name]",
             "providers": [],
             "inputsClass": [],
@@ -1095,13 +1095,32 @@
             "methodsClass": []
         },
         {
-            "name": "CommentTextDirective",
-            "id": "directive-CommentTextDirective-9317132de29572985ba9bef7ca572366eb71f13464f673a4af868320ff37d4a9de3027e9330683abb9a7067f1cea161f80e65e5724559724f55521118ee86378",
+            "name": "CommentRepliesDirective",
+            "id": "directive-CommentRepliesDirective-cb2fad86d5758570b13832fb0d416260a7ed4cbc2ad511b59ab032a1698297661e9de2c45c34059194eccd23e82f4b5a405cbab8a5fd7fd69bc42d4b2277b3ed",
             "file": "src/app/modules/feedback/components/comment/comment.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n\n@Directive({\n    selector: '[comment-text]',\n    host: {\n        class: 'comment__text',\n    },\n})\nexport class CommentTextDirective {}\n",
+            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n\n@Directive({\n    selector: '[comment-text]',\n    host: {\n        class: 'comment__text',\n    },\n})\nexport class CommentTextDirective {}\n\n@Directive({\n    selector: '[comments-replies]',\n    host: {\n        class: 'comment__replies'\n    }\n})export class CommentRepliesDirective{}",
+            "selector": "[comments-replies]",
+            "providers": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "propertiesClass": [],
+            "methodsClass": []
+        },
+        {
+            "name": "CommentTextDirective",
+            "id": "directive-CommentTextDirective-cb2fad86d5758570b13832fb0d416260a7ed4cbc2ad511b59ab032a1698297661e9de2c45c34059194eccd23e82f4b5a405cbab8a5fd7fd69bc42d4b2277b3ed",
+            "file": "src/app/modules/feedback/components/comment/comment.ts",
+            "type": "directive",
+            "description": "",
+            "rawdescription": "\n",
+            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n\n@Directive({\n    selector: '[comment-text]',\n    host: {\n        class: 'comment__text',\n    },\n})\nexport class CommentTextDirective {}\n\n@Directive({\n    selector: '[comments-replies]',\n    host: {\n        class: 'comment__replies'\n    }\n})export class CommentRepliesDirective{}",
             "selector": "[comment-text]",
             "providers": [],
             "inputsClass": [],
@@ -1961,7 +1980,7 @@
         },
         {
             "name": "CommentComponent",
-            "id": "component-CommentComponent-9317132de29572985ba9bef7ca572366eb71f13464f673a4af868320ff37d4a9de3027e9330683abb9a7067f1cea161f80e65e5724559724f55521118ee86378",
+            "id": "component-CommentComponent-cb2fad86d5758570b13832fb0d416260a7ed4cbc2ad511b59ab032a1698297661e9de2c45c34059194eccd23e82f4b5a405cbab8a5fd7fd69bc42d4b2277b3ed",
             "file": "src/app/modules/feedback/components/comment/comment.ts",
             "encapsulation": [
                 "ViewEncapsulation.None"
@@ -1990,20 +2009,20 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n\n@Directive({\n    selector: '[comment-text]',\n    host: {\n        class: 'comment__text',\n    },\n})\nexport class CommentTextDirective {}\n",
+            "sourceCode": "import { Component, Directive, HostBinding, ViewEncapsulation } from '@angular/core';\n\n@Component({\n    selector: 'app-comment',\n    templateUrl: './comment.component.html',\n    styleUrls: ['./comment.component.scss'],\n    encapsulation: ViewEncapsulation.None,\n})\nexport class CommentComponent {}\n\n@Directive({\n    selector: '[comment-avatar]',\n})\nexport class CommentAvatarDirective {\n    @HostBinding('class') class = 'comment__avatar';\n}\n\n@Directive({\n    selector: '[comment-name]',\n    host: {\n        class: 'comment__name',\n    },\n})\nexport class CommentNameDirective {}\n\n@Directive({\n    selector: '[comment-id]',\n    host: {\n        class: 'comment__id',\n    },\n})\nexport class CommentIdDirective {}\n\n@Directive({\n    selector: '[comment-text]',\n    host: {\n        class: 'comment__text',\n    },\n})\nexport class CommentTextDirective {}\n\n@Directive({\n    selector: '[comments-replies]',\n    host: {\n        class: 'comment__replies'\n    }\n})export class CommentRepliesDirective{}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use 'settings/colors';\n\n.comment {\n    display: flex;\n    align-items: flex-start;\n    gap: 2rem;\n\n    &__name {\n        margin: 0;\n    }\n\n    &__id {\n        font-size: 0.875rem;\n        color: colors.$text-color;\n        margin: 0;\n    }\n\n    &__avatar {\n        width: min(100%, 2.5rem);\n        height: min(100%, 2.5rem);\n        border-radius: 50%;\n    }\n\n    &__text {\n        margin-bottom: 0;\n    }\n}\n",
+                    "data": "@use 'settings/colors';\n\n.comment {\n    display: grid;\n    grid-template-columns:  2.5rem auto;\n    grid-template-rows: 2.5rem auto;\n    align-items: flex-start;\n    row-gap: 1.0625rem;\n\n    &__name {\n        margin: 0;\n    }\n\n    &__id {\n        font-size: 0.875rem;\n        color: colors.$text-color;\n        margin: 0;\n    }\n\n    &__avatar {\n        width: min(100%, 2.5rem);\n        height: min(100%, 2.5rem);\n        border-radius: 50%;\n    }\n\n    &__text {\n        margin: 0;\n    }\n\n    &__body {\n        grid-column: 2;\n        margin-left: 2rem;\n    }\n\n    &__replies{\n       display: flex;\n       flex-direction: column;\n       gap: 2rem;\n       padding: 2rem 0;\n    }\n\n    &__header {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n        margin-left: 2rem;\n    }\n}\n",
                     "styleUrl": "./comment.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<div class=\"comment\">\n    <ng-content select=\"[comment-avatar]\"></ng-content>\n    <div class=\"comment__body\">\n        <div class=\"comment__user\">\n            <ng-content select=\"[comment-name]\"></ng-content>\n            <ng-content select=\"[comment-id]\"></ng-content>\n        </div>\n        <ng-content select=\"[comment-text]\"></ng-content>\n    </div>\n</div>\n"
+            "templateData": "<div class=\"comment\">\n    <ng-content select=\"[comment-avatar]\"></ng-content>\n\n    <div class=\"comment__header\">\n        <ng-content select=\"[comment-avatar]\"></ng-content>\n            <div class=\"comment__user\">\n                <ng-content select=\"[comment-name]\"></ng-content>\n                <ng-content select=\"[comment-id]\"></ng-content>\n            </div>\n            <ng-content select=\"[comment-reply-btn]\"></ng-content>\n    </div>\n\n    <div class=\"comment__body\">\n        <ng-content select=\"[comment-text]\"></ng-content>\n        <ng-content class=\"[comment-replies]\"></ng-content>\n    </div>\n</div>\n"
         },
         {
             "name": "CommentFormComponent",
-            "id": "component-CommentFormComponent-80eebc0c4ac885484eb5987df09112e5af47572474c0bd6427b65fa2486b35ca460068e3c833033da3e8834127aa5c3801f7a76367919b5e10d3fe670c156b10",
+            "id": "component-CommentFormComponent-1d6d9d0b6e30d06dcf65dc81c6bd5548602a242343ef6245c560fc3e3fe68f341ab3c18cbde88149fabdd91262f6b3e783cfbaddd46bf00b9c9448ffbe940aab",
             "file": "src/app/modules/feedback/components/comment-form/comment-form.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2096,7 +2115,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26,
+                    "line": 27,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -2108,11 +2127,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { FormControl, Validators } from '@angular/forms';\n\n@Component({\n    selector: 'app-comment-form',\n    templateUrl: './comment-form.component.html',\n    styleUrls: ['./comment-form.component.scss'],\n})\nexport class CommentFormComponent implements OnInit {\n    @Input() maxLength: number = 0; //Whitout limit\n    @Input() sectionLabel: string = 'New comment';\n    @Input() charCounterLabel: string = 'characters left';\n    @Input() buttonLabel: string = 'Add comment';\n    @Output() comment: EventEmitter<string> = new EventEmitter<string>();\n\n    text: FormControl = new FormControl({ value: '', disabled: false });\n\n    ngOnInit(): void {\n        this.text.addValidators([Validators.maxLength(this.maxLength), Validators.minLength(1)]);\n    }\n\n    get textLength() {\n        return this.text.value.length;\n    }\n\n    sendComment() {\n        if (this.text.valid) {\n            this.comment.emit(this.text.value);\n            this.text.setValue('');\n        }\n    }\n}\n",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { FormControl, Validators } from '@angular/forms';\n\n@Component({\n    selector: 'app-comment-form',\n    templateUrl: './comment-form.component.html',\n    styleUrls: ['./comment-form.component.scss'],\n})\nexport class CommentFormComponent implements OnInit {\n    @Input() maxLength: number = 0; //Whitout limit\n    @Input() sectionLabel: string = 'New comment';\n    @Input() charCounterLabel: string = 'characters left';\n    @Input() buttonLabel: string = 'Add comment';\n    @Output() comment: EventEmitter<string> = new EventEmitter<string>();\n\n    text: FormControl = new FormControl({ value: '', disabled: false });\n\n    ngOnInit(): void {\n        // eslint-disable-next-line @typescript-eslint/no-unused-expressions\n        this.maxLength === 0 ? this.text.addValidators([Validators.minLength(1)]) : this.text.addValidators([Validators.maxLength(this.maxLength), Validators.minLength(1)]);\n    }\n\n    get textLength() {\n        return this.text.value.length;\n    }\n\n    sendComment() {\n        if (this.text.valid) {\n            this.comment.emit(this.text.value);\n            this.text.setValue('');\n        }\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use 'settings/colors';\n\n.comment-form {\n    background: white;\n    border-radius: 0.625rem;\n    padding: 1.5rem 2.125rem;\n    margin-top: 1.5rem;\n    margin-bottom: 8.5625rem;\n\n    &__footer {\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n    }\n\n    &__textarea {\n        resize: none;\n        max-height: 5rem;\n    }\n\n    &--error {\n        color: colors.$outline-error-color;\n    }\n}\n",
+                    "data": "@use 'settings/colors';\n\n.comment-form {\n    background: white;\n    border-radius: 0.625rem;\n    padding: 1.5rem 2.125rem;\n    margin-top: 1.5rem;\n    margin-bottom: 1.5625rem;\n    \n    &__footer {\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n    }\n\n    &__textarea {\n        resize: none;\n        max-height: 5rem;\n    }\n\n    &--error {\n        color: colors.$outline-error-color;\n    }\n}\n",
                     "styleUrl": "./comment-form.component.scss"
                 }
             ],
@@ -2127,7 +2146,7 @@
                         "name": "textLength",
                         "type": "",
                         "returnType": "",
-                        "line": 22
+                        "line": 23
                     }
                 }
             },
@@ -2219,7 +2238,7 @@
         },
         {
             "name": "FeedbackDetailComponent",
-            "id": "component-FeedbackDetailComponent-f40f68f1e3fb2db4f967ac405cd6bf9c66686202af3defbfeec1add935f22ecfe4ce778718e76771b3da7c9b9d5372914009b37d6b220158986c9487685b1b29",
+            "id": "component-FeedbackDetailComponent-0146a2e331a9d8f526f912a34c32b92b7f0dcfa1c5c8f8f4526b1df746fdeb2827e538047a29e5c2fa800edd1b64b016ab482a82063c5f8e2cd87dfcc7b6c4ae",
             "file": "src/app/modules/feedback/layouts/feedback-detail/feedback-detail.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2282,7 +2301,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 34,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2303,7 +2322,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 20,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -2313,7 +2332,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 23,
+                    "line": 24,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -2325,11 +2344,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnDestroy, OnInit } from '@angular/core';\nimport { ActivatedRoute } from '@angular/router';\nimport { FeedbackService } from '@core/http/feedback.service';\nimport { Feedback } from '@core/models/feedback.model';\nimport { Subscription } from 'rxjs';\n\n@Component({\n    selector: 'app-feedback-detail',\n    templateUrl: './feedback-detail.component.html',\n    styleUrls: ['./feedback-detail.component.scss'],\n})\nexport class FeedbackDetailComponent implements OnInit, OnDestroy {\n    subscription: Subscription = new Subscription();\n    id: number = 0;\n    feedback!: Feedback;\n\n    constructor(private readonly feedbackService: FeedbackService, private route: ActivatedRoute) {}\n\n    ngOnDestroy(): void {\n        this.subscription.unsubscribe();\n    }\n\n    ngOnInit(): void {\n        this.id = Number(this.route.snapshot.paramMap.get('id'));\n\n        this.subscription.add(\n            this.feedbackService.getFeedbackDetail(this.id).subscribe((feedback) => {\n                this.feedback = feedback as Feedback;\n            })\n        );\n    }\n\n    createComment(comment: string) {\n        this.subscription.add(this.feedbackService.createComment(this.id, comment).subscribe(() => {}));\n    }\n}\n",
+            "sourceCode": "import { Component, OnDestroy, OnInit } from '@angular/core';\nimport { ActivatedRoute } from '@angular/router';\nimport { FeedbackService } from '@core/http/feedback.service';\nimport { Feedback } from '@core/models/feedback.model';\nimport { Subscription } from 'rxjs';\n\n@Component({\n    selector: 'app-feedback-detail',\n    templateUrl: './feedback-detail.component.html',\n    styleUrls: ['./feedback-detail.component.scss'],\n})\nexport class FeedbackDetailComponent implements OnInit, OnDestroy {\n    subscription: Subscription = new Subscription();\n    id: number = 0;\n    feedback!: Feedback;\n\n\n    constructor(private readonly feedbackService: FeedbackService, private route: ActivatedRoute) {}\n\n    ngOnDestroy(): void {\n        this.subscription.unsubscribe();\n    }\n\n    ngOnInit(): void {\n        this.id = Number(this.route.snapshot.paramMap.get('id'));\n\n        this.subscription.add(\n            this.feedbackService.getFeedbackDetail(this.id).subscribe((feedback) => {\n                this.feedback = feedback as Feedback;\n            })\n        );\n    }\n\n    createComment(comment: string) {\n        this.subscription.add(this.feedbackService.createComment(this.id, comment).subscribe(() => {}));\n    }\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use 'settings/colors';\n\n.layout {\n    margin: 3.9375rem auto 0 auto;\n    width: min(45.625rem, 100%);\n}\n\n.toolbar {\n    margin-bottom: 0.625rem;\n}\n\n.section {\n    background: white;\n    border-radius: 0.625rem;\n    padding: 1.5rem 2.125rem;\n    margin-top: 1.5rem;\n}\n\n.comment-form {\n    background: white;\n    border-radius: 0.625rem;\n    padding: 1.5rem 2.125rem;\n    margin-top: 1.5rem;\n    margin-bottom: 8.5625rem;\n\n    &__footer {\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n    }\n\n    &__textarea {\n        resize: none;\n        max-height: 5rem;\n    }\n}\n\n.divider {\n    width: 100%;\n    height: 1px;\n    color: colors.$text-color;\n    margin: 2rem 0;\n}\n",
+                    "data": "@use 'settings/colors';\n\n.layout {\n    margin: 3.9375rem auto 0 auto;\n    padding: 5.875rem 1.5rem 0 1.5rem;\n    width: min(53.625rem, 100%);\n}\n\n.toolbar {\n    margin-bottom: 0.625rem;\n}\n\n.section {\n    background: white;\n    border-radius: 0.625rem;\n    padding: 1.5rem 2.125rem;\n    margin-top: 1.5rem;\n}\n\n.comment-form {\n    background: white;\n    border-radius: 0.625rem;\n    padding: 1.5rem 2.125rem;\n    margin-top: 1.5rem;\n    margin-bottom: 8.5625rem;\n\n    &__footer {\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n    }\n\n    &__textarea {\n        resize: none;\n        max-height: 5rem;\n    }\n}\n\n.divider {\n    width: 100%;\n    height: 1px;\n    color: colors.$text-color;\n    margin: 2rem 0;\n}\n",
                     "styleUrl": "./feedback-detail.component.scss"
                 }
             ],
@@ -2379,7 +2398,7 @@
                 "OnInit",
                 "OnDestroy"
             ],
-            "templateData": "<section class=\"layout\">\n    <ui-toolbar class=\"toolbar\" justify=\"between\" background=\"transparent\">\n        <app-back-btn>Go Back</app-back-btn>\n        <button ui-button color=\"secondary\" routerLink=\"/feedback/edit/{{ feedback.id }}\" data-cy=\"edit\">Edit Feedback</button>\n    </ui-toolbar>\n    <app-feedback-card>\n        <ui-counter feedback-card-aside class=\"hide-mobile\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n        <ng-container feedback-card-aside>\n            <section class=\"show-only-mobile\">\n                <div class=\"feedback-aside-mobile\">\n                    <ui-counter order=\"row\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                    <ui-icon name=\"comments\" ui-badge></ui-icon>\n                </div>\n            </section>\n        </ng-container>\n        <h3 feedback-card-title data-cy=\"title\">{{ feedback.title }}</h3>\n        <div feedback-card-content>\n            <p class=\"text\" data-cy=\"description\">{{ feedback.description }}</p>\n            <ui-icon class=\"hide-mobile\" name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n        </div>\n        <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n    </app-feedback-card>\n    <section class=\"section\" *ngIf=\"feedback.comments\">\n        <div *ngFor=\"let comment of feedback.comments; let i = index\">\n            <app-comment>\n                <img src=\"{{ comment.user.image }}\" alt=\"{{ comment.user.name }}\" comment-avatar />\n                <h4 comment-name>{{ comment.user.name | titlecase }}</h4>\n                <span comment-id>@{{ comment.user.username }}</span>\n                <p comment-text>{{ comment.content }}</p>\n            </app-comment>\n            <ui-divider *ngIf=\"i < feedback.comments!.length - 1\"></ui-divider>\n        </div>\n    </section>\n    <app-comment-form [maxLength]=\"225\" (comment)=\"createComment($event)\"></app-comment-form>\n</section>\n"
+            "templateData": "<section class=\"layout\">\n    <ui-toolbar class=\"toolbar\" justify=\"between\" background=\"transparent\">\n        <app-back-btn>Go Back</app-back-btn>\n        <button ui-button color=\"secondary\" routerLink=\"/feedback/edit/{{ feedback.id }}\" data-cy=\"edit\">Edit Feedback</button>\n    </ui-toolbar>\n    <app-feedback-card>\n        <ui-counter feedback-card-aside class=\"hide-mobile\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n        <ng-container feedback-card-aside>\n            <section class=\"show-only-mobile\">\n                <div class=\"feedback-aside-mobile\">\n                    <ui-counter order=\"row\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                    <ui-icon name=\"comments\" ui-badge></ui-icon>\n                </div>\n            </section>\n        </ng-container>\n        <h3 feedback-card-title data-cy=\"title\">{{ feedback.title }}</h3>\n        <div feedback-card-content>\n            <p class=\"text\" data-cy=\"description\">{{ feedback.description }}</p>\n            <ui-icon class=\"hide-mobile\" name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n        </div>\n        <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n    </app-feedback-card>\n    <section class=\"section\" *ngIf=\"feedback.comments\">\n        <div *ngFor=\"let comment of feedback.comments; let i = index\">\n            <app-comment>\n                <img src=\"{{ comment.user.image }}\" alt=\"{{ comment.user.name }}\" comment-avatar />\n                <h4 comment-name>{{ comment.user.name | titlecase }}</h4>\n                <button ui-button comment-reply-btn color=\"light\">Reply</button>\n                <span comment-id>@{{ comment.user.username }}</span>\n                <p comment-text>{{ comment.content }}</p>\n                <div comments-replies *ngIf=\"comment.replies?.length! > 0\">\n                    <app-comment *ngFor=\"let reply of comment.replies\">\n                        <img comment-avatar src=\"{{ reply.user.image }}\" alt=\"{{ reply.user.name }}\"  />\n                        <h4 comment-name>{{ reply.user.name | titlecase }}</h4>\n                        <button ui-button comment-reply-btn color=\"light\">Reply</button>\n                        <span comment-id>@{{ reply.user.username }}</span>\n                        <p comment-text><span class=\"text-primary\">@{{ comment.user.username }}</span> {{ reply.content }}</p>\n                    </app-comment>\n                </div>\n            </app-comment>\n            <ui-divider *ngIf=\"i < feedback.comments!.length - 1\"></ui-divider>\n        </div>\n    </section>\n    <app-comment-form [maxLength]=\"225\" (comment)=\"createComment($event)\"></app-comment-form>\n</section>\n"
         },
         {
             "name": "FeedbackFormComponent",
@@ -2957,7 +2976,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div *transloco=\"let t\" class=\"layout\">\n    <aside class=\"aside\">\n        <app-banner>\n            <h2 app-banner-title class=\"text-white\">{{ t('title') }}</h2>\n            <span app-banner-subtitle>{{ t('subtitle') }}</span>\n        </app-banner>\n        <app-category-filter (categorySelected)=\"filterFeedbacks($event)\"></app-category-filter>\n        <app-roadmap linkLabel=\"View\" title=\"Roadmap\" [redirectPath]=\"'/roadmap/' + category\">\n            <app-roadmap-item color=\"primary\" [amound]=\"(feebacksByStatus('planned') | async)!.length\">Planned</app-roadmap-item>\n            <app-roadmap-item color=\"tertiary\" [amound]=\"(feebacksByStatus('in-progress') | async)!.length\">In-Progress</app-roadmap-item>\n            <app-roadmap-item color=\"link\" [amound]=\"(feebacksByStatus('live') | async)!.length\">Lived</app-roadmap-item>\n        </app-roadmap>\n    </aside>\n    <main class=\"main\">\n        <ui-toolbar class=\"toolbar\" justify=\"between\">\n            <div class=\"toolbar__header\">\n                <img src=\"/assets/images/suggestions/icon-suggestions.svg\" alt=\"\" />\n                <h3 class=\"text-white\">{{ (feedbacks$ | async)?.length }} {{ t('toolbarTitle') }}</h3>\n            </div>\n            <button ui-button color=\"primary\" routerLink=\"/feedback/new\">\n                <ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}\n            </button>\n        </ui-toolbar>\n        <section class=\"feedback-list\" *ngIf=\"(feedbacks$ | async)!.length > 0\" data-cy=\"feedback-list\">\n            <app-feedback-card class=\"pointer\" *ngFor=\"let feedback of feedbacks$ | async\" routerLink=\"/feedback/detail/{{ feedback.id }}\">\n                <ui-counter feedback-card-aside class=\"hide-mobile\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                <ng-container feedback-card-aside>\n                    <section class=\"show-only-mobile\">\n                        <div class=\"feedback-aside-mobile\">\n                            <ui-counter order=\"row\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                            <ui-icon name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n                        </div>\n                    </section>\n                </ng-container>\n                <h3 feedback-card-title>{{ feedback.title }}</h3>\n                <div feedback-card-content>\n                    <p class=\"text\">{{ feedback.description }}</p>\n                    <ui-icon\n                        class=\"hide-mobile\"\n                        name=\"comments\"\n                        ui-badge\n                        [value]=\"feedback.comments ? feedback.comments.length : 0\"\n                    ></ui-icon>\n                </div>\n                <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n            </app-feedback-card>\n        </section>\n        <app-empty-feedbacks *ngIf=\"(feedbacks$ | async)!.length === 0\">\n            <h1 empty-feedbacks-title>{{ t('emptyFeedbackList.title') }}</h1>\n            <p empty-feedbacks-body>{{ t('emptyFeedbackList.description') }}</p>\n            <button ui-button color=\"primary\" empty-feedbacks-button routerLink=\"/feedback/new\">\n                <ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}\n            </button>\n        </app-empty-feedbacks>\n    </main>\n</div>\n"
+            "templateData": "<div *transloco=\"let t\" class=\"layout\">\n    <aside class=\"aside\">\n        <app-banner>\n            <h2 app-banner-title class=\"text-white\">{{ t('title') }}</h2>\n            <span app-banner-subtitle>{{ t('subtitle') }}</span>\n        </app-banner>\n        <app-category-filter (categorySelected)=\"filterFeedbacks($event)\"></app-category-filter>\n        <app-roadmap linkLabel=\"View\" title=\"Roadmap\" [redirectPath]=\"'/roadmap/' + category\" [disabled]=\"((feebacksByStatus('planned') | async)!.length + (feebacksByStatus('in-progress') | async)!.length + (feebacksByStatus('live') | async)!.length) === 0\">\n            <app-roadmap-item color=\"primary\" [amound]=\"(feebacksByStatus('planned') | async)!.length\">Planned</app-roadmap-item>\n            <app-roadmap-item color=\"tertiary\" [amound]=\"(feebacksByStatus('in-progress') | async)!.length\">In-Progress</app-roadmap-item>\n            <app-roadmap-item color=\"link\" [amound]=\"(feebacksByStatus('live') | async)!.length\">Lived</app-roadmap-item>\n        </app-roadmap>\n    </aside>\n    <main class=\"main\">\n        <ui-toolbar class=\"toolbar\" justify=\"between\">\n            <div class=\"toolbar__header\">\n                <img src=\"/assets/images/suggestions/icon-suggestions.svg\" alt=\"\" />\n                <h3 class=\"text-white\">{{ (feedbacks$ | async)?.length }} {{ t('toolbarTitle') }}</h3>\n            </div>\n            <button ui-button color=\"primary\" routerLink=\"/feedback/new\">\n                <ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}\n            </button>\n        </ui-toolbar>\n        <section class=\"feedback-list\" *ngIf=\"(feedbacks$ | async)!.length > 0\" data-cy=\"feedback-list\">\n            <app-feedback-card class=\"pointer\" *ngFor=\"let feedback of feedbacks$ | async\" routerLink=\"/feedback/detail/{{ feedback.id }}\">\n                <ui-counter feedback-card-aside class=\"hide-mobile\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                <ng-container feedback-card-aside>\n                    <section class=\"show-only-mobile\">\n                        <div class=\"feedback-aside-mobile\">\n                            <ui-counter order=\"row\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                            <ui-icon name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n                        </div>\n                    </section>\n                </ng-container>\n                <h3 feedback-card-title>{{ feedback.title }}</h3>\n                <div feedback-card-content>\n                    <p class=\"text\">{{ feedback.description }}</p>\n                    <ui-icon\n                        class=\"hide-mobile\"\n                        name=\"comments\"\n                        ui-badge\n                        [value]=\"feedback.comments ? feedback.comments.length : 0\"\n                    ></ui-icon>\n                </div>\n                <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n            </app-feedback-card>\n        </section>\n        <app-empty-feedbacks *ngIf=\"(feedbacks$ | async)!.length === 0\">\n            <h1 empty-feedbacks-title>{{ t('emptyFeedbackList.title') }}</h1>\n            <p empty-feedbacks-body>{{ t('emptyFeedbackList.description') }}</p>\n            <button ui-button color=\"primary\" empty-feedbacks-button routerLink=\"/feedback/new\">\n                <ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}\n            </button>\n        </app-empty-feedbacks>\n    </main>\n</div>\n"
         },
         {
             "name": "KanbanBoardComponent",
@@ -3142,8 +3161,120 @@
             "templateData": "<section class=\"kanban-column\">\n    <div class=\"kanban-column__header\">\n        <h3 class=\"kanban-column__title\">{{title}}</h3>\n        <span class=\"kanban-column__subtitle\">{{subtitle}}</span>\n    </div>\n    <div class=\"kanban-column__row\">\n        <ng-content></ng-content>\n    </div>\n</section>"
         },
         {
+            "name": "ReplyComponent",
+            "id": "component-ReplyComponent-e93e872a35c6a576faf571625838d01c7381985c6970499a564a00660df418a05bf2c037944943120ace8bb42e6d6d9aaab6c6557c1e281ca58af03836f80f24",
+            "file": "src/app/modules/feedback/components/reply/reply.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "app-reply",
+            "styleUrls": [
+                "./reply.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./reply.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "maxLength",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "number",
+                    "decorators": []
+                },
+                {
+                    "name": "placeholder",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "postBtnLabel",
+                    "defaultValue": "\"Post\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "post",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "EventEmitter<string>"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "text",
+                    "defaultValue": "new FormControl({value:'', disabled: false})",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "FormControl",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "postReply",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 22,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';\nimport { FormControl, Validators } from '@angular/forms';\n\n@Component({\n  selector: 'app-reply',\n  templateUrl: './reply.component.html',\n  styleUrls: ['./reply.component.scss']\n})\nexport class ReplyComponent implements OnInit {\n  @Input() postBtnLabel: string = \"Post\"\n  @Input() placeholder: string = \"\";\n  @Input() maxLength: number = 0; //Without Limit\n  @Output() post: EventEmitter<string> = new EventEmitter<string>();\n\n  text: FormControl = new FormControl({value:'', disabled: false});\n\n  ngOnInit(): void {\n    // eslint-disable-next-line @typescript-eslint/no-unused-expressions\n    this.maxLength === 0 ? this.text.addValidators([Validators.minLength(1)]) : this.text.addValidators([Validators.maxLength(this.maxLength), Validators.minLength(1)]);\n  }\n\n  postReply() {\n    if (this.text.valid) {\n        this.post.emit(this.text.value);\n    }\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ":host {\n    display: block;\n}\n\n.reply {\n    display: flex;\n    align-items: flex-start;\n    gap: 1rem;\n\n    &__text {\n        margin: 0;\n        min-height: 5rem;\n        resize: none;\n    }\n\n    &__button{\n        min-width: 7.3125rem;\n    }\n}",
+                    "styleUrl": "./reply.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"reply\">\n    <textarea  uiInput [formControl]=\"text\" class=\"reply__text\" placeholder=\"{{placeholder}}\"></textarea>\n    <button ui-button color=\"primary\" class=\"reply__button\" (click)=\"postReply()\">{{postBtnLabel}}</button>\n</div>"
+        },
+        {
             "name": "RoadmapComponent",
-            "id": "component-RoadmapComponent-f7d1b50565cc93738d2bf31691f4626d76827d03d5ac3a1c7dedac7d98eaf53f15d61744f3b9da61a9724e275c54b870ba54cb167eab334e36f72e784296f30b",
+            "id": "component-RoadmapComponent-02ee3b8255a1e4c5aca81214f7d5bca30e5b4f80865ba6b01b28bde9ecd56418ca8f2737326a3ad46e059bde03b9ca7b0d1ad5e491a53bfe78ebf8bcdc061004",
             "file": "src/app/modules/home/components/roadmap/roadmap.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3160,6 +3291,15 @@
             ],
             "viewProviders": [],
             "inputsClass": [
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                },
                 {
                     "name": "linkLabel",
                     "defaultValue": "\"\"",
@@ -3198,20 +3338,20 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-roadmap',\n  templateUrl: './roadmap.component.html',\n  styleUrls: ['./roadmap.component.scss']\n})\nexport class RoadmapComponent {\n  @Input() title: string = \"\";\n  @Input() linkLabel: string = \"\";\n  @Input() redirectPath: string = '';\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\n\n@Component({\n  selector: 'app-roadmap',\n  templateUrl: './roadmap.component.html',\n  styleUrls: ['./roadmap.component.scss']\n})\nexport class RoadmapComponent {\n  @Input() title: string = \"\";\n  @Input() linkLabel: string = \"\";\n  @Input() redirectPath: string = '';\n  @Input() disabled: boolean = false;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "@use 'settings/colors';\n\n:host {\n    display: block;\n}\n\n.roadmap {\n    background: colors.$white-color;\n    border-radius: 0.625rem;\n    padding: 1.1875rem 1.5rem;\n\n    &__header {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n    }\n\n    &__title {\n        margin: 0;\n    }\n\n    &__list {\n        padding-left: 0;\n        margin: 1rem 0 0 0;\n\n    }\n\n    &__item{\n        display: flex;\n        width: 100%;\n    }\n\n    &__counter{\n        margin-left: auto;\n    }\n\n    &__status {\n        display: flex;\n        align-items: center;\n        gap: 1rem;\n    \n        &::before{\n            content: \"\";\n            display: inline-block;\n            width: 8px;\n            height: 8px;\n            background: colors.$text-color;\n            border-radius: 50%;\n        }\n\n        &--planned::before{\n            background: colors.$tertiary-color;\n        }\n\n        &--progress::before{\n            background: colors.$primary-color;\n        }\n\n        &--live::before{\n            background: colors.$link-hover-color;\n        }\n\n        &:not(:last-child) {\n            margin-bottom: 0.5rem;\n        }\n    }\n\n    &__counter {\n        color: colors.$title-color;\n        font-weight: bold;\n    }\n}",
+                    "data": "@use 'settings/colors';\n\n:host {\n    display: block;\n}\n\n.roadmap {\n    background: colors.$white-color;\n    border-radius: 0.625rem;\n    padding: 1.1875rem 1.5rem;\n\n    &__header {\n        display: flex;\n        justify-content: space-between;\n        align-items: center;\n    }\n\n    &__title {\n        margin: 0;\n    }\n\n    &__list {\n        padding-left: 0;\n        margin: 1rem 0 0 0;\n\n    }\n\n    &__item{\n        display: flex;\n        width: 100%;\n    }\n\n    &__counter{\n        margin-left: auto;\n    }\n\n    &__status {\n        display: flex;\n        align-items: center;\n        gap: 1rem;\n    \n        &::before{\n            content: \"\";\n            display: inline-block;\n            width: 8px;\n            height: 8px;\n            background: colors.$text-color;\n            border-radius: 50%;\n        }\n\n        &--planned::before{\n            background: colors.$tertiary-color;\n        }\n\n        &--progress::before{\n            background: colors.$primary-color;\n        }\n\n        &--live::before{\n            background: colors.$link-hover-color;\n        }\n\n        &:not(:last-child) {\n            margin-bottom: 0.5rem;\n        }\n    }\n\n    &__counter {\n        color: colors.$title-color;\n        font-weight: bold;\n    }\n\n    &__link--disabled {\n        pointer-events: none;\n        color: lighten(colors.$secondary-color, 10%);\n    }\n}",
                     "styleUrl": "./roadmap.component.scss"
                 }
             ],
             "stylesData": "",
-            "templateData": "<article class=\"roadmap\">\n    <div class=\"roadmap__header\">\n        <h3 class=\"roadmap__title\">{{title}}</h3>\n        <a class=\"roadmap__link\" href=\"{{redirectPath}}\">{{linkLabel}}</a>\n    </div>\n    <div class=\"roadmap__body\">\n        <ul class=\"roadmap__list\">\n            <ng-content></ng-content>\n        </ul>\n    </div>\n</article>"
+            "templateData": "<article class=\"roadmap\">\n    <div class=\"roadmap__header\">\n        <h3 class=\"roadmap__title\">{{title}}</h3>\n        <a class=\"roadmap__link\" href=\"{{redirectPath}}\" [class.roadmap__link--disabled]=\"disabled\">{{linkLabel}}</a>\n    </div>\n    <div class=\"roadmap__body\">\n        <ul class=\"roadmap__list\">\n            <ng-content></ng-content>\n        </ul>\n    </div>\n</article>"
         },
         {
             "name": "RoadmapDetailComponent",
-            "id": "component-RoadmapDetailComponent-b556c18d1faa8c315569773321624a8fa3d193d8c172c132d85250edb7e2743bc8a8cb2e4c68f6db2f660369637e6d3a3b0d47624affac0d2dc0e27585e1ae92",
+            "id": "component-RoadmapDetailComponent-5b91f2477bc02ce2cd60034a6e1da356198b21badddb5439bc64d2a508ec4d8084b389791627e1ed6f4b0702a3838e7b6387360b861c594348ae1dc0f5891984",
             "file": "src/app/modules/roadmap/layouts/roadmap-detail/roadmap-detail.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -3229,18 +3369,28 @@
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [
+            "propertiesClass": [
                 {
-                    "name": "back",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 15,
+                    "name": "category",
+                    "defaultValue": "'all'",
                     "deprecated": false,
-                    "deprecationMessage": ""
+                    "deprecationMessage": "",
+                    "type": "string | null",
+                    "optional": false,
+                    "description": "",
+                    "line": 14
                 },
+                {
+                    "name": "feedbacks$",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Observable<Feedback[]>",
+                    "optional": false,
+                    "description": "",
+                    "line": 15
+                }
+            ],
+            "methodsClass": [
                 {
                     "name": "feebacksByStatus",
                     "args": [
@@ -3254,7 +3404,7 @@
                     "optional": false,
                     "returnType": "any",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 27,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -3268,6 +3418,57 @@
                             }
                         }
                     ]
+                },
+                {
+                    "name": "getFeedbacksFiltered",
+                    "args": [
+                        {
+                            "name": "category",
+                            "type": "string | null",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "Observable<Feedback[]>",
+                    "typeParameters": [],
+                    "line": 31,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "modifierKind": [
+                        121
+                    ],
+                    "jsdoctags": [
+                        {
+                            "name": "category",
+                            "type": "string | null",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "goBack",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 23,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 18,
+                    "deprecated": false,
+                    "deprecationMessage": ""
                 }
             ],
             "deprecated": false,
@@ -3277,11 +3478,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { Location } from '@angular/common';\nimport { map } from 'rxjs';\nimport { FeedbackService } from '@core/http/feedback.service';\n\n@Component({\n  selector: 'app-roadmap-detail',\n  templateUrl: './roadmap-detail.component.html',\n  styleUrls: ['./roadmap-detail.component.scss']\n})\nexport class RoadmapDetailComponent  {\n\n  constructor(private location: Location, private feedbacks: FeedbackService) {}\n\n    back() {\n        this.location.back();\n    }\n\n    feebacksByStatus(status: string) {\n      return this.feedbacks.getFeedbackList().pipe(map(feedbacks => feedbacks.filter(feedback => feedback.status === status)));\n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { Location } from '@angular/common';\nimport { map, Observable } from 'rxjs';\nimport { FeedbackService } from '@core/http/feedback.service';\nimport { ActivatedRoute } from '@angular/router';\nimport { Feedback } from '@core/models/feedback.model';\n\n@Component({\n  selector: 'app-roadmap-detail',\n  templateUrl: './roadmap-detail.component.html',\n  styleUrls: ['./roadmap-detail.component.scss']\n})\nexport class RoadmapDetailComponent implements OnInit {\n  category: string | null = 'all';\n  feedbacks$!: Observable<Feedback[]>\n  constructor(private location: Location, private feedbacks: FeedbackService, private route: ActivatedRoute) {}\n\n  ngOnInit(): void {\n    this.category = this.route.snapshot.paramMap.get('category');\n    this.feedbacks$ = this.category !== 'all' ? this.getFeedbacksFiltered(this.category) : this.feedbacks.getFeedbackList();\n  }\n\n  goBack() {\n    this.location.back();\n  }\n\n  feebacksByStatus(status: string) {\n      return this.feedbacks$.pipe(map(feedbacks => feedbacks.filter(feedback => feedback.status === status)));\n  }\n\n  private getFeedbacksFiltered(category: string | null): Observable<Feedback[]> {\n    return this.feedbacks\n        .getFeedbackList()\n        .pipe(map((feedbacks: Feedback[]) => feedbacks.filter((feedback: Feedback) => feedback.category === category)));\n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "\n.layout {\n    display: flex;\n    flex-direction: column;\n    gap: 2.625rem;\n    \n    margin: 4.875rem auto 0 auto;\n    width: min(69.375rem, 100%);\n    padding: 0 1.5rem;\n}\n\n.back {\n    display: flex;\n    justify-items: center;\n    gap: 1.2294rem;\n    font-weight: bold;\n    cursor: pointer;\n\n    &:hover {\n        text-decoration: underline;\n    }\n\n    &__text{\n        margin: 0;\n        color: white;\n    }\n\n    &__icon {\n        filter: brightness(4);\n    }\n\n    &__title {\n        margin: 0;\n    }\n}\n\n.toolbar {\n    &__header {\n        display: flex;\n        flex-direction: column;\n        gap: 0.5rem;\n        padding: 1rem 0.8125rem;\n    }\n}\n\n.board-margin {\n    margin-bottom: 11.1875rem;\n}",
+                    "data": "@use \"settings/colors\";\n\n.layout {\n    display: flex;\n    flex-direction: column;\n    gap: 2.625rem;\n    \n    margin: 4.875rem auto 0 auto;\n    width: min(69.375rem, 100%);\n    padding: 0 1.5rem;\n}\n\n.back {\n    display: flex;\n    justify-items: center;\n    gap: 1.2294rem;\n    font-weight: bold;\n    cursor: pointer;\n\n    &:hover {\n        text-decoration: underline;\n    }\n\n    &__text{\n        margin: 0;\n        color: white;\n    }\n\n    &__icon {\n        filter: brightness(4);\n    }\n\n    &__title {\n        margin: 0;\n    }\n}\n\n.toolbar {\n    &__header {\n        display: flex;\n        flex-direction: column;\n        gap: 0.5rem;\n        padding: 1rem 0.8125rem;\n    }\n}\n\n.board-margin {\n    margin-bottom: 11.1875rem;\n}\n\n.kanban-card {\n    &__footer {\n        display: grid;\n        grid-template-columns: repeat(2, 1fr);\n        grid-template-rows: repeat(2, auto);\n        gap: 1rem;\n        margin-top: 1rem;\n        \n    }\n\n    &__title:hover {\n        color: colors.$secondary-color;\n        cursor: pointer;\n    }\n\n    &__counter {\n        grid-row: 2;\n    }\n\n    &__comments {\n        grid-row: 2;\n        justify-self: flex-end;\n    }\n\n\n}",
                     "styleUrl": "./roadmap-detail.component.scss"
                 }
             ],
@@ -3303,9 +3504,15 @@
                         "type": "FeedbackService",
                         "deprecated": false,
                         "deprecationMessage": ""
+                    },
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": ""
                     }
                 ],
-                "line": 11,
+                "line": 15,
                 "jsdoctags": [
                     {
                         "name": "location",
@@ -3324,10 +3531,22 @@
                         "tagName": {
                             "text": "param"
                         }
+                    },
+                    {
+                        "name": "route",
+                        "type": "ActivatedRoute",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
                     }
                 ]
             },
-            "templateData": "<section class=\"layout\" *transloco=\"let t\">\n    <ui-toolbar justify=\"between\" class=\"toolbar\">\n        <div class=\"toolbar__header\">\n            <span class=\"back\" (click)=\"back()\">\n                <ui-icon class=\"back__icon\" name=\"arrow-left\"></ui-icon>\n                <span class=\"back__text\">Go back!</span>\n            </span>\n            <h3 class=\"back__title text-white\">Roadmap</h3>\n        </div>\n        <button ui-button color=\"primary\" routerLink=\"/feedback/new\">\n            <ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}\n        </button>\n    </ui-toolbar>\n    <app-kanban-board class=\"board-margin\">\n        <app-kanban-column [title]=\"'Planned (' + (feebacksByStatus('planned') | async)?.length + ')'\" subtitle=\"Ideas prioritized for research\" >\n            <app-kanban-card [color]=\"'link'\" *ngFor=\"let feedback of feebacksByStatus('planned') | async\" status=\"Planned\">\n                <h3 kanban-card-title>{{ feedback.title }}</h3>\n                <p kanban-card-text>{{ feedback.description }}</p>\n            </app-kanban-card>\n        </app-kanban-column>\n\n        <app-kanban-column [title]=\"'In-progress (' + (feebacksByStatus('in-progress') | async)?.length + ')'\" subtitle=\"Currently being developed\">\n            <app-kanban-card [color]=\"'primary'\" *ngFor=\"let feedback of feebacksByStatus('in-progress') | async\" status=\"In Progress\">\n                <h3 kanban-card-title>{{ feedback.title }}</h3>\n                <p kanban-card-text>{{ feedback.description }}</p>\n            </app-kanban-card>\n        </app-kanban-column>\n\n        <app-kanban-column [title]=\"'Live (' + (feebacksByStatus('live') | async)?.length + ')'\" subtitle=\"Released features\">\n            <app-kanban-card [color]=\"'tertiary'\" *ngFor=\"let feedback of feebacksByStatus('live') | async\" status=\"Live\">\n                <h3 kanban-card-title>{{ feedback.title }}</h3>\n                <p kanban-card-text>{{ feedback.description }}</p>\n            </app-kanban-card>\n        </app-kanban-column>\n    </app-kanban-board>\n</section>\n"
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<section class=\"layout\" *transloco=\"let t\">\n    <ui-toolbar justify=\"between\" class=\"toolbar\">\n        <div class=\"toolbar__header\">\n            <span class=\"back\" (click)=\"goBack()\">\n                <ui-icon class=\"back__icon\" name=\"arrow-left\"></ui-icon>\n                <span class=\"back__text\">Go back!</span>\n            </span>\n            <h3 class=\"back__title text-white\">Roadmap</h3>\n        </div>\n        <button ui-button color=\"primary\" routerLink=\"/feedback/new\">\n            <ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}\n        </button>\n    </ui-toolbar>\n    <app-kanban-board class=\"board-margin\">\n        <app-kanban-column [title]=\"'Planned (' + (feebacksByStatus('planned') | async)?.length + ')'\" subtitle=\"Ideas prioritized for research\" >\n            <app-kanban-card [color]=\"'link'\" *ngFor=\"let feedback of feebacksByStatus('planned') | async\" status=\"Planned\">\n                <h3 kanban-card-title class=\"kanban-card__title\" routerLink=\"/feedback/detail/{{ feedback.id }}\">{{ feedback.title }}</h3>\n                <p kanban-card-text>{{ feedback.description }}</p>\n                <div class=\"kanban-card__footer\">\n                    <ui-chip class=\"kanban-card__feature\" [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n\n                    <ui-counter\n                        class=\"kanban-card__counter\"\n                        [value]=\"feedback.upvotes\"\n                        [limitClicksTo]=\"1\"\n                        [order]=\"'row'\"\n                    ></ui-counter>\n                    <ui-icon class=\"kanban-card__comments\" name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n                </div>\n            </app-kanban-card>\n        </app-kanban-column>\n\n        <app-kanban-column [title]=\"'In-progress (' + (feebacksByStatus('in-progress') | async)?.length + ')'\" subtitle=\"Currently being developed\">\n            <app-kanban-card [color]=\"'primary'\" *ngFor=\"let feedback of feebacksByStatus('in-progress') | async\" status=\"In Progress\">\n                <h3 kanban-card-title class=\"kanban-card__title\" routerLink=\"/feedback/detail/{{ feedback.id }}\">{{ feedback.title }}</h3>\n                <p kanban-card-text>{{ feedback.description }}</p>\n                <div class=\"kanban-card__footer\">\n                    <ui-chip class=\"kanban-card__feature\" [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n\n                    <ui-counter\n                        class=\"kanban-card__counter\"\n                        [value]=\"feedback.upvotes\"\n                        [limitClicksTo]=\"1\"\n                        [order]=\"'row'\"\n                    ></ui-counter>\n                    <ui-icon class=\"kanban-card__comments\" name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n                </div>\n            </app-kanban-card>\n        </app-kanban-column>\n\n        <app-kanban-column [title]=\"'Live (' + (feebacksByStatus('live') | async)?.length + ')'\" subtitle=\"Released features\">\n            <app-kanban-card [color]=\"'tertiary'\" *ngFor=\"let feedback of feebacksByStatus('live') | async\" status=\"Live\">\n                <h3 kanban-card-title class=\"kanban-card__title\" routerLink=\"/feedback/detail/{{ feedback.id }}\">{{ feedback.title }}</h3>\n                <p kanban-card-text>{{ feedback.description }}</p>\n                <div class=\"kanban-card__footer\">\n                    <ui-chip class=\"kanban-card__feature\" [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n\n                    <ui-counter\n                        class=\"kanban-card__counter\"\n                        [value]=\"feedback.upvotes\"\n                        [limitClicksTo]=\"1\"\n                        [order]=\"'row'\"\n                    ></ui-counter>\n                    <ui-icon class=\"kanban-card__comments\" name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n                </div>\n            </app-kanban-card>\n        </app-kanban-column>\n    </app-kanban-board>\n</section>\n"
         },
         {
             "name": "RoadmapItemComponent",
@@ -4573,13 +4792,13 @@
         },
         {
             "name": "CommentModule",
-            "id": "module-CommentModule-796dd968676a88d3fde9a461baf316850f61725235d8fccad190477a996d33877d53e0e1777dd8475c17b9cb88d7ba4e2ad9a7be9549c79ac073519a7c6f9256",
+            "id": "module-CommentModule-e777b4ad0d9b4a9f9a54feb0000386804c9fcdac3122f9497309aee732146133df8a7482a2a7c992eae3b2722e7c1bf1839291f475fac361f5d61612b57edf2a",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/modules/feedback/components/comment/comment.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { CommentAvatarDirective, CommentComponent, CommentIdDirective, CommentNameDirective, CommentTextDirective } from './comment';\n\n@NgModule({\n    declarations: [CommentComponent, CommentIdDirective, CommentAvatarDirective, CommentNameDirective, CommentTextDirective],\n    imports: [CommonModule],\n    exports: [CommentComponent, CommentIdDirective, CommentAvatarDirective, CommentNameDirective, CommentTextDirective],\n})\nexport class CommentModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { CommentAvatarDirective, CommentComponent, CommentIdDirective, CommentNameDirective, CommentRepliesDirective, CommentTextDirective } from './comment';\n\n@NgModule({\n    declarations: [CommentComponent, CommentIdDirective, CommentAvatarDirective, CommentNameDirective, CommentTextDirective, CommentRepliesDirective],\n    imports: [CommonModule],\n    exports: [CommentComponent, CommentIdDirective, CommentAvatarDirective, CommentNameDirective, CommentTextDirective, CommentRepliesDirective],\n})\nexport class CommentModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4599,6 +4818,9 @@
                         },
                         {
                             "name": "CommentNameDirective"
+                        },
+                        {
+                            "name": "CommentRepliesDirective"
                         },
                         {
                             "name": "CommentTextDirective"
@@ -4623,6 +4845,9 @@
                         },
                         {
                             "name": "CommentNameDirective"
+                        },
+                        {
+                            "name": "CommentRepliesDirective"
                         },
                         {
                             "name": "CommentTextDirective"
@@ -4697,13 +4922,13 @@
         },
         {
             "name": "FeedbackModule",
-            "id": "module-FeedbackModule-435a167158e89e72ff73c9a468cb37662fa264e81a28d9b958f05508be3ecf16d07659045a3d8de9a6b3e415810e32287a7d049a39551a9c800c34e7f27df6f0",
+            "id": "module-FeedbackModule-ad333c8174b81a8a699f9b8590cef2cb0d772223442da36735472d9a3094fb299e1d7c2ae343103c9da3893065fb4d4b7e148df69814f5a6a29188219122694d",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/modules/feedback/feedback.module.ts",
             "methods": [],
-            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { RouterModule, Routes } from '@angular/router';\nimport { UiBadgeModule } from '@components/badge/ui-badge.module';\nimport { UiButtonModule } from '@components/button/ui-button.module';\nimport { UiChipsModule } from '@components/chips/ui-chips.module';\nimport { UiCounterModule } from '@components/counter/ui-counter.module';\nimport { UiDividerModule } from '@components/divider/ui-divider.module';\nimport { UiFeedbackCardModule } from '@components/feedback-card/feedback-card.module';\nimport { UiFormFieldModule } from '@components/form-field/ui-form-field.module';\nimport { UiIconModule } from '@components/icon/ui-icon.module';\nimport { UiInputModule } from '@components/input/ui-input.module';\nimport { UiSelectModule } from '@components/select/ui-select.module';\nimport { UiToolbarModule } from '@components/toolbar/ui-toolbar.module';\nimport { TranslocoModule } from '@ngneat/transloco';\nimport { BackBtnComponent } from './components/back-btn/back-btn.component';\nimport { CommentFormComponent } from './components/comment-form/comment-form.component';\nimport { CommentModule } from './components/comment/comment.module';\nimport { FormCardComponent } from './components/form-card/form-card.component';\nimport { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';\nimport { FeedbackFormComponent } from './layouts/feedback-form/feedback-form.component';\n\nconst routes: Routes = [\n    {\n        path: 'detail/:id',\n        component: FeedbackDetailComponent,\n    },\n    {\n        path: 'new',\n        component: FeedbackFormComponent,\n    },\n\n    {\n        path: 'edit/:id',\n        component: FeedbackFormComponent,\n    },\n];\n\n@NgModule({\n    declarations: [FeedbackDetailComponent, FeedbackFormComponent, BackBtnComponent, FormCardComponent, CommentFormComponent],\n    imports: [\n        CommonModule,\n        RouterModule.forChild(routes),\n        UiToolbarModule,\n        UiButtonModule,\n        UiIconModule,\n        UiFeedbackCardModule,\n        UiCounterModule,\n        UiChipsModule,\n        UiBadgeModule,\n        UiFormFieldModule,\n        UiInputModule,\n        UiSelectModule,\n        UiDividerModule,\n        CommentModule,\n        TranslocoModule,\n        ReactiveFormsModule,\n    ],\n    exports: [RouterModule],\n})\nexport class FeedbackModule {}\n",
+            "sourceCode": "import { CommonModule } from '@angular/common';\nimport { NgModule } from '@angular/core';\nimport { ReactiveFormsModule } from '@angular/forms';\nimport { RouterModule, Routes } from '@angular/router';\nimport { UiBadgeModule } from '@components/badge/ui-badge.module';\nimport { UiButtonModule } from '@components/button/ui-button.module';\nimport { UiChipsModule } from '@components/chips/ui-chips.module';\nimport { UiCounterModule } from '@components/counter/ui-counter.module';\nimport { UiDividerModule } from '@components/divider/ui-divider.module';\nimport { UiFeedbackCardModule } from '@components/feedback-card/feedback-card.module';\nimport { UiFormFieldModule } from '@components/form-field/ui-form-field.module';\nimport { UiIconModule } from '@components/icon/ui-icon.module';\nimport { UiInputModule } from '@components/input/ui-input.module';\nimport { UiSelectModule } from '@components/select/ui-select.module';\nimport { UiToolbarModule } from '@components/toolbar/ui-toolbar.module';\nimport { TranslocoModule } from '@ngneat/transloco';\nimport { BackBtnComponent } from './components/back-btn/back-btn.component';\nimport { CommentFormComponent } from './components/comment-form/comment-form.component';\nimport { CommentModule } from './components/comment/comment.module';\nimport { FormCardComponent } from './components/form-card/form-card.component';\nimport { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';\nimport { FeedbackFormComponent } from './layouts/feedback-form/feedback-form.component';\nimport { ReplyComponent } from './components/reply/reply.component';\n\nconst routes: Routes = [\n    {\n        path: 'detail/:id',\n        component: FeedbackDetailComponent,\n    },\n    {\n        path: 'new',\n        component: FeedbackFormComponent,\n    },\n\n    {\n        path: 'edit/:id',\n        component: FeedbackFormComponent,\n    },\n];\n\n@NgModule({\n    declarations: [FeedbackDetailComponent, FeedbackFormComponent, BackBtnComponent, FormCardComponent, CommentFormComponent, ReplyComponent],\n    imports: [\n        CommonModule,\n        RouterModule.forChild(routes),\n        UiToolbarModule,\n        UiButtonModule,\n        UiIconModule,\n        UiFeedbackCardModule,\n        UiCounterModule,\n        UiChipsModule,\n        UiBadgeModule,\n        UiFormFieldModule,\n        UiInputModule,\n        UiSelectModule,\n        UiDividerModule,\n        CommentModule,\n        TranslocoModule,\n        ReactiveFormsModule,\n    ],\n    exports: [RouterModule],\n})\nexport class FeedbackModule {}\n",
             "children": [
                 {
                     "type": "providers",
@@ -4726,6 +4951,9 @@
                         },
                         {
                             "name": "FormCardComponent"
+                        },
+                        {
+                            "name": "ReplyComponent"
                         }
                     ]
                 },
@@ -4916,13 +5144,13 @@
         },
         {
             "name": "RoadmapModule",
-            "id": "module-RoadmapModule-3575138d093bc42bda5ee78b7ffb6ffbd9539f9682c7ce113de2b8177292d7f61e324fac18fbe3029b704549e963c90878d036f5725f483daf718c0c53b28a74",
+            "id": "module-RoadmapModule-0b397517a1ad08e1eb57c7708c45a5ca7168d34d44d083c9f5114fa551e0bd44164f40812b053483b5fada18560856b30b46895104ea1a2705e96ef1e0ca1e8e",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/modules/roadmap/roadmap.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RoadmapDetailComponent } from './layouts/roadmap-detail/roadmap-detail.component';\nimport { RouterModule } from '@angular/router';\nimport { UiToolbarModule } from '@components/toolbar/ui-toolbar.module';\nimport { UiButtonModule } from '@components/button/ui-button.module';\nimport { UiIconModule } from '@components/icon/ui-icon.module';\nimport { TranslocoModule } from '@ngneat/transloco';\nimport { KanbanCardModule } from './components/kanban-card/kanban-card.module';\nimport { KanbanColumnComponent } from './components/kanban-column/kanban-column.component';\nimport { KanbanBoardComponent } from './components/kanban-board/kanban-board.component';\nimport { UiCounterModule } from '@components/counter/ui-counter.module';\n\nconst routes = [\n  {\n    path: ':category',\n    component: RoadmapDetailComponent,\n    pathMatch: 'full'\n  }\n]\n\n@NgModule({\n  declarations: [\n    RoadmapDetailComponent,\n    KanbanColumnComponent,\n    KanbanBoardComponent,\n  ],\n  imports: [\n    CommonModule,\n    RouterModule.forChild(routes),\n    TranslocoModule,\n    UiToolbarModule,\n    UiButtonModule,\n    UiIconModule,\n    KanbanCardModule,\n    UiCounterModule\n  ]\n})\nexport class RoadmapModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RoadmapDetailComponent } from './layouts/roadmap-detail/roadmap-detail.component';\nimport { RouterModule } from '@angular/router';\nimport { UiToolbarModule } from '@components/toolbar/ui-toolbar.module';\nimport { UiButtonModule } from '@components/button/ui-button.module';\nimport { UiIconModule } from '@components/icon/ui-icon.module';\nimport { TranslocoModule } from '@ngneat/transloco';\nimport { KanbanCardModule } from './components/kanban-card/kanban-card.module';\nimport { KanbanColumnComponent } from './components/kanban-column/kanban-column.component';\nimport { KanbanBoardComponent } from './components/kanban-board/kanban-board.component';\nimport { UiCounterModule } from '@components/counter/ui-counter.module';\nimport { UiBadgeModule } from '@components/badge/ui-badge.module';\nimport { UiChipsModule } from '@components/chips/ui-chips.module';\n\nconst routes = [\n  {\n    path: ':category',\n    component: RoadmapDetailComponent,\n    pathMatch: 'full'\n  }\n]\n\n@NgModule({\n  declarations: [\n    RoadmapDetailComponent,\n    KanbanColumnComponent,\n    KanbanBoardComponent,\n  ],\n  imports: [\n    CommonModule,\n    RouterModule.forChild(routes),\n    TranslocoModule,\n    UiToolbarModule,\n    UiButtonModule,\n    UiIconModule,\n    KanbanCardModule,\n    UiCounterModule,\n    UiBadgeModule,\n    UiChipsModule\n  ]\n})\nexport class RoadmapModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -4949,7 +5177,13 @@
                             "name": "KanbanCardModule"
                         },
                         {
+                            "name": "UiBadgeModule"
+                        },
+                        {
                             "name": "UiButtonModule"
+                        },
+                        {
+                            "name": "UiChipsModule"
                         },
                         {
                             "name": "UiCounterModule"
@@ -4978,13 +5212,13 @@
         },
         {
             "name": "RoadmapModule",
-            "id": "module-RoadmapModule-3a56c6917eef74d5d5a7a920d618518515e8f5f0929ab3b94e5e10af41e0c94db441771dc95d881d3804f422aa111fb6c1947fe3cead288258c37fdd32c63301-1",
+            "id": "module-RoadmapModule-562604d1500aeb02543530daf2f5a314b7e523e43978bc7f9e073bbae888993c4de986882db331c945d3e8eb5cb6567d3f24b7bccc79c51888b64a7ff94c4d7a-1",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/modules/home/components/roadmap/roadmap.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RoadmapComponent } from './roadmap.component';\nimport { RoadmapItemComponent } from './roadmap-item.component';\n\n@NgModule({\n  declarations: [RoadmapComponent, RoadmapItemComponent],\n  imports: [\n    CommonModule\n  ],\n  exports: [RoadmapComponent, RoadmapItemComponent],\n})\nexport class RoadmapModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RoadmapComponent } from './roadmap.component';\nimport { RoadmapItemComponent } from './roadmap-item.component';\nimport { RouterModule } from '@angular/router';\n\n@NgModule({\n  declarations: [RoadmapComponent, RoadmapItemComponent],\n  imports: [\n    CommonModule,\n    RouterModule\n  ],\n  exports: [RoadmapComponent, RoadmapItemComponent],\n})\nexport class RoadmapModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -7028,6 +7262,15 @@
                 "filePath": "src/app/modules/feedback/components/comment/comment.ts",
                 "type": "directive",
                 "linktype": "directive",
+                "name": "CommentRepliesDirective",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/feedback/components/comment/comment.ts",
+                "type": "directive",
+                "linktype": "directive",
                 "name": "CommentTextDirective",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -7040,6 +7283,15 @@
                 "name": "FormCardComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/modules/feedback/components/reply/reply.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ReplyComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
@@ -7138,7 +7390,7 @@
                 "linktype": "component",
                 "name": "RoadmapComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -7201,7 +7453,7 @@
                 "linktype": "component",
                 "name": "RoadmapDetailComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
