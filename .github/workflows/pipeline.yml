@@ -1,26 +1,25 @@
 name: Github actions for integration
 
-on: 
+on:
   push:
     branches:
       - develop
-      - master
     paths:
-      - '**.jpg'
-      - '**.jpeg'
-      - '**.png'
-      - '**.gif'
-    
+      - "**.jpg"
+      - "**.jpeg"
+      - "**.png"
+      - "**.gif"
+
 jobs:
   install:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
         with:
-         fetch-depth: 0
+          fetch-depth: 0
       - uses: actions/setup-node@v1
         with:
-         node-version: "14.x"
+          node-version: "14.x"
       - name: Install dependencies
         run: npm ci
       - name: Lint the project
@@ -38,6 +37,3 @@ jobs:
         uses: cypress-io/github-action@v2.9.7
         with:
           command: npm run test:e2e
-
-      
-      
