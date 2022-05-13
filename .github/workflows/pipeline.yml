@@ -5,6 +5,11 @@ on:
     branches:
       - develop
       - master
+    paths:
+      - '**.jpg'
+      - '**.jpeg'
+      - '**.png'
+      - '**.gif'
     
 jobs:
   install:
