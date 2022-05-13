@@ -1,14 +1,9 @@
 name: Github actions for integration
 
 on:
-  push:
-    branches:
-      - develop
-    paths:
-      - "**.jpg"
-      - "**.jpeg"
-      - "**.png"
-      - "**.gif"
+  pull_request:
+    branches: [master, develop]
+    paths: ["**.jpg", "**.png", "**.gif", "**.jpeg"]
 
 jobs:
   install:
