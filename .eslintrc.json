@@ -18,8 +18,8 @@
       "extends": [
         "plugin:@angular-eslint/recommended",
         "plugin:@angular-eslint/template/process-inline-templates",
-		"plugin:import/recommended",
-		"airbnb-typescript/base",
+      "plugin:import/recommended",
+      "airbnb-typescript/base",
         "prettier"
       ],
       "rules": {
@@ -43,9 +43,9 @@
         "import/prefer-default-export": "off",
         "class-methods-use-this": "off",
         "lines-between-class-members": "off",
-		"@typescript-eslint/lines-between-class-members": ["off"],
-		"no-console": "warn",
-		"import/no-extraneous-dependencies": "off"
+        "@typescript-eslint/lines-between-class-members": ["off"],
+        "no-console": "warn",
+        "import/no-extraneous-dependencies": "off"
       }
     },
     {

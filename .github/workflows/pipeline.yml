@@ -4,6 +4,8 @@ on:
   pull_request:
     branches: [master, develop]
     paths: ["**.jpg", "**.png", "**.gif", "**.jpeg"]
+  workflow_dispatch:
+
 
 jobs:
   install:
@@ -24,11 +26,9 @@ jobs:
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           api-key: ${{ secrets.CRUSH_API_KEY }}
-      - name: Run unit tests
+      - name: Running unit tests
         run: npm run test:unit
-      - name: Build the project
-        run: npm run build
-      - name: Run integration tests
+      - name: Running cypress tests
         uses: cypress-io/github-action@v2.9.7
         with:
-          command: npm run test:e2e
+          run: npm run build
