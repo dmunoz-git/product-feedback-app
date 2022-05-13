@@ -17,11 +17,22 @@ jobs:
         with:
          node-version: "14.x"
       - name: Install dependencies
-        run: npm install
-      - name: Linting the project
+        run: npm ci
+      - name: Lint the project
         run: npm run lint
-      - name: Running unit tests
+      - name: Crush images
+        uses: crush-pics/crush-pics-github-action@master
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          api-key: ${{ secrets.CRUSH_API_KEY }}
+      - name: Run unit tests
         run: npm run test:unit
-      - name: Building the project
+      - name: Build the project
         run: npm run build
+      - name: Run integration tests
+        uses: cypress-io/github-action@v2.9.7
+        with:
+          command: npm run test:e2e
+
+      
       
