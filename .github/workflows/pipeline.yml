@@ -1,0 +1,36 @@
+name: Github actions for integration
+
+on:
+  pull_request:
+    branches: [master, develop]
+    paths: ["**.jpg", "**.png", "**.gif", "**.jpeg"]
+  workflow_dispatch:
+
+
+jobs:
+  install:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v1
+        with:
+          node-version: "14.x"
+      - name: Install dependencies
+        run: npm ci
+      - name: Lint the project
+        run: npm run lint
+      - name: Crush images
+        uses: crush-pics/crush-pics-github-action@master
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          api-key: ${{ secrets.CRUSH_API_KEY }}
+      - name: Running unit tests
+        run: npm run test:unit
+      - name: Running cypress tests
+        uses: cypress-io/github-action@v2.9.7
+        with:
+          browser: chrome
+          build: npm run build
+          start: npm start
