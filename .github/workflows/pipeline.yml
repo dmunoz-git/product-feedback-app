@@ -31,4 +31,6 @@ jobs:
       - name: Running cypress tests
         uses: cypress-io/github-action@v2.9.7
         with:
-          run: npm run build
+          browser: chrome
+          build: npm run build
+          start: npm start
