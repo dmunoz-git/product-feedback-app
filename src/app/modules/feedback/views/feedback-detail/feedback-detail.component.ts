@@ -14,7 +14,6 @@ export class FeedbackDetailComponent implements OnInit, OnDestroy {
     id: number = 0;
     feedback!: Feedback;
 
-
     constructor(private readonly feedbackService: FeedbackService, private route: ActivatedRoute) {}
 
     ngOnDestroy(): void {
@@ -34,5 +33,4 @@ export class FeedbackDetailComponent implements OnInit, OnDestroy {
     createComment(comment: string) {
         this.subscription.add(this.feedbackService.createComment(this.id, comment).subscribe(() => {}));
     }
-
 }

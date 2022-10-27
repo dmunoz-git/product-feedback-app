@@ -1,10 +1,10 @@
-@use "settings/colors";
+@use 'settings/colors';
 
 .layout {
     display: flex;
     flex-direction: column;
     gap: 2.625rem;
-    
+
     margin: 4.875rem auto 0 auto;
     width: min(69.375rem, 100%);
     padding: 0 1.5rem;
@@ -21,7 +21,7 @@
         text-decoration: underline;
     }
 
-    &__text{
+    &__text {
         margin: 0;
         color: white;
     }
@@ -55,7 +55,6 @@
         grid-template-rows: repeat(2, auto);
         gap: 1rem;
         margin-top: 1rem;
-        
     }
 
     &__title:hover {
@@ -71,6 +70,4 @@
         grid-row: 2;
         justify-self: flex-end;
     }
-
-
 }
