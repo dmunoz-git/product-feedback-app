@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FeedbackService } from '@core/http/feedback.service';
 import { Feedback } from '@core/models/feedback.model';
-import { Observable, map } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
 @Component({
-    selector: 'app-home-view',
-    templateUrl: './home-view.component.html',
-    styleUrls: ['./home-view.component.scss'],
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
 })
-export class HomeViewComponent implements OnInit {
+export class HomeComponent implements OnInit {
     feedbacks$!: Observable<Feedback[]>;
     category: string = 'all';
 
