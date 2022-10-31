@@ -30,11 +30,13 @@
                 <p comment-text>{{ comment.content }}</p>
                 <div comments-replies *ngIf="comment.replies?.length! > 0">
                     <app-comment *ngFor="let reply of comment.replies">
-                        <img comment-avatar src="{{ reply.user.image }}" alt="{{ reply.user.name }}"  />
+                        <img comment-avatar src="{{ reply.user.image }}" alt="{{ reply.user.name }}" />
                         <h4 comment-name>{{ reply.user.name | titlecase }}</h4>
                         <button ui-button comment-reply-btn color="light">Reply</button>
                         <span comment-id>@{{ reply.user.username }}</span>
-                        <p comment-text><span class="text-primary">@{{ comment.user.username }}</span> {{ reply.content }}</p>
+                        <p comment-text>
+                            <span class="text-primary">@{{ comment.user.username }}</span> {{ reply.content }}
+                        </p>
                     </app-comment>
                 </div>
             </app-comment>

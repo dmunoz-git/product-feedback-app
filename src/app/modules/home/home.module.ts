@@ -13,19 +13,19 @@ import { TranslocoModule } from '@ngneat/transloco';
 import { BannerModule } from './components/banner/banner.module';
 import { CategoryFilterComponent } from './components/category-filter/category-filter.component';
 import { EmptyFeedbacksModule } from './components/empty-feedbacks/empty-feedbacks.module';
-import { HomeComponent } from './layout/home.component';
 import { RoadmapModule } from './components/roadmap/roadmap.module';
+import { HomeViewComponent } from './views/home-view/home-view.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: HomeComponent,
+        component: HomeViewComponent,
         pathMatch: 'full',
     },
 ];
 
 @NgModule({
-    declarations: [HomeComponent, CategoryFilterComponent],
+    declarations: [CategoryFilterComponent, HomeViewComponent],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
@@ -40,7 +40,7 @@ const routes: Routes = [
         EmptyFeedbacksModule,
         BannerModule,
         TranslocoModule,
-        RoadmapModule
+        RoadmapModule,
     ],
     exports: [RouterModule],
 })

@@ -214,93 +214,39 @@
     "injectables": [
         {
             "name": "CommentService",
-            "id": "injectable-CommentService-da160f608a584aa5f733af80bba07fe448db278db7d1913a8effb5efc02cb9689b9d972484ca65eb83cb810630a7e2ec62e47ffa91e1812455880e6de2da1f79",
+            "id": "injectable-CommentService-1b59dfebebd80943ff5b809e9126db6c85c758241a606b007b158ea4a914176f20d294b8055c0ad5a10a7b0cf450eb57460dd0e988ce0c636e347386b157987e",
             "file": "src/app/core/http/comment.service.ts",
             "properties": [],
             "methods": [
                 {
                     "name": "createComment",
-                    "args": [
-                        {
-                            "name": "comment",
-                            "type": "Comment",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
+                    "args": [],
                     "optional": false,
                     "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 10,
+                    "line": 9,
                     "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "comment",
-                            "type": "Comment",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
+                    "deprecationMessage": ""
                 },
                 {
                     "name": "deleteComment",
-                    "args": [
-                        {
-                            "name": "id",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
+                    "args": [],
                     "optional": false,
                     "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 26,
+                    "line": 25,
                     "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "id",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
+                    "deprecationMessage": ""
                 },
                 {
                     "name": "getCommentDetail",
-                    "args": [
-                        {
-                            "name": "id",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
+                    "args": [],
                     "optional": false,
                     "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 14,
+                    "line": 13,
                     "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "id",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
+                    "deprecationMessage": ""
                 },
                 {
                     "name": "getComments",
@@ -308,67 +254,26 @@
                     "optional": false,
                     "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 18,
+                    "line": 17,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
                 {
                     "name": "updateComment",
-                    "args": [
-                        {
-                            "name": "id",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        },
-                        {
-                            "name": "comment",
-                            "type": "Comment",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
+                    "args": [],
                     "optional": false,
                     "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 22,
+                    "line": 21,
                     "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "id",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        },
-                        {
-                            "name": "comment",
-                            "type": "Comment",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
+                    "deprecationMessage": ""
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Observable, of } from 'rxjs';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class CommentService {\n    constructor() {}\n\n    createComment(comment: Comment): Observable<null> {\n        return of(null);\n    }\n\n    getCommentDetail(id: number): Observable<null> {\n        return of(null);\n    }\n\n    getComments(): Observable<null> {\n        return of(null);\n    }\n\n    updateComment(id: number, comment: Comment): Observable<null> {\n        return of(null);\n    }\n\n    deleteComment(id: number): Observable<null> {\n        return of(null);\n    }\n}\n",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 7
-            },
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Observable, of } from 'rxjs';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class CommentService {\n\n    createComment(): Observable<null> {\n        return of(null);\n    }\n\n    getCommentDetail(): Observable<null> {\n        return of(null);\n    }\n\n    getComments(): Observable<null> {\n        return of(null);\n    }\n\n    updateComment(): Observable<null> {\n        return of(null);\n    }\n\n    deleteComment(): Observable<null> {\n        return of(null);\n    }\n}\n",
             "type": "injectable"
         },
         {
@@ -593,65 +498,29 @@
         },
         {
             "name": "ReplyService",
-            "id": "injectable-ReplyService-560018670536755b720d52b1a81dcf63e261635e68620068e41acd63a7e675b7f94a06eb6c30d39c894337490d8e3943724d325ecf52f9d85b4f3a55fb70fae6",
+            "id": "injectable-ReplyService-8838e65389e09ed9c0df6a8d3508f2c6f5740507dbe2362eae40eb80071ba6f22dcc171d411a3073b8010aa98d518664e1988fd0a25ec7b6b2dc7dff1d0f072a",
             "file": "src/app/core/http/reply.service.ts",
             "properties": [],
             "methods": [
                 {
                     "name": "createReply",
-                    "args": [
-                        {
-                            "name": "reply",
-                            "type": "Reply",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
+                    "args": [],
                     "optional": false,
                     "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 11,
+                    "line": 9,
                     "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "reply",
-                            "type": "Reply",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
+                    "deprecationMessage": ""
                 },
                 {
                     "name": "deleteReply",
-                    "args": [
-                        {
-                            "name": "id",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
+                    "args": [],
                     "optional": false,
                     "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 27,
+                    "line": 25,
                     "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "id",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
+                    "deprecationMessage": ""
                 },
                 {
                     "name": "getReplies",
@@ -659,95 +528,36 @@
                     "optional": false,
                     "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 19,
+                    "line": 17,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
                 {
                     "name": "getReplyDetail",
-                    "args": [
-                        {
-                            "name": "id",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
+                    "args": [],
                     "optional": false,
                     "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 15,
+                    "line": 13,
                     "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "id",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
+                    "deprecationMessage": ""
                 },
                 {
                     "name": "updateReply",
-                    "args": [
-                        {
-                            "name": "id",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        },
-                        {
-                            "name": "reply",
-                            "type": "Reply",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
+                    "args": [],
                     "optional": false,
                     "returnType": "Observable<undefined>",
                     "typeParameters": [],
-                    "line": 23,
+                    "line": 21,
                     "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "id",
-                            "type": "number",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        },
-                        {
-                            "name": "reply",
-                            "type": "Reply",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
+                    "deprecationMessage": ""
                 }
             ],
             "deprecated": false,
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Observable, of } from 'rxjs';\nimport { Reply } from '../models/reply.model';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class ReplyService {\n    constructor() {}\n\n    createReply(reply: Reply): Observable<null> {\n        return of(null);\n    }\n\n    getReplyDetail(id: number): Observable<null> {\n        return of(null);\n    }\n\n    getReplies(): Observable<null> {\n        return of(null);\n    }\n\n    updateReply(id: number, reply: Reply): Observable<null> {\n        return of(null);\n    }\n\n    deleteReply(id: number): Observable<null> {\n        return of(null);\n    }\n}\n",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
+            "sourceCode": "import { Injectable } from '@angular/core';\nimport { Observable, of } from 'rxjs';\n\n@Injectable({\n    providedIn: 'root',\n})\nexport class ReplyService {\n\n    createReply(): Observable<null> {\n        return of(null);\n    }\n\n    getReplyDetail(): Observable<null> {\n        return of(null);\n    }\n\n    getReplies(): Observable<null> {\n        return of(null);\n    }\n\n    updateReply(): Observable<null> {\n        return of(null);\n    }\n\n    deleteReply(): Observable<null> {\n        return of(null);\n    }\n}\n",
             "type": "injectable"
         },
         {
@@ -831,9 +641,7 @@
                     "optional": false,
                     "description": "",
                     "line": 8,
-                    "modifierKind": [
-                        121
-                    ]
+                    "modifierKind": [121]
                 }
             ],
             "methods": [
@@ -846,9 +654,7 @@
                     "line": 14,
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ]
+                    "modifierKind": [123]
                 },
                 {
                     "name": "register",
@@ -866,9 +672,7 @@
                     "line": 10,
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "modifierKind": [
-                        123
-                    ],
+                    "modifierKind": [123],
                     "jsdoctags": [
                         {
                             "name": "select",
@@ -1481,9 +1285,7 @@
                     "optional": false,
                     "description": "",
                     "line": 11,
-                    "modifierKind": [
-                        121
-                    ]
+                    "modifierKind": [121]
                 },
                 {
                     "name": "regex",
@@ -1494,9 +1296,7 @@
                     "optional": false,
                     "description": "",
                     "line": 12,
-                    "modifierKind": [
-                        121
-                    ]
+                    "modifierKind": [121]
                 }
             ],
             "methodsClass": [
@@ -1516,9 +1316,7 @@
                     "line": 34,
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "modifierKind": [
-                        121
-                    ],
+                    "modifierKind": [121],
                     "jsdoctags": [
                         {
                             "name": "value",
@@ -1585,9 +1383,7 @@
                     "line": 43,
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "modifierKind": [
-                        121
-                    ],
+                    "modifierKind": [121],
                     "jsdoctags": [
                         {
                             "name": "value",
@@ -1601,10 +1397,7 @@
                     ]
                 }
             ],
-            "implements": [
-                "OnChanges",
-                "OnDestroy"
-            ],
+            "implements": ["OnChanges", "OnDestroy"],
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1716,9 +1509,7 @@
             "outputs": [],
             "providers": [],
             "selector": "app-root",
-            "styleUrls": [
-                "./app.component.scss"
-            ],
+            "styleUrls": ["./app.component.scss"],
             "styles": [],
             "template": "<router-outlet></router-outlet>",
             "templateUrl": [],
@@ -1754,13 +1545,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-back-btn",
-            "styleUrls": [
-                "./back-btn.component.scss"
-            ],
+            "styleUrls": ["./back-btn.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./back-btn.component.html"
-            ],
+            "templateUrl": ["./back-btn.component.html"],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
@@ -1831,13 +1618,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-banner",
-            "styleUrls": [
-                "./banner.component.scss"
-            ],
+            "styleUrls": ["./banner.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./banner.component.html"
-            ],
+            "templateUrl": ["./banner.component.html"],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
@@ -1871,13 +1654,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-category-filter",
-            "styleUrls": [
-                "./category-filter.component.scss"
-            ],
+            "styleUrls": ["./category-filter.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./category-filter.component.html"
-            ],
+            "templateUrl": ["./category-filter.component.html"],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [
@@ -1982,21 +1761,15 @@
             "name": "CommentComponent",
             "id": "component-CommentComponent-cb2fad86d5758570b13832fb0d416260a7ed4cbc2ad511b59ab032a1698297661e9de2c45c34059194eccd23e82f4b5a405cbab8a5fd7fd69bc42d4b2277b3ed",
             "file": "src/app/modules/feedback/components/comment/comment.ts",
-            "encapsulation": [
-                "ViewEncapsulation.None"
-            ],
+            "encapsulation": ["ViewEncapsulation.None"],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
             "selector": "app-comment",
-            "styleUrls": [
-                "./comment.component.scss"
-            ],
+            "styleUrls": ["./comment.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./comment.component.html"
-            ],
+            "templateUrl": ["./comment.component.html"],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
@@ -2030,13 +1803,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-comment-form",
-            "styleUrls": [
-                "./comment-form.component.scss"
-            ],
+            "styleUrls": ["./comment-form.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./comment-form.component.html"
-            ],
+            "templateUrl": ["./comment-form.component.html"],
             "viewProviders": [],
             "inputsClass": [
                 {
@@ -2136,9 +1905,7 @@
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
+            "implements": ["OnInit"],
             "accessors": {
                 "textLength": {
                     "name": "textLength",
@@ -2156,21 +1923,15 @@
             "name": "EmptyFeedbacksComponent",
             "id": "component-EmptyFeedbacksComponent-057a08c06a521da201a1ffdaf56ad6c06bfffedf50033535d89462c9cba678ab12918c620c800ce4af999cdcb77bd6b3ebf9740920551e5f00d024ea351c3a77",
             "file": "src/app/modules/home/components/empty-feedbacks/empty-feedbacks.component.ts",
-            "encapsulation": [
-                "ViewEncapsulation.None"
-            ],
+            "encapsulation": ["ViewEncapsulation.None"],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
             "selector": "app-empty-feedbacks",
-            "styleUrls": [
-                "./empty-feedbacks.component.scss"
-            ],
+            "styleUrls": ["./empty-feedbacks.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./empty-feedbacks.component.html"
-            ],
+            "templateUrl": ["./empty-feedbacks.component.html"],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
@@ -2198,21 +1959,15 @@
             "name": "FeedbackCardComponent",
             "id": "component-FeedbackCardComponent-49f69f245cb6108770e4eab831f2974f16d4b4fc3d2786ef2241f6f4385e25695aebef7b631c92c560f71b48f6f16db233bdbcef4dadae9f6d8f7b133151b8b8",
             "file": "src/app/components/feedback-card/feedback-card.component.ts",
-            "encapsulation": [
-                "ViewEncapsulation.None"
-            ],
+            "encapsulation": ["ViewEncapsulation.None"],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
             "selector": "app-feedback-card",
-            "styleUrls": [
-                "./feedback-card.component.scss"
-            ],
+            "styleUrls": ["./feedback-card.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./feedback-card.component.html"
-            ],
+            "templateUrl": ["./feedback-card.component.html"],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
@@ -2246,13 +2001,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-feedback-detail",
-            "styleUrls": [
-                "./feedback-detail.component.scss"
-            ],
+            "styleUrls": ["./feedback-detail.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./feedback-detail.component.html"
-            ],
+            "templateUrl": ["./feedback-detail.component.html"],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
@@ -2394,10 +2145,7 @@
                     }
                 ]
             },
-            "implements": [
-                "OnInit",
-                "OnDestroy"
-            ],
+            "implements": ["OnInit", "OnDestroy"],
             "templateData": "<section class=\"layout\">\n    <ui-toolbar class=\"toolbar\" justify=\"between\" background=\"transparent\">\n        <app-back-btn>Go Back</app-back-btn>\n        <button ui-button color=\"secondary\" routerLink=\"/feedback/edit/{{ feedback.id }}\" data-cy=\"edit\">Edit Feedback</button>\n    </ui-toolbar>\n    <app-feedback-card>\n        <ui-counter feedback-card-aside class=\"hide-mobile\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n        <ng-container feedback-card-aside>\n            <section class=\"show-only-mobile\">\n                <div class=\"feedback-aside-mobile\">\n                    <ui-counter order=\"row\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                    <ui-icon name=\"comments\" ui-badge></ui-icon>\n                </div>\n            </section>\n        </ng-container>\n        <h3 feedback-card-title data-cy=\"title\">{{ feedback.title }}</h3>\n        <div feedback-card-content>\n            <p class=\"text\" data-cy=\"description\">{{ feedback.description }}</p>\n            <ui-icon class=\"hide-mobile\" name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n        </div>\n        <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n    </app-feedback-card>\n    <section class=\"section\" *ngIf=\"feedback.comments\">\n        <div *ngFor=\"let comment of feedback.comments; let i = index\">\n            <app-comment>\n                <img src=\"{{ comment.user.image }}\" alt=\"{{ comment.user.name }}\" comment-avatar />\n                <h4 comment-name>{{ comment.user.name | titlecase }}</h4>\n                <button ui-button comment-reply-btn color=\"light\">Reply</button>\n                <span comment-id>@{{ comment.user.username }}</span>\n                <p comment-text>{{ comment.content }}</p>\n                <div comments-replies *ngIf=\"comment.replies?.length! > 0\">\n                    <app-comment *ngFor=\"let reply of comment.replies\">\n                        <img comment-avatar src=\"{{ reply.user.image }}\" alt=\"{{ reply.user.name }}\"  />\n                        <h4 comment-name>{{ reply.user.name | titlecase }}</h4>\n                        <button ui-button comment-reply-btn color=\"light\">Reply</button>\n                        <span comment-id>@{{ reply.user.username }}</span>\n                        <p comment-text><span class=\"text-primary\">@{{ comment.user.username }}</span> {{ reply.content }}</p>\n                    </app-comment>\n                </div>\n            </app-comment>\n            <ui-divider *ngIf=\"i < feedback.comments!.length - 1\"></ui-divider>\n        </div>\n    </section>\n    <app-comment-form [maxLength]=\"225\" (comment)=\"createComment($event)\"></app-comment-form>\n</section>\n"
         },
         {
@@ -2410,13 +2158,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-feedback-form",
-            "styleUrls": [
-                "./feedback-form.component.scss"
-            ],
+            "styleUrls": ["./feedback-form.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./feedback-form.component.html"
-            ],
+            "templateUrl": ["./feedback-form.component.html"],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
@@ -2430,10 +2174,7 @@
                     "optional": false,
                     "description": "",
                     "line": 13,
-                    "modifierKind": [
-                        123,
-                        144
-                    ]
+                    "modifierKind": [123, 144]
                 },
                 {
                     "name": "feedbackForm",
@@ -2444,9 +2185,7 @@
                     "optional": false,
                     "description": "",
                     "line": 18,
-                    "modifierKind": [
-                        123
-                    ]
+                    "modifierKind": [123]
                 },
                 {
                     "name": "feedbackId",
@@ -2457,9 +2196,7 @@
                     "optional": false,
                     "description": "",
                     "line": 24,
-                    "modifierKind": [
-                        121
-                    ]
+                    "modifierKind": [121]
                 },
                 {
                     "name": "statusControl",
@@ -2470,9 +2207,7 @@
                     "optional": false,
                     "description": "",
                     "line": 16,
-                    "modifierKind": [
-                        123
-                    ]
+                    "modifierKind": [123]
                 },
                 {
                     "name": "statuses",
@@ -2483,10 +2218,7 @@
                     "optional": false,
                     "description": "",
                     "line": 14,
-                    "modifierKind": [
-                        123,
-                        144
-                    ]
+                    "modifierKind": [123, 144]
                 },
                 {
                     "name": "subscription",
@@ -2497,9 +2229,7 @@
                     "optional": false,
                     "description": "",
                     "line": 25,
-                    "modifierKind": [
-                        121
-                    ]
+                    "modifierKind": [121]
                 },
                 {
                     "name": "update",
@@ -2510,9 +2240,7 @@
                     "optional": false,
                     "description": "",
                     "line": 15,
-                    "modifierKind": [
-                        123
-                    ]
+                    "modifierKind": [123]
                 }
             ],
             "methodsClass": [
@@ -2682,10 +2410,7 @@
                     }
                 ]
             },
-            "implements": [
-                "OnInit",
-                "OnDestroy"
-            ],
+            "implements": ["OnInit", "OnDestroy"],
             "accessors": {
                 "title": {
                     "name": "title",
@@ -2727,13 +2452,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-form-card",
-            "styleUrls": [
-                "./form-card.component.scss"
-            ],
+            "styleUrls": ["./form-card.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./form-card.component.html"
-            ],
+            "templateUrl": ["./form-card.component.html"],
             "viewProviders": [],
             "inputsClass": [
                 {
@@ -2786,13 +2507,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-home",
-            "styleUrls": [
-                "./home.component.scss"
-            ],
+            "styleUrls": ["./home.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./home.component.html"
-            ],
+            "templateUrl": ["./home.component.html"],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
@@ -2890,9 +2607,7 @@
                     "line": 33,
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "modifierKind": [
-                        121
-                    ],
+                    "modifierKind": [121],
                     "jsdoctags": [
                         {
                             "name": "category",
@@ -2973,14 +2688,12 @@
                     }
                 ]
             },
-            "implements": [
-                "OnInit"
-            ],
+            "implements": ["OnInit"],
             "templateData": "<div *transloco=\"let t\" class=\"layout\">\n    <aside class=\"aside\">\n        <app-banner>\n            <h2 app-banner-title class=\"text-white\">{{ t('title') }}</h2>\n            <span app-banner-subtitle>{{ t('subtitle') }}</span>\n        </app-banner>\n        <app-category-filter (categorySelected)=\"filterFeedbacks($event)\"></app-category-filter>\n        <app-roadmap linkLabel=\"View\" title=\"Roadmap\" [redirectPath]=\"'/roadmap/' + category\" [disabled]=\"((feebacksByStatus('planned') | async)!.length + (feebacksByStatus('in-progress') | async)!.length + (feebacksByStatus('live') | async)!.length) === 0\">\n            <app-roadmap-item color=\"primary\" [amound]=\"(feebacksByStatus('planned') | async)!.length\">Planned</app-roadmap-item>\n            <app-roadmap-item color=\"tertiary\" [amound]=\"(feebacksByStatus('in-progress') | async)!.length\">In-Progress</app-roadmap-item>\n            <app-roadmap-item color=\"link\" [amound]=\"(feebacksByStatus('live') | async)!.length\">Lived</app-roadmap-item>\n        </app-roadmap>\n    </aside>\n    <main class=\"main\">\n        <ui-toolbar class=\"toolbar\" justify=\"between\">\n            <div class=\"toolbar__header\">\n                <img src=\"/assets/images/suggestions/icon-suggestions.svg\" alt=\"\" />\n                <h3 class=\"text-white\">{{ (feedbacks$ | async)?.length }} {{ t('toolbarTitle') }}</h3>\n            </div>\n            <button ui-button color=\"primary\" routerLink=\"/feedback/new\">\n                <ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}\n            </button>\n        </ui-toolbar>\n        <section class=\"feedback-list\" *ngIf=\"(feedbacks$ | async)!.length > 0\" data-cy=\"feedback-list\">\n            <app-feedback-card class=\"pointer\" *ngFor=\"let feedback of feedbacks$ | async\" routerLink=\"/feedback/detail/{{ feedback.id }}\">\n                <ui-counter feedback-card-aside class=\"hide-mobile\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                <ng-container feedback-card-aside>\n                    <section class=\"show-only-mobile\">\n                        <div class=\"feedback-aside-mobile\">\n                            <ui-counter order=\"row\" [limitClicksTo]=\"1\" [value]=\"feedback.upvotes\"></ui-counter>\n                            <ui-icon name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n                        </div>\n                    </section>\n                </ng-container>\n                <h3 feedback-card-title>{{ feedback.title }}</h3>\n                <div feedback-card-content>\n                    <p class=\"text\">{{ feedback.description }}</p>\n                    <ui-icon\n                        class=\"hide-mobile\"\n                        name=\"comments\"\n                        ui-badge\n                        [value]=\"feedback.comments ? feedback.comments.length : 0\"\n                    ></ui-icon>\n                </div>\n                <ui-chip feedback-card-footer [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n            </app-feedback-card>\n        </section>\n        <app-empty-feedbacks *ngIf=\"(feedbacks$ | async)!.length === 0\">\n            <h1 empty-feedbacks-title>{{ t('emptyFeedbackList.title') }}</h1>\n            <p empty-feedbacks-body>{{ t('emptyFeedbackList.description') }}</p>\n            <button ui-button color=\"primary\" empty-feedbacks-button routerLink=\"/feedback/new\">\n                <ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}\n            </button>\n        </app-empty-feedbacks>\n    </main>\n</div>\n"
         },
         {
             "name": "KanbanBoardComponent",
-            "id": "component-KanbanBoardComponent-b6a62f5e67a19acf3083de0bc9e7e0eba4c7f92e53c0bf2a5820d0c7629f0e0313b76e305a756b5957a0c4bc08f186d7023a832532e0a3a0fc3de450b90616dd",
+            "id": "component-KanbanBoardComponent-8ed13c0c27a866778ab288ee5b360eff51c20afee6c568a1f41aed63a8c32a019b45f5e7845c0c4e57cbb927beabf69b350759b5aa4cf45156e191313dd315df",
             "file": "src/app/modules/roadmap/components/kanban-board/kanban-board.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2988,29 +2701,14 @@
             "outputs": [],
             "providers": [],
             "selector": "app-kanban-board",
-            "styleUrls": [
-                "./kanban-board.component.scss"
-            ],
+            "styleUrls": ["./kanban-board.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./kanban-board.component.html"
-            ],
+            "templateUrl": ["./kanban-board.component.html"],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
             "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 12,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
+            "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
             "hostBindings": [],
@@ -3018,7 +2716,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-kanban-board',\n  templateUrl: './kanban-board.component.html',\n  styleUrls: ['./kanban-board.component.scss']\n})\nexport class KanbanBoardComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-kanban-board',\n  templateUrl: './kanban-board.component.html',\n  styleUrls: ['./kanban-board.component.scss']\n})\nexport class KanbanBoardComponent {\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -3027,38 +2725,21 @@
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 8
-            },
-            "implements": [
-                "OnInit"
-            ],
             "templateData": "<section class=\"kanban-board\">\n    <ng-content></ng-content>\n</section>"
         },
         {
             "name": "KanbanCardComponent",
             "id": "component-KanbanCardComponent-b34f0f72861eba4b64bfa24ef7baa9921da1b176607a78eb79bd188395da2d788ae53239b3276d3429758cfbfe39fb95125bb33c032bef343f443ed04de78f2b",
             "file": "src/app/modules/roadmap/components/kanban-card/kanban-card.ts",
-            "encapsulation": [
-                "ViewEncapsulation.None"
-            ],
+            "encapsulation": ["ViewEncapsulation.None"],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
             "selector": "app-kanban-card",
-            "styleUrls": [
-                "./kanban-card.component.scss"
-            ],
+            "styleUrls": ["./kanban-card.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./kanban-card.component.html"
-            ],
+            "templateUrl": ["./kanban-card.component.html"],
             "viewProviders": [],
             "inputsClass": [
                 {
@@ -3111,13 +2792,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-kanban-column",
-            "styleUrls": [
-                "./kanban-column.component.scss"
-            ],
+            "styleUrls": ["./kanban-column.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./kanban-column.component.html"
-            ],
+            "templateUrl": ["./kanban-column.component.html"],
             "viewProviders": [],
             "inputsClass": [
                 {
@@ -3170,13 +2847,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-reply",
-            "styleUrls": [
-                "./reply.component.scss"
-            ],
+            "styleUrls": ["./reply.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./reply.component.html"
-            ],
+            "templateUrl": ["./reply.component.html"],
             "viewProviders": [],
             "inputsClass": [
                 {
@@ -3267,9 +2940,7 @@
                 }
             ],
             "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
+            "implements": ["OnInit"],
             "templateData": "<div class=\"reply\">\n    <textarea  uiInput [formControl]=\"text\" class=\"reply__text\" placeholder=\"{{placeholder}}\"></textarea>\n    <button ui-button color=\"primary\" class=\"reply__button\" (click)=\"postReply()\">{{postBtnLabel}}</button>\n</div>"
         },
         {
@@ -3282,13 +2953,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-roadmap",
-            "styleUrls": [
-                "./roadmap.component.scss"
-            ],
+            "styleUrls": ["./roadmap.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./roadmap.component.html"
-            ],
+            "templateUrl": ["./roadmap.component.html"],
             "viewProviders": [],
             "inputsClass": [
                 {
@@ -3359,13 +3026,9 @@
             "outputs": [],
             "providers": [],
             "selector": "app-roadmap-detail",
-            "styleUrls": [
-                "./roadmap-detail.component.scss"
-            ],
+            "styleUrls": ["./roadmap-detail.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./roadmap-detail.component.html"
-            ],
+            "templateUrl": ["./roadmap-detail.component.html"],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
@@ -3435,9 +3098,7 @@
                     "line": 31,
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "modifierKind": [
-                        121
-                    ],
+                    "modifierKind": [121],
                     "jsdoctags": [
                         {
                             "name": "category",
@@ -3543,9 +3204,7 @@
                     }
                 ]
             },
-            "implements": [
-                "OnInit"
-            ],
+            "implements": ["OnInit"],
             "templateData": "<section class=\"layout\" *transloco=\"let t\">\n    <ui-toolbar justify=\"between\" class=\"toolbar\">\n        <div class=\"toolbar__header\">\n            <span class=\"back\" (click)=\"goBack()\">\n                <ui-icon class=\"back__icon\" name=\"arrow-left\"></ui-icon>\n                <span class=\"back__text\">Go back!</span>\n            </span>\n            <h3 class=\"back__title text-white\">Roadmap</h3>\n        </div>\n        <button ui-button color=\"primary\" routerLink=\"/feedback/new\">\n            <ui-icon name=\"plus\"></ui-icon> {{ t('createFeedbackLabelButton') }}\n        </button>\n    </ui-toolbar>\n    <app-kanban-board class=\"board-margin\">\n        <app-kanban-column [title]=\"'Planned (' + (feebacksByStatus('planned') | async)?.length + ')'\" subtitle=\"Ideas prioritized for research\" >\n            <app-kanban-card [color]=\"'link'\" *ngFor=\"let feedback of feebacksByStatus('planned') | async\" status=\"Planned\">\n                <h3 kanban-card-title class=\"kanban-card__title\" routerLink=\"/feedback/detail/{{ feedback.id }}\">{{ feedback.title }}</h3>\n                <p kanban-card-text>{{ feedback.description }}</p>\n                <div class=\"kanban-card__footer\">\n                    <ui-chip class=\"kanban-card__feature\" [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n\n                    <ui-counter\n                        class=\"kanban-card__counter\"\n                        [value]=\"feedback.upvotes\"\n                        [limitClicksTo]=\"1\"\n                        [order]=\"'row'\"\n                    ></ui-counter>\n                    <ui-icon class=\"kanban-card__comments\" name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n                </div>\n            </app-kanban-card>\n        </app-kanban-column>\n\n        <app-kanban-column [title]=\"'In-progress (' + (feebacksByStatus('in-progress') | async)?.length + ')'\" subtitle=\"Currently being developed\">\n            <app-kanban-card [color]=\"'primary'\" *ngFor=\"let feedback of feebacksByStatus('in-progress') | async\" status=\"In Progress\">\n                <h3 kanban-card-title class=\"kanban-card__title\" routerLink=\"/feedback/detail/{{ feedback.id }}\">{{ feedback.title }}</h3>\n                <p kanban-card-text>{{ feedback.description }}</p>\n                <div class=\"kanban-card__footer\">\n                    <ui-chip class=\"kanban-card__feature\" [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n\n                    <ui-counter\n                        class=\"kanban-card__counter\"\n                        [value]=\"feedback.upvotes\"\n                        [limitClicksTo]=\"1\"\n                        [order]=\"'row'\"\n                    ></ui-counter>\n                    <ui-icon class=\"kanban-card__comments\" name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n                </div>\n            </app-kanban-card>\n        </app-kanban-column>\n\n        <app-kanban-column [title]=\"'Live (' + (feebacksByStatus('live') | async)?.length + ')'\" subtitle=\"Released features\">\n            <app-kanban-card [color]=\"'tertiary'\" *ngFor=\"let feedback of feebacksByStatus('live') | async\" status=\"Live\">\n                <h3 kanban-card-title class=\"kanban-card__title\" routerLink=\"/feedback/detail/{{ feedback.id }}\">{{ feedback.title }}</h3>\n                <p kanban-card-text>{{ feedback.description }}</p>\n                <div class=\"kanban-card__footer\">\n                    <ui-chip class=\"kanban-card__feature\" [selectable]=\"false\">{{ feedback.category | titlecase }}</ui-chip>\n\n                    <ui-counter\n                        class=\"kanban-card__counter\"\n                        [value]=\"feedback.upvotes\"\n                        [limitClicksTo]=\"1\"\n                        [order]=\"'row'\"\n                    ></ui-counter>\n                    <ui-icon class=\"kanban-card__comments\" name=\"comments\" ui-badge [value]=\"feedback.comments ? feedback.comments.length : 0\"></ui-icon>\n                </div>\n            </app-kanban-card>\n        </app-kanban-column>\n    </app-kanban-board>\n</section>\n"
         },
         {
@@ -3558,9 +3217,7 @@
             "outputs": [],
             "providers": [],
             "selector": "app-roadmap-item",
-            "styleUrls": [
-                "roadmap-item.component.scss"
-            ],
+            "styleUrls": ["roadmap-item.component.scss"],
             "styles": [],
             "template": "<li class=\"roadmap-item\">\n  <span class=\"roadmap-item__status\" [ngClass]=\"'roadmap-item__status--' + color\"><ng-content></ng-content></span>\n  <span class=\"roadmap-item__counter\">{{amound}}</span>\n</li>",
             "templateUrl": [],
@@ -3615,9 +3272,7 @@
             "outputs": [],
             "providers": [],
             "selector": "ui-chip",
-            "styleUrls": [
-                "./ui-chip.component.scss"
-            ],
+            "styleUrls": ["./ui-chip.component.scss"],
             "styles": [],
             "template": "<span class=\"ui-chip\" [class.ui-chip--active]=\"active\" [class.ui-chip--selected]=\"selectable\" #text>       <ng-content></ng-content>\n   </span>",
             "templateUrl": [],
@@ -3672,13 +3327,9 @@
             "outputs": [],
             "providers": [],
             "selector": "ui-chip-list",
-            "styleUrls": [
-                "./ui-chip-list.component.scss"
-            ],
+            "styleUrls": ["./ui-chip-list.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./ui-chip-list.component.html"
-            ],
+            "templateUrl": ["./ui-chip-list.component.html"],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
@@ -3712,9 +3363,7 @@
             "outputs": [],
             "providers": [],
             "selector": "ui-counter",
-            "styleUrls": [
-                "./ui-counter.component.scss"
-            ],
+            "styleUrls": ["./ui-counter.component.scss"],
             "styles": [],
             "template": "<span        class=\"ui-counter\"\n        (click)=\"increment($event)\"\n        [class.ui-counter--active]=\"active\"\n        [class.ui-counter--row]=\"order === 'row'\"\n    >\n        <img class=\"ui-counter__icon\" src=\"assets/images/icons/icon-arrow-up.svg\" alt=\"counter icon\" />\n        <span class=\"ui-counter__value\">{{ value }}</span>\n    </span>",
             "templateUrl": [],
@@ -3804,9 +3453,7 @@
                     "line": 34,
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "modifierKind": [
-                        121
-                    ],
+                    "modifierKind": [121],
                     "jsdoctags": [
                         {
                             "name": "value",
@@ -3847,13 +3494,9 @@
             "outputs": [],
             "providers": [],
             "selector": "ui-divider",
-            "styleUrls": [
-                "./ui-divider.component.scss"
-            ],
+            "styleUrls": ["./ui-divider.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./ui-divider.component.html"
-            ],
+            "templateUrl": ["./ui-divider.component.html"],
             "viewProviders": [],
             "inputsClass": [],
             "outputsClass": [],
@@ -3920,13 +3563,9 @@
             "outputs": [],
             "providers": [],
             "selector": "ui-form-field",
-            "styleUrls": [
-                "./ui-form-field.component.scss"
-            ],
+            "styleUrls": ["./ui-form-field.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./ui-form-field.component.html"
-            ],
+            "templateUrl": ["./ui-form-field.component.html"],
             "viewProviders": [],
             "inputsClass": [
                 {
@@ -3972,9 +3611,7 @@
             "selector": "ui-icon",
             "styleUrls": [],
             "styles": [],
-            "templateUrl": [
-                "./ui-icon.component.html"
-            ],
+            "templateUrl": ["./ui-icon.component.html"],
             "viewProviders": [],
             "inputsClass": [
                 {
@@ -4059,17 +3696,13 @@
             "name": "UiSelectOptionComponent",
             "id": "component-UiSelectOptionComponent-c41557e226025ebfd2975d96647986825b82762434269c519a596628b02d8ac14531e7de0f24e74c76bedd034e6ba6679caee6f71c3ea27c292b2adeb447372b",
             "file": "src/app/components/select/ui-select-option.component.ts",
-            "encapsulation": [
-                "ViewEncapsulation.None"
-            ],
+            "encapsulation": ["ViewEncapsulation.None"],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
             "selector": "ui-select-option",
-            "styleUrls": [
-                "./ui-select-option.component.scss"
-            ],
+            "styleUrls": ["./ui-select-option.component.scss"],
             "styles": [],
             "template": "<button class=\"ui-select-option\" [class.ui-select-option--selected]=\"selected\" #text>        <ng-content></ng-content><img *ngIf=\"selected\" src=\"assets/images/icons/icon-check.svg\" alt=\"\" />\n    </button>",
             "templateUrl": [],
@@ -4138,9 +3771,7 @@
                 {
                     "name": "click",
                     "args": [],
-                    "argsDecorator": [
-                        "$event"
-                    ],
+                    "argsDecorator": ["$event"],
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 21
@@ -4189,9 +3820,7 @@
             "name": "UiSelectPanelComponent",
             "id": "component-UiSelectPanelComponent-a4c74cd818b0bc1b548cecd51a25744fa3acc8fd489834e69808649f327c36714634ccda3c773994c360655221e428b3b1a7c42c372cb003bafe3d4eb88ecabb",
             "file": "src/app/components/select/ui-select-panel.component.ts",
-            "encapsulation": [
-                "ViewEncapsulation.None"
-            ],
+            "encapsulation": ["ViewEncapsulation.None"],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
@@ -4202,13 +3831,9 @@
                 }
             ],
             "selector": "ui-select",
-            "styleUrls": [
-                "./ui-select-panel.component.scss"
-            ],
+            "styleUrls": ["./ui-select-panel.component.scss"],
             "styles": [],
-            "templateUrl": [
-                "./ui-select-panel.component.html"
-            ],
+            "templateUrl": ["./ui-select-panel.component.html"],
             "viewProviders": [],
             "inputsClass": [
                 {
@@ -4565,10 +4190,7 @@
                     }
                 ]
             },
-            "implements": [
-                "AfterViewInit",
-                "ControlValueAccessor"
-            ],
+            "implements": ["AfterViewInit", "ControlValueAccessor"],
             "templateData": "<div\n    class=\"ui-selector\"\n    [class.ui-selector--focus]=\"isDropdownOpen\"\n    cdkOverlayOrigin\n    (click)=\"toggleDropdown()\"\n    #origin=\"cdkOverlayOrigin\"\n    #trigger\n>\n    <input class=\"ui-selector__input\" [value]=\"displayedText\" [placeholder]=\"placeholder\" type=\"text\" readonly autocomplete=\"off\" />\n    <img *ngIf=\"!isDropdownOpen\" class=\"ui-selector__icon\" src=\"assets/images/icons/icon-arrow-down.svg\" alt=\"Selector displayed\" />\n    <img *ngIf=\"isDropdownOpen\" class=\"ui-selector__icon\" src=\"assets/images/icons/icon-arrow-up.svg\" alt=\"Selector displayed\" />\n</div>\n\n<ng-template\n    cdkConnectedOverlay\n    cdkConnectedOverlayLockPosition\n    cdkConnectedOverlayHasBackdrop\n    cdkConnectedOverlayBackdropClass=\"cdk-overlay-transparent-backdrop\"\n    [cdkConnectedOverlayOrigin]=\"origin\"\n    [cdkConnectedOverlayOpen]=\"isDropdownOpen\"\n    [cdkConnectedOverlayMinWidth]=\"_triggerRect?.width!\"\n    (backdropClick)=\"isDropdownOpen = false\"\n>\n    <div class=\"ui-select-panel\" @fadeInOut>\n        <ng-content></ng-content>\n    </div>\n</ng-template>\n"
         },
         {
@@ -4581,9 +4203,7 @@
             "outputs": [],
             "providers": [],
             "selector": "ui-toolbar",
-            "styleUrls": [
-                "./ui-toolbar.component.scss"
-            ],
+            "styleUrls": ["./ui-toolbar.component.scss"],
             "styles": [],
             "template": "<div class=\"ui-toolbar\" [ngClass]=\"getJustifyClass()\" [class.bg-transparent]=\"background === 'transparent'\">        <ng-content></ng-content>\n    </div>",
             "templateUrl": [],
@@ -5835,7 +5455,7 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/badge/badge.stories.ts",
+                "file": "src/app/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -5845,7 +5465,7 @@
                 "name": "Basic",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/button/button.stories.ts",
+                "file": "src/app/components/badge/badge.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "",
@@ -6005,21 +5625,21 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/app/components/badge/badge.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<UiBadgeDirective>",
-                "defaultValue": "(args: UiBadgeDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiBadgeDirective],\n        imports: [CommonModule],\n    },\n    template: `<ui-icon name=\"comments\" ui-badge value=\"3\"></ui-icon>`,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/app/components/button/button.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<UiButtonDirective>",
                 "defaultValue": "(args: UiButtonDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiButtonDirective],\n        imports: [CommonModule],\n    },\n    template: `<button ui-button [color]=\"color\" [size]=\"size\">Button</button>`,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/components/badge/badge.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<UiBadgeDirective>",
+                "defaultValue": "(args: UiBadgeDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiBadgeDirective],\n        imports: [CommonModule],\n    },\n    template: `<ui-icon name=\"comments\" ui-badge value=\"3\"></ui-icon>`,\n})"
             },
             {
                 "name": "Template",
@@ -6203,28 +5823,6 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "src/app/components/badge/badge.stories.ts": [
-                {
-                    "name": "Basic",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/badge/badge.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/app/components/badge/badge.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<UiBadgeDirective>",
-                    "defaultValue": "(args: UiBadgeDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiBadgeDirective],\n        imports: [CommonModule],\n    },\n    template: `<ui-icon name=\"comments\" ui-badge value=\"3\"></ui-icon>`,\n})"
-                }
-            ],
             "src/app/components/button/button.stories.ts": [
                 {
                     "name": "Basic",
@@ -6245,6 +5843,28 @@
                     "deprecationMessage": "",
                     "type": "Story<UiButtonDirective>",
                     "defaultValue": "(args: UiButtonDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiButtonDirective],\n        imports: [CommonModule],\n    },\n    template: `<button ui-button [color]=\"color\" [size]=\"size\">Button</button>`,\n})"
+                }
+            ],
+            "src/app/components/badge/badge.stories.ts": [
+                {
+                    "name": "Basic",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/badge/badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/components/badge/badge.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<UiBadgeDirective>",
+                    "defaultValue": "(args: UiBadgeDirective) => ({\n    props: args,\n    moduleMetadata: {\n        declarations: [UiBadgeDirective],\n        imports: [CommonModule],\n    },\n    template: `<ui-icon name=\"comments\" ui-badge value=\"3\"></ui-icon>`,\n})"
                 }
             ],
             "src/app/components/counter/counter.stories.ts": [
@@ -7138,7 +6758,7 @@
                 "linktype": "injectable",
                 "name": "CommentService",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -7156,7 +6776,7 @@
                 "linktype": "injectable",
                 "name": "ReplyService",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -7408,7 +7028,7 @@
                 "linktype": "component",
                 "name": "KanbanBoardComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
