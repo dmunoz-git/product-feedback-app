@@ -48,3 +48,6 @@ Thumbs.db
 
 # Test coverage
 /coverage
+
+# Storybook
+documentation.json

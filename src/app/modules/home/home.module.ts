@@ -14,18 +14,18 @@ import { BannerModule } from './components/banner/banner.module';
 import { CategoryFilterComponent } from './components/category-filter/category-filter.component';
 import { EmptyFeedbacksModule } from './components/empty-feedbacks/empty-feedbacks.module';
 import { RoadmapModule } from './components/roadmap/roadmap.module';
-import { HomeViewComponent } from './views/home-view/home-view.component';
+import { HomeComponent } from './views/home/home.component';
 
 const routes: Routes = [
     {
         path: '',
-        component: HomeViewComponent,
+        component: HomeComponent,
         pathMatch: 'full',
     },
 ];
 
 @NgModule({
-    declarations: [CategoryFilterComponent, HomeViewComponent],
+    declarations: [CategoryFilterComponent, HomeComponent],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
