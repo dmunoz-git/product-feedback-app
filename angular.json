@@ -19,8 +19,11 @@
                         "polyfills": "projects/feedback-app/src/polyfills.ts",
                         "tsConfig": "projects/feedback-app/tsconfig.app.json",
                         "inlineStyleLanguage": "scss",
-                        "assets": ["projects/feedback-app/src/favicon.ico", "projects/feedback-app/src/assets"],
-                        "styles": ["projects/feedback-app/src/styles.scss"],
+                        "assets": ["projects/feedback-app/src/assets"],
+                        "styles": ["projects/feedback-app/src/assets/scss/index.scss"],
+                        "stylePreprocessorOptions": {
+                            "includePaths": ["projects/feedback-app/src/assets/scss"]
+                        },
                         "scripts": []
                     },
                     "configurations": {

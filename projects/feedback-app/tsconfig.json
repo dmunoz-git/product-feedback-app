@@ -19,7 +19,13 @@
         "noImplicitOverride": true,
         "noPropertyAccessFromIndexSignature": true,
         "noImplicitReturns": true,
-        "noFallthroughCasesInSwitch": true
+        "noFallthroughCasesInSwitch": true,
+        "paths": {
+            "@core/*": ["projects/feedback-app/src/app/core/*"],
+            "@modules/*": ["projects/feedback-app/src/app/modules/*"],
+            "@components/*": ["projects/feedback-app/src/app/components/*"],
+            "@enviroments/*": ["projects/feedback-app/src/environments/*"]
+        }
     },
     "angularCompilerOptions": {
         "strictInjectionParameters": true,
