@@ -1,8 +1,0 @@
-<div class="kanban-card" [ngClass]="'kanban-card--' + color">
-    <span class="kanban-card__status" [ngClass]="'kanban-card__status--' + color">{{status}}</span>
-    <ng-content select="[kanban-card-title]"></ng-content>
-    <div class="kanban-card__body">
-        <ng-content select="[kanban-card-text]"></ng-content>
-        <ng-content></ng-content>
-    </div>
-</div>

@@ -1,0 +1,11 @@
+<article class="roadmap">
+    <div class="roadmap__header">
+        <h3 class="roadmap__title">{{ title }}</h3>
+        <a class="roadmap__link" href="{{ redirectPath }}" [class.roadmap__link--disabled]="disabled">{{ linkLabel }}</a>
+    </div>
+    <div class="roadmap__body">
+        <ul class="roadmap__list">
+            <ng-content></ng-content>
+        </ul>
+    </div>
+</article>

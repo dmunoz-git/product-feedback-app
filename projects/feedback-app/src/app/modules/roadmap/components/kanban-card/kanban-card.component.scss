@@ -1,0 +1,67 @@
+@use 'settings/colors';
+
+$colors: (
+    'primary': colors.$primary-color,
+    'link': colors.$link-hover-color,
+    'tertiary': colors.$tertiary-color,
+);
+
+:host {
+    display: block;
+    max-width: 21.875rem;
+}
+
+.kanban-card {
+    background: white;
+    padding: 2rem;
+
+    border-top: 0.375rem solid;
+    border-radius: 0.3125rem;
+
+    &--primary {
+        border-top: 0.375rem solid map-get($colors, 'primary');
+    }
+
+    &--link {
+        border-top: 0.375rem solid map-get($colors, 'link');
+    }
+
+    &--tertiary {
+        border-top: 0.375rem solid map-get($colors, 'tertiary');
+    }
+
+    &__title {
+        margin: 0.5rem 0 0.25rem 0;
+    }
+
+    &__text {
+        margin: 0;
+    }
+
+    &__status {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    &__status::before {
+        content: '';
+        display: block;
+        width: 8px;
+        height: 8px;
+        background: colors.$text-color;
+        border-radius: 50%;
+    }
+
+    &__status--primary::before {
+        background: map-get($colors, 'primary');
+    }
+
+    &__status--link::before {
+        background: map-get($colors, 'link');
+    }
+
+    &__status--tertiary::before {
+        background: map-get($colors, 'tertiary');
+    }
+}

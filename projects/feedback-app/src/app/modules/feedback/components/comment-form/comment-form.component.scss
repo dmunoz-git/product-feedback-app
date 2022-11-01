@@ -1,0 +1,24 @@
+@use 'settings/colors';
+
+.comment-form {
+    background: white;
+    border-radius: 0.625rem;
+    padding: 1.5rem 2.125rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5625rem;
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__textarea {
+        resize: none;
+        max-height: 5rem;
+    }
+
+    &--error {
+        color: colors.$outline-error-color;
+    }
+}
