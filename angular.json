@@ -20,9 +20,9 @@
                         "tsConfig": "projects/feedback-app/tsconfig.app.json",
                         "inlineStyleLanguage": "scss",
                         "assets": ["projects/feedback-app/src/assets"],
-                        "styles": ["projects/feedback-app/src/assets/scss/index.scss"],
+                        "styles": ["projects/feedback-app/src/styles/index.scss"],
                         "stylePreprocessorOptions": {
-                            "includePaths": ["projects/feedback-app/src/assets/scss"]
+                            "includePaths": ["projects/feedback-app/src/styles"]
                         },
                         "scripts": []
                     },
