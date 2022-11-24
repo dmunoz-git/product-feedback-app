@@ -1,0 +1,9 @@
+@use 'settings/colors';
+
+:host {
+    display: block;
+    margin: 2rem auto;
+    height: 1px;
+    width: 100%;
+    background-color: colors.$divider-background;
+}

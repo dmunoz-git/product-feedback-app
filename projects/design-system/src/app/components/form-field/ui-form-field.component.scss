@@ -1,0 +1,12 @@
+:host {
+    display: block;
+}
+
+.ui-form-field {
+    max-width: 15.9375rem;
+    width: 100%;
+
+    &--fluent {
+        min-width: 100%;
+    }
+}

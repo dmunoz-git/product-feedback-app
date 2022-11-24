@@ -1,0 +1,80 @@
+@use '../settings/layout';
+@use '../settings/colors';
+
+.ui-button {
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: var(--fs-button);
+    padding: 13px;
+    cursor: pointer;
+
+    &--primary {
+        background-color: colors.$primary-color;
+        color: colors.$light-text-color;
+
+        &:hover {
+            background-color: lighten(colors.$primary-color, 10%);
+        }
+    }
+
+    &--secondary {
+        background-color: colors.$secondary-color;
+        color: colors.$light-text-color;
+
+        &:hover {
+            background-color: lighten(colors.$secondary-color, 10%);
+        }
+    }
+
+    &--info {
+        background-color: colors.$info-color;
+        color: colors.$light-text-color;
+
+        &:hover {
+            background-color: lighten(colors.$info-color, 10%);
+        }
+    }
+
+    &--error {
+        background-color: colors.$error-color;
+        color: colors.$light-text-color;
+
+        &:hover {
+            background-color: lighten(colors.$error-color, 10%);
+        }
+    }
+
+    &--light {
+        background-color: colors.$white-color;
+        color: colors.$secondary-color;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &--dark {
+        background: colors.$dark-color;
+        color: colors.$light-text-color;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &--icon-ly {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1ch;
+    }
+
+    &--full-width {
+        width: 100%;
+    }
+
+    &--long {
+        width: min(layout.$min-button-width, 100%);
+    }
+}

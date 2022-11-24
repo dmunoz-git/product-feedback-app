@@ -1,0 +1,25 @@
+@use '../settings/breakpoints';
+
+@mixin mobile {
+    @media screen and (max-width: map-get(breakpoints.$grid-breakpoints, mobile)) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media screen and (min-width: map-get(breakpoints.$grid-breakpoints, mobile)) and (max-width: map-get(breakpoints.$grid-breakpoints, tablet)) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: map-get(breakpoints.$grid-breakpoints, tablet)) and (max-width: map-get(breakpoints.$grid-breakpoints, desktop)) {
+        @content;
+    }
+}
+
+@mixin desktop-large {
+    @media screen and (min-width: map-get(breakpoints.$grid-breakpoints, desktop)) {
+        @content;
+    }
+}

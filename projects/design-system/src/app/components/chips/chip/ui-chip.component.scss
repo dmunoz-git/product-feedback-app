@@ -1,0 +1,26 @@
+@use 'settings/colors';
+
+.ui-chip {
+    display: inline-block;
+    font-weight: 600;
+    padding: 0.39em 1.153em;
+    border-radius: 0.625rem;
+    background-color: colors.$chips-background-color;
+    color: colors.$secondary-color;
+
+    &--selected:hover {
+        background-color: darken(colors.$chips-background-color, 10%);
+        color: colors.$secondary-color;
+        cursor: pointer;
+    }
+
+    &--active {
+        background-color: colors.$secondary-color;
+        color: colors.$light-text-color;
+
+        &:hover {
+            background-color: colors.$secondary-color;
+            color: colors.$light-text-color;
+        }
+    }
+}

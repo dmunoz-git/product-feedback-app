@@ -1,0 +1,83 @@
+@use 'sass:math';
+
+// Font-family configuration variable for the body element.
+$font-family: 'Jost', sans-serif;
+
+// Font-sizes configuration variables
+$fs-base: 16; // base font size in px
+
+$_fs-24: math.div(24, $fs-base) + rem; // 24px
+$_fs-20: math.div(20, $fs-base) + rem; // 20px
+$_fs-18: math.div(18, $fs-base) + rem; // 18px
+$_fs-16: math.div(16, $fs-base) + rem; // 16px
+$_fs-15: math.div(15, $fs-base) + rem; // 15px
+$_fs-14: math.div(14, $fs-base) + rem; // 14px
+$_fs-13: math.div(13, $fs-base) + rem; // 13px
+
+$font-size: $_fs-16;
+
+$elements-fs: (
+    h1: $_fs-24,
+    h2: $_fs-20,
+    h3: $_fs-18,
+    h4: $_fs-14,
+    p: $_fs-16,
+);
+
+$custom-fs: (
+    'fs-body1': $_fs-16,
+    'fs-body2': $_fs-15,
+    'fs-body3': $_fs-14,
+    'fs-button': $_fs-14,
+);
+
+// Line heading configuration variables
+$_lh-35: math.div(35, $fs-base) + rem; // 35px
+$_lh-29: math.div(29, $fs-base) + rem; // 29px
+$_lh-26: math.div(26, $fs-base) + rem; // 25px
+$_lh-23: math.div(23, $fs-base) + rem; // 23px
+$_lh-22: math.div(22, $fs-base) + rem; // 22px
+$_lh-20: math.div(20, $fs-base) + rem; // 20px
+$_lh-19: math.div(19, $fs-base) + rem; // 19px
+
+$elements-lh: (
+    h1: $_lh-35,
+    h2: $_lh-29,
+    h3: $_lh-26,
+    h4: $_lh-20,
+    p: $_lh-23,
+);
+
+$custom-lh: (
+    body1: $_lh-23,
+    body2: $_lh-22,
+    body3: $_lh-19,
+);
+
+// Spacing configuration variables
+$_sp-0: -0.33;
+$_sp-1: -0.25;
+$_sp-2: -0.2;
+
+$elements-sp: (
+    h1: $_sp-0,
+    h2: $_sp-1,
+    h3: $_sp-1,
+    h4: $_sp-2,
+);
+
+// Weight configuration variables
+
+$elements-wh: (
+    h1: bold,
+    h2: bold,
+    h3: bold,
+    h4: bold,
+    p: regular,
+);
+
+$custom-wh: (
+    body1: regular,
+    body2: regular,
+    body3: 600,
+);

@@ -1,0 +1,7 @@
+@mixin convertDicToCssVars($dic) {
+    @each $key, $value in $dic {
+        @if $value {
+            --#{$key}: #{$value};
+        }
+    }
+}

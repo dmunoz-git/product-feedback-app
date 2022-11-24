@@ -3,6 +3,122 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
+        "design-system": {
+            "projectType": "application",
+            "root": "projects/design-system",
+            "sourceRoot": "projects/design-system/src",
+            "prefix": "product-feedback-app",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "outputs": ["{options.outputPath}"],
+                    "options": {
+                        "outputPath": "dist/design-system",
+                        "index": "projects/design-system/src/index.html",
+                        "main": "projects/design-system/src/main.ts",
+                        "polyfills": "projects/design-system/src/polyfills.ts",
+                        "tsConfig": "projects/design-system/tsconfig.app.json",
+                        "inlineStyleLanguage": "scss",
+                        "assets": ["projects/design-system/src/favicon.ico", "projects/design-system/src/assets"],
+                        "styles": ["projects/design-system/src/styles.scss"],
+                        "scripts": []
+                    },
+                    "configurations": {
+                        "production": {
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "500kb",
+                                    "maximumError": "1mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "2kb",
+                                    "maximumError": "4kb"
+                                }
+                            ],
+                            "fileReplacements": [
+                                {
+                                    "replace": "projects/design-system/src/environments/environment.ts",
+                                    "with": "projects/design-system/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "outputHashing": "all"
+                        },
+                        "development": {
+                            "buildOptimizer": false,
+                            "optimization": false,
+                            "vendorChunk": true,
+                            "extractLicenses": false,
+                            "sourceMap": true,
+                            "namedChunks": true
+                        }
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "design-system:build:production"
+                        },
+                        "development": {
+                            "browserTarget": "design-system:build:development"
+                        }
+                    },
+                    "defaultConfiguration": "development"
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "design-system:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@nrwl/linter:eslint",
+                    "options": {
+                        "lintFilePatterns": ["projects/design-system/**/*.ts", "projects/design-system/**/*.html"]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "outputs": ["coverage/projects/design-system"],
+                    "options": {
+                        "jestConfig": "projects/design-system/jest.config.ts",
+                        "passWithNoTests": true
+                    }
+                }
+            },
+            "tags": []
+        },
+        "design-system-e2e": {
+            "root": "projects/design-system-e2e",
+            "sourceRoot": "projects/design-system-e2e/src",
+            "projectType": "application",
+            "architect": {
+                "e2e": {
+                    "builder": "@nrwl/cypress:cypress",
+                    "options": {
+                        "cypressConfig": "projects/design-system-e2e/cypress.json",
+                        "devServerTarget": "design-system:serve:development"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "design-system:serve:production"
+                        }
+                    }
+                },
+                "lint": {
+                    "builder": "@nrwl/linter:eslint",
+                    "outputs": ["{options.outputFile}"],
+                    "options": {
+                        "lintFilePatterns": ["projects/design-system-e2e/**/*.{js,ts}"]
+                    }
+                }
+            },
+            "tags": [],
+            "implicitDependencies": ["design-system"]
+        },
         "feedback-app": {
             "projectType": "application",
             "root": "projects/feedback-app",

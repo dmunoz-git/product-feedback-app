@@ -1,0 +1,8 @@
+@use '../settings/typography';
+@use '../settings/colors';
+
+body {
+    font-family: typography.$font-family;
+    background: colors.$background-color;
+    color: colors.$text-color;
+}
