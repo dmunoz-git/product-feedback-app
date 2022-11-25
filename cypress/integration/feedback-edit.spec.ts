@@ -15,6 +15,21 @@ describe('Feedback edit form', () => {
         cy.get('[data-cy=cancel]').should('be.visible');
     });
 
+    it('should show category as Title Case', () => {
+        let category: Cypress.Chainable<JQuery<HTMLInputElement>>  = cy.get('[data-cy=category-field]').children('div').children('input');
+        category.invoke('val').then((val) => {
+            let value = val as string;
+            expect(val).to.equal(value.split('\\$1').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join('\\$1'));
+        });
+    });
+
+    it('should show status as Title Case', () => {
+        let status: Cypress.Chainable<JQuery<HTMLInputElement>>  = cy.get('[data-cy=status-field]').children('div').children('input');
+        status.invoke('val').then((val) => {
+            let value = val as string;
+            expect(val).to.equal(value.split('\\$1').map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()).join('\\$1'));
+        });
+    });
     it('should edit a edit an feedback', () => {
         cy.get('[data-cy=title-field]').clear().type('Edited feedback');
         cy.get('[data-cy=description-field]').clear().type('Edited description');
