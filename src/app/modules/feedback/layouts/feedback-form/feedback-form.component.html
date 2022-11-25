@@ -20,7 +20,7 @@
             <h4 class="form-field-title">{{ t('formFields.category') }}</h4>
             <ui-form-field size="fluent">
                 <ui-label>{{ t('formFields.categoryLabel') }}</ui-label>
-                <ui-select formControlName="category">
+                <ui-select formControlName="category" data-cy="category-field">
                     <ui-select-option *ngFor="let category of categories" value="{{ category }}">{{
                         t('categories.' + category)
                     }}</ui-select-option>
