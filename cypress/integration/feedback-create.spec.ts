@@ -29,7 +29,8 @@ describe('Feedback create form', () => {
             cy.get('[data-cy=title-field]').type(feedback.title);
             cy.get('[data-cy=description-field]').type(feedback.description);
             cy.get('[data-cy=submit]').click();
-            cy.get('[data-cy=feedback-list]').contains(feedback.title);
+            cy.get('[data-cy=feedback-list]').should('contain', feedback.title);
         });
     });
+
 });

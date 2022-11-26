@@ -11,7 +11,7 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { fadeInOut } from '@components/animations/fade.animation';
-import { UiSelectOptionComponent } from '../option/ui-select-option.component';
+import { IUiSelectOption, UiSelectOptionComponent } from '../option/ui-select-option.component';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
@@ -59,10 +59,9 @@ export class UiSelectPanelComponent implements AfterViewInit, ControlValueAccess
         this.isDropdownOpen ? this.onClose() : this.onOpened();
     }
 
-    selectOption(option: UiSelectOptionComponent) {
-        this.selectedOption = option;
+    selectOption(option: IUiSelectOption) {
         this.selected = option.value;
-        this.displayedText = this.selectedOption && this.selected !== '' ? option.textElement.nativeElement.innerText : '';
+        this.displayedText = option.text;
         this.isDropdownOpen = false;
         this.setSelected();
         this.onChangeFn(this.selected);
@@ -79,7 +78,7 @@ export class UiSelectPanelComponent implements AfterViewInit, ControlValueAccess
     }
 
     setSelected() {
-        this.options.forEach((opt) => (opt.selected = opt.value === this.selected));
+        this.options.forEach((opt) => (opt.data.selected = opt.data.value === this.selected));
     }
 
     writeValue(fn: any): void {
