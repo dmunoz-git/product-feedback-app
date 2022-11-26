@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { UiSelectPanelComponent } from './ui-select-panel.component';
+import { UiSelectPanelComponent } from './panel/ui-select-panel.component';
 
 @Injectable({
     providedIn: 'root',

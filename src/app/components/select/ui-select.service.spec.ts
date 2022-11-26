@@ -1,5 +1,5 @@
 import { TestBed } from '@angular/core/testing';
-import { UiSelectService } from '../ui-select.service';
+import { UiSelectService } from './ui-select.service';
 
 describe('UiSelectService', () => {
     let service: UiSelectService;
