@@ -12,7 +12,6 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { fadeInOut } from '@components/animations/fade.animation';
 import { UiSelectOptionComponent } from '../option/ui-select-option.component';
-import { UiSelectService } from '../ui-select.service';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
@@ -43,10 +42,6 @@ export class UiSelectPanelComponent implements AfterViewInit, ControlValueAccess
     _triggerRect: any = null;
 
     isDropdownOpen: boolean = false;
-
-    constructor(private select: UiSelectService) {
-        this.select.register(this);
-    }
 
     ngAfterViewInit(): void {
         if (this.selected !== '') {

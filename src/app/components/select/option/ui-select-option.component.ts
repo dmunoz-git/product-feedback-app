@@ -1,5 +1,5 @@
-import { Component, ElementRef, HostListener, Input, ViewChild, ViewEncapsulation } from '@angular/core';
-import { UiSelectService } from '../ui-select.service';
+import { Component, ElementRef, Host, HostListener, Input, Optional, ViewChild, ViewEncapsulation } from '@angular/core';
+import { UiSelectPanelComponent } from '../panel/ui-select-panel.component';
 
 @Component({
     // eslint-disable-next-line @angular-eslint/component-selector
@@ -16,10 +16,11 @@ export class UiSelectOptionComponent {
     @ViewChild('text') textElement!: ElementRef;
     selected: boolean = false;
 
-    constructor(private select: UiSelectService) {}
+    constructor(@Optional() @Host() private panel: UiSelectPanelComponent) {}
 
     @HostListener('click', ['$event'])
     click() {
-        this.select.getSelect().selectOption(this);
+        this.selected = true;
+        this.panel.selectOption(this);
     }
 }
