@@ -35,9 +35,24 @@ describe('Feedback edit form', () => {
         cy.get('[data-cy=description-field]').clear().type('Edited description');
         cy.get('[data-cy=edit]').click();
         cy.get('[data-cy=feedback-list]').contains('Edited feedback').click();
-
         cy.get('[data-cy=title]').should('have.text', 'Edited feedback');
         cy.get('[data-cy=description]').should('have.text', 'Edited description');
+    });
+
+    it('should be able to have a clickeable category selector', () => {
+        cy.get('[data-cy=category-field]').children('div').children('input').click();
+        cy.get('[data-cy=category-option]').first().children('button').invoke('text').then((btnTxt) => {
+            cy.get('[data-cy=category-option]').first().click();
+            cy.get('[data-cy=category-field]').children('div').children('input').invoke('val').then((inputTxt) => {
+                expect(inputTxt).to.equal(btnTxt);
+            }); 
+        })
+    });
+
+    it('should be able to have a clickeable status selector', () => {
+        let status: Cypress.Chainable<JQuery<HTMLInputElement>>  = cy.get('[data-cy=status-field]').children('div').children('input');
+        status.click();
+        cy.get('button').should('have.length.at.least', 1);
     });
 
     it('should cancel the action and return to home view', () => {

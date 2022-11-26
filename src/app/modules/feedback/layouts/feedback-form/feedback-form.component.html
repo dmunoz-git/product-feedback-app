@@ -21,7 +21,7 @@
             <ui-form-field size="fluent">
                 <ui-label>{{ t('formFields.categoryLabel') }}</ui-label>
                 <ui-select formControlName="category" data-cy="category-field">
-                    <ui-select-option *ngFor="let category of categories" value="{{ category }}">{{
+                    <ui-select-option *ngFor="let category of categories" value="{{ category }}" data-cy="category-option">{{
                         t('categories.' + category)
                     }}</ui-select-option>
                 </ui-select>
