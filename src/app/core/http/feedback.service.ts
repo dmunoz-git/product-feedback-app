@@ -17,7 +17,7 @@ export class FeedbackService {
             title: feedback.title,
             category: feedback.category,
             upvotes: 0,
-            status: feedback.status,
+            status: 'suggestion',
             description: feedback.description,
             comments: [],
         };
