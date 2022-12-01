@@ -20,7 +20,7 @@
         </div>
         <ui-chip feedback-card-footer [selectable]="false">{{ feedback.category | titlecase }}</ui-chip>
     </app-feedback-card>
-    <section class="section" *ngIf="feedback.comments">
+    <section class="section" *ngIf="feedback.comments?.length && feedback.comments!.length > 0">
         <div *ngFor="let comment of feedback.comments; let i = index">
             <app-comment>
                 <img src="{{ comment.user.image }}" alt="{{ comment.user.name }}" comment-avatar />
