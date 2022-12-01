@@ -18,8 +18,8 @@ import { BackBtnComponent } from './components/back-btn/back-btn.component';
 import { CommentFormComponent } from './components/comment-form/comment-form.component';
 import { CommentModule } from './components/comment/comment.module';
 import { FormCardComponent } from './components/form-card/form-card.component';
-import { FeedbackDetailComponent } from './layouts/feedback-detail/feedback-detail.component';
-import { FeedbackFormComponent } from './layouts/feedback-form/feedback-form.component';
+import { FeedbackDetailComponent } from './views/feedback-detail/feedback-detail.component';
+import { FeedbackFormComponent } from './views/feedback-form/feedback-form.component';
 import { ReplyComponent } from './components/reply/reply.component';
 
 const routes: Routes = [
@@ -39,7 +39,14 @@ const routes: Routes = [
 ];
 
 @NgModule({
-    declarations: [FeedbackDetailComponent, FeedbackFormComponent, BackBtnComponent, FormCardComponent, CommentFormComponent, ReplyComponent],
+    declarations: [
+        FeedbackDetailComponent,
+        FeedbackFormComponent,
+        BackBtnComponent,
+        FormCardComponent,
+        CommentFormComponent,
+        ReplyComponent,
+    ],
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
