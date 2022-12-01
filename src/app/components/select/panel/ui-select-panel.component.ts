@@ -29,37 +29,45 @@ import { IUiSelectOption, UiSelectOptionComponent } from '../option/ui-select-op
     ],
 })
 export class UiSelectPanelComponent implements AfterViewInit, ControlValueAccessor {
-    @Input() selected: string = '';
-    @Input() placeholder: string = '';
-    @Input() disabled: boolean = false;
-    @ViewChild('trigger') trigger!: ElementRef;
-
-    @ContentChildren(UiSelectOptionComponent) options!: QueryList<UiSelectOptionComponent>;
-
-    selectedOption!: UiSelectOptionComponent;
-    displayedText: string = '';
-
-    _triggerRect: any = null;
-
-    isDropdownOpen: boolean = false;
-
-    ngAfterViewInit(): void {
-        if (this.selected !== '') {
-            this.setSelected();
-        }
-    }
-
-    onTouchedFn = () => {};
+    @Input() public selected: string = '';
+    @Input() public placeholder: string = '';
+    @Input() public disabled: boolean = false;
+    @ViewChild('trigger') public trigger!: ElementRef;
+    @ContentChildren(UiSelectOptionComponent) public options!: QueryList<UiSelectOptionComponent>;
 
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    onChangeFn = (_: any) => {};
+    public onChangeFn = (_: any) => {};
+    public onTouchedFn = () => {};
 
-    toggleDropdown() {
+    public selectedOption!: UiSelectOptionComponent;
+    public displayedText: string = '';
+    public triggerRect: any = null;
+    public isDropdownOpen: boolean = false;
+
+    public ngAfterViewInit(): void {
+        setTimeout(() => {
+            if(this.selected !== '') {
+                this.setSelected();
+                this.selectedOption = this.options.find((opt) => opt.data.value === this.selected)!;
+                if(this.selectedOption) {
+                    this.selectedOption.data.selected = true;
+                    this.displayedText = this.selectedOption.data.text;
+                }
+                else {
+                    throw new Error('Selected option not found');
+                }
+            }
+        });
+    }
+
+
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    public toggleDropdown() {
         // eslint-disable-next-line @typescript-eslint/no-unused-expressions
         this.isDropdownOpen ? this.onClose() : this.onOpened();
     }
 
-    selectOption(option: IUiSelectOption) {
+    public selectOption(option: IUiSelectOption) {
         this.selected = option.value;
         this.displayedText = option.text;
         this.isDropdownOpen = false;
@@ -67,34 +75,34 @@ export class UiSelectPanelComponent implements AfterViewInit, ControlValueAccess
         this.onChangeFn(this.selected);
     }
 
-    onOpened() {
-        this._triggerRect = this.trigger?.nativeElement.getBoundingClientRect();
+    private onOpened() {
+        this.triggerRect = this.trigger?.nativeElement.getBoundingClientRect();
         this.isDropdownOpen = true;
         this.onTouchedFn();
     }
 
-    onClose() {
+    private onClose() {
         this.isDropdownOpen = false;
     }
 
-    setSelected() {
+    private setSelected() {
         this.options.forEach((opt) => (opt.data.selected = opt.data.value === this.selected));
     }
 
-    writeValue(fn: any): void {
+    public writeValue(fn: any): void {
         this.displayedText = fn;
         this.selected = fn;
     }
 
-    registerOnChange(fn: any): void {
+    public registerOnChange(fn: any): void {
         this.onChangeFn = fn;
     }
 
-    registerOnTouched(fn: any): void {
+    public registerOnTouched(fn: any): void {
         this.onTouchedFn = fn;
     }
 
-    setDisabledState(isDisabled: boolean): void {
+    public setDisabledState(isDisabled: boolean): void {
         this.disabled = isDisabled;
     }
 }
