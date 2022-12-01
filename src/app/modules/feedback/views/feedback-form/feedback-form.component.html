@@ -20,8 +20,8 @@
             <h4 class="form-field-title">{{ t('formFields.category') }}</h4>
             <ui-form-field size="fluent">
                 <ui-label>{{ t('formFields.categoryLabel') }}</ui-label>
-                <ui-select formControlName="category">
-                    <ui-select-option *ngFor="let category of categories" value="{{ category }}">{{
+                <ui-select formControlName="category" data-cy="category-field">
+                    <ui-select-option *ngFor="let category of categories" value="{{ category }}" data-cy="category-option">{{
                         t('categories.' + category)
                     }}</ui-select-option>
                 </ui-select>
@@ -30,7 +30,7 @@
             <h4 class="form-field-title" *ngIf="update">Update status</h4>
             <ui-form-field size="fluent" *ngIf="update">
                 <ui-label>{{ t('formFields.statusLabel') }}</ui-label>
-                <ui-select [formControl]="statusControl">
+                <ui-select [formControl]="statusControl" data-cy=status-field>
                     <ui-select-option *ngFor="let status of statuses" value="{{ status }}">{{ t('status.' + status) }}</ui-select-option>
                 </ui-select>
             </ui-form-field>
@@ -69,7 +69,7 @@
                     (click)="updateFeedback()"
                     data-cy="edit"
                 >
-                    {{ t('buttons.addFeedbacks') }}
+                    {{ t('buttons.editFeedbacks') }}
                 </button>
                 <button
                     *ngIf="!update"

@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { UiSelectOptionComponent } from '../ui-select-option.component';
+import { UiSelectOptionComponent } from './ui-select-option.component';
 
 describe('UiSelectOptionComponent', () => {
     let component: UiSelectOptionComponent;
