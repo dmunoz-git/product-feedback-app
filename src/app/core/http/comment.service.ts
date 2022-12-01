@@ -5,13 +5,12 @@ import { Observable, of } from 'rxjs';
     providedIn: 'root',
 })
 export class CommentService {
-    constructor() {}
 
-    createComment(comment: Comment): Observable<null> {
+    createComment(): Observable<null> {
         return of(null);
     }
 
-    getCommentDetail(id: number): Observable<null> {
+    getCommentDetail(): Observable<null> {
         return of(null);
     }
 
@@ -19,11 +18,11 @@ export class CommentService {
         return of(null);
     }
 
-    updateComment(id: number, comment: Comment): Observable<null> {
+    updateComment(): Observable<null> {
         return of(null);
     }
 
-    deleteComment(id: number): Observable<null> {
+    deleteComment(): Observable<null> {
         return of(null);
     }
 }

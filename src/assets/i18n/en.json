@@ -38,7 +38,8 @@
 
 	"buttons": {
 		"cancel": "Cancel",
-		"addFeedbacks": "Add Feedback"
+		"addFeedbacks": "Add Feedback",
+		"editFeedbacks": "Edit Feedback"
 	},
 
 	"errors": {
